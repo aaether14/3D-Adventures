@@ -1,0 +1,555 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{52e99227-81f0-4025-840a-d501702ae599}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{91f285f4-c56d-4c90-bccc-93f4539bff26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="texture_sets">
+      <UniqueIdentifier>{fffd5f9d-3e14-44f5-8994-0bf5ea1c4bcf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="projects">
+      <UniqueIdentifier>{7b303f43-d142-490d-905f-6e657079d84a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\ssao">
+      <UniqueIdentifier>{28c3beb4-d21b-43b0-9da1-a7d1314e7a4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders\hdr">
+      <UniqueIdentifier>{a99a66af-7a4b-448f-9fb0-16cb43481a84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\terrain">
+      <UniqueIdentifier>{b8f13a2b-f727-44c3-bb58-2c1b719e7935}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\model_loaders">
+      <UniqueIdentifier>{1b173c7e-9b32-44c2-ae5d-8aa01efb1802}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\light">
+      <UniqueIdentifier>{040f3b5a-8590-4e33-91dc-f63fcd855df1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\texture">
+      <UniqueIdentifier>{00f068ae-a9a7-453e-a478-522c5a3a6041}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\shader">
+      <UniqueIdentifier>{12277e5a-c45d-489c-83ab-9f835e389a0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\util">
+      <UniqueIdentifier>{2f16ce69-121b-4e20-8f5f-5d96604b895f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\controller">
+      <UniqueIdentifier>{7282b505-7d09-4451-adbb-4960794e97fe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\ui">
+      <UniqueIdentifier>{2f0b4b9b-d653-4166-9b0a-e69956334ece}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\ui_implementation">
+      <UniqueIdentifier>{3c0999f8-47cb-4326-b721-b4fd5df0b8db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\entity">
+      <UniqueIdentifier>{76bb3ad4-66c6-4b4b-9fa0-d4a70e9a34a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\filters">
+      <UniqueIdentifier>{9b5030f7-7092-4f2e-b03c-f08ba0699a48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\settings">
+      <UniqueIdentifier>{af2b6aa0-2e4f-4789-9c90-cbdfe403bbd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\camera_implementation">
+      <UniqueIdentifier>{e65e87bf-e1a3-4ba5-a1e2-640f2a63acdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\sky">
+      <UniqueIdentifier>{9c49929e-d9e9-44b2-85bf-24e7a9b6cf8c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="common\controls.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\pipeline.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\mesh_drawer.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\application.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\skybox.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="common\mesh_wrapper.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\terrain_wrapper.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\uniform.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\resource_loader.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\2d.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\technique.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\game_object.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\texture\texture.cpp">
+      <Filter>common\texture</Filter>
+    </ClCompile>
+    <ClCompile Include="common\controller\controls_source.cpp">
+      <Filter>common\controller</Filter>
+    </ClCompile>
+    <ClCompile Include="common\light\light.cpp">
+      <Filter>common\light</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\static_info.cpp">
+      <Filter>common\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\creature.cpp">
+      <Filter>common\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\static.cpp">
+      <Filter>common\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\basic_filter.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\blur.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\dof.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\fxaa.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\g_buffer.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\hdr.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\shadow.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\shadow_calculator.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\ssao.cpp">
+      <Filter>common\filters</Filter>
+    </ClCompile>
+    <ClCompile Include="common\model_loaders\animated_mesh.cpp">
+      <Filter>common\model_loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="common\model_loaders\assimp_loader.cpp">
+      <Filter>common\model_loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="common\model_loaders\granny_loader.cpp">
+      <Filter>common\model_loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="common\model_loaders\granny_loader_helper.cpp">
+      <Filter>common\model_loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="common\model_loaders\math_3d.cpp">
+      <Filter>common\model_loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="common\model_loaders\aaether_loader.cpp">
+      <Filter>common\model_loaders</Filter>
+    </ClCompile>
+    <ClCompile Include="common\camera_implementation\camera.cpp">
+      <Filter>common\camera_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\sky\sky_render.cpp">
+      <Filter>common\sky</Filter>
+    </ClCompile>
+    <ClCompile Include="common\settings\settings.cpp">
+      <Filter>common\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="common\settings\environment.cpp">
+      <Filter>common\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="common\shader\shader.cpp">
+      <Filter>common\shader</Filter>
+    </ClCompile>
+    <ClCompile Include="common\terrain\quad_tree.cpp">
+      <Filter>common\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="common\terrain\terrain.cpp">
+      <Filter>common\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="common\terrain\terrain_strip.cpp">
+      <Filter>common\terrain</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ui\ui_util.cpp">
+      <Filter>common\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ui\ui_manager.cpp">
+      <Filter>common\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ui_implementation\ui_root.cpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ui_implementation\settings_root.cpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\util\string_helper.cpp">
+      <Filter>common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="common\util\utils.cpp">
+      <Filter>common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="common\util\view.cpp">
+      <Filter>common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="common\util\controller_math.cpp">
+      <Filter>common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ui_implementation\lighting_root.cpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\settings\filter_settings.cpp">
+      <Filter>common\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ui_implementation\filter_root.cpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\util\file_helper.cpp">
+      <Filter>common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ui_implementation\top_root.cpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\ui_implementation\project_root.cpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\staitc_builder.cpp">
+      <Filter>common\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="common\player.cpp">
+      <Filter>common\entity</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\shaders\skybox_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\skybox_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\mesh_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\mesh_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\terrain_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\terrain_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\shadow_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\shadow_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\2d_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\2d_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\filter-null_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\filter-null_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\gaus_blur_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\gaus_blur_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\gaus_blur_vert2.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\gaus_blur_frag2.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\mult_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\mult_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\add_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\add_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\gamma_correction_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\gamma_correction_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\ssao_blur_frag.txt">
+      <Filter>shaders\ssao</Filter>
+    </Text>
+    <Text Include="data\shaders\ssao_blur_vert.txt">
+      <Filter>shaders\ssao</Filter>
+    </Text>
+    <Text Include="data\shaders\ssao_frag.txt">
+      <Filter>shaders\ssao</Filter>
+    </Text>
+    <Text Include="data\shaders\ssao_vert.txt">
+      <Filter>shaders\ssao</Filter>
+    </Text>
+    <Text Include="data\shaders\geometry_pass_frag.txt">
+      <Filter>shaders\ssao</Filter>
+    </Text>
+    <Text Include="data\shaders\geometry_pass_vert.txt">
+      <Filter>shaders\ssao</Filter>
+    </Text>
+    <Text Include="data\shaders\bright_filter_frag.txt">
+      <Filter>shaders\hdr</Filter>
+    </Text>
+    <Text Include="data\shaders\bright_filter_vert.txt">
+      <Filter>shaders\hdr</Filter>
+    </Text>
+    <Text Include="data\shaders\fxaa_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\fxaa_vert.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\procedural_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\light_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+    <Text Include="data\shaders\shadow_sample_frag.txt">
+      <Filter>shaders</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\controls.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\pipeline.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\mesh_drawer.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\application.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\skybox.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\mesh_wrapper.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\terrain_wrapper.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\uniform.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\resource_loader.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\2d.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\technique.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\game_object.hpp">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\texture\texture.hpp">
+      <Filter>common\texture</Filter>
+    </ClInclude>
+    <ClInclude Include="common\controller\controls_source.hpp">
+      <Filter>common\controller</Filter>
+    </ClInclude>
+    <ClInclude Include="common\light\light.hpp">
+      <Filter>common\light</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\static.hpp">
+      <Filter>common\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\static_info.hpp">
+      <Filter>common\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\basic_filter.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\blur.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\dof.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\fxaa.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\g_buffer.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\hdr.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\shadow.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\shadow_calculator.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\ssao.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\model_loaders\animated_mesh.hpp">
+      <Filter>common\model_loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="common\model_loaders\assimp_loader.hpp">
+      <Filter>common\model_loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="common\model_loaders\granny_loader.h">
+      <Filter>common\model_loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="common\model_loaders\math_3d.h">
+      <Filter>common\model_loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="common\model_loaders\ogldev_types.h">
+      <Filter>common\model_loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="common\model_loaders\ogldev_util.h">
+      <Filter>common\model_loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="common\model_loaders\aaether_loader.hpp">
+      <Filter>common\model_loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="common\camera_implementation\camera.hpp">
+      <Filter>common\camera_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\sky\sky_render.hpp">
+      <Filter>common\sky</Filter>
+    </ClInclude>
+    <ClInclude Include="common\settings\settings.hpp">
+      <Filter>common\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="common\settings\environment.hpp">
+      <Filter>common\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="common\shader\shader.hpp">
+      <Filter>common\shader</Filter>
+    </ClInclude>
+    <ClInclude Include="common\terrain\terrain_strip.hpp">
+      <Filter>common\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="common\terrain\quad_tree.hpp">
+      <Filter>common\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="common\terrain\terrain.hpp">
+      <Filter>common\terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ui\ui_util.hpp">
+      <Filter>common\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ui\ui_manager.hpp">
+      <Filter>common\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ui_implementation\settings_root.hpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ui_implementation\ui_root.hpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\util\string_helper.hpp">
+      <Filter>common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="common\util\utils.hpp">
+      <Filter>common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="common\util\view.hpp">
+      <Filter>common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="common\util\controller_math.hpp">
+      <Filter>common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ui_implementation\lighting_root.hpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\settings\filter_settings.hpp">
+      <Filter>common\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ui_implementation\filter_root.hpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\util\file_helper.hpp">
+      <Filter>common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ui_implementation\top_root.hpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\ui_implementation\project_root.hpp">
+      <Filter>common\ui_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\static_builder.hpp">
+      <Filter>common\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\creature.hpp">
+      <Filter>common\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="common\player.hpp">
+      <Filter>common\entity</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\texture_sets\map1.tset">
+      <Filter>texture_sets</Filter>
+    </None>
+    <None Include="data\texture_sets\map1.nset">
+      <Filter>texture_sets</Filter>
+    </None>
+    <None Include="data\texture_sets\map1.aset">
+      <Filter>texture_sets</Filter>
+    </None>
+    <None Include="map1.AAETHER">
+      <Filter>projects</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="common\res.rc">
+      <Filter>common</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

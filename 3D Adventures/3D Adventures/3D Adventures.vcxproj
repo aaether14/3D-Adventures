@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1D248041-9F86-4B2E-93CF-9E9FAC109E8D}</ProjectGuid>
+    <RootNamespace>My3DAdventures</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>..\3D Adventures\;..\..\Dependencies\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_WARNINGS;TIXML_USE_STL;FREEGLUT_STATIC;WIN32;_LIB;FREEGLUT_LIB_PRAGMAS=0;DEBUG;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>granny2.lib;assimpd.lib;FreeImaged.lib;freetype.lib;glfw3.lib;glew32.lib;glu32.lib;opengl32.lib;gdi32.lib;winmm.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Console</SubSystem>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <AdditionalIncludeDirectories>..\..\Dependencies\include;..\3D Adventures\common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>CEGUICommonDialogs-0.lib;CEGUIBase-0.lib;CEGUIOpenGLRenderer-0.lib;granny2.lib;assimpd.lib;FreeImaged.lib;freetype.lib;glfw3.lib;glew32.lib;glu32.lib;opengl32.lib;gdi32.lib;winmm.lib;user32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>..\..\Dependencies\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="common\2d.cpp" />
+    <ClCompile Include="common\application.cpp" />
+    <ClCompile Include="common\camera_implementation\camera.cpp" />
+    <ClCompile Include="common\controller\controls_source.cpp" />
+    <ClCompile Include="common\controls.cpp" />
+    <ClCompile Include="common\entity\creature.cpp" />
+    <ClCompile Include="common\entity\staitc_builder.cpp" />
+    <ClCompile Include="common\entity\static.cpp" />
+    <ClCompile Include="common\entity\static_info.cpp" />
+    <ClCompile Include="common\filters\basic_filter.cpp" />
+    <ClCompile Include="common\filters\blur.cpp" />
+    <ClCompile Include="common\filters\dof.cpp" />
+    <ClCompile Include="common\filters\fxaa.cpp" />
+    <ClCompile Include="common\filters\g_buffer.cpp" />
+    <ClCompile Include="common\filters\hdr.cpp" />
+    <ClCompile Include="common\filters\shadow.cpp" />
+    <ClCompile Include="common\filters\shadow_calculator.cpp" />
+    <ClCompile Include="common\filters\ssao.cpp" />
+    <ClCompile Include="common\game_object.cpp" />
+    <ClCompile Include="common\light\light.cpp" />
+    <ClCompile Include="common\model_loaders\aaether_loader.cpp" />
+    <ClCompile Include="common\model_loaders\animated_mesh.cpp" />
+    <ClCompile Include="common\model_loaders\assimp_loader.cpp" />
+    <ClCompile Include="common\model_loaders\granny_loader.cpp" />
+    <ClCompile Include="common\model_loaders\granny_loader_helper.cpp" />
+    <ClCompile Include="common\model_loaders\math_3d.cpp" />
+    <ClCompile Include="common\settings\environment.cpp" />
+    <ClCompile Include="common\settings\filter_settings.cpp" />
+    <ClCompile Include="common\settings\settings.cpp" />
+    <ClCompile Include="common\shader\shader.cpp" />
+    <ClCompile Include="common\sky\sky_render.cpp" />
+    <ClCompile Include="common\technique.cpp" />
+    <ClCompile Include="common\mesh_drawer.cpp" />
+    <ClCompile Include="common\mesh_wrapper.cpp" />
+    <ClCompile Include="common\pipeline.cpp" />
+    <ClCompile Include="common\player.cpp" />
+    <ClCompile Include="common\resource_loader.cpp" />
+    <ClCompile Include="common\skybox.cpp" />
+    <ClCompile Include="common\terrain\quad_tree.cpp" />
+    <ClCompile Include="common\terrain\terrain.cpp" />
+    <ClCompile Include="common\terrain\terrain_strip.cpp" />
+    <ClCompile Include="common\terrain_wrapper.cpp" />
+    <ClCompile Include="common\texture\texture.cpp" />
+    <ClCompile Include="common\ui\ui_manager.cpp" />
+    <ClCompile Include="common\ui\ui_util.cpp" />
+    <ClCompile Include="common\ui_implementation\filter_root.cpp" />
+    <ClCompile Include="common\ui_implementation\lighting_root.cpp" />
+    <ClCompile Include="common\ui_implementation\project_root.cpp" />
+    <ClCompile Include="common\ui_implementation\settings_root.cpp" />
+    <ClCompile Include="common\ui_implementation\top_root.cpp" />
+    <ClCompile Include="common\ui_implementation\ui_root.cpp" />
+    <ClCompile Include="common\uniform.cpp" />
+    <ClCompile Include="common\util\controller_math.cpp" />
+    <ClCompile Include="common\util\file_helper.cpp" />
+    <ClCompile Include="common\util\string_helper.cpp" />
+    <ClCompile Include="common\util\utils.cpp" />
+    <ClCompile Include="common\util\view.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="data\shaders\2d_frag.txt" />
+    <Text Include="data\shaders\2d_vert.txt" />
+    <Text Include="data\shaders\add_frag.txt" />
+    <Text Include="data\shaders\add_vert.txt" />
+    <Text Include="data\shaders\bright_filter_frag.txt" />
+    <Text Include="data\shaders\bright_filter_vert.txt" />
+    <Text Include="data\shaders\filter-null_frag.txt" />
+    <Text Include="data\shaders\filter-null_vert.txt" />
+    <Text Include="data\shaders\fxaa_frag.txt" />
+    <Text Include="data\shaders\fxaa_vert.txt" />
+    <Text Include="data\shaders\gamma_correction_frag.txt" />
+    <Text Include="data\shaders\gamma_correction_vert.txt" />
+    <Text Include="data\shaders\gaus_blur_frag.txt" />
+    <Text Include="data\shaders\gaus_blur_frag2.txt" />
+    <Text Include="data\shaders\gaus_blur_vert.txt" />
+    <Text Include="data\shaders\gaus_blur_vert2.txt" />
+    <Text Include="data\shaders\geometry_pass_frag.txt" />
+    <Text Include="data\shaders\geometry_pass_vert.txt" />
+    <Text Include="data\shaders\light_frag.txt" />
+    <Text Include="data\shaders\mesh_frag.txt" />
+    <Text Include="data\shaders\mesh_vert.txt" />
+    <Text Include="data\shaders\mult_frag.txt" />
+    <Text Include="data\shaders\mult_vert.txt" />
+    <Text Include="data\shaders\procedural_frag.txt" />
+    <Text Include="data\shaders\shadow_frag.txt" />
+    <Text Include="data\shaders\shadow_sample_frag.txt" />
+    <Text Include="data\shaders\shadow_vert.txt" />
+    <Text Include="data\shaders\skybox_frag.txt" />
+    <Text Include="data\shaders\skybox_vert.txt" />
+    <Text Include="data\shaders\ssao_blur_frag.txt" />
+    <Text Include="data\shaders\ssao_blur_vert.txt" />
+    <Text Include="data\shaders\ssao_frag.txt" />
+    <Text Include="data\shaders\ssao_vert.txt" />
+    <Text Include="data\shaders\terrain_frag.txt" />
+    <Text Include="data\shaders\terrain_vert.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="common\2d.hpp" />
+    <ClInclude Include="common\application.hpp" />
+    <ClInclude Include="common\camera_implementation\camera.hpp" />
+    <ClInclude Include="common\controller\controls_source.hpp" />
+    <ClInclude Include="common\controls.hpp" />
+    <ClInclude Include="common\entity\creature.hpp" />
+    <ClInclude Include="common\entity\static.hpp" />
+    <ClInclude Include="common\entity\static_builder.hpp" />
+    <ClInclude Include="common\entity\static_info.hpp" />
+    <ClInclude Include="common\filters\basic_filter.hpp" />
+    <ClInclude Include="common\filters\blur.hpp" />
+    <ClInclude Include="common\filters\dof.hpp" />
+    <ClInclude Include="common\filters\fxaa.hpp" />
+    <ClInclude Include="common\filters\g_buffer.hpp" />
+    <ClInclude Include="common\filters\hdr.hpp" />
+    <ClInclude Include="common\filters\shadow.hpp" />
+    <ClInclude Include="common\filters\shadow_calculator.hpp" />
+    <ClInclude Include="common\filters\ssao.hpp" />
+    <ClInclude Include="common\game_object.hpp" />
+    <ClInclude Include="common\light\light.hpp" />
+    <ClInclude Include="common\model_loaders\aaether_loader.hpp" />
+    <ClInclude Include="common\model_loaders\animated_mesh.hpp" />
+    <ClInclude Include="common\model_loaders\assimp_loader.hpp" />
+    <ClInclude Include="common\model_loaders\granny_loader.h" />
+    <ClInclude Include="common\model_loaders\math_3d.h" />
+    <ClInclude Include="common\model_loaders\ogldev_types.h" />
+    <ClInclude Include="common\model_loaders\ogldev_util.h" />
+    <ClInclude Include="common\settings\environment.hpp" />
+    <ClInclude Include="common\settings\filter_settings.hpp" />
+    <ClInclude Include="common\settings\settings.hpp" />
+    <ClInclude Include="common\shader\shader.hpp" />
+    <ClInclude Include="common\sky\sky_render.hpp" />
+    <ClInclude Include="common\technique.hpp" />
+    <ClInclude Include="common\mesh_drawer.hpp" />
+    <ClInclude Include="common\mesh_wrapper.hpp" />
+    <ClInclude Include="common\pipeline.hpp" />
+    <ClInclude Include="common\player.hpp" />
+    <ClInclude Include="common\resource_loader.hpp" />
+    <ClInclude Include="common\skybox.hpp" />
+    <ClInclude Include="common\terrain\quad_tree.hpp" />
+    <ClInclude Include="common\terrain\terrain.hpp" />
+    <ClInclude Include="common\terrain\terrain_strip.hpp" />
+    <ClInclude Include="common\terrain_wrapper.hpp" />
+    <ClInclude Include="common\texture\texture.hpp" />
+    <ClInclude Include="common\ui\ui_manager.hpp" />
+    <ClInclude Include="common\ui\ui_util.hpp" />
+    <ClInclude Include="common\ui_implementation\filter_root.hpp" />
+    <ClInclude Include="common\ui_implementation\lighting_root.hpp" />
+    <ClInclude Include="common\ui_implementation\project_root.hpp" />
+    <ClInclude Include="common\ui_implementation\settings_root.hpp" />
+    <ClInclude Include="common\ui_implementation\top_root.hpp" />
+    <ClInclude Include="common\ui_implementation\ui_root.hpp" />
+    <ClInclude Include="common\uniform.hpp" />
+    <ClInclude Include="common\util\controller_math.hpp" />
+    <ClInclude Include="common\util\file_helper.hpp" />
+    <ClInclude Include="common\util\string_helper.hpp" />
+    <ClInclude Include="common\util\utils.hpp" />
+    <ClInclude Include="common\util\view.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="data\texture_sets\map1.aset" />
+    <None Include="data\texture_sets\map1.nset" />
+    <None Include="data\texture_sets\map1.tset" />
+    <None Include="map1.AAETHER" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="common\res.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

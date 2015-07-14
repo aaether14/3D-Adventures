@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<GUILayout version="4" >
+    <Window type="GlossySerpentFHD/TabContentPane" name="Tab3" >
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
+        <Property name="Text" value="HDR" />
+        <Property name="MaxSize" value="{{1,0},{1,0}}" />
+        <Window type="GlossySerpentFHD/StaticText" name="StaticText" >
+            <Property name="Area" value="{{0.449191,0},{0.30598,0},{0.731543,0},{0.367254,0}}" />
+            <Property name="Text" value="White point" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="true" />
+            <Property name="BackgroundEnabled" value="true" />
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+            </AutoWindow>
+        </Window>
+        <Window type="GlossySerpentFHD/Spinner" name="Spinner" >
+            <Property name="Area" value="{{0.070907,0},{0.297255,0},{0.40527,0},{0.378138,0}}" />
+            <Property name="Text" value="0" />
+            <Property name="TextInputMode" value="FloatingPoint" />
+            <AutoWindow namePath="__auto_editbox__" >
+                <Property name="Text" value="0" />
+                <Property name="ValidationString" value="-?\d*\.?\d*" />
+            </AutoWindow>
+            <AutoWindow namePath="__auto_incbtn__" >
+                <Property name="WantsMultiClickEvents" value="false" />
+                <Property name="MouseAutoRepeatEnabled" value="true" />
+            </AutoWindow>
+            <AutoWindow namePath="__auto_decbtn__" >
+                <Property name="WantsMultiClickEvents" value="false" />
+                <Property name="MouseAutoRepeatEnabled" value="true" />
+            </AutoWindow>
+        </Window>
+        <Window type="GlossySerpentFHD/Checkbox" name="Checkbox" >
+            <Property name="Area" value="{{0.071814,0},{0.218432,0},{0.424755,0},{0.282158,0}}" />
+            <Property name="Text" value="Enable" />
+        </Window>
+        <Window type="GlossySerpentFHD/StaticText" name="StaticText2" >
+            <Property name="Area" value="{{0.274191,0},{0.092647,0},{0.707793,0},{0.188921,0}}" />
+            <Property name="Text" value="Bloom" />
+            <Property name="MaxSize" value="{{1,0},{1,0}}" />
+            <Property name="FrameEnabled" value="true" />
+            <Property name="BackgroundEnabled" value="true" />
+            <AutoWindow namePath="__auto_vscrollbar__" >
+                <Property name="VerticalScrollbar" value="true" />
+            </AutoWindow>
+        </Window>
+    </Window>
+</GUILayout>

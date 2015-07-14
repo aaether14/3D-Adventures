@@ -1,0 +1,149 @@
+#include <util/controller_math.hpp>
+
+
+
+namespace Math
+{
+
+
+
+	glm::mat4 Translation(glm::vec3 t_vec)
+	{
+
+
+		glm::mat4 tr_matrix(1.0f);
+		tr_matrix[3] = glm::vec4(t_vec, 1.0);
+		return tr_matrix;
+
+
+	}
+
+
+
+
+	glm::mat4 Scale(glm::vec3 t_vec)
+	{
+
+
+
+		glm::mat4 tr_matrix(1.0f);
+		tr_matrix[0][0] = t_vec.x;
+		tr_matrix[1][1] = t_vec.y;
+		tr_matrix[2][2] = t_vec.z;
+		return tr_matrix;
+
+
+
+	}
+
+
+
+
+
+
+	void print_matrix(glm::mat4 m)
+	{
+
+
+		printf("%1.2f, %1.2f, %1.2f, %1.2f,\n%1.2f, %1.2f, %1.2f, %1.2f,\n%1.2f, %1.2f, %1.2f, %1.2f,\n%1.2f, %1.2f, %1.2f, %1.2f\n\n",
+			m[0][0], m[0][1], m[0][2], m[0][3],
+			m[1][0], m[1][1], m[1][2], m[1][3],
+			m[2][0], m[2][1], m[2][2], m[2][3],
+			m[3][0], m[3][1], m[3][2], m[3][3]
+			);
+
+	}
+
+
+
+
+
+	void print_vec3(glm::vec3 v)
+	{
+
+
+		printf("%4.4f, %4.4f, %4.4f\n\n", v.x, v.y, v.z);
+
+
+	}
+
+
+
+
+
+
+
+	void print_ivec2(glm::ivec2 v)
+
+
+	{
+
+
+		printf("%i, %i\n", v.x, v.y);
+
+
+	}
+
+
+
+	GLuint SphereInFrustum(Frustum *frustum, glm::vec3 pos, GLfloat radius)
+	{
+
+
+		GLuint p;
+		GLuint c = 0;
+		GLfloat d;
+
+
+		for (p = 0; p < 4; p++)
+		{
+
+
+			d = glm::dot(frustum->getPlanes()[p].normal, pos) + frustum->getPlanes()[p].distance;
+			if (d <= -radius)
+				return 0;
+			if (d > radius)
+				c++;
+
+		}
+
+
+		return (c == 4) ? 2 : 1;
+
+
+
+	}
+
+
+
+
+	glm::mat4 ConvertGrannyMatrix(granny_matrix_4x4 gr)
+	{
+
+
+		glm::mat4 tr;
+		memcpy(&tr[0][0], &gr[0][0], sizeof(granny_matrix_4x4));
+		return tr;
+
+
+	}
+
+
+
+
+
+	bool CircleRectangleCollision(Rectangle *rect, Circle * circ)
+	{
+
+
+		GLfloat closestX = glm::clamp(circ->point.x, rect->point.x, rect->point.x + rect->width);
+		GLfloat closestY = glm::clamp(circ->point.y, rect->point.y, rect->point.y + rect->height);
+		glm::vec2 dist = circ->point - glm::vec2(closestX, closestY);
+		return dist.x*dist.x + dist.y*dist.y < circ->radius *circ->radius;
+
+
+	}
+
+
+
+}
