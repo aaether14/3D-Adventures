@@ -6,7 +6,7 @@
         <Property name="Text" value="SSAO" />
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
         <Window type="GlossySerpentFHD/Spinner" name="Spinner" >
-            <Property name="Area" value="{{0.089657,0},{0.235588,0},{0.42402,0},{0.316471,0}}" />
+            <Property name="Area" value="{{0.089657,-17},{0.235588,-2},{0.537969,-17},{0.359065,-2}}" />
             <Property name="Text" value="0" />
             <Property name="TextInputMode" value="FloatingPoint" />
             <AutoWindow namePath="__auto_editbox__" >
@@ -23,11 +23,11 @@
             </AutoWindow>
         </Window>
         <Window type="GlossySerpentFHD/Checkbox" name="Checkbox" >
-            <Property name="Area" value="{{0.089314,0},{0.143432,0},{0.442255,0},{0.207158,0}}" />
+            <Property name="Area" value="{{0.089314,-13},{0.143432,-10},{0.442255,-9},{0.207158,-2}}" />
             <Property name="Text" value="Enable" />
         </Window>
         <Window type="GlossySerpentFHD/Spinner" name="Spinner2" >
-            <Property name="Area" value="{{0.089485,0},{0.324117,0},{0.423114,0},{0.407451,0}}" />
+            <Property name="Area" value="{{0.089485,-17},{0.324117,8},{0.537797,-17},{0.447594,8}}" />
             <Property name="Text" value="0" />
             <Property name="TextInputMode" value="FloatingPoint" />
             <AutoWindow namePath="__auto_editbox__" >
@@ -44,7 +44,7 @@
             </AutoWindow>
         </Window>
         <Window type="GlossySerpentFHD/StaticText" name="StaticText" >
-            <Property name="Area" value="{{0.466691,0},{0.237647,0},{0.749043,0},{0.320588,0}}" />
+            <Property name="Area" value="{{0.466691,2},{0.237647,-1},{0.968877,2},{0.340949,-1}}" />
             <Property name="Text" value="Radius" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="true" />
@@ -54,7 +54,7 @@
             </AutoWindow>
         </Window>
         <Window type="GlossySerpentFHD/StaticText" name="StaticText2" >
-            <Property name="Area" value="{{0.466691,0},{0.32451,0},{0.750293,0},{0.404117,0}}" />
+            <Property name="Area" value="{{0.466691,2},{0.32451,10},{0.968877,2},{0.427812,10}}" />
             <Property name="Text" value="Power" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="true" />
@@ -64,7 +64,7 @@
             </AutoWindow>
         </Window>
         <Window type="GlossySerpentFHD/Spinner" name="Spinner3" >
-            <Property name="Area" value="{{0.090735,0},{0.412451,0},{0.424364,0},{0.495785,0}}" />
+            <Property name="Area" value="{{0.090735,-17},{0.412451,19},{0.539047,-17},{0.535928,19}}" />
             <Property name="Text" value="0" />
             <AutoWindow namePath="__auto_editbox__" >
                 <Property name="Text" value="0" />
@@ -80,7 +80,7 @@
             </AutoWindow>
         </Window>
         <Window type="GlossySerpentFHD/StaticText" name="StaticText3" >
-            <Property name="Area" value="{{0.466691,0},{0.407843,0},{0.750293,0},{0.48745,0}}" />
+            <Property name="Area" value="{{0.466691,2},{0.407843,21},{0.968877,2},{0.511145,21}}" />
             <Property name="Text" value="Samples" />
             <Property name="MaxSize" value="{{1,0},{1,0}}" />
             <Property name="FrameEnabled" value="true" />

@@ -17,7 +17,6 @@ void RootSettings::Init(Settings * settings, CEGUI::Window * Root)
 	Root->getChild("Frame/Settings")->addChild(wmgr.loadLayoutFromFile("hdr.layout"));
 	Root->getChild("Frame/Settings")->addChild(wmgr.loadLayoutFromFile("fxaa.layout"));
 	Root->getChild("Frame/Settings")->addChild(wmgr.loadLayoutFromFile("dof.layout"));
-	Root->getChild("Frame/Settings")->addChild(wmgr.loadLayoutFromFile("shadows.layout"));
 
 
 
