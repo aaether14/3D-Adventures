@@ -85,6 +85,7 @@
     <ClCompile Include="common\entity\static.cpp" />
     <ClCompile Include="common\entity\static_info.cpp" />
     <ClCompile Include="common\entity\ui\scene_outliner.cpp" />
+    <ClCompile Include="common\entity\ui\ui_transform.cpp" />
     <ClCompile Include="common\filters\basic_filter.cpp" />
     <ClCompile Include="common\filters\blur.cpp" />
     <ClCompile Include="common\filters\dof.cpp" />
@@ -183,6 +184,7 @@
     <ClInclude Include="common\entity\static.hpp" />
     <ClInclude Include="common\entity\static_info.hpp" />
     <ClInclude Include="common\entity\ui\scene_outliner.hpp" />
+    <ClInclude Include="common\entity\ui\ui_transform.hpp" />
     <ClInclude Include="common\filters\basic_filter.hpp" />
     <ClInclude Include="common\filters\blur.hpp" />
     <ClInclude Include="common\filters\dof.hpp" />

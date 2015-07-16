@@ -1,8 +1,8 @@
-﻿Build started 7/16/2015 1:32:55 PM.
+﻿Build started 7/16/2015 7:08:46 PM.
      1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\entity\ui\scene_outliner.cpp
-         scene_outliner.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\entity\palette\staitc_builder.cpp
+         staitc_builder.cpp
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
        Link:
@@ -17,6 +17,7 @@
          Release\static.obj
          Release\static_info.obj
          Release\scene_outliner.obj
+         Release\ui_transform.obj
          Release\basic_filter.obj
          Release\blur.obj
          Release\dof.obj
@@ -70,11 +71,10 @@
      1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\model_loaders\granny_loader.cpp(349): warning C4715: 'GrannyLoadAnimation' : not all control paths return a value
      1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\game_object.cpp(56): warning C4715: 'GameObject::GetInd' : not all control paths return a value
      1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\controller\controls_source.cpp(109): warning C4715: 'ControllerSource::CreateWindow' : not all control paths return a value
-     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\entity\palette\staitc_builder.cpp(241): warning C4715: 'StaticPalette::GetMatrix' : not all control paths return a value
          Finished generating code
          3D Adventures.vcxproj -> C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe
      1>Done Building Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:11.88
+Time Elapsed 00:00:12.16

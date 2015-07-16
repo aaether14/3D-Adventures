@@ -8,8 +8,8 @@
 void StaticBuilder::Create(char*path)
 {
 
-	GLuint e_n = 0;
 
+	GLuint e_n = 0;
 	StaticEntity **entity = new StaticEntity*[e_n];
 
 
@@ -124,25 +124,6 @@ void StaticBuilder::Save(char*path,
 
 
 
-bool StaticPalette::SaveEntities(const CEGUI::EventArgs &args)
-{
-
-
-
-
-	if (p_info.file_name.length() > 0)
-		GetBuilder()->Save(AString::char_to_str(p_info.file_name),
-		GetEntity(),
-		GetEntityNumber() + 1,
-		GetEntityInfo(),
-		GetWidth(),
-		GetHeight());
-
-
-	return 1;
-
-}
-
 
 
 
@@ -180,24 +161,12 @@ void StaticPalette::Init()
 
 
 	visible = false;
-
-
-	p_info.file_name = "data/terrain_files/test.st";
-	p_info.ind = 0;
-	p_info.scale = 1.0f;
-	p_info.scale_range = 0.0f;
-	p_info.scale_compute = 0.0f;
-	p_info.y_rot_range = 0.0f;
-	p_info.y_rot_compute = 0.0f;
-	p_info.rot = glm::vec3(0.0);
-	p_info.pos = glm::vec3(0.0);
-
-
 	id = 0;
 	number_of_entities = 0;
 
 
 	ui_scene = new ui_Scene();
+	ui_transform = new ui_Transform();
 
 
 }
@@ -207,6 +176,8 @@ void StaticPalette::Init()
 void StaticPalette::SetNumbers(GLuint e_n)
 {
 
+
+	//settings number of entities in the palette
 
 
 	number_of_entities = e_n - 1;
@@ -223,20 +194,26 @@ void StaticPalette::SetNumbers(GLuint e_n)
 glm::mat4 StaticPalette::GetMatrix(GLboolean model_type, GLuint special){
 
 
-	GLfloat t_scale = p_info.scale + p_info.scale_compute;
-	GLfloat t_rot_y = p_info.rot.y + p_info.y_rot_compute;
 
-
+	//make sure we're using the same model coords
 	
+	
+	glm::mat3 trans = ui_transform->GetPInfo()->trans;
+	glm::mat4 model_matrix;
+
+
 
 	if (model_type == AAETHER_MODEL)
-		return Math::Translation(p_info.pos)*
-		Math::Rotate(p_info.rot.x, p_info.rot.y, p_info.rot.z)*
-		Math::Scale(t_scale);
+		model_matrix = Math::Translation(trans[0])*
+		Math::Rotate(trans[1])*
+		Math::Scale(trans[2]);
 	else if (model_type == GRANNY_MODEL)
-		return Math::Translation(p_info.pos)*
-		Math::Rotate(p_info.rot.x - M_PI / 2, t_rot_y, p_info.rot.z)*
-		Math::Scale(t_scale / 100.0f);
+		model_matrix = Math::Translation(trans[0])*
+		Math::Rotate(trans[1] + glm::vec3(-M_PI / 2.0f, 0.0, 0.0f))*
+		Math::Scale(trans[2] / 100.0f);
+
+
+	return model_matrix;
 
 }
 
@@ -248,6 +225,9 @@ glm::mat4 StaticPalette::GetMatrix(GLboolean model_type, GLuint special){
 
 void StaticPalette::Render(Controller*ctrl, MeshShader *u_data, StaticEntity ** entity)
 {
+
+
+	//rendering entity depending on the palette id
 
 
 	if (visible)
@@ -282,28 +262,42 @@ void StaticPalette::ControlPalette(Controller * ctrl)
 
 
 
+	//applying transform & making visible
+
+
 	if (ctrl->GetKey(GLFW_KEY_LEFT_ALT))
 	{
-
-		p_info.ind = ctrl->GetGameObject()->GetInd(ctrl->GetCameraPointer()->GetInfo()->getCameraPos());
-		p_info.pos = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
-		if (ctrl->GetKeyOnce(GLFW_KEY_LEFT_ALT))
-		{
-			p_info.scale_compute = Math::randomf(-p_info.scale_range, p_info.scale_range);
-			p_info.y_rot_compute = Math::randomf(-p_info.y_rot_range, p_info.y_rot_range);
-		}
+		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform->UpdateData();
 		visible = true;
-
 	}
 
 
 
+	//switching trough the palette
+
+
 	if (id > 0 && ctrl->GetKeyOnce(GLFW_KEY_Q))
+	{
 		id--;
+		ui_transform->GetPInfo()->Reset();
+		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform->UpdateData();
+	}
 	if (id < number_of_entities && ctrl->GetKeyOnce(GLFW_KEY_E))
+	{
 		id++;
+		ui_transform->GetPInfo()->Reset();
+		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform->UpdateData();
+	}
 
 
+
+
+
+
+	//erase entities from scene
 
 
 
@@ -327,6 +321,8 @@ void StaticPalette::ControlPalette(Controller * ctrl)
 
 
 
+
+
 }
 
 
@@ -335,22 +331,29 @@ void StaticPalette::PlacePalette(Controller * ctrl, std::vector<StaticEntityInfo
 {
 
 
+
+
+	//placing the palette entity
+
+
 	if (ctrl->GetKeyOnce(GLFW_KEY_SPACE) && visible)
 	{
 
 
 
 		visible = false;
-
 		StaticEntityInfo *temp = new StaticEntityInfo();
+
 
 		temp->SetId(id);
 		temp->SetMatrix(GetMatrix(entity[id]->GetType(), id));
 
 
+		GLuint ind = ctrl->GetGameObject()->GetInd(ctrl->GetCameraPointer()->GetInfo()->getCameraPos());
 
-		ui_scene->AddItem(std::to_string(id), glm::ivec2(p_info.ind, entity_info[p_info.ind].size()));
-		entity_info[p_info.ind].push_back(temp);
+
+		ui_scene->AddItem(std::to_string(id), glm::ivec2(ind, entity_info[ind].size()));
+		entity_info[ind].push_back(temp);
 
 
 

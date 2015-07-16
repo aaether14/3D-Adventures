@@ -99,13 +99,6 @@ void ui_Scene::UpdateSceneData(GLint ind, GLint pos)
 				scene_data[i].y--;
 
 
-
-	for (GLuint i = 0; i < selected_data.size(); i++)
-		if (selected_data[i].x == ind)
-			if (selected_data[i].y == pos)
-				selected_data.erase(selected_data.begin() + i);
-
-
 	for (GLuint i = 0; i < selected_data.size(); i++)
 		if (selected_data[i].x == ind)
 			if (selected_data[i].y > pos)

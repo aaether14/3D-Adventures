@@ -261,6 +261,9 @@
     <ClCompile Include="common\entity\palette\staitc_builder.cpp">
       <Filter>common\entity\palette</Filter>
     </ClCompile>
+    <ClCompile Include="common\entity\ui\ui_transform.cpp">
+      <Filter>common\entity\ui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\shaders\skybox_frag.txt">
@@ -546,6 +549,9 @@
     </ClInclude>
     <ClInclude Include="common\entity\palette\static_builder.hpp">
       <Filter>common\entity\palette</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\ui\ui_transform.hpp">
+      <Filter>common\entity\ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

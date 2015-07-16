@@ -85,6 +85,7 @@ public:
 
 
 	inline glm::mat4 Rotate(GLfloat x, GLfloat y, GLfloat z){ return glm::mat4_cast(glm::fquat(glm::vec3(x, y, z))); }
+	inline glm::mat4 Rotate(glm::vec3 v){ return Rotate(v.x, v.y, v.z); }
 
 
 

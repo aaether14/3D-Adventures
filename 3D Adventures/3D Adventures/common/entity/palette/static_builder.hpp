@@ -7,6 +7,7 @@
 
 #include "../static_info.hpp"
 #include "../ui/scene_outliner.hpp"
+#include "../ui/ui_transform.hpp"
 #include <CEGUI/CEGUI.h>
 #include <util/string_helper.hpp>
 
@@ -44,15 +45,7 @@ class StaticPalette
 
 
 	ui_Scene * ui_scene;
-
-
-
-
-
-
-
-	bool SaveEntities(const CEGUI::EventArgs &args);
-
+	ui_Transform * ui_transform;
 
 
 
@@ -69,19 +62,11 @@ class StaticPalette
 
 
 
-
-
-
-
-
-
 	GLuint number_of_entities, id;
 	GLint switch_id;
 	StaticBuilder * builder;
 	GLuint quad_width, quad_height;
 
-
-	void SaveEntities();
 
 
 
@@ -99,21 +84,6 @@ public:
 	inline GLuint GetHeight(){ return this->quad_height; }
 
 
-	struct PaletteInfo
-	{
-
-		GLuint ind;
-		GLfloat scale;
-		GLfloat scale_range;
-		GLfloat scale_compute;
-		glm::vec3 rot;
-		GLfloat y_rot_range;
-		GLfloat y_rot_compute;
-		glm::vec3 pos;
-		std::string file_name;
-
-
-	}p_info;
 
 
 	inline StaticPalette(){ this->Init(); }
@@ -130,7 +100,6 @@ public:
 
 	void SetNumbers(GLuint e_n);
 	inline void SetDataPointers(StaticEntity**entity, std::vector<StaticEntityInfo*>*entity_info){ this->entity = entity; this->entity_info = entity_info; }
-	void DeleteLast();
 
 
 
