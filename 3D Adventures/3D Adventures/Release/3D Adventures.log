@@ -1,14 +1,10 @@
-﻿Build started 7/14/2015 9:01:14 PM.
+﻿Build started 7/16/2015 1:32:55 PM.
      1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\application.cpp
-         application.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\entity\ui\scene_outliner.cpp
+         scene_outliner.cpp
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\model_loaders/animated_mesh.hpp(11): warning C4005: 'MAX_BONES' : macro redefinition
-                 C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/ssao.hpp(14) : see previous definition of 'MAX_BONES'
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\model_loaders/granny_loader.h(30): warning C4005: 'MAX_BONES' : macro redefinition
-                 C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\model_loaders/animated_mesh.hpp(11) : see previous definition of 'MAX_BONES'
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe" /NOLOGO /LIBPATH:..\..\Dependencies\lib "CEGUICommonDialogs-0.lib" "CEGUIBase-0.lib" "CEGUIOpenGLRenderer-0.lib" granny2.lib assimpd.lib FreeImaged.lib freetype.lib glfw3.lib glew32.lib glu32.lib opengl32.lib gdi32.lib winmm.lib user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.lib" /MACHINE:X86 /SAFESEH Release\res.res
          Release\2d.obj
@@ -20,6 +16,7 @@
          Release\staitc_builder.obj
          Release\static.obj
          Release\static_info.obj
+         Release\scene_outliner.obj
          Release\basic_filter.obj
          Release\blur.obj
          Release\dof.obj
@@ -72,12 +69,12 @@
          Generating code
      1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\model_loaders\granny_loader.cpp(349): warning C4715: 'GrannyLoadAnimation' : not all control paths return a value
      1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\game_object.cpp(56): warning C4715: 'GameObject::GetInd' : not all control paths return a value
-     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\controller\controls_source.cpp(108): warning C4715: 'ControllerSource::CreateWindow' : not all control paths return a value
-     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\entity\staitc_builder.cpp(236): warning C4715: 'StaticPalette::GetMatrix' : not all control paths return a value
+     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\controller\controls_source.cpp(109): warning C4715: 'ControllerSource::CreateWindow' : not all control paths return a value
+     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\entity\palette\staitc_builder.cpp(241): warning C4715: 'StaticPalette::GetMatrix' : not all control paths return a value
          Finished generating code
          3D Adventures.vcxproj -> C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe
      1>Done Building Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:14.44
+Time Elapsed 00:00:11.88

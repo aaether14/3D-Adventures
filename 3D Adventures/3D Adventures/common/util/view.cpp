@@ -66,7 +66,7 @@ void ViewInfo::Init()
 
 	this->FoV = 60.0;
 	this->direction = glm::vec3(0, 0, 0);
-	this->distance = 0.0f;
+	this->distance = 50.0f;
 	this->render_distance = RENDER_DISTANCE;
 	this->position = glm::vec3(200, 0, 200);
 

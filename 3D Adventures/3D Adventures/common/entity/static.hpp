@@ -6,7 +6,7 @@
 
 
 #include "static_info.hpp"
-#include "static_builder.hpp"
+#include "palette/static_builder.hpp"
 
 
 
@@ -43,7 +43,6 @@ class StaticManager
 
 
 	StaticPalette * palette;
-
 
 
 

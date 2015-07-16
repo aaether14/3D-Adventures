@@ -23,6 +23,7 @@ GLFWwindow*ControllerSource::window = 0;
 
 glm::vec2 ControllerSource::mouse_position = glm::vec2(0.0f, 0.0f);
 GLuint ControllerSource::mouse_buttons[] = { 0 };
+GLdouble ControllerSource::wheel_offset = 0.0;
 
 
 
@@ -135,6 +136,7 @@ void ControllerSource::InitCallbacks()
 	glfwSetMouseButtonCallback(ControllerSource::window, ControllerSource::mouse_callback);
 	glfwSetCursorPosCallback(ControllerSource::window, ControllerSource::cursor_callback);
 	glfwSetWindowSizeCallback(ControllerSource::window, ControllerSource::resize_callback);
+	glfwSetScrollCallback(ControllerSource::window, ControllerSource::scroll_callback);
 
 
 }
@@ -306,3 +308,11 @@ GLvoid ControllerSource::resize_callback(GLFWwindow* window, GLint width, GLint 
 
 }
 
+
+
+GLvoid ControllerSource::scroll_callback(GLFWwindow* window, GLdouble xoffset, GLdouble yoffset)
+{
+
+	wheel_offset = yoffset;
+
+}

@@ -88,6 +88,8 @@ class ControllerSource
 
 	static GLvoid cursor_callback(GLFWwindow* window, GLdouble x, GLdouble y);
 	static GLvoid resize_callback(GLFWwindow* window, GLint width, GLint height);
+	static GLvoid scroll_callback(GLFWwindow* window, GLdouble xoffset, GLdouble yoffset);
+	static GLdouble wheel_offset;
 
 
 
@@ -108,6 +110,8 @@ public:
 	inline glm::vec2 GetMousePosition(){ return ControllerSource::mouse_position; }
 	inline GLuint GetMouseButton(GLuint code){ return ControllerSource::mouse_buttons[code]; }
 	inline GLuint GetMouseButtonOnce(GLuint code){ GLuint result = (ControllerSource::mouse_buttons[code] == 1); if (result)ControllerSource::mouse_buttons[code]++; return result; }
+	inline GLdouble GetWheelOffset(){ return wheel_offset; }
+	inline GLvoid ResetWheelOffset(){ wheel_offset = 0.0; }
 
 
 	inline FPS*GetFpsPointer(){ return this->fps; }

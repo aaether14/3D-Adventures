@@ -2,7 +2,7 @@
 
 <GUILayout version="4" >
     <Window type="GlossySerpentFHD/StaticImage" name="MainMenuRootItem" >
-        <Property name="Area" value="{{-0.00195313,0},{-0.00260417,0},{0.998047,0},{0.997396,0}}" />
+        <Property name="Area" value="{{0,0},{0,0},{1,0},{1,0}}" />
         <Property name="MaxSize" value="{{1,0},{1,0}}" />
         <Property name="FrameEnabled" value="false" />
         <Property name="InheritsAlpha" value="false" />
@@ -12,7 +12,6 @@
         <Window type="GlossySerpentFHD/FrameWindow" name="Frame" >
             <Property name="Area" value="{{0.68118,0},{0.052,0},{0.68118,245},{0.052,296}}" />
             <Property name="Text" value="Settings" />
-            <Property name="GlyphImage" value="GlossySerpentFHD/GlyphBack" />
             <Property name="TitlebarFont" value="DejaVuSerif-HD-12" />
             <Property name="SizingEnabled" value="false" />
             <Property name="TitlebarHeight" value="25" />
@@ -77,6 +76,29 @@
                         <Property name="WantsMultiClickEvents" value="false" />
                     </Window>
                 </Window>
+            </Window>
+        </Window>
+        <Window type="GlossySerpentFHD/FrameWindow" name="Frame2" >
+            <Property name="Area" value="{{0.68118,0},{0.55,0},{0.68118,244},{0.55,260}}" />
+            <Property name="Text" value="Scene" />
+            <Property name="TitlebarFont" value="DejaVuSerif-HD-12" />
+            <Property name="SizingEnabled" value="false" />
+            <Property name="TitlebarHeight" value="25" />
+            <Property name="AutoRenderingSurface" value="true" />
+            <AutoWindow namePath="__auto_titlebar__" >
+                <Property name="Font" value="DejaVuSerif-HD-12" />
+                <Property name="NonClient" value="true" />
+                <Property name="AlwaysOnTop" value="false" />
+            </AutoWindow>
+            <AutoWindow namePath="__auto_closebutton__" >
+                <Property name="NonClient" value="true" />
+                <Property name="AlwaysOnTop" value="true" />
+            </AutoWindow>
+            <Window type="Vanilla/Listbox" name="SceneOutliner" >
+                <Property name="Area" value="{{0.0346821,0},{0.0884521,0},{0.980347,0},{0.92973,0}}" />
+                <Property name="MultiSelect" value="true" />
+                <Property name="ItemTooltips" value="true" />
+                <Property name="ForceVertScrollbar" value="false" />
             </Window>
         </Window>
     </Window>

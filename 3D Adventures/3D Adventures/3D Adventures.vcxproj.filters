@@ -73,6 +73,15 @@
     <Filter Include="common\sky">
       <UniqueIdentifier>{9c49929e-d9e9-44b2-85bf-24e7a9b6cf8c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ui_layout">
+      <UniqueIdentifier>{86bd493a-30c6-4c0e-ad42-a91176b5ab56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\entity\ui">
+      <UniqueIdentifier>{afd37a00-fbef-44f9-a4d8-87d10fb57d09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\entity\palette">
+      <UniqueIdentifier>{fa282c07-1957-4ac9-80dc-29d79e3e8b5c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\controls.cpp">
@@ -243,11 +252,14 @@
     <ClCompile Include="common\ui_implementation\project_root.cpp">
       <Filter>common\ui_implementation</Filter>
     </ClCompile>
-    <ClCompile Include="common\entity\staitc_builder.cpp">
-      <Filter>common\entity</Filter>
-    </ClCompile>
     <ClCompile Include="common\player.cpp">
       <Filter>common\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\ui\scene_outliner.cpp">
+      <Filter>common\entity\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\palette\staitc_builder.cpp">
+      <Filter>common\entity\palette</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -523,14 +535,17 @@
     <ClInclude Include="common\ui_implementation\project_root.hpp">
       <Filter>common\ui_implementation</Filter>
     </ClInclude>
-    <ClInclude Include="common\entity\static_builder.hpp">
-      <Filter>common\entity</Filter>
-    </ClInclude>
     <ClInclude Include="common\entity\creature.hpp">
       <Filter>common\entity</Filter>
     </ClInclude>
     <ClInclude Include="common\player.hpp">
       <Filter>common\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\ui\scene_outliner.hpp">
+      <Filter>common\entity\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\palette\static_builder.hpp">
+      <Filter>common\entity\palette</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -545,6 +560,27 @@
     </None>
     <None Include="map1.AAETHER">
       <Filter>projects</Filter>
+    </None>
+    <None Include="data\ui\layouts\dof.layout">
+      <Filter>ui_layout</Filter>
+    </None>
+    <None Include="data\ui\layouts\fxaa.layout">
+      <Filter>ui_layout</Filter>
+    </None>
+    <None Include="data\ui\layouts\hdr.layout">
+      <Filter>ui_layout</Filter>
+    </None>
+    <None Include="data\ui\layouts\lighting.layout">
+      <Filter>ui_layout</Filter>
+    </None>
+    <None Include="data\ui\layouts\shadows.layout">
+      <Filter>ui_layout</Filter>
+    </None>
+    <None Include="data\ui\layouts\ssao.layout">
+      <Filter>ui_layout</Filter>
+    </None>
+    <None Include="data\ui\layouts\ui.layout">
+      <Filter>ui_layout</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

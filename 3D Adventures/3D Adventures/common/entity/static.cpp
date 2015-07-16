@@ -142,7 +142,9 @@ void StaticManager::Load(char*path, Controller * ctrl)
 				temp_info->SetMatrix(temp_matrix);
 
 
+				palette->GetSceneOutliner()->AddItem(std::to_string(temp_id), glm::ivec2(temp_ind, entity_info[temp_ind].size()));
 				entity_info[temp_ind].push_back(temp_info);
+
 				
 
 
@@ -222,8 +224,6 @@ void StaticManager::Render(Controller *ctrl, MeshShader *shader)
 
 
 	QuadTree * tree = ctrl->GetGameObject()->GetTree();
-
-
 	this->RenderQuad(ctrl, shader,tree->GetStartNode());
 
 
@@ -244,6 +244,10 @@ void StaticManager::Clean()
 
 	for (GLuint i = 0; i < this->quad_width * this->quad_height; i++)
 	destroy_vector(this->entity_info[i]);
+
+
+	delete palette;
+
 
 }
 

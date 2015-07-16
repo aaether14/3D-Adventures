@@ -47,8 +47,8 @@ void Application::Load(char *path)
 
 
 	ctrl->Load(path);
-	pipe = new Pipeline(ctrl);
 	root_ui = new RootUI(ctrl);
+	pipe = new Pipeline(ctrl);
 
 
 }

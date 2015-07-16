@@ -48,8 +48,8 @@ void MeshDrawer::LoadMeshes(Controller * ctrl)
 
 
 
-	this->s_manager = new StaticManager(ctrl);
-	this->s_manager->Load(resource->GetStaticFile(), ctrl);
+	s_manager = new StaticManager(ctrl);
+	s_manager->Load(resource->GetStaticFile(), ctrl);
 
 
 
@@ -63,8 +63,6 @@ void MeshDrawer::LoadMeshes(Controller * ctrl)
 
 
 
-
-	ctrl->GetCameraPointer()->GetInfo()->SetDistance(50.0f);
 
 
 }
@@ -96,7 +94,7 @@ void MeshDrawer::Draw(Controller *ctrl){
 
 
 	shader->SetSpecular(0.0f, 1.0f);
-    s_manager->Render(ctrl, this->shader);
+    s_manager->Render(ctrl, shader);
 	s_manager->GetPalette()->Render(ctrl, shader, s_manager->GetEntities());
 
 

@@ -5,7 +5,7 @@
 
 
 
-#include "controls.hpp"
+#include <controls.hpp>
 #include <CEGUI/CEGUI.h>
 #include "project_root.hpp"
 
