@@ -5,8 +5,9 @@
 
 #include <util/string_helper.hpp>
 #include "math_3d.h"
-#include "texture/texture.hpp"
+#include <texture/texture.hpp>
 #include <assert.h>
+#include <base/base_model_loader.hpp>
 
 
 
@@ -17,7 +18,7 @@
 
 
 
-class Aa_model
+class Aa_model : public AModel
 {
 
 
@@ -63,8 +64,11 @@ public:
 
 	Aa_model();
 	~Aa_model();
-	void Load(const char*path);
+
+
+	int Load(const char*path);
 	void Render();
+	void Clean();
 
 
 };

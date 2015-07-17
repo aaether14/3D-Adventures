@@ -6,7 +6,8 @@
 #include <granny.h>
 #include <util/string_helper.hpp>
 #include <assert.h>
-#include "texture/texture.hpp"
+#include <texture/texture.hpp>
+#include <base/base_model_loader.hpp>
 
 
 
@@ -124,24 +125,17 @@ struct DemoScene
 
 };
 
-class GrannyModel
+class GrannyModel : public AModel
 {
 
 
 
 	GLuint m_VAO;
-
-
-	DemoScene GlobalScene;
-
-
+    DemoScene GlobalScene;
 	std::vector<granny_control*> GrannyControls;
-
-
 	granny_matrix_4x4 CompositeBuffer[MAX_BONES+1];
-
-
 	granny_system_clock GlobalStartClock;
+
 
 
 	DemoMesh* CreateBoundMesh(granny_mesh* GrannyMesh, granny_model_instance* ModelInstance);
@@ -159,10 +153,13 @@ public:
 
 
 	inline GrannyModel() { this->Init(); }
-
-
 	GLint Init();
-	GLint Load(const char* path);
+
+
+	int Load(const char* path);
+	inline void Render(){ Render(-1); }
+	void Clean();
+
 
 
 	void LoadAnimation(const char*path);
@@ -172,16 +169,14 @@ public:
 	void AttachGrannyModel(GrannyModel*GrannyAttachModel, const char*bone_name);
 
 
+
 	void Render(GLuint anim_num);
 	void RenderAttachedModel(GrannyModel *AttachedGrannyModel);
-
-
 	void Update(granny_real32 const CurrentTime);
 
 
+
 	inline granny_matrix_4x4 *GiveTransform(){ return this->CompositeBuffer; }
-
-
 	inline GLuint GetNumBones(){ return this->GlobalScene.MaxBoneCount; }
 
 

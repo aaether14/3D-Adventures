@@ -23,8 +23,16 @@ Aa_model::Aa_model()
 
 
 
-
 Aa_model::~Aa_model()
+{
+
+	Clean();
+
+
+}
+
+
+void Aa_model::Clean()
 {
 
 
@@ -55,7 +63,7 @@ Aa_model::~Aa_model()
 
 
 
-void Aa_model::Load(const char* path)
+int Aa_model::Load(const char* path)
 {
 
 
@@ -137,6 +145,8 @@ void Aa_model::Load(const char* path)
 	glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(Indices[0]) * Indices.size(), &Indices[0], GL_STATIC_DRAW);
 	glBindVertexArray(0);
 
+
+	return 1;
 
 
 }

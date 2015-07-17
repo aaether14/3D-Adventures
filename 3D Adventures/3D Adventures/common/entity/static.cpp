@@ -86,7 +86,6 @@ void StaticManager::Load(char*path, Controller * ctrl)
 			temp_str.push_back('\0');
 
 
-			this->entity[i]->SetPath(&temp_str[0]);
 
 
 			if (this->entity[i]->GetType() == GRANNY_MODEL)
@@ -94,8 +93,10 @@ void StaticManager::Load(char*path, Controller * ctrl)
 
 
 
-				this->entity[i]->SetGranny(new GrannyModel);
-				this->entity[i]->GetGranny()->Load(&temp_str[0]);
+				GrannyModel * new_model = new GrannyModel();
+				new_model->Load(&temp_str[0]);
+
+				this->entity[i]->AddModelComponent(new_model);
 
 
 
@@ -104,8 +105,10 @@ void StaticManager::Load(char*path, Controller * ctrl)
 			{
 
 
-				this->entity[i]->SetAaether(new Aa_model());
-				this->entity[i]->GetAaether()->Load(&temp_str[0]);
+				Aa_model * new_model = new Aa_model();
+				new_model->Load(&temp_str[0]);
+
+				this->entity[i]->AddModelComponent(new_model);
 
 
 			}
@@ -180,9 +183,15 @@ void StaticManager::RenderPatch(Controller*ctrl, MeshShader *shader, std::vector
 {
 
 
+	View * view = ctrl->GetCameraPointer()->GetView();
+	ViewInfo *info = ctrl->GetCameraPointer()->GetInfo();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+
 
 	for (GLuint i = 0; i < patch_info.size(); i++)
-		patch_info[i]->Render(ctrl, shader, this->entity);
+		patch_info[i]->Render(info, view, res, tech, shader, scene_info->GetEntities());
 
 
 

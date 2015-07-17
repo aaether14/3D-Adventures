@@ -51,6 +51,7 @@ void Application::Load(char *path)
 	pipe = new Pipeline(ctrl);
 
 
+
 }
 
 

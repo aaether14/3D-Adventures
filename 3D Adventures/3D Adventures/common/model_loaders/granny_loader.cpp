@@ -711,3 +711,12 @@ void GrannyModel::RenderModel(DemoModel* Model, GLuint anim_num)
 }
 
 
+
+
+void GrannyModel::Clean()
+{
+
+	delete &GlobalScene;
+
+
+}

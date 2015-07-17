@@ -106,6 +106,7 @@
     <ClCompile Include="common\model_loaders\math_3d.cpp" />
     <ClCompile Include="common\settings\environment.cpp" />
     <ClCompile Include="common\settings\filter_settings.cpp" />
+    <ClCompile Include="common\settings\scene_info.cpp" />
     <ClCompile Include="common\shader\shader.cpp" />
     <ClCompile Include="common\sky\sky_render.cpp" />
     <ClCompile Include="common\technique.cpp" />
@@ -177,6 +178,7 @@
   <ItemGroup>
     <ClInclude Include="common\2d.hpp" />
     <ClInclude Include="common\application.hpp" />
+    <ClInclude Include="common\base\base_model_loader.hpp" />
     <ClInclude Include="common\base\base_resource_loader.hpp" />
     <ClInclude Include="common\base\base_state_saver.hpp" />
     <ClInclude Include="common\camera_implementation\camera.hpp" />
@@ -208,6 +210,7 @@
     <ClInclude Include="common\model_loaders\ogldev_util.h" />
     <ClInclude Include="common\settings\environment.hpp" />
     <ClInclude Include="common\settings\filter_settings.hpp" />
+    <ClInclude Include="common\settings\scene_info.hpp" />
     <ClInclude Include="common\settings\settings.hpp" />
     <ClInclude Include="common\shader\shader.hpp" />
     <ClInclude Include="common\sky\sky_render.hpp" />

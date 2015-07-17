@@ -46,25 +46,10 @@ void StaticBuilder::Save(char*path,
 
 
 
-	if (entity)
-	{
 
 		fout.write((const char*)&(e_n), sizeof(GLuint));
 
-		for (GLuint i = 0; i < e_n; i++)
-		{
 
-
-			temp = entity[i]->GetType();
-			fout.write((const char*)&(temp), sizeof(GLuint));
-
-			temp = entity[i]->GetPath().length();
-			fout.write((const char*)&(temp), sizeof(GLuint));
-
-			fout.write((const char*)&(entity[i]->GetPath()[0]), sizeof(char)*temp);
-
-
-		}
 
 		if (entity_info)
 		{
@@ -109,7 +94,6 @@ void StaticBuilder::Save(char*path,
 		temp = -1;
 		fout.write((const char*)&(temp), sizeof(GLuint));
 
-	}
 
 	fout.close();
 
@@ -208,6 +192,15 @@ void StaticPalette::Render(Controller*ctrl, MeshShader *u_data, StaticEntity ** 
 	//rendering entity depending on the palette id
 
 
+
+
+	View * view = ctrl->GetCameraPointer()->GetView();
+	ViewInfo *info = ctrl->GetCameraPointer()->GetInfo();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+
+
+
 	if (visible)
 	{
 
@@ -217,7 +210,7 @@ void StaticPalette::Render(Controller*ctrl, MeshShader *u_data, StaticEntity ** 
 
 
 			if (id < 33)glDisable(GL_CULL_FACE);
-			entity[id]->Render(ctrl, u_data, GetMatrix(entity[id]->GetType(), id));
+			entity[id]->Render(info, view, res, tech, u_data, GetMatrix(entity[id]->GetType(), id));
 			if (id < 33)glEnable(GL_CULL_FACE);
 
 
@@ -225,7 +218,7 @@ void StaticPalette::Render(Controller*ctrl, MeshShader *u_data, StaticEntity ** 
 		}
 		else
 		{
-			entity[id]->Render(ctrl, u_data, GetMatrix(entity[id]->GetType(), id));
+			entity[id]->Render(info, view, res, tech, u_data, GetMatrix(entity[id]->GetType(), id));
 		}
 
 

@@ -2,15 +2,13 @@
 
 
 
-void StaticEntity::Render(Controller*ctrl, MeshShader *shader, glm::mat4 matrix)
+void StaticEntity::Render(ViewInfo * info, View * view,
+	ResourceLoader * res, Techniques * tech,
+	MeshShader *shader, glm::mat4 matrix)
 {
 
 
 
-	View * view = ctrl->GetCameraPointer()->GetView();
-	ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
 
 
@@ -58,10 +56,9 @@ void StaticEntity::Render(Controller*ctrl, MeshShader *shader, glm::mat4 matrix)
 	}
 
 
-	if (this->type == GRANNY_MODEL)
-		this->gr_model->Render(-1);
-	else if (this->type == AAETHER_MODEL)
-		this->aa_model->Render();
+
+	for (GLuint i = 0; i < model_components.size(); i++)
+		model_components[i]->Render();
 
 
 
@@ -70,7 +67,9 @@ void StaticEntity::Render(Controller*ctrl, MeshShader *shader, glm::mat4 matrix)
 }
 
 
-void StaticEntityInfo::Render(Controller*ctrl, MeshShader *shader, StaticEntity ** entity)
+void StaticEntityInfo::Render(ViewInfo * info, View * view,
+	ResourceLoader * res, Techniques * tech,
+	MeshShader *shader, std::vector<StaticEntity*>entities)
 {
 
 
@@ -79,7 +78,7 @@ void StaticEntityInfo::Render(Controller*ctrl, MeshShader *shader, StaticEntity 
 
 
 		if (this->id < 33)glDisable(GL_CULL_FACE);
-		entity[this->id]->Render(ctrl, shader, this->matrix);
+		entities[this->id]->Render(info, view, res, tech, shader, this->matrix);
 		if (this->id < 33)glEnable(GL_CULL_FACE);
 
 
@@ -87,7 +86,7 @@ void StaticEntityInfo::Render(Controller*ctrl, MeshShader *shader, StaticEntity 
 	}
 	else
 	{
-		entity[this->id]->Render(ctrl, shader, this->matrix);
+		entities[this->id]->Render(info, view, res, tech, shader, this->matrix);
 	}
 
 
@@ -102,11 +101,10 @@ void StaticEntity::Clean()
 
 
 
-	if (gr_model)
-		delete gr_model;
+	for (GLuint i = 0; i < model_components.size(); i++)
+		model_components[i]->Clean();
 
-	if (aa_model)
-		delete aa_model;
+	model_components.clear();
 
 
 }

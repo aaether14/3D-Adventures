@@ -5,6 +5,8 @@
 
 
 
+#include <model_loaders/aaether_loader.hpp>
+#include <model_loaders/granny_loader.h>
 #include "static_info.hpp"
 #include "palette/static_builder.hpp"
 

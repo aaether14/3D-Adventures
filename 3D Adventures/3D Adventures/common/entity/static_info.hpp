@@ -4,13 +4,12 @@
 
 
 
-#include <model_loaders/granny_loader.h>
-#include "controls.hpp"
-#include <util/controller_math.hpp>
-#include  <fstream>
+#include <base/base_model_loader.hpp>
+#include <camera_implementation/camera.hpp>
+#include <util/view.hpp>
 #include "uniform.hpp"
-#include <model_loaders/aaether_loader.hpp>
-
+#include "../technique.hpp"
+#include "../resource_loader.hpp"
 
 
 
@@ -30,9 +29,7 @@ class StaticEntity
 
 
 	GLuint type;
-	std::string path;
-	GrannyModel * gr_model;
-	Aa_model * aa_model;
+	std::vector<AModel*>model_components;
 
 
 
@@ -42,15 +39,20 @@ public:
 
 
 
-	void Render(Controller *ctrl, MeshShader *u_data, glm::mat4 matrix);
-	inline void SetPath(std::string path){ this->path = path; }
+	void Render(ViewInfo * info, View * view, 
+		ResourceLoader * res,Techniques * tech, 
+		MeshShader *shader, glm::mat4 matrix);
+
+	inline void AddModelComponent(AModel* model_component){ model_components.push_back(model_component); }
+
+
+
 	inline void SetType(GLuint type){ this->type = type; }
-	inline std::string GetPath(){ return this->path; }
 	inline GLuint GetType(){ return this->type; }
-	inline GrannyModel* GetGranny(){ return this->gr_model; }
-	inline void SetGranny(GrannyModel * gr_model){ this->gr_model = gr_model; }
-	inline void SetAaether(Aa_model * aa_model){ this->aa_model = aa_model; }
-	inline Aa_model * GetAaether(){ return this->aa_model; }
+
+
+
+
 	inline ~StaticEntity(){ this->Clean(); }
 	void Clean();
 
@@ -75,11 +77,18 @@ class StaticEntityInfo
 public:
 
 
-	inline void SetMatrix(glm::mat4 matrix){ this->matrix = matrix; }
+
 	inline void SetId(GLuint id){ this->id = id; }
 	inline GLuint GetId(){ return this->id; }
+
+
 	inline glm::mat4 GetMatrix(){ return this->matrix; }
-	void Render(Controller*ctrl, MeshShader *u_data, StaticEntity ** entity);
+	inline void SetMatrix(glm::mat4 matrix){ this->matrix = matrix; }
+
+
+	void Render(ViewInfo * info, View * view,
+		ResourceLoader * res, Techniques * tech,
+		MeshShader *shader, std::vector<StaticEntity*>entities);
 
 
 };

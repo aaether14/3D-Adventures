@@ -270,6 +270,9 @@
     <ClCompile Include="common\base\base_resource_loader.cpp">
       <Filter>common\base</Filter>
     </ClCompile>
+    <ClCompile Include="common\settings\scene_info.cpp">
+      <Filter>common\settings</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\shaders\skybox_frag.txt">
@@ -566,6 +569,12 @@
       <Filter>common\base</Filter>
     </ClInclude>
     <ClInclude Include="common\settings\settings.hpp">
+      <Filter>common\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="common\base\base_model_loader.hpp">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="common\settings\scene_info.hpp">
       <Filter>common\settings</Filter>
     </ClInclude>
   </ItemGroup>
