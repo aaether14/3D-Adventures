@@ -8,9 +8,12 @@ void ui_Scene::Init()
 
 
 	CEGUI::Window *Root = CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow();
+	static_cast<CEGUI::FrameWindow*>(Root->getChild("Frame2"))->subscribeEvent(CEGUI::FrameWindow::EventCloseClicked,
+		CEGUI::Event::Subscriber(&ui_Scene::CloseWindow, this));
+
+
+
 	Listbox = static_cast<CEGUI::Listbox*>(Root->getChild("Frame2/SceneOutliner"));
-
-
 	Listbox->subscribeEvent(CEGUI::Listbox::EventSelectionChanged,
 		CEGUI::Event::Subscriber(&ui_Scene::SelectionChanged, this));
 

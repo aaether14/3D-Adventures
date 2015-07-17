@@ -7,8 +7,11 @@ void ui_Transform::Init()
 {
 
 
+
 	CEGUI::Window *Root = CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow();
 	FrameRoot = Root->getChild("Frame3");
+	FrameRoot->subscribeEvent(CEGUI::FrameWindow::EventCloseClicked,
+		CEGUI::Event::Subscriber(&ui_Transform::CloseWindow, this));
 
 
 
@@ -33,7 +36,6 @@ void ui_Transform::Init()
 
 
 	p_info = new PaletteInfo();
-	p_info->file_name = "data/terrain_files/test.st";
 	p_info->Reset();
 
 
@@ -69,12 +71,23 @@ void ui_Transform::UpdateData()
 
 
 
+void ui_Transform::UpdateStepData(GLfloat step_size)
+{
+
+	static_cast<CEGUI::Spinner*>(FrameRoot->getChild("Spinner"))->setStepSize(step_size);
+	static_cast<CEGUI::Spinner*>(FrameRoot->getChild("Spinner2"))->setStepSize(step_size);
+	static_cast<CEGUI::Spinner*>(FrameRoot->getChild("Spinner3"))->setStepSize(step_size);
+
+
+}
+
 
 bool ui_Transform::RadioPositionChanged(const CEGUI::EventArgs& e)
 {
 
 	update_id = 0;
 	UpdateData();
+	UpdateStepData(0.075f);
 	return 1;
 
 }
@@ -86,6 +99,7 @@ bool ui_Transform::RadioRotationChanged(const CEGUI::EventArgs& e)
 
 	update_id = 1;
 	UpdateData();
+	UpdateStepData(0.075f);
 	return 1;
 
 }
@@ -97,6 +111,7 @@ bool ui_Transform::RadioScaleChanged(const CEGUI::EventArgs& e)
 
 	update_id = 2;
 	UpdateData();
+	UpdateStepData(0.075f);
 	return 1;
 
 }

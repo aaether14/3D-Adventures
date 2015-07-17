@@ -128,6 +128,7 @@
     <ClCompile Include="common\ui_implementation\settings_root.cpp" />
     <ClCompile Include="common\ui_implementation\top_root.cpp" />
     <ClCompile Include="common\ui_implementation\ui_root.cpp" />
+    <ClCompile Include="common\ui_implementation\view_root.cpp" />
     <ClCompile Include="common\uniform.cpp" />
     <ClCompile Include="common\util\controller_math.cpp" />
     <ClCompile Include="common\util\file_helper.cpp" />
@@ -228,6 +229,7 @@
     <ClInclude Include="common\ui_implementation\settings_root.hpp" />
     <ClInclude Include="common\ui_implementation\top_root.hpp" />
     <ClInclude Include="common\ui_implementation\ui_root.hpp" />
+    <ClInclude Include="common\ui_implementation\view_root.hpp" />
     <ClInclude Include="common\uniform.hpp" />
     <ClInclude Include="common\util\controller_math.hpp" />
     <ClInclude Include="common\util\file_helper.hpp" />

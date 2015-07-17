@@ -27,6 +27,9 @@ class ui_Transform
 	bool SpinnerScaleChanged(const CEGUI::EventArgs& e);
 
 
+	inline bool CloseWindow(const CEGUI::EventArgs& e){ FrameRoot->hide(); return 1; }
+
+
 
 
 	class PaletteInfo
@@ -37,9 +40,6 @@ class ui_Transform
 
 
 		glm::mat3 trans;
-		std::string file_name;
-
-
 		inline void Reset(){ trans[0] = glm::vec3(0.0); trans[1] = glm::vec3(0.0); trans[2] = glm::vec3(1.0); }
 
 
@@ -65,7 +65,10 @@ public:
 
 
 	inline PaletteInfo * GetPInfo(){ return p_info; }
+
+
 	void UpdateData();
+	void UpdateStepData(GLfloat step_size);
 
 
 };

@@ -8,6 +8,7 @@
 #include <controls.hpp>
 #include <CEGUI/CEGUI.h>
 #include "project_root.hpp"
+#include "view_root.hpp"
 
 
 
@@ -18,6 +19,7 @@ class TopRoot
 
 
 	ui_ProjectRoot * ui_project_root;
+	ui_ViewRoot * ui_view_root;
 
 
 public:

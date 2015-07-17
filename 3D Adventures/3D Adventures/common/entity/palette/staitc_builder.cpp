@@ -139,34 +139,15 @@ void StaticPalette::Init()
 
 
 	this->builder = new StaticBuilder();
-	/*
-	this->bar = TwNewBar("Palette");
-	TwDefine(" Palette position='824 0' ");
-	TwAddVarRW(this->bar, "switch_entity", TW_TYPE_UINT32, &this->id, " label='Entity#'  min='0' keyIncr=e keyDecr=q ");
-	TwAddVarRW(this->bar, "pos_x", TW_TYPE_FLOAT, &this->pos.x, " label='X' step = 0.075");
-	TwAddVarRW(this->bar, "pos_y", TW_TYPE_FLOAT, &this->pos.y, " label='Y' step = 0.075");
-	TwAddVarRW(this->bar, "pos_z", TW_TYPE_FLOAT, &this->pos.z, " label='Z' step = 0.075");
-	TwAddVarRW(this->bar, "pos_z", TW_TYPE_FLOAT, &this->pos.z, " label='Z' step = 0.075");
-	TwAddVarRW(this->bar, "scale", TW_TYPE_FLOAT, &this->scale, " label='Scale' step = 0.075 min='0' ");
-	TwAddVarRW(this->bar, "scale_range", TW_TYPE_FLOAT, &this->scale_range, " label='Scale Range' step = 0.03 min='0' ");
-	TwAddVarRW(this->bar, "y_rot_range", TW_TYPE_FLOAT, &this->y_rot_range, " label='Rotate Range' step = 0.075 min='0' ");
-	TwAddVarRW(this->bar, "rot_x", TW_TYPE_FLOAT, &this->x_rot, " label='Rotate X' step = 0.075");
-	TwAddVarRW(this->bar, "rot_y", TW_TYPE_FLOAT, &this->y_rot, " label='Rotate Y' step = 0.075");
-	TwAddVarRW(this->bar, "rot_z", TW_TYPE_FLOAT, &this->z_rot, " label='Rotate Z' step = 0.075");
-	TwAddVarRW(this->bar, "file_name", TW_TYPE_STDSTRING, &this->file_name, "label = 'Filename' ");
-	TwAddButton(this->bar, "save", Save, this, " label='Save' ");
-	TwAddButton(this->bar, "empty_file", EmptyFile, this, " label='Empty File' ");
-	TwAddButton(this->bar, "undo_last_move", UndoLastMove, this, " label='Undo' ");
-	*/
+	ui_scene = new ui_Scene();
+	ui_transform = new ui_Transform();
+
 
 
 	visible = false;
 	id = 0;
 	number_of_entities = 0;
 
-
-	ui_scene = new ui_Scene();
-	ui_transform = new ui_Transform();
 
 
 }
@@ -177,13 +158,10 @@ void StaticPalette::SetNumbers(GLuint e_n)
 {
 
 
-	//settings number of entities in the palette
-
 
 	number_of_entities = e_n - 1;
 	id = 0;
 
-	//TwSetParam(bar, "switch_entity", "max", TW_PARAM_INT32, 1, &this->e_n);
 
 
 

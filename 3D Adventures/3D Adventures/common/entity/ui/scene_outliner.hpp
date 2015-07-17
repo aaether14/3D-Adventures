@@ -23,6 +23,14 @@ class ui_Scene
 
 
 
+	inline bool CloseWindow(const CEGUI::EventArgs& e)
+	{
+		CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow()->getChild("Frame2")->hide();
+		return 1;
+	}
+
+
+
 public:
 
 

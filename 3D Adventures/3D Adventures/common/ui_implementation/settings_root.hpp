@@ -31,6 +31,13 @@ class RootSettings
 		is_inside_window = false;
 		return true;
 	}
+
+
+	inline bool CloseWindow(const CEGUI::EventArgs& e)
+	{
+		CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow()->getChild("Frame")->hide();
+		return 1;
+	}
 	
 
 

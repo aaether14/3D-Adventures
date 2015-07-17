@@ -11,6 +11,9 @@ void RootSettings::Init(Settings * settings, CEGUI::Window * Root)
 	CEGUI::WindowManager& wmgr = CEGUI::WindowManager::getSingleton();
 
 
+	static_cast<CEGUI::FrameWindow*>(Root->getChild("Frame"))->subscribeEvent(CEGUI::FrameWindow::EventCloseClicked,
+		CEGUI::Event::Subscriber(&RootSettings::CloseWindow, this));
+
 
 	Root->getChild("Frame/Settings")->addChild(wmgr.loadLayoutFromFile("lighting.layout"));
 	Root->getChild("Frame/Settings")->addChild(wmgr.loadLayoutFromFile("ssao.layout"));
