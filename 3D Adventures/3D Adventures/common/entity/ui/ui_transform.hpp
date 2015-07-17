@@ -17,14 +17,19 @@ class ui_Transform
 	CEGUI::Window * FrameRoot;
 
 
+
+
 	bool RadioPositionChanged(const CEGUI::EventArgs& e);
 	bool RadioRotationChanged(const CEGUI::EventArgs& e);
 	bool RadioScaleChanged(const CEGUI::EventArgs& e);
 
 
+
+
 	bool SpinnerPositionChanged(const CEGUI::EventArgs& e);
 	bool SpinnerRotationChanged(const CEGUI::EventArgs& e);
 	bool SpinnerScaleChanged(const CEGUI::EventArgs& e);
+
 
 
 	inline bool CloseWindow(const CEGUI::EventArgs& e){ FrameRoot->hide(); return 1; }

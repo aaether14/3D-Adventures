@@ -66,7 +66,8 @@ void Skybox::SetUniforms(Controller * ctrl, glm::mat4 MVP, glm::mat4 MV)
 {
 
 
-	Environment * env = ctrl->GetGameObject()->GetSettings()->GetEnv();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	Environment * env = static_cast<Environment*>(res->Get("Environment"));
 
 
 

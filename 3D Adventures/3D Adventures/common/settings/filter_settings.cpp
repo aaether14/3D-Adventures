@@ -42,7 +42,7 @@ void FilterSettings::Reset()
 
 
 
-	this->should_reset = false;
+	SetShouldReset(false);
 
 
 
@@ -50,10 +50,10 @@ void FilterSettings::Reset()
 }
 
 
-void FilterSettings::Init()
+void FilterSettings::Init(char * path)
 {
 
-
+	SetPath(path);
 	Reset();
 
 
@@ -77,11 +77,11 @@ void FilterSettings::Clean()
 
 
 
-void FilterSettings::Save(char * path)
+void FilterSettings::Save()
 {
 
 
-	std::ofstream fout(path, std::ios::binary);
+	std::ofstream fout(GetPath(), std::ios::binary);
 	AFile::WriteToFile(fout, SSAO.Enabled);
 	AFile::WriteToFile(fout, SSAO.NumSamples);
 	AFile::WriteToFile(fout, SSAO.Power);
@@ -102,11 +102,11 @@ void FilterSettings::Save(char * path)
 
 
 
-void FilterSettings::Load(char * path)
+void FilterSettings::Load()
 {
 
 
-	std::ifstream fin(path, std::ios::binary);
+	std::ifstream fin(GetPath(), std::ios::binary);
 	AFile::ReadFromFile(fin, SSAO.Enabled);
 	AFile::ReadFromFile(fin, SSAO.NumSamples);
 	AFile::ReadFromFile(fin, SSAO.Power);
@@ -120,6 +120,8 @@ void FilterSettings::Load(char * path)
 	AFile::ReadFromFile(fin, FXAA.span_max);
 	fin.close();
 
+
+	SetShouldReset(true);
 
 
 }

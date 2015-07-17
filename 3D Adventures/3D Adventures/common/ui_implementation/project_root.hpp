@@ -27,8 +27,7 @@ class ui_ProjectRoot
 
 	inline bool SaveProject(const CEGUI::EventArgs &args)
 	{
-		ctrl->GetGameObject()->GetSettings()->GetEnv()->Save(ctrl->GetGameObject()->GetResource()->GetEnvFile());
-		ctrl->GetGameObject()->GetSettings()->GetFilterSettings()->Save(ctrl->GetGameObject()->GetResource()->GetFSettingsFile());
+		ctrl->GetGameObject()->GetResource()->SaveChanges();
 		return 1;
 	}
 
@@ -36,10 +35,7 @@ class ui_ProjectRoot
 
 	inline bool LoadProject(const CEGUI::EventArgs &args)
 	{
-		ctrl->GetGameObject()->GetSettings()->GetEnv()->Load(ctrl->GetGameObject()->GetResource()->GetEnvFile());
-		ctrl->GetGameObject()->GetSettings()->GetFilterSettings()->Load(ctrl->GetGameObject()->GetResource()->GetFSettingsFile());
-		ctrl->GetGameObject()->GetSettings()->GetEnv()->should_reset = true;
-		ctrl->GetGameObject()->GetSettings()->GetFilterSettings()->should_reset = true;
+		ctrl->GetGameObject()->GetResource()->LoadChanges();
 		return 1;
 	}
 

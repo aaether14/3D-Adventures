@@ -12,10 +12,6 @@ void ui_FilterRoot::Init(FilterSettings * filter_settings, CEGUI::Window * Root)
 	this->Root = Root;
 
 
-	Reset();
-
-
-
 }
 
 
@@ -110,10 +106,10 @@ void ui_FilterRoot::SyncUI()
 {
 
 
-	if (filter_settings->should_reset)
+	if (filter_settings->ShouldReset())
 	{
 		Reset();
-		filter_settings->should_reset = false;
+		filter_settings->SetShouldReset(false);
 	}
 
 

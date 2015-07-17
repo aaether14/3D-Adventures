@@ -18,7 +18,6 @@ void GameObject::Init(GLuint window_width, GLuint window_height)
 
 
 
-	this->settings = new Settings();
 	this->res = new ResourceLoader();
 
 
@@ -36,7 +35,6 @@ void GameObject::Clean()
 	delete this->shadow_bbox;
 	delete this->res;
 	delete this->techniques;
-	delete this->settings;
 
 
 }

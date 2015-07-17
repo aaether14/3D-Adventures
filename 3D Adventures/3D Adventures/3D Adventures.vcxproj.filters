@@ -82,6 +82,9 @@
     <Filter Include="common\entity\palette">
       <UniqueIdentifier>{fa282c07-1957-4ac9-80dc-29d79e3e8b5c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common\base">
+      <UniqueIdentifier>{63d997ab-5c57-441b-95a6-514c0b91edf0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\controls.cpp">
@@ -192,9 +195,6 @@
     <ClCompile Include="common\sky\sky_render.cpp">
       <Filter>common\sky</Filter>
     </ClCompile>
-    <ClCompile Include="common\settings\settings.cpp">
-      <Filter>common\settings</Filter>
-    </ClCompile>
     <ClCompile Include="common\settings\environment.cpp">
       <Filter>common\settings</Filter>
     </ClCompile>
@@ -266,6 +266,9 @@
     </ClCompile>
     <ClCompile Include="common\ui_implementation\view_root.cpp">
       <Filter>common\ui_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\base\base_resource_loader.cpp">
+      <Filter>common\base</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -481,9 +484,6 @@
     <ClInclude Include="common\sky\sky_render.hpp">
       <Filter>common\sky</Filter>
     </ClInclude>
-    <ClInclude Include="common\settings\settings.hpp">
-      <Filter>common\settings</Filter>
-    </ClInclude>
     <ClInclude Include="common\settings\environment.hpp">
       <Filter>common\settings</Filter>
     </ClInclude>
@@ -558,6 +558,15 @@
     </ClInclude>
     <ClInclude Include="common\ui_implementation\view_root.hpp">
       <Filter>common\ui_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\base\base_state_saver.hpp">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="common\base\base_resource_loader.hpp">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="common\settings\settings.hpp">
+      <Filter>common\settings</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

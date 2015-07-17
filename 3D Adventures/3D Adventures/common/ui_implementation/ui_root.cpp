@@ -17,7 +17,7 @@ void RootUI::Init(Controller * ctrl)
 
 
     
-	root_settings = new RootSettings(ctrl->GetGameObject()->GetSettings(), Root);
+	root_settings = new RootSettings(ctrl->GetGameObject()->GetResource(), Root);
 	top_root = new TopRoot(ctrl, Root);
 
 

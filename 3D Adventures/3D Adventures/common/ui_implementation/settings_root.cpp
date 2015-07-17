@@ -3,7 +3,7 @@
 
 
 
-void RootSettings::Init(Settings * settings, CEGUI::Window * Root)
+void RootSettings::Init(ResourceLoader * res, CEGUI::Window * Root)
 {
 
 
@@ -31,8 +31,13 @@ void RootSettings::Init(Settings * settings, CEGUI::Window * Root)
 
 
 
-	ui_lighting_root = new ui_LightingRoot(settings->GetEnv(), Root);
-	ui_filter_root = new ui_FilterRoot(settings->GetFilterSettings(), Root);
+	Environment * env = static_cast<Environment*>(res->Get("Environment"));
+	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
+
+
+
+	ui_lighting_root = new ui_LightingRoot(env, Root);
+	ui_filter_root = new ui_FilterRoot(f_settings, Root);
 
 
 

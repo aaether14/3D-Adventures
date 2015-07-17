@@ -77,6 +77,7 @@
   <ItemGroup>
     <ClCompile Include="common\2d.cpp" />
     <ClCompile Include="common\application.cpp" />
+    <ClCompile Include="common\base\base_resource_loader.cpp" />
     <ClCompile Include="common\camera_implementation\camera.cpp" />
     <ClCompile Include="common\controller\controls_source.cpp" />
     <ClCompile Include="common\controls.cpp" />
@@ -105,7 +106,6 @@
     <ClCompile Include="common\model_loaders\math_3d.cpp" />
     <ClCompile Include="common\settings\environment.cpp" />
     <ClCompile Include="common\settings\filter_settings.cpp" />
-    <ClCompile Include="common\settings\settings.cpp" />
     <ClCompile Include="common\shader\shader.cpp" />
     <ClCompile Include="common\sky\sky_render.cpp" />
     <ClCompile Include="common\technique.cpp" />
@@ -177,6 +177,8 @@
   <ItemGroup>
     <ClInclude Include="common\2d.hpp" />
     <ClInclude Include="common\application.hpp" />
+    <ClInclude Include="common\base\base_resource_loader.hpp" />
+    <ClInclude Include="common\base\base_state_saver.hpp" />
     <ClInclude Include="common\camera_implementation\camera.hpp" />
     <ClInclude Include="common\controller\controls_source.hpp" />
     <ClInclude Include="common\controls.hpp" />

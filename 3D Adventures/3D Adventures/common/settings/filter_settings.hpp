@@ -6,11 +6,12 @@
 
 #include <util/controller_math.hpp>
 #include <util/file_helper.hpp>
+#include "../base//base_state_saver.hpp"
 
 
 
 
-class FilterSettings
+class FilterSettings : public AStateSaver
 {
 
 
@@ -61,12 +62,9 @@ public:
 
 
 
-	GLboolean should_reset;
 
-
-
-	inline FilterSettings(){ this->Init(); }
-	void Init();
+	inline FilterSettings(char * path){ this->Init(path); }
+	void Init(char *path);
 
 
 
@@ -76,8 +74,8 @@ public:
 
 
 	void Reset();
-	void Save(char*path);
-	void Load(char*path);
+	void Save();
+	void Load();
 
 
 

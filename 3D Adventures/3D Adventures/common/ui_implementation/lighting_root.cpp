@@ -13,10 +13,6 @@ void ui_LightingRoot::Init(Environment * env, CEGUI::Window * Root)
 
 
 
-	Reset();
-
-
-
 }
 
 
@@ -62,10 +58,10 @@ void ui_LightingRoot::SyncUI()
 
 
 
-	if (env->should_reset)
+	if (env->ShouldReset())
 	{
 		Reset();
-		env->should_reset = false;
+		env->SetShouldReset(false);
 	}
 
 

@@ -8,6 +8,7 @@
 #include <CEGUI/CEGUI.h>
 #include "lighting_root.hpp"
 #include "filter_root.hpp"
+#include "../settings/settings.hpp"
 
 
 
@@ -54,8 +55,8 @@ public:
 
 
 
-	inline RootSettings(Settings * settings, CEGUI::Window * Root){ this->Init(settings, Root); }
-	void Init(Settings * setting, CEGUI::Window * Root);
+	inline RootSettings(ResourceLoader * res, CEGUI::Window * Root){ this->Init(res, Root); }
+	void Init(ResourceLoader * res, CEGUI::Window * Root);
 
 
 

@@ -4,14 +4,13 @@
 
 
 
-#include <util/string_helper.hpp>
-using namespace::AString;
+#include <base/base_resource_loader.hpp>
 
 
 
 
 
-class ResourceLoader
+class ResourceLoader : public BaseResourceLoader
 {
 
 
@@ -31,13 +30,13 @@ class ResourceLoader
 	std::string a_file;
 
 
-	inline void Init(){}
-
 
 public:
 
 
 	ResourceLoader(){ this->Init(); }
+	void Init();
+
 
 
 	inline char* GetPlayerFile(){ return char_to_str(player_file); }
@@ -51,7 +50,9 @@ public:
 	inline char* GetTFile(){ return char_to_str(t_file); }
 	inline char* GetNFile(){ return char_to_str(n_file); }
 	inline char* GetAFile(){ return char_to_str(a_file); }
-	void Load(char *path);
+
+
+	void LoadResourcePaths(char *path);
 
 
 };

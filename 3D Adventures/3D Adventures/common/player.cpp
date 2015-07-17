@@ -362,7 +362,8 @@ void Player::Render(Controller *ctrl, MeshShader * shader)
 	View * view = ctrl->GetCameraPointer()->GetView();
 	ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	Environment * env = ctrl->GetGameObject()->GetSettings()->GetEnv();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	Environment * env = static_cast<Environment*>(res->Get("Environment"));
 
 
 

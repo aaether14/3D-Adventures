@@ -2,7 +2,7 @@
 
 
 
-void ResourceLoader::Load(char *path)
+void ResourceLoader::LoadResourcePaths(char *path)
 {
 
 
@@ -41,6 +41,13 @@ void ResourceLoader::Load(char *path)
 
 
 
+void ResourceLoader::Init()
+{
 
+
+
+
+
+}
 
 

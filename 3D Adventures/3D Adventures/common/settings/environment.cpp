@@ -34,18 +34,18 @@ void Environment::Reset()
 
 
 
-	this->should_reset = false;
+	SetShouldReset(false);
 
 
 }
 
 
 
-void Environment::Save(char *path)
+void Environment::Save()
 {
 
 
-	std::ofstream fout(path, std::ios::binary);
+	std::ofstream fout(GetPath(), std::ios::binary);
 	AFile::WriteToFile(fout, sun_dir);
 	AFile::WriteToFile(fout, sun_color);
 	AFile::WriteToFile(fout, model_ambient);
@@ -64,12 +64,12 @@ void Environment::Save(char *path)
 
 
 
-void Environment::Load(char*path)
+void Environment::Load()
 {
 
 
 
-	std::ifstream fin(path, std::ios::binary);
+	std::ifstream fin(GetPath(), std::ios::binary);
 	AFile::ReadFromFile(fin, sun_dir);
 	AFile::ReadFromFile(fin, sun_color);
 	AFile::ReadFromFile(fin, model_ambient);
@@ -83,6 +83,9 @@ void Environment::Load(char*path)
 	fin.close();
 
 
+	SetShouldReset(true);
+
+
 }
 
 
@@ -90,10 +93,10 @@ void Environment::Load(char*path)
 
 
 
-void Environment::Init()
+void Environment::Init(char * path)
 {
 
-
+	SetPath(path);
 	this->Reset();
 
 

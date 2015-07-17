@@ -149,8 +149,8 @@ void Pipeline::HandleDoF(Controller * ctrl)
 {
 
 
-	Settings * settings = ctrl->GetGameObject()->GetSettings();
-	FilterSettings * f_settings = settings->GetFilterSettings();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
 
@@ -199,8 +199,8 @@ void Pipeline::HandleBloom(Controller * ctrl)
 {
 
 
-	Settings * settings = ctrl->GetGameObject()->GetSettings();
-	FilterSettings * f_settings = settings->GetFilterSettings();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
 
@@ -263,8 +263,8 @@ void Pipeline::HandleFXAA(Controller * ctrl)
 {
 
 
-	Settings * settings = ctrl->GetGameObject()->GetSettings();
-	FilterSettings * f_settings = settings->GetFilterSettings();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
 
@@ -313,8 +313,8 @@ void Pipeline::HandleSSAO(Controller * ctrl)
 {
 
 
-	Settings * settings = ctrl->GetGameObject()->GetSettings();
-	FilterSettings * f_settings = settings->GetFilterSettings();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
 
@@ -367,8 +367,8 @@ void Pipeline::Render(Controller*ctrl)
 
 
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	Settings * settings = ctrl->GetGameObject()->GetSettings();
-	FilterSettings * f_settings = settings->GetFilterSettings();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
 

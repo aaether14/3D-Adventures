@@ -28,14 +28,14 @@ void Controller::Load(char*path)
 
 
 	ResourceLoader * res = g_obj->GetResource();
-	Environment * env = g_obj->GetSettings()->GetEnv();
-	FilterSettings * f_settings = g_obj->GetSettings()->GetFilterSettings();
 
 
-	res->Load(path);
-	env->Load(g_obj->GetResource()->GetEnvFile());
-	f_settings->Load(g_obj->GetResource()->GetFSettingsFile());
+	res->LoadResourcePaths(path);
 
+
+	res->Add("Environment",new Environment(res->GetEnvFile()));
+	res->Add("FilterSettings", new FilterSettings(res->GetFSettingsFile()));
+	res->LoadChanges();
 
 
 

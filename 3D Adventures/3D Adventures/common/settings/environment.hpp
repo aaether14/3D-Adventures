@@ -7,6 +7,7 @@
 
 #include <util/controller_math.hpp>
 #include <util/file_helper.hpp>
+#include "../base//base_state_saver.hpp"
 
 
 
@@ -14,17 +15,13 @@
 
 
 
-class Environment
+class Environment : public AStateSaver
 {
 
 
 		
 
 public:
-
-
-
-	std::string file_name;
 
 
 
@@ -44,19 +41,14 @@ public:
 
 
 
-	GLboolean should_reset;
-
-
-	inline Environment(){ this->Init(); }
-	void Init();
+	inline Environment(char * path){ this->Init(path); }
+	void Init(char * path);
 
 	
 
-
-
 	void Reset();
-	void Save(char*path);
-	void Load(char*path);
+	void Save();
+	void Load();
 
 
 };

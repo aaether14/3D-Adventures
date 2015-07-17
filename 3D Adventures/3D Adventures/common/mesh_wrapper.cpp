@@ -40,9 +40,9 @@ void MeshWrapper::FirstPass(Controller*ctrl)
 
 
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	Settings * settings = ctrl->GetGameObject()->GetSettings();
-	FilterSettings * f_settings = settings->GetFilterSettings();
-	Environment * env = settings->GetEnv();
+	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	Environment * env = static_cast<Environment*>(res->Get("Environment"));
+	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 	View * view = ctrl->GetCameraPointer()->GetView();
 
 
