@@ -168,18 +168,24 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 
 
 		visible = false;
-		StaticEntityInfo *temp = new StaticEntityInfo();
+		TransformInfo *new_instance = new TransformInfo();
 
 
-		temp->SetId(id);
-		temp->SetMatrix(GetMatrix());
+
+		new_instance->id = id;
+		new_instance->matrix = GetMatrix();
+		new_instance->pos = ui_transform->GetPInfo()->trans[0];
+		new_instance->rot = ui_transform->GetPInfo()->trans[1];
+		new_instance->scale = ui_transform->GetPInfo()->trans[2];
+
+
 
 
 		GLuint ind = ctrl->GetGameObject()->GetInd(ctrl->GetCameraPointer()->GetInfo()->getCameraPos());
 
 
 		ui_scene->AddItem(std::to_string(id), glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
-		scene_info->GetEntityInfos()[ind].push_back(temp);
+		scene_info->GetEntityInfos()[ind].push_back(new_instance);
 
 
 

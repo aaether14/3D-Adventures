@@ -23,7 +23,7 @@ void SceneInfo::Load()
 		
 
 
-			StaticEntity * new_entity = new StaticEntity();
+			Entity * new_entity = new Entity();
 
 
 

@@ -141,9 +141,6 @@
     <ClCompile Include="common\light\light.cpp">
       <Filter>common\light</Filter>
     </ClCompile>
-    <ClCompile Include="common\entity\static.cpp">
-      <Filter>common\entity</Filter>
-    </ClCompile>
     <ClCompile Include="common\filters\basic_filter.cpp">
       <Filter>common\filters</Filter>
     </ClCompile>
@@ -267,9 +264,6 @@
     <ClCompile Include="common\settings\scene_info.cpp">
       <Filter>common\settings</Filter>
     </ClCompile>
-    <ClCompile Include="common\entity_info\static_info.cpp">
-      <Filter>common\entity_info</Filter>
-    </ClCompile>
     <ClCompile Include="common\entity\palette\entity_palette.cpp">
       <Filter>common\entity\palette</Filter>
     </ClCompile>
@@ -278,6 +272,12 @@
     </ClCompile>
     <ClCompile Include="common\components\model_component.cpp">
       <Filter>common\components</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\entity_manager.cpp">
+      <Filter>common\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity_info\transform_info.cpp">
+      <Filter>common\entity_info</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -433,9 +433,6 @@
     <ClInclude Include="common\light\light.hpp">
       <Filter>common\light</Filter>
     </ClInclude>
-    <ClInclude Include="common\entity\static.hpp">
-      <Filter>common\entity</Filter>
-    </ClInclude>
     <ClInclude Include="common\filters\basic_filter.hpp">
       <Filter>common\filters</Filter>
     </ClInclude>
@@ -574,9 +571,6 @@
     <ClInclude Include="common\base\base_component.hpp">
       <Filter>common\base</Filter>
     </ClInclude>
-    <ClInclude Include="common\entity_info\static_info.hpp">
-      <Filter>common\entity_info</Filter>
-    </ClInclude>
     <ClInclude Include="common\entity\palette\entity_palette.hpp">
       <Filter>common\entity\palette</Filter>
     </ClInclude>
@@ -585,6 +579,12 @@
     </ClInclude>
     <ClInclude Include="common\components\model_component.hpp">
       <Filter>common\components</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\entity_manager.hpp">
+      <Filter>common\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity_info\transform_info.hpp">
+      <Filter>common\entity_info</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

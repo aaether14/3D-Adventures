@@ -1,10 +1,10 @@
-#include "static.hpp"
+#include "entity_manager.hpp"
 
 
 
 
 
-void StaticManager::Init(Controller *ctrl)
+void EntityManager::Init(Controller *ctrl)
 {
 
 
@@ -25,7 +25,7 @@ void StaticManager::Init(Controller *ctrl)
 
 
 
-void StaticManager::RenderPatch(Controller*ctrl, MeshShader *shader, std::vector<StaticEntityInfo*> patch_info)
+void EntityManager::RenderPatch(Controller*ctrl, MeshShader *shader, std::vector<TransformInfo*> patch_info)
 {
 
 
@@ -48,7 +48,7 @@ void StaticManager::RenderPatch(Controller*ctrl, MeshShader *shader, std::vector
 
 
 
-void StaticManager::RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * node)
+void EntityManager::RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * node)
 {
 
 
@@ -79,7 +79,7 @@ void StaticManager::RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * 
 
 
 
-void StaticManager::Render(Controller *ctrl, MeshShader *shader)
+void EntityManager::Render(Controller *ctrl, MeshShader *shader)
 {
 
 
@@ -95,7 +95,7 @@ void StaticManager::Render(Controller *ctrl, MeshShader *shader)
 
 
 
-void StaticManager::Clean()
+void EntityManager::Clean()
 {
 
 

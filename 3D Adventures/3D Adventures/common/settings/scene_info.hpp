@@ -4,7 +4,7 @@
 
 
 
-#include <entity_info/static_info.hpp>
+#include <entity_info/transform_info.hpp>
 #include <base/base_state_saver.hpp>
 #include <components/model_component.hpp>
 
@@ -23,8 +23,8 @@ class SceneInfo : public AStateSaver
 
 private:
 
-	std::vector<StaticEntityInfo*> * entity_infos;
-	std::vector<StaticEntity*>entities;
+	std::vector<TransformInfo*> * entity_infos;
+	std::vector<Entity*>entities;
 
 
 public:
@@ -37,11 +37,11 @@ public:
 
 
 
-	inline std::vector<StaticEntityInfo*> * GetEntityInfos(){ return entity_infos; }
-	inline std::vector<StaticEntity*> GetEntities(){ return entities; }
+	inline std::vector<TransformInfo*> * GetEntityInfos(){ return entity_infos; }
+	inline std::vector<Entity*> GetEntities(){ return entities; }
 
 
-	inline void ReserveInfoSpace(GLuint size){ entity_infos = new std::vector<StaticEntityInfo*>[size]; }
+	inline void ReserveInfoSpace(GLuint size){ entity_infos = new std::vector<TransformInfo*>[size]; }
 
 
 };

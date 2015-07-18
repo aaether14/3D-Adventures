@@ -5,7 +5,7 @@
 
 
 
-#include <entity_info/static_info.hpp>
+#include <entity_info/transform_info.hpp>
 #include "../ui/scene_outliner.hpp"
 #include "../ui/ui_transform.hpp"
 #include <CEGUI/CEGUI.h>
