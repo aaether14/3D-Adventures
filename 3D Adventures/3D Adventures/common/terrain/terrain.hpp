@@ -4,13 +4,12 @@
 
 
 
-#include <gl/glew.h>
-#include "texture/texture.hpp"
+#include <texture/texture.hpp>
 #include "terrain_strip.hpp"
 #include <util/view.hpp>
 #include <util/controller_math.hpp>
 #include "quad_tree.hpp"
-#include "uniform.hpp"
+#include <terrain_shader.hpp>
 
 
 

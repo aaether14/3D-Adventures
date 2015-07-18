@@ -10,10 +10,9 @@ void TerrainWrapper::Init(Controller * ctrl)
 	ResourceLoader * resource = ctrl->GetGameObject()->GetResource();
 
 
+	this->TerrainLight = new Light(this);
+	this->PipeTerrain = new Terrain(this);
 
-	this->terrain_shader = new TerrainShader();
-	this->TerrainLight = new Light(this->terrain_shader);
-	this->PipeTerrain = new Terrain(this->terrain_shader);
 
 
 	this->PipeTerrain->LoadChunks(resource->GetTerrainFile());
@@ -80,13 +79,13 @@ void TerrainWrapper::FirstPass(Controller*ctrl)
 
 
 
-	this->terrain_shader->Use();
+	Use();
 
 
-	this->terrain_shader->Set("myTextureSampler", 0);
-	this->terrain_shader->Set("myTextureSampler2", 1);
-	this->terrain_shader->Set("myTextureSampler3", 2);
-	this->terrain_shader->Set("shadow_map", 3);
+	Set("myTextureSampler", 0);
+	Set("myTextureSampler2", 1);
+	Set("myTextureSampler3", 2);
+	Set("shadow_map", 3);
 
 
 
@@ -113,7 +112,7 @@ void TerrainWrapper::FirstPass(Controller*ctrl)
 
 
 
-	this->terrain_shader->Set("LightMatrix", biasMatrix*
+	Set("LightMatrix", biasMatrix*
 		tech->GetShadow()->GetDirectionalShadow(env, info));
 
 
@@ -157,7 +156,7 @@ void TerrainWrapper::Render(Controller*ctrl)
 	{
 
 
-		this->terrain_shader->Space(glm::mat4(1.0), view);
+		Space(glm::mat4(1.0), view);
 
 
 	}
@@ -176,10 +175,11 @@ void TerrainWrapper::Clean()
 {
 
 
-	delete this->terrain_shader;
-
-
+	if (PipeTerrain)
 	delete PipeTerrain;
+
+
+	if (TerrainLight)
 	delete TerrainLight;
 
 

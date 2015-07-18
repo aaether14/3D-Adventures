@@ -1,8 +1,29 @@
-﻿Build started 7/18/2015 6:23:44 PM.
+﻿Build started 7/18/2015 7:52:34 PM.
      1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\entity\palette\entity_palette.cpp
-         entity_palette.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\application.cpp common\controls.cpp common\mesh_drawer.cpp common\mesh_wrapper.cpp common\pipeline.cpp common\skybox.cpp main.cpp
+         application.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
+         controls.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
+         mesh_drawer.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
+         mesh_wrapper.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
+         pipeline.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
+     1>common\pipeline.cpp(69): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>common\pipeline.cpp(182): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>common\pipeline.cpp(237): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+         skybox.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
+         main.cpp
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(101): warning C4018: '<' : signed/unsigned mismatch
        Link:
@@ -51,6 +72,7 @@
          Release\quad_tree.obj
          Release\terrain.obj
          Release\terrain_strip.obj
+         Release\terrain_shader.obj
          Release\terrain_wrapper.obj
          Release\texture.obj
          Release\ui_manager.obj
@@ -62,7 +84,7 @@
          Release\top_root.obj
          Release\ui_root.obj
          Release\view_root.obj
-         Release\uniform.obj
+         Release\mesh_shader.obj
          Release\controller_math.obj
          Release\file_helper.obj
          Release\string_helper.obj
@@ -78,4 +100,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:21.23
+Time Elapsed 00:00:33.94

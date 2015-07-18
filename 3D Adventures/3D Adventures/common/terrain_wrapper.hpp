@@ -11,14 +11,13 @@
 
 
 
-class TerrainWrapper
+class TerrainWrapper : public TerrainShader
 {
 
 
 
 	Light *TerrainLight;
 	Terrain*PipeTerrain;
-	TerrainShader * terrain_shader;
 
 
 

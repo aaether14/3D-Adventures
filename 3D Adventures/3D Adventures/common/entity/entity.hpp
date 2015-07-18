@@ -7,7 +7,7 @@
 #include <components/model_component.hpp>
 #include <camera_implementation/camera.hpp>
 #include <util/view.hpp>
-#include "uniform.hpp"
+#include <mesh_shader.hpp>
 #include "../technique.hpp"
 #include "../resource_loader.hpp"
 
