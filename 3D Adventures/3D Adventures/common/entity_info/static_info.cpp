@@ -57,8 +57,9 @@ void StaticEntity::Render(ViewInfo * info, View * view,
 
 
 
-	for (GLuint i = 0; i < model_components.size(); i++)
-		model_components[i]->Render();
+
+	ModelComponent * model_component = static_cast<ModelComponent*>(GetComponent("ModelComponent"));
+	model_component->GetModel()->Render();
 
 
 
@@ -73,22 +74,7 @@ void StaticEntityInfo::Render(ViewInfo * info, View * view,
 {
 
 
-	if (this->id >= 30)
-	{
-
-
-		if (this->id < 33)glDisable(GL_CULL_FACE);
-		entities[this->id]->Render(info, view, res, tech, shader, this->matrix);
-		if (this->id < 33)glEnable(GL_CULL_FACE);
-
-
-
-	}
-	else
-	{
-		entities[this->id]->Render(info, view, res, tech, shader, this->matrix);
-	}
-
+		entities[id]->Render(info, view, res, tech, shader, matrix);
 
 }
 
@@ -101,10 +87,6 @@ void StaticEntity::Clean()
 
 
 
-	for (GLuint i = 0; i < model_components.size(); i++)
-		model_components[i]->Clean();
-
-	model_components.clear();
 
 
 }

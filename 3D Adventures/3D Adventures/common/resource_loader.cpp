@@ -51,3 +51,13 @@ void ResourceLoader::Init()
 }
 
 
+
+
+void ResourceLoader::Clean()
+{
+
+
+
+
+
+}

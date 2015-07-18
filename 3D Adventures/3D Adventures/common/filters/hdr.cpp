@@ -42,9 +42,14 @@ void HdrImplementation::Clean()
 {
 
 
-
+	if (bright_shader)
 	delete bright_shader;
+
+	if (bright_texture)
 	delete bright_texture;
+
+
+	if (bright_texture_temp)
 	delete bright_texture_temp;
 
 

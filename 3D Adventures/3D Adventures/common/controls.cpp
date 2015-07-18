@@ -48,9 +48,12 @@ void Controller::Clean()
 {
 
 	
+	if (camera)
+	delete camera;
 
-	delete this->camera;
-	delete this->g_obj;
+
+	if (g_obj)
+	delete g_obj;
 
 
 	ControllerSource::Clean();

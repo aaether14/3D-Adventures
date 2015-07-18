@@ -28,9 +28,17 @@ void Camera::Init()
 
 void Camera::Clean()
 {
+
+
 	if (view_3rd)
 	delete view_3rd;
+
+
+	if (info)
 	delete info;
+
+
+	if (frustum)
 	delete frustum;
 
 

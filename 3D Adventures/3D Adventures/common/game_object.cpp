@@ -32,8 +32,14 @@ void GameObject::Clean()
 {
 
 
+	if (shadow_bbox)
 	delete this->shadow_bbox;
+
+	if (res)
 	delete this->res;
+
+
+	if (techniques)
 	delete this->techniques;
 
 

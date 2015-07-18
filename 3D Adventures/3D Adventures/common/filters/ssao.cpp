@@ -201,13 +201,28 @@ void SSAOImplementation::BindSSAOTexture()
 void SSAOImplementation::Clean()
 {
 
+
+	if (ssao_shader)
 	delete ssao_shader;
+
+	if (ssao_blur)
 	delete ssao_blur;
+
+
+	if (geometry_pass)
 	delete geometry_pass;
 
+
+	if (ssao_texture)
 	delete ssao_texture;
+
+	if (ssao_temp_texture)
 	delete ssao_temp_texture;
+
+
+	if (geometry_pass_texture)
 	delete geometry_pass_texture;
+
 
 	glDeleteTextures(1, &noise_texture);
 

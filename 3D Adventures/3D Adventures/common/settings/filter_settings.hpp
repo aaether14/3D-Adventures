@@ -68,10 +68,6 @@ public:
 
 
 
-	inline ~FilterSettings(){ this->Clean(); }
-	void Clean();
-
-
 
 	void Reset();
 	void Save();

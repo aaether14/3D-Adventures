@@ -106,7 +106,7 @@ int Aa_model::Load(const char* path)
 	std::string tex_path(path);
 	tex_path = tex_path.substr(0, tex_path.length()-4) + ".aam";
 	is.open(tex_path.c_str());
-	tex_path = tex_path.substr(0,tex_path.find_last_of("/")+1);
+	tex_path = tex_path.substr(0,tex_path.find_last_of("\\")+1);
 	for (int i = 0; i < mnumMaterials; i++)
 	{
 

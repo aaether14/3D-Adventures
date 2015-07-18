@@ -34,9 +34,12 @@ class ResourceLoader : public BaseResourceLoader
 public:
 
 
-	ResourceLoader(){ this->Init(); }
+	ResourceLoader(){ Init(); }
 	void Init();
 
+
+	~ResourceLoader(){ Clean(); }
+	void Clean();
 
 
 	inline char* GetPlayerFile(){ return char_to_str(player_file); }

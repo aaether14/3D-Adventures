@@ -64,11 +64,22 @@ void BasicFilterImplementation::Clean()
 {
 
 
-
+	if (null_filter)
 	delete null_filter;
+
+	if (gamma_filter)
 	delete gamma_filter;
+
+
+	if (mult_shader)
 	delete mult_shader;
+
+
+	if (add_shader)
 	delete add_shader;
+
+
+	if (m_quad)
 	delete m_quad;
 
 

@@ -35,7 +35,7 @@ void FXAAImplementation::Clean()
 {
 
 
-
+	if (fxaa_shader)
 	delete fxaa_shader;
 
 

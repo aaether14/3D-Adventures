@@ -63,17 +63,6 @@ void FilterSettings::Init(char * path)
 
 
 
-void FilterSettings::Clean()
-{
-
-
-
-
-
-
-}
-
-
 
 
 
@@ -125,3 +114,5 @@ void FilterSettings::Load()
 
 
 }
+
+

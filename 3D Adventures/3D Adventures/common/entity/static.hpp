@@ -7,22 +7,12 @@
 
 #include <model_loaders/aaether_loader.hpp>
 #include <model_loaders/granny_loader.h>
-#include "static_info.hpp"
-#include "palette/static_builder.hpp"
+#include <entity_info/static_info.hpp>
+#include "palette/entity_palette.hpp"
 
 
 
 
-
-
-template<typename T>
-void destroy_vector(std::vector<T*> &v)
-{
-	while (!v.empty()) {
-		delete v.back();
-		v.pop_back();
-	}
-}
 
 
 
@@ -34,17 +24,12 @@ class StaticManager
 
 
 
-	StaticEntity ** entity;
-	GLuint e_n, quad_width, quad_height;
-	std::vector<StaticEntityInfo*> *entity_info;
-
-
 
 	void RenderPatch(Controller*ctrl, MeshShader * shader, std::vector<StaticEntityInfo*> patch_info);
 	void RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * node);
 
 
-	StaticPalette * palette;
+	EntityPalette * palette;
 
 
 
@@ -57,13 +42,10 @@ public:
 	void Clean();
 
 
-	void Load(char *path, Controller * ctrl);
 	void Render(Controller *ctrl, MeshShader * shader);
 
 
-	inline StaticPalette*GetPalette(){ return this->palette; }
-	inline std::vector<StaticEntityInfo*> * GetEntityInfos(){ return entity_info; }
-	inline StaticEntity ** GetEntities(){ return entity; }
+	inline EntityPalette*GetPalette(){ return this->palette; }
 	
 
 };

@@ -85,6 +85,12 @@
     <Filter Include="common\base">
       <UniqueIdentifier>{63d997ab-5c57-441b-95a6-514c0b91edf0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common\entity_info">
+      <UniqueIdentifier>{532409e9-dc0c-45fe-bb98-b7d1eb2e57ad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\components">
+      <UniqueIdentifier>{80d85e86-e818-4c91-a9b2-174884552a92}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\controls.cpp">
@@ -134,12 +140,6 @@
     </ClCompile>
     <ClCompile Include="common\light\light.cpp">
       <Filter>common\light</Filter>
-    </ClCompile>
-    <ClCompile Include="common\entity\static_info.cpp">
-      <Filter>common\entity</Filter>
-    </ClCompile>
-    <ClCompile Include="common\entity\creature.cpp">
-      <Filter>common\entity</Filter>
     </ClCompile>
     <ClCompile Include="common\entity\static.cpp">
       <Filter>common\entity</Filter>
@@ -252,14 +252,8 @@
     <ClCompile Include="common\ui_implementation\project_root.cpp">
       <Filter>common\ui_implementation</Filter>
     </ClCompile>
-    <ClCompile Include="common\player.cpp">
-      <Filter>common\entity</Filter>
-    </ClCompile>
     <ClCompile Include="common\entity\ui\scene_outliner.cpp">
       <Filter>common\entity\ui</Filter>
-    </ClCompile>
-    <ClCompile Include="common\entity\palette\staitc_builder.cpp">
-      <Filter>common\entity\palette</Filter>
     </ClCompile>
     <ClCompile Include="common\entity\ui\ui_transform.cpp">
       <Filter>common\entity\ui</Filter>
@@ -272,6 +266,18 @@
     </ClCompile>
     <ClCompile Include="common\settings\scene_info.cpp">
       <Filter>common\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity_info\static_info.cpp">
+      <Filter>common\entity_info</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\palette\entity_palette.cpp">
+      <Filter>common\entity\palette</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\entity.cpp">
+      <Filter>common\entity</Filter>
+    </ClCompile>
+    <ClCompile Include="common\components\model_component.cpp">
+      <Filter>common\components</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -430,9 +436,6 @@
     <ClInclude Include="common\entity\static.hpp">
       <Filter>common\entity</Filter>
     </ClInclude>
-    <ClInclude Include="common\entity\static_info.hpp">
-      <Filter>common\entity</Filter>
-    </ClInclude>
     <ClInclude Include="common\filters\basic_filter.hpp">
       <Filter>common\filters</Filter>
     </ClInclude>
@@ -544,17 +547,8 @@
     <ClInclude Include="common\ui_implementation\project_root.hpp">
       <Filter>common\ui_implementation</Filter>
     </ClInclude>
-    <ClInclude Include="common\entity\creature.hpp">
-      <Filter>common\entity</Filter>
-    </ClInclude>
-    <ClInclude Include="common\player.hpp">
-      <Filter>common\entity</Filter>
-    </ClInclude>
     <ClInclude Include="common\entity\ui\scene_outliner.hpp">
       <Filter>common\entity\ui</Filter>
-    </ClInclude>
-    <ClInclude Include="common\entity\palette\static_builder.hpp">
-      <Filter>common\entity\palette</Filter>
     </ClInclude>
     <ClInclude Include="common\entity\ui\ui_transform.hpp">
       <Filter>common\entity\ui</Filter>
@@ -576,6 +570,21 @@
     </ClInclude>
     <ClInclude Include="common\settings\scene_info.hpp">
       <Filter>common\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="common\base\base_component.hpp">
+      <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity_info\static_info.hpp">
+      <Filter>common\entity_info</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\palette\entity_palette.hpp">
+      <Filter>common\entity\palette</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\entity.hpp">
+      <Filter>common\entity</Filter>
+    </ClInclude>
+    <ClInclude Include="common\components\model_component.hpp">
+      <Filter>common\components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

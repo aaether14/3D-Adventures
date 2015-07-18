@@ -37,8 +37,11 @@ void BlurImplementation::Init()
 void BlurImplementation::Clean()
 {
 
-
+	if (gaus_blur1)
 	delete gaus_blur1;
+
+
+	if (gaus_blur2)
 	delete gaus_blur2;
 
 

@@ -11,12 +11,10 @@
 
 
 
-class MeshWrapper
+class MeshWrapper : public MeshShader
 {
 
 	
-
-	MeshShader * mesh_shader;
 	Light *MeshLight;
 	MeshDrawer * Drawer;
 

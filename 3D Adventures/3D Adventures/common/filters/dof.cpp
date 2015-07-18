@@ -29,8 +29,11 @@ void DofImplementation::Clean()
 {
 
 
-
+	if (dof_texture)
 	delete dof_texture;
+
+
+	if (dof_temp_texture)
 	delete dof_temp_texture;
 
 

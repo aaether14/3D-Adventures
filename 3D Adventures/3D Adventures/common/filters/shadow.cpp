@@ -38,9 +38,14 @@ void ShadowImplementation::Init(GLuint width, GLuint height)
 void ShadowImplementation::Clean()
 {
 
-
+	if (shadow_shader)
 	delete shadow_shader;
+
+	if (shadow_map)
 	delete shadow_map;
+
+
+	if (temp_shadow_map)
 	delete temp_shadow_map;
 
 

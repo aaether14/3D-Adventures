@@ -30,7 +30,6 @@ protected:
 	inline std::map < std::string, AStateSaver * >GetStateChangers(){ return state_changers; }
 
 
-
 public:
 
 
@@ -43,7 +42,6 @@ public:
 
 	void SaveChanges();
 	void LoadChanges();
-
 
 
 

@@ -58,9 +58,12 @@ void GBuffer::Clean()
 {
 
 
+	if (buffer)
 	delete buffer;
 
+
 	for (GLuint i = 0; i < 2; i++)
+		if (color_textures[i])
 		delete color_textures[i];
 
 

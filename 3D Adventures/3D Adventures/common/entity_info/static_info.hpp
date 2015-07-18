@@ -3,8 +3,7 @@
 
 
 
-
-#include <base/base_model_loader.hpp>
+#include <components/model_component.hpp>
 #include <camera_implementation/camera.hpp>
 #include <util/view.hpp>
 #include "uniform.hpp"
@@ -27,9 +26,7 @@ class StaticEntity
 
 
 
-
-	GLuint type;
-	std::vector<AModel*>model_components;
+	std::map<std::string, AComponent*> components;
 
 
 
@@ -39,16 +36,17 @@ public:
 
 
 
+
 	void Render(ViewInfo * info, View * view, 
 		ResourceLoader * res,Techniques * tech, 
 		MeshShader *shader, glm::mat4 matrix);
 
-	inline void AddModelComponent(AModel* model_component){ model_components.push_back(model_component); }
 
 
+	inline void AddComponent(std::string name, AComponent *comp){ components[name] = comp; }
+	inline AComponent*GetComponent(std::string name){ return components[name]; }
+	inline GLuint GetComponentsSize(){ return components.size(); }
 
-	inline void SetType(GLuint type){ this->type = type; }
-	inline GLuint GetType(){ return this->type; }
 
 
 

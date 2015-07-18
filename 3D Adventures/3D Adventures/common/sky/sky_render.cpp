@@ -29,8 +29,12 @@ SkyRender::~SkyRender()
 
 void SkyRender::Clean()
 {
-	glDeleteTextures(this->m_textures.size(), &this->m_textures[0]);
-	delete this->model;
+	glDeleteTextures(m_textures.size(), &m_textures[0]);
+
+	if (model)
+	delete model;
+
+
 }
 
 

@@ -12,9 +12,8 @@ void MeshWrapper::Init(Controller * ctrl)
 {
 
 
-	this->mesh_shader = new MeshShader();
-	this->Drawer = new MeshDrawer(mesh_shader, ctrl);
-	this->MeshLight = new Light(mesh_shader);
+	this->Drawer = new MeshDrawer(this, ctrl);
+	this->MeshLight = new Light(this);
 
 
 }
@@ -47,18 +46,18 @@ void MeshWrapper::FirstPass(Controller*ctrl)
 
 
 
-	this->mesh_shader->Use();
+	Use();
 
 
 
-	this->mesh_shader->Set("texture_material", 0);
-	this->mesh_shader->Set("shadow_map", 1);
-	this->mesh_shader->Set("ssao_map", 2);
+	Set("texture_material", 0);
+	Set("shadow_map", 1);
+	Set("ssao_map", 2);
 
 
 
 
-	this->mesh_shader->Set("has_ssao", GLfloat(f_settings->SSAO.Enabled));
+	Set("has_ssao", GLfloat(f_settings->SSAO.Enabled));
 	this->MeshLight->SetFog(glm::pow(env->fog_color, glm::vec3(2.2)), env->fog_density);
 
 
@@ -97,8 +96,7 @@ void MeshWrapper::Clean()
 {
 
 
-	delete this->mesh_shader;
-
+	MeshShader::Clean();
 
 	delete Drawer;
 	delete MeshLight;
