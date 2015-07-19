@@ -146,4 +146,30 @@ namespace Math
 
 
 
+
+	glm::vec3 GetVecFromString(std::string str)
+	{
+
+
+		float values[3];
+		char begin = 0;
+
+
+		for (GLuint i = 0; i < 3; i++)
+		{
+			values[i] = std::stof(str.substr(begin, str.find_first_of(", ", begin)));
+			begin = str.find_first_of(", ", begin) + 1;
+		}
+
+
+		glm::vec3 v;
+		memcpy(&v[0], &values[0], sizeof(glm::vec3));
+		return v;
+
+
+	}
+
+
+
 }
+

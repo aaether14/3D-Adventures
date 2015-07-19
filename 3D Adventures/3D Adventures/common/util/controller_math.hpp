@@ -10,6 +10,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <util/view.hpp>
 #include <stdio.h>
+#include <string>
 #include <granny.h>
 
 
@@ -98,6 +99,8 @@ public:
 	glm::mat4 ConvertGrannyMatrix(granny_matrix_4x4 gr);
 	inline GLfloat randomf(GLfloat LO, GLfloat HI){ return LO + static_cast <float> (rand()) / (static_cast <float> (RAND_MAX / (HI - LO))); }
 
+
+	glm::vec3 GetVecFromString(std::string str);
 
 
 }

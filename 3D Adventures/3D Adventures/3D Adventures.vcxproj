@@ -79,6 +79,7 @@
     <ClCompile Include="common\application.cpp" />
     <ClCompile Include="common\base\base_resource_loader.cpp" />
     <ClCompile Include="common\camera_implementation\camera.cpp" />
+    <ClCompile Include="common\components\general_entity_info_component.cpp" />
     <ClCompile Include="common\components\model_component.cpp" />
     <ClCompile Include="common\controller\controls_source.cpp" />
     <ClCompile Include="common\controls.cpp" />
@@ -184,6 +185,7 @@
     <ClInclude Include="common\base\base_resource_loader.hpp" />
     <ClInclude Include="common\base\base_state_saver.hpp" />
     <ClInclude Include="common\camera_implementation\camera.hpp" />
+    <ClInclude Include="common\components\general_entity_info_component.hpp" />
     <ClInclude Include="common\components\model_component.hpp" />
     <ClInclude Include="common\controller\controls_source.hpp" />
     <ClInclude Include="common\controls.hpp" />

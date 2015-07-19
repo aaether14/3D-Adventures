@@ -7,6 +7,7 @@
 #include <entity_info/transform_info.hpp>
 #include <base/base_state_saver.hpp>
 #include <components/model_component.hpp>
+#include <components/general_entity_info_component.hpp>
 
 
 

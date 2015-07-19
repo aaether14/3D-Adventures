@@ -54,7 +54,15 @@ void SceneInfo::Load()
 
 
 
-
+			InfoComponent * ic = new InfoComponent();
+			if (ic->isValid(AString::char_to_str(boost::filesystem::extension(iterator2->path()))))
+			{
+				ic->Load(AString::char_to_str(iterator2->path().string()),
+					AString::char_to_str(boost::filesystem::extension(iterator2->path())));
+				new_entity->AddComponent("InfoComponent", ic);
+			}
+			else if (ic)
+				delete ic;
 
 
 

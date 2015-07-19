@@ -25,8 +25,11 @@ void EntityPalette::Init()
 
 
 
-glm::mat4 EntityPalette::GetMatrix(){
+glm::mat4 EntityPalette::GetMatrix(Entity *entity)
+{
 
+
+	InfoComponent * ic = static_cast<InfoComponent*>(entity->GetComponent("InfoComponent"));
 
 
 	//make sure we're using the same model coords
@@ -36,9 +39,16 @@ glm::mat4 EntityPalette::GetMatrix(){
 	glm::mat4 model_matrix;
 
 
+	if (ic)
+	{
+		trans[1] += ic->GetInfo()->base_rot;
+		trans[2] *= ic->GetInfo()->base_scale;
+	}
+
+
 	model_matrix = Math::Translation(trans[0])*
-	Math::Rotate(trans[1] + glm::vec3(-M_PI / 2.0f, 0.0, 0.0f))*
-    Math::Scale(trans[2] / 100.0f);
+	Math::Rotate(trans[1])*
+    Math::Scale(trans[2]);
 
 
 	return model_matrix;
@@ -69,7 +79,7 @@ void EntityPalette::Render(Controller*ctrl, MeshShader *u_data)
 
 
 	if (visible)
-		scene_info->GetEntities()[id]->Render(info, view, res, tech, u_data, GetMatrix());
+		scene_info->GetEntities()[id]->Render(info, view, res, tech, u_data, GetMatrix(scene_info->GetEntities()[id]));
 
 
 
@@ -106,7 +116,7 @@ void EntityPalette::ControlPalette(Controller * ctrl)
 		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
 		ui_transform->UpdateData();
 	}
-	if (id < scene_info->GetEntities().size() && ctrl->GetKeyOnce(GLFW_KEY_E))
+	if (id < scene_info->GetEntities().size() - 1 && ctrl->GetKeyOnce(GLFW_KEY_E))
 	{
 		id++;
 		ui_transform->GetPInfo()->Reset();
@@ -157,6 +167,7 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 
 	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+	InfoComponent * ic = static_cast<InfoComponent*>(scene_info->GetEntities()[id]->GetComponent("InfoComponent"));
 
 
 	//placing the palette entity
@@ -173,12 +184,17 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 
 
 		new_instance->id = id;
-		new_instance->matrix = GetMatrix();
+		new_instance->matrix = GetMatrix(scene_info->GetEntities()[id]);
 		new_instance->pos = ui_transform->GetPInfo()->trans[0];
 		new_instance->rot = ui_transform->GetPInfo()->trans[1];
 		new_instance->scale = ui_transform->GetPInfo()->trans[2];
 
 
+		if (ic)
+		{
+			new_instance->rot += ic->GetInfo()->base_rot;
+			new_instance->scale *= ic->GetInfo()->base_scale;
+		}
 
 
 		GLuint ind = ctrl->GetGameObject()->GetInd(ctrl->GetCameraPointer()->GetInfo()->getCameraPos());

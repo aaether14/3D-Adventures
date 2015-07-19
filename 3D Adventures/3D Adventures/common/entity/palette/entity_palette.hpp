@@ -48,7 +48,7 @@ public:
 	inline EntityPalette(){ this->Init(); }
 
 
-	glm::mat4 GetMatrix();
+	glm::mat4 GetMatrix(Entity * entity);
 	void Render(Controller*ctrl, MeshShader *u_data);
 	void ControlPalette(Controller * ctrl);
 	void PlacePalette(Controller * ctrl);

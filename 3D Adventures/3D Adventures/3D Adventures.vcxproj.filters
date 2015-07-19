@@ -282,6 +282,9 @@
     <ClCompile Include="common\mesh_shader.cpp">
       <Filter>common</Filter>
     </ClCompile>
+    <ClCompile Include="common\components\general_entity_info_component.cpp">
+      <Filter>common\components</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\shaders\skybox_frag.txt">
@@ -591,6 +594,9 @@
     </ClInclude>
     <ClInclude Include="common\mesh_shader.hpp">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\components\general_entity_info_component.hpp">
+      <Filter>common\components</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<GeneralInfo>
+  <BaseInfo>
+    <Rotation>-1.57, 0, 0</Rotation>
+    <Scale>0.01, 0.01, 0.01</Scale>
+    <SSAO>1</SSAO>
+  </BaseInfo>
+</GeneralInfo>
