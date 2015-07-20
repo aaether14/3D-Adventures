@@ -114,7 +114,21 @@ void SceneInfo::Load()
 	{
 
 
-		if (v.first == "Entity")
+
+
+		if (v.first == "GeneralInfo")
+		{
+
+
+		   map_size.x = v.second.get<float>("Width");
+		   map_size.y = v.second.get<float>("Height");
+		   number_of_tiles = v.second.get<int>("Tiles");
+		   entity_infos = new std::vector<TransformInfo*>[number_of_tiles];
+
+
+
+		}
+		else if (v.first == "Entity")
 		{
 
 
@@ -137,9 +151,16 @@ void SceneInfo::Load()
 			new_info->scale = Math::GetVecFromString(base_scale);
 
 
-			Math::print_vec3(new_info->rot);
+			new_info->matrix = Math::Translation(new_info->pos)*
+				Math::Rotate(new_info->rot)*
+				Math::Scale(new_info->scale);
 
-			delete new_info;
+
+			GLuint ind = GLuint(new_info->pos.z / (map_size.y / sqrt(number_of_tiles)))*sqrt(number_of_tiles) + 
+				GLuint(new_info->pos.x / (map_size.x / sqrt(number_of_tiles)));
+
+
+			GetEntityInfos()[ind].push_back(new_info);
 
 
 		}
@@ -167,6 +188,21 @@ void SceneInfo::Save()
 	using boost::property_tree::ptree;
 	ptree pt;
 	ptree rootNode;
+
+
+
+
+	{
+
+		ptree new_info;
+		new_info.push_back(ptree::value_type("Width", ptree(std::to_string(map_size.x))));
+		new_info.push_back(ptree::value_type("Height", ptree(std::to_string(map_size.y))));
+		new_info.push_back(ptree::value_type("Tiles", ptree(std::to_string(number_of_tiles))));
+		rootNode.add_child("GeneralInfo", new_info);
+
+	}
+
+
 
 
 	for (GLuint i = 0; i < number_of_tiles; i++)

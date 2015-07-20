@@ -61,12 +61,6 @@ public:
 	inline std::vector<Entity*> GetEntities(){ return entities; }
 
 
-	inline void ReserveInfoSpace(GLuint size, glm::vec2 map_size)
-	{
-		entity_infos = new std::vector<TransformInfo*>[size];
-		number_of_tiles = size; 
-		this->map_size = map_size;
-	}
 
 
 };

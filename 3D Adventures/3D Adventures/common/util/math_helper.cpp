@@ -155,11 +155,12 @@ namespace Math
 		char begin = 0;
 
 
-		for (GLuint i = 0; i < 3; i++)
+		for (GLuint i = 0; i < 2; i++)
 		{
 			values[i] = std::stof(str.substr(begin, str.find_first_of(", ", begin)));
 			begin = str.find_first_of(", ", begin) + 1;
 		}
+		values[2] = std::stof(str.substr(str.find_last_of(", ")));
 
 
 		glm::vec3 v;
