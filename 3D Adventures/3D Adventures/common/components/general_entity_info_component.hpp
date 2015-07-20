@@ -1,3 +1,14 @@
+/*
+
+
+Info component implementation
+Affects entity
+
+
+*/
+
+
+
 #ifndef GENERAL_ENTITY_INFO_COMPONENT
 #define GENERAL_ENTITY_INFO_COMPONENT
 
@@ -7,7 +18,7 @@
 
 #include <base/base_component.hpp>
 #include <util/file_helper.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 
@@ -25,9 +36,12 @@ class InfoComponent : public AComponent
 	public:
 
 
+		std::string name;
 		glm::vec3 base_rot;
 		glm::vec3 base_scale;
+		GLfloat radius;
 		GLboolean affected_by_ssao;
+		GLboolean cull;
 
 
 		void Read(std::ifstream & is);

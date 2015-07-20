@@ -1,3 +1,14 @@
+/*
+
+
+Skydome implementation
+
+
+*/
+
+
+
+
 #ifndef SKY_RENDER
 #define SKY_REDNER
 

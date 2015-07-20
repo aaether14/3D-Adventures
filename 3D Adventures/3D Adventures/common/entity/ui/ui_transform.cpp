@@ -7,6 +7,8 @@ void ui_Transform::Init()
 {
 
 
+	//Provide callbacks to determine updates
+
 
 	CEGUI::Window *Root = CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow();
 	FrameRoot = Root->getChild("Frame3");

@@ -101,11 +101,8 @@
     <ClCompile Include="common\game_object.cpp" />
     <ClCompile Include="common\light\light.cpp" />
     <ClCompile Include="common\model_loaders\aaether_loader.cpp" />
-    <ClCompile Include="common\model_loaders\animated_mesh.cpp" />
-    <ClCompile Include="common\model_loaders\assimp_loader.cpp" />
     <ClCompile Include="common\model_loaders\granny_loader.cpp" />
     <ClCompile Include="common\model_loaders\granny_loader_helper.cpp" />
-    <ClCompile Include="common\model_loaders\math_3d.cpp" />
     <ClCompile Include="common\settings\environment.cpp" />
     <ClCompile Include="common\settings\filter_settings.cpp" />
     <ClCompile Include="common\settings\scene_info.cpp" />
@@ -133,7 +130,7 @@
     <ClCompile Include="common\ui_implementation\ui_root.cpp" />
     <ClCompile Include="common\ui_implementation\view_root.cpp" />
     <ClCompile Include="common\mesh_shader.cpp" />
-    <ClCompile Include="common\util\controller_math.cpp" />
+    <ClCompile Include="common\util\math_helper.cpp" />
     <ClCompile Include="common\util\file_helper.cpp" />
     <ClCompile Include="common\util\string_helper.cpp" />
     <ClCompile Include="common\util\utils.cpp" />
@@ -207,12 +204,7 @@
     <ClInclude Include="common\game_object.hpp" />
     <ClInclude Include="common\light\light.hpp" />
     <ClInclude Include="common\model_loaders\aaether_loader.hpp" />
-    <ClInclude Include="common\model_loaders\animated_mesh.hpp" />
-    <ClInclude Include="common\model_loaders\assimp_loader.hpp" />
     <ClInclude Include="common\model_loaders\granny_loader.h" />
-    <ClInclude Include="common\model_loaders\math_3d.h" />
-    <ClInclude Include="common\model_loaders\ogldev_types.h" />
-    <ClInclude Include="common\model_loaders\ogldev_util.h" />
     <ClInclude Include="common\settings\environment.hpp" />
     <ClInclude Include="common\settings\filter_settings.hpp" />
     <ClInclude Include="common\settings\scene_info.hpp" />
@@ -241,7 +233,7 @@
     <ClInclude Include="common\ui_implementation\ui_root.hpp" />
     <ClInclude Include="common\ui_implementation\view_root.hpp" />
     <ClInclude Include="common\mesh_shader.hpp" />
-    <ClInclude Include="common\util\controller_math.hpp" />
+    <ClInclude Include="common\util\math_helper.hpp" />
     <ClInclude Include="common\util\file_helper.hpp" />
     <ClInclude Include="common\util\string_helper.hpp" />
     <ClInclude Include="common\util\utils.hpp" />

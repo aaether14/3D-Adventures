@@ -7,6 +7,8 @@ void Camera::Init()
 {
 
 
+	//Initialising
+
 
 	verticalAngle = -M_PI / 24;
 	horizontalAngle = 3.14f;
@@ -30,6 +32,10 @@ void Camera::Clean()
 {
 
 
+	//Cleaning up...
+
+
+
 	if (view_3rd)
 	delete view_3rd;
 
@@ -48,6 +54,8 @@ void Camera::Clean()
 
 void Camera::ProcessInput(ControllerSource * source)
 {
+
+
 
 
 	if (source->GetKey(GLFW_KEY_LEFT_SHIFT))
@@ -99,6 +107,9 @@ void Camera::ComputeAngles(ControllerSource * source){
 
 
 
+	//Preparing mouse input for world movement
+
+
 	GLdouble delta_x, delta_y;
 
 
@@ -148,6 +159,10 @@ void Camera::ComputeAngles(ControllerSource * source){
 void Camera::SetInfo(ControllerSource * source)
 {
 
+
+	//converting mouse movement to spherical coodrs to view direction
+
+
 	info->setDirection(glm::vec3(
 		cos(verticalAngle) * sin(horizontalAngle),
 		sin(verticalAngle),
@@ -175,6 +190,10 @@ void Camera::SetInfo(ControllerSource * source)
 		2.0f*glm::normalize(glm::vec3(info->getDirection().x, 0, info->getDirection().z)
 		+ glm::vec3(0, 1, 0)
 		));
+
+
+
+	//Computing the view state
 
 
 	view_3rd->Create3rd(info);

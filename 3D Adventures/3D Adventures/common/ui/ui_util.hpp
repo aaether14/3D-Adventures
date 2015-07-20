@@ -1,3 +1,14 @@
+/*
+
+
+Some functions to connect CEGUI to the other libraries
+
+
+*/
+
+
+
+
 #ifndef UI_UTIL_HPP
 #define UI_UTIL_HPP
 
@@ -6,7 +17,7 @@
 
 
 #include <glfw3.h>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 #include <CEGUI/CEGUI.h>
 
 

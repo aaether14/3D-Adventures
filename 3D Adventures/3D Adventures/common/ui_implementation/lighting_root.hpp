@@ -1,3 +1,13 @@
+/*
+
+
+Lighting settings ui layout management
+
+
+*/
+
+
+
 #ifndef LIGHT_ROOT_HPP
 #define LIGHT_ROOT_HPP
 

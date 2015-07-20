@@ -1,3 +1,13 @@
+/*
+
+
+Used to store terrain chunks
+
+
+*/
+
+
+
 #ifndef TERRAIN_STRIP_HPP
 #define TERRAIN_STRIP_HPP
 
@@ -6,7 +16,7 @@
 
 #include <gl/glew.h>
 #include "texture/texture.hpp"
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

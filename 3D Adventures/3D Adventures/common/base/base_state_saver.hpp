@@ -1,3 +1,13 @@
+/*
+
+
+Interface for storing any scene information prone to change
+
+
+*/
+
+
+
 #ifndef BASE_STATE_SAVER_HPP
 #define BASE_STATE_SAVER_HPP
 
@@ -27,6 +37,8 @@ public:
 	virtual void Reset() = 0;
 
 
+
+	//Used to change ui state
 
 	inline void SetShouldReset(bool should_reset){ this->should_reset = should_reset; }
 	inline bool ShouldReset(){ return should_reset; }

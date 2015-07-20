@@ -1,14 +1,26 @@
+/*
+
+
+Own model format implementation
+Using Assimp to convert from other formats into binary data
+for faster acces
+
+
+*/
+
+
+
 #ifndef AAETHER_LOADER
 #define AAETHER_LOADER
 
 
 
-#include <util/string_helper.hpp>
-#include "math_3d.h"
 #include <texture/texture.hpp>
-#include <assert.h>
+#include <util/string_helper.hpp>
+#include <util/math_helper.hpp>
+#include <util/file_helper.hpp>
 #include <base/base_model_loader.hpp>
-
+#include <assert.h>
 
 
 
@@ -55,8 +67,8 @@ class Aa_model : public AModel
 	};
 
 
-	vector<Aa_entry> m_Entries;
-	vector<GLuint> m_Textures;
+	std::vector<Aa_entry> m_Entries;
+	std::vector<GLuint> m_Textures;
 
 
 public:

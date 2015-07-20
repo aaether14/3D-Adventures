@@ -20,6 +20,7 @@ void Entity::Render(ViewInfo * info, View * view,
 
 
 		Environment * env = static_cast<Environment*>(res->Get("Environment"));
+		InfoComponent * info_component = static_cast<InfoComponent*>(GetComponent("InfoComponent"));
 
 
 		if (tech->GetSSAO()->OnGeometryPass())
@@ -33,6 +34,9 @@ void Entity::Render(ViewInfo * info, View * view,
 		{
 
 
+			//Passing MVP
+
+
 			shader->Space(matrix, view);
 
 
@@ -44,13 +48,35 @@ void Entity::Render(ViewInfo * info, View * view,
 				);
 
 
+
+			//Also light MVP
+
+
 			shader->Set("LightMatrix", biasMatrix*
 				tech->GetShadow()->GetDirectionalShadow(env, info)*matrix);
 
 		}
 
 
-		model_component->GetModel()->Render();
+
+
+		if (!(tech->GetSSAO()->OnGeometryPass() && !info_component->GetInfo()->affected_by_ssao))
+		{
+
+
+			if (!info_component->GetInfo()->cull)
+			{
+				glDisable(GL_CULL_FACE);
+				model_component->GetModel()->Render();
+				glEnable(GL_CULL_FACE);
+			}
+			else
+				model_component->GetModel()->Render();
+
+		}
+
+
+
 	}
 
 

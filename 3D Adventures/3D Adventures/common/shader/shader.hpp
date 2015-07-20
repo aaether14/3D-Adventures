@@ -1,3 +1,15 @@
+/*
+
+
+Shader class for which makes for easy uniform management using std::map
+
+
+*/
+
+
+
+
+
 #ifndef SHADER_HPP
 #define SHADER_HPP
 
@@ -6,7 +18,7 @@
 #include <util/string_helper.hpp>
 #include <map>
 #include <GL/glew.h>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

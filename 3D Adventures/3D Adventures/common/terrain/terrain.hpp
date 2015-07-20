@@ -1,3 +1,15 @@
+/*
+
+
+Terrain implementation
+supporting splatting and bump-mapping
+
+
+*/
+
+
+
+
 #ifndef TERRAIN_HPP
 #define TERRAIN_HPP
 
@@ -7,7 +19,7 @@
 #include <texture/texture.hpp>
 #include "terrain_strip.hpp"
 #include <util/view.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 #include "quad_tree.hpp"
 #include <terrain_shader.hpp>
 

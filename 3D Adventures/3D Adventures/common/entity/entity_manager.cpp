@@ -11,8 +11,11 @@ void EntityManager::Init(Controller *ctrl)
 	palette = new EntityPalette();
 	QuadTree * tree = ctrl->GetGameObject()->GetTree();
 	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+
+
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
-	scene_info->ReserveInfoSpace(tree->GetWidth() * tree->GetHeight());
+	scene_info->ReserveInfoSpace(tree->GetWidth() * tree->GetHeight(),
+		glm::vec2(tree->GetMinX(), tree->GetMinZ())*glm::vec2(tree->GetWidth(), tree->GetHeight()));
 
 
 }

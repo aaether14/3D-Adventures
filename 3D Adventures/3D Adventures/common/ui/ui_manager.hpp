@@ -1,3 +1,14 @@
+/*
+
+
+CEGUI initialisation
+
+
+*/
+
+
+
+
 #ifndef UI_MANAGER
 #define UI_MANAGER
 

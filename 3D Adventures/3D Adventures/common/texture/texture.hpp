@@ -1,3 +1,15 @@
+/*
+
+
+Class for managing OpenGL textures and also WTT(write to texture) support
+Using FreeImage for loading
+
+
+*/
+
+
+
+
 #ifndef TEXTURE_HPP
 #define TEXTURE_HPP
 

@@ -8,6 +8,10 @@ bool ModelComponent::isValid(char * extension)
 {
 
 
+
+	//Check if valid extension
+
+
 	std::vector<std::string> valid_extensions = { ".aao", ".gr2" };
 
 	for (GLuint i = 0; i < valid_extensions.size(); i++)
@@ -23,6 +27,11 @@ bool ModelComponent::isValid(char * extension)
 
 void ModelComponent::Load(char * path, char * extension)
 {
+
+
+
+	//Load acordingly
+
 
 
 	if (!std::string(extension).compare(".gr2"))

@@ -1,3 +1,14 @@
+/*
+
+
+Storing light uniforms for passing light data
+Provides support for directional, point and spot lights
+
+
+*/
+
+
+
 #ifndef LIGHT
 #define LIGHT
 
@@ -5,7 +16,7 @@
 
 
 #include <shader/shader.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

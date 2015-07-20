@@ -1,3 +1,14 @@
+/*
+
+
+Entity implmentation
+Stores components
+
+
+*/
+
+
+
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 

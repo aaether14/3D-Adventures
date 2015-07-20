@@ -1,3 +1,14 @@
+/*
+
+
+Basic gaussian blur and logarithmic blur
+
+
+*/
+
+
+
+
 #ifndef BLUR_HPP
 #define BLUR_HPP
 
@@ -6,7 +17,7 @@
 
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

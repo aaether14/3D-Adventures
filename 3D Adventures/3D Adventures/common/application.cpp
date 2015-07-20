@@ -15,7 +15,7 @@ int Application::Init()
 {
 
 
-	ctrl = new Controller(WINDOW_WIDTH, WINDOW_HEIGHT, FULLSCREEN, "3D Adventures 0.1.6", 4, 3);
+	ctrl = new Controller(WINDOW_WIDTH, WINDOW_HEIGHT, FULLSCREEN, "3D Adventures 0.1.4", 4, 3);
 	return 1;
 
 
@@ -49,7 +49,6 @@ void Application::Load(char *path)
 	ctrl->Load(path);
 	root_ui = new RootUI(ctrl);
 	pipe = new Pipeline(ctrl);
-
 
 
 }

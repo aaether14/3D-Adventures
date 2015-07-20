@@ -1,9 +1,21 @@
+/*
+
+
+Class for combining all textures from deffered process
+
+
+*/
+
+
+
 #ifndef SIMPLE_2D_HPP
 #define SIMPLE_2D_HPP
 
 
+
+
 #include <GL/glew.h>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
 #include <util/utils.hpp>

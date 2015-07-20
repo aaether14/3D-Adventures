@@ -1,3 +1,13 @@
+/*
+
+Quad tree implementation
+
+
+*/
+
+
+
+
 #ifndef QUAD_TREE
 #define QUAD_TREE
 
@@ -15,23 +25,16 @@ class QuadNode
 
 	glm::vec3 h_points[4];
 	glm::vec3 center;
+
+
+
 	GLfloat radius;
-
-
 	GLuint ind;
-
-
 	GLboolean visible;
 
 
 	QuadNode ** nodes;
-
-
-
 	QuadNode * parent;
-
-
-
 	TerrainStrip * chunk;
 
 
@@ -40,38 +43,25 @@ public:
 	
 
 	inline glm::vec3 GetCenter(){ return this->center; }
-
-
-
 	inline GLfloat GetRadius(){ return this->radius; }
-
-
 	inline GLuint GetInd(){ return this->ind; }
 
 	
 	inline void SetVisible(GLboolean visible){ this->visible = visible; }
-
-
 	inline GLboolean GetVisible(){ return this->visible; }
 
 
 
 	inline QuadNode ** GetNodes(){ return this->nodes; }
-
-
-
 	inline TerrainStrip *GetChunk(){return this->chunk;}
-
-
-
 	inline void SetParent(QuadNode *p){ this->parent = p; }
+
+
 
 
 	void Create(glm::ivec2 sq_points[4], GLuint chunk_height, GLuint chunk_width,
 		GLuint width,
 		glm::vec3 *heightData);
-
-
 
 
 
@@ -102,10 +92,8 @@ public:
 		GLfloat min_z);
 
 
+
 	void Read();
-
-
-
 	void Clean();
 
 
@@ -119,22 +107,22 @@ class QuadTree
 {
 
 
+
+
 	QuadNode * start_node;
 
 
+
 	GLuint tree_width, tree_height;
-
-
 	GLfloat min_x, min_z;
+
+
 
 
 public:
 
 
 	inline GLfloat GetMinX(){ return this->min_x; }
-
-
-
 	inline GLfloat GetMinZ(){ return this->min_z; }
 
 
@@ -142,18 +130,16 @@ public:
 
 
 	inline GLuint GetWidth(){ return this->tree_width; }
-
-
-
 	inline GLuint GetHeight(){ return this->tree_height; }
 
 
 
 	inline QuadTree(){ this->start_node = new QuadNode(); this->start_node->SetParent(NULL); }
-
-
-
 	inline ~QuadTree(){ delete this->start_node; }
+
+
+
+
 
 
 	void Create(GLuint quad_height, GLuint quad_width,
@@ -171,6 +157,8 @@ public:
 		glm::vec3 *tangentData,
 		GLfloat min_x,
 		GLfloat min_z);
+
+
 
 	void Load(std::ifstream *fin,
 		GLuint chunk_width, GLuint chunk_height,

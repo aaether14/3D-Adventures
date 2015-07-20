@@ -1,10 +1,20 @@
+/*
+
+
+Using Templates for easier binary data storing/loading
+
+
+*/
+
+
+
 #ifndef FILE_HELPER_HPP
 #define FILE_HELPER_HPP
 
 
 
 
-#include "controller_math.hpp"
+#include "math_helper.hpp"
 #include <fstream>
 #include <boost/filesystem.hpp>
 #include <boost/property_tree/xml_parser.hpp>

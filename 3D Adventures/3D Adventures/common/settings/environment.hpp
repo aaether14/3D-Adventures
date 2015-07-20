@@ -1,3 +1,15 @@
+/*
+
+
+Storing lighting state
+WIP
+
+
+*/
+
+
+
+
 #ifndef ENVIRONMENT_HPP
 #define ENVIRONMENT_HPP
 
@@ -5,7 +17,7 @@
 
 
 
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 #include <util/file_helper.hpp>
 #include "../base//base_state_saver.hpp"
 

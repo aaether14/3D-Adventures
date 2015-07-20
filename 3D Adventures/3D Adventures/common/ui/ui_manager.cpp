@@ -7,6 +7,9 @@ void UIManager::Init()
 {
 
 
+	//Initialising renderer
+
+
 	CEGUI::OpenGL3Renderer& renderer = CEGUI::OpenGL3Renderer::bootstrapSystem();
 
 
@@ -14,6 +17,8 @@ void UIManager::Init()
 	  CEGUI::DefaultResourceProvider* rp = static_cast<CEGUI::DefaultResourceProvider*>
 		  (CEGUI::System::getSingleton().getResourceProvider());
 
+
+	  //Managing resource directories
 
 
 	  rp->setResourceGroupDirectory("schemes", "data/ui/schemes/");
@@ -34,6 +39,10 @@ void UIManager::Init()
 	  CEGUI::XMLParser* parser = CEGUI::System::getSingleton().getXMLParser();
 	  if (parser->isPropertyPresent("SchemaDefaultResourceGroup"))
 		  parser->setProperty("SchemaDefaultResourceGroup", "schemas");
+
+
+
+	  //Adding skins
 
 
 
@@ -73,6 +82,9 @@ void UIManager::Clean()
 void UIManager::Render(ControllerSource * ctrl)
 {
 
+
+
+	//Basic CEGUI context rendering
 
 
 	CEGUI::GUIContext& context = CEGUI::System::getSingleton().getDefaultGUIContext();

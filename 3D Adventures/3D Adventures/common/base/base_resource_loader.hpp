@@ -1,3 +1,16 @@
+/*
+
+
+Can be derived to store any state changers 
+for centralised save/load
+
+
+*/
+
+
+
+
+
 #ifndef BASE_RESOURCE_LOADER_HPP
 #define BASE_RESOURCE_LOADER_HPP
 
@@ -5,7 +18,7 @@
 
 
 #include <util/string_helper.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 #include <base/base_state_saver.hpp>
 #include <map>
 using namespace::AString;

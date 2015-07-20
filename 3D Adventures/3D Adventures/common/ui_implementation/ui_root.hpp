@@ -1,3 +1,14 @@
+/*
+
+
+Accesing UI through UIManager and getting pointer of window root
+
+
+*/
+
+
+
+
 #ifndef ROOT_UI_HPP
 #define ROOT_UI_HPP
 

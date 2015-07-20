@@ -1,3 +1,14 @@
+/*
+
+
+Scene outliner
+WIP
+
+
+*/
+
+
+
 #ifndef SCENE_OUTLINER_HPP
 #define SCENE_OUTLINER_HPP
 

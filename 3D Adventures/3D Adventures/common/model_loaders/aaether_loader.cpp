@@ -16,7 +16,6 @@ Aa_model::Aa_model()
 
 
 	m_VAO = 0;
-	ZERO_MEM(m_Buffers);
 
 
 }
@@ -37,14 +36,14 @@ void Aa_model::Clean()
 
 
 
-	for (uint i = 0; i < m_Textures.size(); i++) {
+	for (GLuint i = 0; i < m_Textures.size(); i++) {
 		glDeleteTextures(1, &this->m_Textures[i]);
 	}
 
 
 
 	if (m_Buffers[0] != 0) {
-		glDeleteBuffers(ARRAY_SIZE_IN_ELEMENTS(m_Buffers), m_Buffers);
+		glDeleteBuffers(COUNT_OF(m_Buffers), m_Buffers);
 	}
 
 
@@ -70,30 +69,30 @@ int Aa_model::Load(const char* path)
 
 	glGenVertexArrays(1, &this->m_VAO);
 	glBindVertexArray(this->m_VAO);
-	glGenBuffers(ARRAY_SIZE_IN_ELEMENTS(m_Buffers), m_Buffers);
+	glGenBuffers(COUNT_OF(m_Buffers), m_Buffers);
 
 
 
 	size_t size1, size2;
-	std::vector<Vector3f> Positions;
-	std::vector<Vector3f> Normals;
-	std::vector<Vector2f> TexCoords;
+	std::vector<glm::vec3> Positions;
+	std::vector<glm::vec3> Normals;
+	std::vector<glm::vec2> TexCoords;
 	std::vector<GLuint> Indices;
 	GLuint mnumMaterials;
 	GLdouble time = glfwGetTime();
 
 
 
-	ifstream is(path, ios::binary);
+	std::ifstream is(path, std::ios::binary);
 	is.read((char*)&size2, sizeof(GLint));
 	Positions.resize(size2);
-	is.read((char*)&Positions[0], size2 * sizeof(Vector3f));
+	is.read((char*)&Positions[0], size2 * sizeof(glm::vec3));
 	is.read((char*)&size2, sizeof(GLint));
 	Normals.resize(size2);
-	is.read((char*)&Normals[0], size2 * sizeof(Vector3f));
+	is.read((char*)&Normals[0], size2 * sizeof(glm::vec3));
 	is.read((char*)&size2, sizeof(GLint));
 	TexCoords.resize(size2);
-	is.read((char*)&TexCoords[0], size2 * sizeof(Vector2f));
+	is.read((char*)&TexCoords[0], size2 * sizeof(glm::vec2));
 	is.read((char*)&size2, sizeof(GLint));
 	Indices.resize(size2);
 	is.read((char*)&Indices[0], size2 * sizeof(GLuint));
@@ -111,7 +110,7 @@ int Aa_model::Load(const char* path)
 	{
 
 		GLuint ind, type;
-		Vector3f color;
+		glm::vec3 color;
 		std::string mat_path;
 
 		is >> ind >> type;

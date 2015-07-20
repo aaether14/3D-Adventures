@@ -1,7 +1,19 @@
-//Checked 2014
+/*
+
+
+Classes for storing any type of view info
+
+
+*/
+
+
+
 
 #ifndef VIEW_HPP
 #define VIEW_HPP
+
+
+
 
 #include <glfw3.h>
 #include <glm/glm.hpp>
@@ -11,13 +23,19 @@
 
 
 
+
+
 #ifndef M_PI
 #define M_PI 3.14159265358979323846
 #endif
 
 
 
+
 #define RENDER_DISTANCE 256
+
+
+
 
 
 class ViewInfo

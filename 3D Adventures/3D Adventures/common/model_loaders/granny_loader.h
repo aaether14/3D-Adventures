@@ -1,3 +1,15 @@
+/*
+
+
+Granny SDK implementation
+also support skinned meshes
+
+
+*/
+
+
+
+
 #ifndef GRANNY_LOADER_HPP
 #define GRANNY_LOADER_HPP
 

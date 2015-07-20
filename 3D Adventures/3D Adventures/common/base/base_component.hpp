@@ -1,3 +1,16 @@
+/*
+
+
+Base component implementation
+Interface for adding components to entities
+Dependent on file's extension to determine it's actions
+
+
+*/
+
+
+
+
 #ifndef BASE_COMPONENT_HPP
 #define BASE_COMPONENT_HPP
 

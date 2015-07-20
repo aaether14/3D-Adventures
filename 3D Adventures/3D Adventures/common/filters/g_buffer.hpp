@@ -1,3 +1,18 @@
+/*
+
+
+
+GBuffer implementation for deffered rendering
+Provides textures for simple WTT and ping pong techniques
+
+
+
+*/
+
+
+
+
+
 #ifndef G_BUFFER_HPP
 #define G_BUFFER_HPP
 
@@ -5,7 +20,7 @@
 
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

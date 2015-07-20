@@ -1,3 +1,14 @@
+/*
+
+
+Base class for controller
+Used to acces window and input
+
+
+*/
+
+
+
 #ifndef CONTROLS_SOURCE_HPP
 #define CONTROLS_SOURCE_HPP
 

@@ -1,9 +1,9 @@
-﻿Build started 7/19/2015 1:36:33 PM.
+﻿Build started 7/20/2015 4:12:23 PM.
      1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\entity\entity.cpp
-         entity.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(75): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\settings\scene_info.cpp
+         scene_info.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(93): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe" /NOLOGO /LIBPATH:..\..\Dependencies\lib "CEGUICommonDialogs-0.lib" "CEGUIBase-0.lib" "CEGUIOpenGLRenderer-0.lib" granny2.lib assimpd.lib FreeImaged.lib freetype.lib glfw3.lib glew32.lib glu32.lib opengl32.lib gdi32.lib winmm.lib user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.lib" /MACHINE:X86 /SAFESEH Release\res.res
          Release\2d.obj
@@ -32,11 +32,8 @@
          Release\game_object.obj
          Release\light.obj
          Release\aaether_loader.obj
-         Release\animated_mesh.obj
-         Release\assimp_loader.obj
          Release\granny_loader.obj
          Release\granny_loader_helper.obj
-         Release\math_3d.obj
          Release\environment.obj
          Release\filter_settings.obj
          Release\scene_info.obj
@@ -64,7 +61,7 @@
          Release\ui_root.obj
          Release\view_root.obj
          Release\mesh_shader.obj
-         Release\controller_math.obj
+         Release\math_helper.obj
          Release\file_helper.obj
          Release\string_helper.obj
          Release\utils.obj
@@ -79,4 +76,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:21.74
+Time Elapsed 00:00:24.21

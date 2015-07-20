@@ -1,3 +1,13 @@
+/*
+
+
+Filter settings ui layout management
+
+
+*/
+
+
+
 #ifndef FILTER_ROOT_HPP
 #define FILTER_ROOT_HPP
 

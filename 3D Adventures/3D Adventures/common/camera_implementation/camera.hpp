@@ -1,3 +1,16 @@
+/*
+
+
+Basic camera implementation
+Can support 1st and 3rd person views
+Also has frustum functionality for frustum culling
+
+
+*/
+
+
+
+
 #ifndef CAMERA_HPP
 #define CAMERA_HPP
 

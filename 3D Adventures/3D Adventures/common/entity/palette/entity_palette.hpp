@@ -1,3 +1,15 @@
+/*
+
+
+entity palette implementation
+also stores information affecting scene outliner and transform tab from ui
+
+
+*/
+
+
+
+
 #ifndef STATIC_BUILDER_HPP
 #define STATIC_BUILDER_HPP
 
@@ -19,6 +31,8 @@
 class EntityPalette
 {
 
+
+	//UI data
 
 	ui_Scene * ui_scene;
 	ui_Transform * ui_transform;

@@ -1,3 +1,15 @@
+/*
+
+
+
+Exponential shadow mapping 
+
+
+
+*/
+
+
+
 #ifndef SHADOW_HPP
 #define SHADOW_HPP
 
@@ -5,7 +17,7 @@
 
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 #include <settings/environment.hpp>
 
 

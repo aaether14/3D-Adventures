@@ -1,3 +1,13 @@
+/*
+
+
+Storing settings on ui side
+
+
+*/
+
+
+
 #ifndef SETTINGS_ROOT_HPP
 #define SETTINGS_ROOT_HPP
 

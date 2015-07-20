@@ -1,3 +1,14 @@
+/*
+
+
+View tab to control which framewindows are openend
+
+
+*/
+
+
+
+
 #ifndef VIEW_ROOT_HPP
 #define VIEW_ROOT_HPP
 

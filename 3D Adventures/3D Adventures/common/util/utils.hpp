@@ -1,3 +1,12 @@
+/*
+
+
+Just a class to provide quads for WTT
+
+
+*/
+
+
 #ifndef UTILS_HPP
 #define UTILS_HPP
 
@@ -5,7 +14,7 @@
 
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

@@ -1,3 +1,15 @@
+/*
+
+
+Model component implementation
+Used to load any type of model that has Render, Load and Clean functions defined
+
+
+*/
+
+
+
+
 #ifndef MODEL_COMPONENT_HPP
 #define MODEL_COMPONENT_HPP
 

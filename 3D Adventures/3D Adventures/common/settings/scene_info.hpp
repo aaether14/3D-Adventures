@@ -1,3 +1,17 @@
+/*
+
+
+
+Entity data is stored here
+
+
+
+*/
+
+
+
+
+
 #ifndef SCENE_INFO_HPP
 #define SCENE_INFO_HPP
 
@@ -8,7 +22,6 @@
 #include <base/base_state_saver.hpp>
 #include <components/model_component.hpp>
 #include <components/general_entity_info_component.hpp>
-
 
 
 
@@ -24,7 +37,13 @@ class SceneInfo : public AStateSaver
 
 private:
 
+
+
 	std::vector<TransformInfo*> * entity_infos;
+	GLuint number_of_tiles;
+	glm::vec2 map_size;
+
+
 	std::vector<Entity*>entities;
 
 
@@ -42,7 +61,12 @@ public:
 	inline std::vector<Entity*> GetEntities(){ return entities; }
 
 
-	inline void ReserveInfoSpace(GLuint size){ entity_infos = new std::vector<TransformInfo*>[size]; }
+	inline void ReserveInfoSpace(GLuint size, glm::vec2 map_size)
+	{
+		entity_infos = new std::vector<TransformInfo*>[size];
+		number_of_tiles = size; 
+		this->map_size = map_size;
+	}
 
 
 };

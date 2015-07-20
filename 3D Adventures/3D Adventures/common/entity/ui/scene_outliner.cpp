@@ -7,6 +7,9 @@ void ui_Scene::Init()
 {
 
 
+	//Manage eventss
+
+
 	CEGUI::Window *Root = CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow();
 	static_cast<CEGUI::FrameWindow*>(Root->getChild("Frame2"))->subscribeEvent(CEGUI::FrameWindow::EventCloseClicked,
 		CEGUI::Event::Subscriber(&ui_Scene::CloseWindow, this));
@@ -39,6 +42,9 @@ void ui_Scene::AddItem(std::string name, glm::ivec2 data)
 {
 
 
+	//Add entity to scene outliner
+
+
 	CEGUI::ListboxTextItem * item = new CEGUI::ListboxTextItem(name, 0);
 	item->setSelectionBrushImage("GlossySerpentFHD/TextSelectionBrush");
 	Listbox->addItem(item);
@@ -51,6 +57,9 @@ void ui_Scene::AddItem(std::string name, glm::ivec2 data)
 
 bool ui_Scene::SelectionChanged(const CEGUI::EventArgs& e)
 {
+
+
+	//Prepare selection info
 
 
 	ClearSelectedData();
@@ -66,6 +75,8 @@ bool ui_Scene::SelectionChanged(const CEGUI::EventArgs& e)
 void ui_Scene::ClearSelectedDataFromScene()
 {
 
+
+	//for deleting entities
 
 
 	CEGUI::ListboxItem * item = Listbox->getFirstSelectedItem();

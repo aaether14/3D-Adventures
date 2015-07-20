@@ -1,5 +1,16 @@
-#ifndef STATIC_INFO_HPP
-#define STATIC_INFO_HPP
+/*
+
+
+Storing transform data for entity instancing
+
+
+*/
+
+
+
+
+#ifndef TRANSFORM_INFO_HPP
+#define TRANSFORM_INFO_HPP
 
 
 

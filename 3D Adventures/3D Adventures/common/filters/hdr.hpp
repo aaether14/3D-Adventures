@@ -1,3 +1,15 @@
+/*
+
+
+High Dynamic Range including Bloom, Tone mapping, white points and basic exposure
+WIP
+
+
+*/
+
+
+
+
 #ifndef HDR_HPP
 #define HDR_HPP
 
@@ -6,7 +18,7 @@
 
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

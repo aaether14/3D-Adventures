@@ -1,9 +1,24 @@
+/*
+
+
+
+Cascade shadow mapping attempt
+WIP
+
+
+
+*/
+
+
+
+
+
 #ifndef SHADOW_CALCULATOR_HPP
 #define SHADOW_CALCULATOR_HPP
 
 
 
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 #define MAX_SPLITS 4

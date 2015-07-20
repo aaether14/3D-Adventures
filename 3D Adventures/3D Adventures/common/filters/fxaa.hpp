@@ -1,3 +1,14 @@
+/*
+
+
+Fast aporXimate Anti Aliasing
+
+
+*/
+
+
+
+
 #ifndef FXAA_HPP
 #define FXAA_HPP
 
@@ -6,7 +17,7 @@
 
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

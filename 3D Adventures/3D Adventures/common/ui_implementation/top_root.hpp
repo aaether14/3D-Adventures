@@ -1,3 +1,14 @@
+/*
+
+
+Top bar ui layout management
+
+
+*/
+
+
+
+
 #ifndef TOP_ROOT_HPP
 #define TOP_ROOT_HPP
 

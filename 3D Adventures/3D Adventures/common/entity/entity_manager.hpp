@@ -1,3 +1,15 @@
+/*
+
+
+Entity manager implementation to determine how each visible entity affects the scene
+Also stores the entity palette
+It uses the terrain quad tree for frustum culling
+
+
+*/
+
+
+
 #ifndef ENTITY_MANAGER_HPP
 #define ENTITY_MANAGER_HPP
 

@@ -1,3 +1,16 @@
+/*
+
+
+Attempt to create Depth of Field
+WIP
+
+
+*/
+
+
+
+
+
 #ifndef DOF_HPP
 #define DOF_HPP
 
@@ -6,7 +19,7 @@
 
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
-#include <util/controller_math.hpp>
+#include <util/math_helper.hpp>
 
 
 

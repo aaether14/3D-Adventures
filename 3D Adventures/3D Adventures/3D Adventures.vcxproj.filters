@@ -165,19 +165,10 @@
     <ClCompile Include="common\filters\ssao.cpp">
       <Filter>common\filters</Filter>
     </ClCompile>
-    <ClCompile Include="common\model_loaders\animated_mesh.cpp">
-      <Filter>common\model_loaders</Filter>
-    </ClCompile>
-    <ClCompile Include="common\model_loaders\assimp_loader.cpp">
-      <Filter>common\model_loaders</Filter>
-    </ClCompile>
     <ClCompile Include="common\model_loaders\granny_loader.cpp">
       <Filter>common\model_loaders</Filter>
     </ClCompile>
     <ClCompile Include="common\model_loaders\granny_loader_helper.cpp">
-      <Filter>common\model_loaders</Filter>
-    </ClCompile>
-    <ClCompile Include="common\model_loaders\math_3d.cpp">
       <Filter>common\model_loaders</Filter>
     </ClCompile>
     <ClCompile Include="common\model_loaders\aaether_loader.cpp">
@@ -223,9 +214,6 @@
       <Filter>common\util</Filter>
     </ClCompile>
     <ClCompile Include="common\util\view.cpp">
-      <Filter>common\util</Filter>
-    </ClCompile>
-    <ClCompile Include="common\util\controller_math.cpp">
       <Filter>common\util</Filter>
     </ClCompile>
     <ClCompile Include="common\ui_implementation\lighting_root.cpp">
@@ -284,6 +272,9 @@
     </ClCompile>
     <ClCompile Include="common\components\general_entity_info_component.cpp">
       <Filter>common\components</Filter>
+    </ClCompile>
+    <ClCompile Include="common\util\math_helper.cpp">
+      <Filter>common\util</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -463,22 +454,7 @@
     <ClInclude Include="common\filters\ssao.hpp">
       <Filter>common\filters</Filter>
     </ClInclude>
-    <ClInclude Include="common\model_loaders\animated_mesh.hpp">
-      <Filter>common\model_loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="common\model_loaders\assimp_loader.hpp">
-      <Filter>common\model_loaders</Filter>
-    </ClInclude>
     <ClInclude Include="common\model_loaders\granny_loader.h">
-      <Filter>common\model_loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="common\model_loaders\math_3d.h">
-      <Filter>common\model_loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="common\model_loaders\ogldev_types.h">
-      <Filter>common\model_loaders</Filter>
-    </ClInclude>
-    <ClInclude Include="common\model_loaders\ogldev_util.h">
       <Filter>common\model_loaders</Filter>
     </ClInclude>
     <ClInclude Include="common\model_loaders\aaether_loader.hpp">
@@ -524,9 +500,6 @@
       <Filter>common\util</Filter>
     </ClInclude>
     <ClInclude Include="common\util\view.hpp">
-      <Filter>common\util</Filter>
-    </ClInclude>
-    <ClInclude Include="common\util\controller_math.hpp">
       <Filter>common\util</Filter>
     </ClInclude>
     <ClInclude Include="common\ui_implementation\lighting_root.hpp">
@@ -597,6 +570,9 @@
     </ClInclude>
     <ClInclude Include="common\components\general_entity_info_component.hpp">
       <Filter>common\components</Filter>
+    </ClInclude>
+    <ClInclude Include="common\util\math_helper.hpp">
+      <Filter>common\util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

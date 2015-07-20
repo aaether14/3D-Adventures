@@ -8,6 +8,9 @@ bool InfoComponent::isValid(char * extension)
 {
 
 
+	//See if valid extension
+
+
 	if (!std::string(extension).compare(".ainfo"))
 		return true;
 	return false;
@@ -21,7 +24,7 @@ bool InfoComponent::isValid(char * extension)
 void InfoComponent::Load(char * path, char* extension)
 {
 
-
+	//Read if valid file
 
 	info->Read(std::ifstream(path));
 
@@ -48,6 +51,7 @@ void InfoComponent::GeneralEntityInfo::Read(std::ifstream & is)
 {
 
 
+	//read xml using boost
 
 
 	using boost::property_tree::ptree;
@@ -73,6 +77,9 @@ void InfoComponent::GeneralEntityInfo::Read(std::ifstream & is)
 			base_rot = v.second.get<std::string>("Rotation");
 			base_scale = v.second.get<std::string>("Scale");
 			affected_by_ssao = v.second.get<GLboolean>("SSAO");
+			cull = v.second.get<GLboolean>("Cull");
+			radius = v.second.get<GLfloat>("Radius");
+			name = v.second.get<std::string>("Name");
 
 
 
@@ -81,6 +88,10 @@ void InfoComponent::GeneralEntityInfo::Read(std::ifstream & is)
 
 
 		}
+
+
+		break;
+
 	}
 
 }
