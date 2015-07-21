@@ -33,7 +33,7 @@ public:
     
 
 
-	GLuint id;
+	std::string entity_name;
 	glm::mat4 matrix;
 
 
@@ -46,7 +46,7 @@ public:
 
 	void Render(ViewInfo * info, View * view,
 		ResourceLoader * res, Techniques * tech,
-		MeshShader *shader, std::vector<Entity*>entities);
+		MeshShader *shader, Entity * entity);
 
 
 };

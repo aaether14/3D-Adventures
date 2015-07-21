@@ -35,7 +35,7 @@ void Controller::Load(char*path)
 
 	res->Add("Environment",new Environment(res->GetEnvFile()));
 	res->Add("FilterSettings", new FilterSettings(res->GetFSettingsFile()));
-	res->Add("Entities", new SceneInfo());
+	res->Add("Entities", new SceneInfo(res->GetSceneFile()));
 	res->LoadChanges();
 
 

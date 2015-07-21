@@ -74,11 +74,23 @@ void SceneInfo::Load()
 	}
 
 
+
+
 	if (new_entity)
 	if (!new_entity->GetComponentsSize())
 			delete new_entity;
-		else
-			entities.push_back(new_entity);
+	else
+	{
+		if (new_entity->GetComponent("InfoComponent"))
+		{
+			InfoComponent * ic = static_cast<InfoComponent*>(new_entity->GetComponent("InfoComponent"));
+			if (!entity_map.count(ic->GetInfo()->name))
+				entity_map[ic->GetInfo()->name] = new_entity;
+		}
+	}
+
+
+
 
 
 
@@ -105,7 +117,7 @@ void SceneInfo::Load()
 
 	using boost::property_tree::ptree;
 	ptree pt;
-	read_xml("testXml.xml", pt);
+	read_xml(GetPath(), pt);
 
 
 
@@ -143,7 +155,7 @@ void SceneInfo::Load()
 			base_position = v.second.get<std::string>("Position");
 			base_rotation = v.second.get<std::string>("Rotation");
 			base_scale = v.second.get<std::string>("Scale");
-			new_info->id = v.second.get<int>("Id");
+			new_info->entity_name = v.second.get<std::string>("EntityName");
 
 
 			new_info->pos = Math::GetVecFromString(base_position);
@@ -172,6 +184,7 @@ void SceneInfo::Load()
 
 
 
+	SetShouldReset(true);
 
 
 }
@@ -220,7 +233,7 @@ void SceneInfo::Save()
 			new_info.push_back(ptree::value_type("Position", ptree(Math::GetStringFromVec(info->pos))));
 			new_info.push_back(ptree::value_type("Rotation", ptree(Math::GetStringFromVec(info->rot))));
 			new_info.push_back(ptree::value_type("Scale", ptree(Math::GetStringFromVec(info->scale))));
-			new_info.push_back(ptree::value_type("Id", ptree(std::to_string(info->id))));
+			new_info.push_back(ptree::value_type("EntityName", ptree(info->entity_name)));
 			rootNode.add_child("Entity", new_info);
 
 		}
@@ -229,7 +242,7 @@ void SceneInfo::Save()
 
 
 	pt.add_child("Scene", rootNode);
-	write_xml("testXml.xml", pt);
+	write_xml(GetPath(), pt);
 
 
 

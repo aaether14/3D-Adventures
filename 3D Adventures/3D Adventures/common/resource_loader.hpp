@@ -24,6 +24,7 @@ class ResourceLoader : public BaseResourceLoader
 
 	std::string env_file;
 	std::string fsettings_file;
+	std::string scene_file;
 
 
 
@@ -43,6 +44,7 @@ public:
 	inline char* GetColorFile(){ return char_to_str(color_file); }
 	inline char* GetEnvFile(){ return char_to_str(env_file); }
 	inline char* GetFSettingsFile(){ return char_to_str(fsettings_file); }
+	inline char* GetSceneFile(){ return char_to_str(scene_file); }
 	inline char* GetTFile(){ return char_to_str(t_file); }
 	inline char* GetNFile(){ return char_to_str(n_file); }
 	inline char* GetAFile(){ return char_to_str(a_file); }

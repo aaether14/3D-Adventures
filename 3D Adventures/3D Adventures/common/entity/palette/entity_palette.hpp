@@ -40,13 +40,14 @@ class EntityPalette
 
 
 	GLboolean visible;
-	GLuint id;
+	Entity * current_entity;
+	GLuint entity_counter;
 
 
 
 
 	void Init();
-
+	glm::mat4 GetMatrix(Entity * entity); // function to compute matrix for entity
 
 
 
@@ -56,13 +57,10 @@ public:
 
 
 	inline ui_Scene * GetSceneOutliner(){ return this->ui_scene; }
-
-
-
 	inline EntityPalette(){ this->Init(); }
 
 
-	glm::mat4 GetMatrix(Entity * entity);
+
 	void Render(Controller*ctrl, MeshShader *u_data);
 	void ControlPalette(Controller * ctrl);
 	void PlacePalette(Controller * ctrl);

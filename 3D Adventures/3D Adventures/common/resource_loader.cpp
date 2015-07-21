@@ -11,7 +11,7 @@ void ResourceLoader::LoadResourcePaths(char *path)
 	std::ifstream fin(path);
 	std::string temp_str;
 
-	std::string files[7];
+	std::string files[8];
 
 
 	while (std::getline(fin,temp_str))
@@ -22,15 +22,16 @@ void ResourceLoader::LoadResourcePaths(char *path)
 	}
 
 
-	this->terrain_file = files[0];
-	this->color_file = files[1];
-	this->t_file = files[2];
-	this->n_file = files[3];
-	this->a_file = files[4];
+	terrain_file = files[0];
+	color_file = files[1];
+	t_file = files[2];
+	n_file = files[3];
+	a_file = files[4];
 
 
-	this->env_file = files[5];
-	this->fsettings_file = files[6];
+	env_file = files[5];
+    fsettings_file = files[6];
+	scene_file = files[7];
 
 
 	fin.close();

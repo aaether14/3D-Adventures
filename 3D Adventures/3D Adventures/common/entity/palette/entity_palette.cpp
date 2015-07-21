@@ -16,8 +16,7 @@ void EntityPalette::Init()
 
 
 	visible = false;
-	id = 0;
-
+	entity_counter = 0;
 
 
 }
@@ -79,7 +78,7 @@ void EntityPalette::Render(Controller*ctrl, MeshShader *u_data)
 
 
 	if (visible)
-		scene_info->GetEntities()[id]->Render(info, view, res, tech, u_data, GetMatrix(scene_info->GetEntities()[id]));
+		current_entity->Render(info, view, res, tech, u_data, GetMatrix(current_entity));
 
 
 
@@ -109,23 +108,23 @@ void EntityPalette::ControlPalette(Controller * ctrl)
 	//switching trough the palette
 
 
-	if (id > 0 && ctrl->GetKeyOnce(GLFW_KEY_Q))
+	if (entity_counter > 0 && ctrl->GetKeyOnce(GLFW_KEY_Q))
 	{
-		id--;
+		entity_counter--;
 		ui_transform->GetPInfo()->Reset();
 		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
 		ui_transform->UpdateData();
 	}
-	if (id < scene_info->GetEntities().size() - 1 && ctrl->GetKeyOnce(GLFW_KEY_E))
+	if (entity_counter < scene_info->GetNumberOfEntities() - 1 && ctrl->GetKeyOnce(GLFW_KEY_E))
 	{
-		id++;
+		entity_counter++;
 		ui_transform->GetPInfo()->Reset();
 		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
 		ui_transform->UpdateData();
 	}
 
 
-
+	current_entity = scene_info->GetEntity(entity_counter);
 
 
 
@@ -167,7 +166,7 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 
 	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
-	InfoComponent * ic = static_cast<InfoComponent*>(scene_info->GetEntities()[id]->GetComponent("InfoComponent"));
+	InfoComponent * ic = static_cast<InfoComponent*>(current_entity->GetComponent("InfoComponent"));
 
 
 	//placing the palette entity
@@ -183,8 +182,8 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 
 
 
-		new_instance->id = id;
-		new_instance->matrix = GetMatrix(scene_info->GetEntities()[id]);
+		new_instance->entity_name = ic->GetInfo()->name;
+		new_instance->matrix = GetMatrix(current_entity);
 		new_instance->pos = ui_transform->GetPInfo()->trans[0];
 		new_instance->rot = ui_transform->GetPInfo()->trans[1];
 		new_instance->scale = ui_transform->GetPInfo()->trans[2];
@@ -200,7 +199,7 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 		GLuint ind = ctrl->GetGameObject()->GetInd(ctrl->GetCameraPointer()->GetInfo()->getCameraPos());
 
 
-		ui_scene->AddItem(std::to_string(id), glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
+		ui_scene->AddItem(ic->GetInfo()->name, glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
 		scene_info->GetEntityInfos()[ind].push_back(new_instance);
 
 

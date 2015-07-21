@@ -44,11 +44,13 @@ private:
 	glm::vec2 map_size;
 
 
-	std::vector<Entity*>entities;
+	std::map<std::string, Entity*> entity_map;
 
 
 public:
 
+	
+	inline SceneInfo(char * path){ SetPath(path); }
 
 
 	void Load();
@@ -58,8 +60,9 @@ public:
 
 
 	inline std::vector<TransformInfo*> * GetEntityInfos(){ return entity_infos; }
-	inline std::vector<Entity*> GetEntities(){ return entities; }
-
+	inline Entity* GetEntity(std::string name){ return entity_map[name]; }
+	inline Entity* GetEntity(GLuint counter){ std::map<std::string, Entity*>::iterator it(entity_map.begin()); std::advance(it, counter); return it->second; }
+	inline GLuint GetNumberOfEntities(){ return entity_map.size(); }
 
 
 

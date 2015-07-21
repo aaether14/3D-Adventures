@@ -6,11 +6,11 @@
 
 void TransformInfo::Render(ViewInfo * info, View * view,
 	ResourceLoader * res, Techniques * tech,
-	MeshShader *shader, std::vector<Entity*>entities)
+	MeshShader *shader, Entity*entity)
 {
 
 
-		entities[id]->Render(info, view, res, tech, shader, matrix);
+		entity->Render(info, view, res, tech, shader, matrix);
 
 }
 
