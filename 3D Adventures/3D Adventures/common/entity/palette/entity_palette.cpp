@@ -182,7 +182,7 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 
 
 
-		new_instance->entity_name = ic->GetInfo()->name;
+		new_instance->entity_name = ic->GetInfo()->entity_name;
 		new_instance->matrix = GetMatrix(current_entity);
 		new_instance->pos = ui_transform->GetPInfo()->trans[0];
 		new_instance->rot = ui_transform->GetPInfo()->trans[1];
@@ -199,7 +199,7 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 		GLuint ind = ctrl->GetGameObject()->GetInd(ctrl->GetCameraPointer()->GetInfo()->getCameraPos());
 
 
-		ui_scene->AddItem(ic->GetInfo()->name, glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
+		ui_scene->AddItem(ic->GetInfo()->entity_name, glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
 		scene_info->GetEntityInfos()[ind].push_back(new_instance);
 
 

@@ -3,39 +3,19 @@
 
 
 
-void SceneInfo::Load()
+void SceneInfo::AddComponentsToEntity(char * path, Entity * new_entity)
 {
 
 
 
-	//reading components
-
-
-	try
-	{
-
-
-
-		boost::filesystem::directory_iterator iterator(std::string(OBJECT_FOLDER));
-
-
-		for (; iterator != boost::filesystem::directory_iterator(); ++iterator)
-		{
-		
-
-
-			Entity * new_entity = new Entity();
-
-
-
-	boost::filesystem::directory_iterator iterator2(iterator->path());
-	for (; iterator2 != boost::filesystem::directory_iterator(); ++iterator2)
+	boost::filesystem::directory_iterator iterator(path);
+	for (; iterator != boost::filesystem::directory_iterator(); ++iterator)
 	{
 
 
 
 
-		if (boost::filesystem::is_regular_file(iterator2->path()))
+		if (boost::filesystem::is_regular_file(iterator->path()))
 		{
 
 
@@ -43,10 +23,10 @@ void SceneInfo::Load()
 
 
 			ModelComponent * mc = new ModelComponent();
-			if (mc->isValid(AString::char_to_str(boost::filesystem::extension(iterator2->path()))))
+			if (mc->isValid(AString::char_to_str(boost::filesystem::extension(iterator->path()))))
 			{
-				mc->Load(AString::char_to_str(iterator2->path().string()),
-					AString::char_to_str(boost::filesystem::extension(iterator2->path())));
+				mc->Load(AString::char_to_str(iterator->path().string()),
+					AString::char_to_str(boost::filesystem::extension(iterator->path())));
 				new_entity->AddComponent("ModelComponent", mc);
 			}
 			else
@@ -55,11 +35,12 @@ void SceneInfo::Load()
 
 
 
+
 			InfoComponent * ic = new InfoComponent();
-			if (ic->isValid(AString::char_to_str(boost::filesystem::extension(iterator2->path()))))
+			if (ic->isValid(AString::char_to_str(boost::filesystem::extension(iterator->path()))))
 			{
-				ic->Load(AString::char_to_str(iterator2->path().string()),
-					AString::char_to_str(boost::filesystem::extension(iterator2->path())));
+				ic->Load(AString::char_to_str(iterator->path().string()),
+					AString::char_to_str(boost::filesystem::extension(iterator->path())));
 				new_entity->AddComponent("InfoComponent", ic);
 			}
 			else if (ic)
@@ -74,30 +55,72 @@ void SceneInfo::Load()
 	}
 
 
+}
 
+
+
+
+void SceneInfo::AddEntity(Entity * new_entity)
+{
 
 	if (new_entity)
-	if (!new_entity->GetComponentsSize())
+		if (!new_entity->GetComponentsSize())
 			delete new_entity;
-	else
-	{
-		if (new_entity->GetComponent("InfoComponent"))
+		else
 		{
-			InfoComponent * ic = static_cast<InfoComponent*>(new_entity->GetComponent("InfoComponent"));
-			if (!entity_map.count(ic->GetInfo()->name))
-				entity_map[ic->GetInfo()->name] = new_entity;
+			if (new_entity->GetComponent("InfoComponent"))
+			{
+				InfoComponent * ic = static_cast<InfoComponent*>(new_entity->GetComponent("InfoComponent"));
+				if (!entity_map.count(ic->GetInfo()->entity_name))
+					entity_map[ic->GetInfo()->entity_name] = new_entity;
+				else
+				{
+					GLuint number_sufix = 2;
+					while (entity_map.count(ic->GetInfo()->entity_name + std::to_string(number_sufix)))
+						number_sufix++;
+					ic->GetInfo()->entity_name = ic->GetInfo()->entity_name + std::to_string(number_sufix);
+					entity_map[ic->GetInfo()->entity_name] = new_entity;
+
+				}
+			}
+			else
+			{
+				const std::string &ex("No info component found");
+				boost::system::error_code er;
+				throw boost::filesystem::filesystem_error(ex, er);
+			}
 		}
-	}
+
+
+}
 
 
 
+void SceneInfo::Load()
+{
 
 
 
+	//reading components
 
-	}
+
+	try
+	{
 
 
+		boost::filesystem::directory_iterator iterator(std::string(OBJECT_FOLDER));
+		for (; iterator != boost::filesystem::directory_iterator(); ++iterator)
+		{
+		
+
+
+			Entity * new_entity = new Entity();
+			AddComponentsToEntity(AString::char_to_str(iterator->path().string()), new_entity);
+			AddEntity(new_entity);
+
+
+
+		}
 
 
 	}

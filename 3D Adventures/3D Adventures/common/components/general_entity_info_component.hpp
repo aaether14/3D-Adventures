@@ -36,7 +36,7 @@ class InfoComponent : public AComponent
 	public:
 
 
-		std::string name;
+		std::string entity_name;
 		glm::vec3 base_rot;
 		glm::vec3 base_scale;
 		GLfloat radius;

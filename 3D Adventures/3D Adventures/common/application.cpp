@@ -15,7 +15,7 @@ int Application::Init()
 {
 
 
-	ctrl = new Controller(WINDOW_WIDTH, WINDOW_HEIGHT, FULLSCREEN, "3D Adventures 0.1.4", 4, 3);
+	ctrl = new Controller(WINDOW_WIDTH, WINDOW_HEIGHT, FULLSCREEN, "3D Adventures 0.2.5", 4, 3);
 	return 1;
 
 

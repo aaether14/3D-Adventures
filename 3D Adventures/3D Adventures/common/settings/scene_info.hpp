@@ -66,6 +66,11 @@ public:
 
 
 
+	void AddComponentsToEntity(char * path, Entity * new_entity);
+	void AddEntity(Entity* new_entity);
+
+
+
 };
 
 

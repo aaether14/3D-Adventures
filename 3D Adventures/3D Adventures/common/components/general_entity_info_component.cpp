@@ -79,7 +79,7 @@ void InfoComponent::GeneralEntityInfo::Read(std::ifstream & is)
 			affected_by_ssao = v.second.get<GLboolean>("SSAO");
 			cull = v.second.get<GLboolean>("Cull");
 			radius = v.second.get<GLfloat>("Radius");
-			name = v.second.get<std::string>("Name");
+			entity_name = v.second.get<std::string>("EntityName");
 
 
 
