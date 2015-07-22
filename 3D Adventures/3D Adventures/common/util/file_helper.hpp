@@ -15,7 +15,9 @@ Using Templates for easier binary data storing/loading
 
 
 #include "math_helper.hpp"
+#include "string_helper.hpp"
 #include <fstream>
+#include <iostream>
 #include <boost/filesystem.hpp>
 #include <boost/property_tree/xml_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
@@ -34,6 +36,13 @@ namespace AFile
 	inline void ReadFromFile(std::ifstream& is, const T& obj){ is.read((char*)&(obj), sizeof(T)); }
 
 
+	bool copyDir(
+		boost::filesystem::path const & source,
+		boost::filesystem::path const & destination
+		);
+
+
+	char *GetFileWithExtension(std::string path, std::string extension);
 
 
 }

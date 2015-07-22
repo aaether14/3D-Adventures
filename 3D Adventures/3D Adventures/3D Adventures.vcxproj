@@ -83,6 +83,7 @@
     <ClCompile Include="common\components\model_component.cpp" />
     <ClCompile Include="common\controller\controls_source.cpp" />
     <ClCompile Include="common\controls.cpp" />
+    <ClCompile Include="common\converter\assimp_converter.cpp" />
     <ClCompile Include="common\entity\entity.cpp" />
     <ClCompile Include="common\entity\palette\entity_palette.cpp" />
     <ClCompile Include="common\entity\entity_manager.cpp" />
@@ -186,6 +187,7 @@
     <ClInclude Include="common\components\model_component.hpp" />
     <ClInclude Include="common\controller\controls_source.hpp" />
     <ClInclude Include="common\controls.hpp" />
+    <ClInclude Include="common\converter\assimp_converter.hpp" />
     <ClInclude Include="common\entity\entity.hpp" />
     <ClInclude Include="common\entity\palette\entity_palette.hpp" />
     <ClInclude Include="common\entity\entity_manager.hpp" />

@@ -45,6 +45,7 @@ class InfoComponent : public AComponent
 
 
 		void Read(std::ifstream & is);
+		boost::property_tree::ptree GetPtree();
 		
 
 

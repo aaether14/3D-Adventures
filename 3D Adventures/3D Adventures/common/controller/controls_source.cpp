@@ -21,10 +21,11 @@ GLuint ControllerSource::opengl_minor_version = 0;
 GLFWwindow*ControllerSource::window = 0;
 
 
+
 glm::vec2 ControllerSource::mouse_position = glm::vec2(0.0f, 0.0f);
 GLuint ControllerSource::mouse_buttons[] = { 0 };
 GLdouble ControllerSource::wheel_offset = 0.0;
-
+std::vector<std::string> ControllerSource::drop_files;
 
 
 
@@ -137,6 +138,7 @@ void ControllerSource::InitCallbacks()
 	glfwSetCursorPosCallback(ControllerSource::window, ControllerSource::cursor_callback);
 	glfwSetWindowSizeCallback(ControllerSource::window, ControllerSource::resize_callback);
 	glfwSetScrollCallback(ControllerSource::window, ControllerSource::scroll_callback);
+	glfwSetDropCallback(ControllerSource::window, ControllerSource::drop_callback);
 
 
 }
@@ -314,5 +316,16 @@ GLvoid ControllerSource::scroll_callback(GLFWwindow* window, GLdouble xoffset, G
 {
 
 	wheel_offset = yoffset;
+
+}
+
+
+
+
+GLvoid ControllerSource::drop_callback(GLFWwindow* window, GLint count, const GLchar ** paths)
+{
+
+	for (GLuint i = 0; i < count; i++)
+		drop_files.push_back(paths[i]);
 
 }

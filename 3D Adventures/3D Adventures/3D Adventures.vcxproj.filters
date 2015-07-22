@@ -91,6 +91,9 @@
     <Filter Include="common\components">
       <UniqueIdentifier>{80d85e86-e818-4c91-a9b2-174884552a92}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common\converter">
+      <UniqueIdentifier>{668faad6-9e4a-49b0-865d-3df31b368f0e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\controls.cpp">
@@ -275,6 +278,9 @@
     </ClCompile>
     <ClCompile Include="common\util\math_helper.cpp">
       <Filter>common\util</Filter>
+    </ClCompile>
+    <ClCompile Include="common\converter\assimp_converter.cpp">
+      <Filter>common\converter</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -573,6 +579,9 @@
     </ClInclude>
     <ClInclude Include="common\util\math_helper.hpp">
       <Filter>common\util</Filter>
+    </ClInclude>
+    <ClInclude Include="common\converter\assimp_converter.hpp">
+      <Filter>common\converter</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

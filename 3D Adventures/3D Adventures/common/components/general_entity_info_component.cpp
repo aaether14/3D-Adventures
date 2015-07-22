@@ -95,3 +95,34 @@ void InfoComponent::GeneralEntityInfo::Read(std::ifstream & is)
 	}
 
 }
+
+
+
+
+boost::property_tree::ptree InfoComponent::GeneralEntityInfo::GetPtree()
+{
+
+	using boost::property_tree::ptree;
+	ptree pt;
+	ptree rootNode;
+
+
+
+
+			ptree new_info;
+			new_info.push_back(ptree::value_type("EntityName", ptree(entity_name)));
+			new_info.push_back(ptree::value_type("Rotation", ptree(Math::GetStringFromVec(base_rot))));
+			new_info.push_back(ptree::value_type("Scale", ptree(Math::GetStringFromVec(base_scale))));
+			new_info.push_back(ptree::value_type("Radius", ptree(std::to_string(radius))));
+			new_info.push_back(ptree::value_type("SSAO", ptree(std::to_string(affected_by_ssao))));
+			new_info.push_back(ptree::value_type("Cull", ptree(std::to_string(cull))));
+			rootNode.add_child("BaseInfo", new_info);
+
+
+
+	pt.add_child("GeneralInfo", rootNode);
+	
+
+	return pt;
+
+}

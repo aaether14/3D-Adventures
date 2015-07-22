@@ -97,6 +97,9 @@ class ControllerSource
 	static GLuint mouse_buttons[8];
 
 
+
+	static std::vector<std::string> drop_files;
+	static GLvoid drop_callback(GLFWwindow* window, GLint count, const GLchar ** paths);
 	static GLvoid cursor_callback(GLFWwindow* window, GLdouble x, GLdouble y);
 	static GLvoid resize_callback(GLFWwindow* window, GLint width, GLint height);
 	static GLvoid scroll_callback(GLFWwindow* window, GLdouble xoffset, GLdouble yoffset);
@@ -118,6 +121,8 @@ public:
 	inline GLuint GetKeyOnce(GLuint code){ GLuint result = (ControllerSource::keys[code] == 1); if (result)ControllerSource::keys[code]++; return result; }
 
 
+
+
 	inline glm::vec2 GetMousePosition(){ return ControllerSource::mouse_position; }
 	inline GLuint GetMouseButton(GLuint code){ return ControllerSource::mouse_buttons[code]; }
 	inline GLuint GetMouseButtonOnce(GLuint code){ GLuint result = (ControllerSource::mouse_buttons[code] == 1); if (result)ControllerSource::mouse_buttons[code]++; return result; }
@@ -133,9 +138,15 @@ public:
 	inline GLFWwindow * GetWindow(){ return this->window; }
 
 
-	inline ControllerSource() { this->Init(); }
 
+	inline std::vector<std::string> GetDropFiles(){ return drop_files; }
+	inline void ResetDropList(){ drop_files.clear(); }
+
+
+
+	inline ControllerSource() { this->Init(); }
 	inline GLfloat returnFps(){ return this->fps->Get(); }
+
 
 
 	static GLboolean CreateWindow(GLuint window_width, GLuint window_height,

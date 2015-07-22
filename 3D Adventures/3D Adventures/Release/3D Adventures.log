@@ -1,8 +1,8 @@
-﻿Build started 7/21/2015 7:04:02 PM.
+﻿Build started 7/22/2015 12:35:47 PM.
      1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\application.cpp
-         application.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\mesh_drawer.cpp
+         mesh_drawer.cpp
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(93): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\filters/shadow_calculator.hpp(116): warning C4018: '<' : signed/unsigned mismatch
        Link:
@@ -15,6 +15,7 @@
          Release\model_component.obj
          Release\controls_source.obj
          Release\controls.obj
+         Release\assimp_converter.obj
          Release\entity.obj
          Release\entity_palette.obj
          Release\entity_manager.obj
@@ -70,11 +71,11 @@
          Release\main.obj
          Generating code
      1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\game_object.cpp(60): warning C4715: 'GameObject::GetInd' : not all control paths return a value
-     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\controller\controls_source.cpp(109): warning C4715: 'ControllerSource::CreateWindow' : not all control paths return a value
+     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\controller\controls_source.cpp(110): warning C4715: 'ControllerSource::CreateWindow' : not all control paths return a value
          Finished generating code
          3D Adventures.vcxproj -> C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe
      1>Done Building Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:25.18
+Time Elapsed 00:00:23.88
