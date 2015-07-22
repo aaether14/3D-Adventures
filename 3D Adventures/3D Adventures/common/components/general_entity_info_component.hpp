@@ -1,14 +1,3 @@
-/*
-
-
-Info component implementation
-Affects entity
-
-
-*/
-
-
-
 #ifndef GENERAL_ENTITY_INFO_COMPONENT
 #define GENERAL_ENTITY_INFO_COMPONENT
 
@@ -23,12 +12,22 @@ Affects entity
 
 
 
+/**
 
+
+Info component implementation
+Affects entity
+
+
+*/
 class InfoComponent : public AComponent
 {
 
 
 
+	/**
+	Actual info for an entity
+	*/
 	class GeneralEntityInfo
 	{
 
@@ -44,7 +43,13 @@ class InfoComponent : public AComponent
 		GLboolean cull;
 
 
-		void Read(std::ifstream & is);
+		/**
+		Read general information regarding the entity from a file
+		*/
+		void Read(std:: string path);
+		/**
+		Create a boost::property_tree::ptree from the data
+		*/
 		boost::property_tree::ptree GetPtree();
 		
 
@@ -57,16 +62,29 @@ class InfoComponent : public AComponent
 public:
 
 
-
+	/**
+	Call Init()
+	*/
 	inline InfoComponent(){ Init(); }
+	/**
+	Initialize data
+	*/
 	void Init();
 
 
+	/**
+	Provide definition for pure virtual function
+	*/
 	bool isValid(char * extension);
+	/**
+	Provide definition for pure virtual function
+	*/
 	void Load(char * path, char * extension);
 
 
-
+	/**
+	Get pointer to entity information
+	*/
 	GeneralEntityInfo * GetInfo(){ return info; }
 
 

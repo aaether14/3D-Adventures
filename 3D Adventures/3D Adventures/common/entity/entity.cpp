@@ -91,7 +91,7 @@ void Entity::Clean()
 {
 
 
-
+	components.clear();
 
 
 }

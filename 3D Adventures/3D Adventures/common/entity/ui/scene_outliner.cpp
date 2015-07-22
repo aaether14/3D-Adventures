@@ -3,7 +3,7 @@
 
 
 
-void ui_Scene::Init()
+void ui_SceneOutliner::Init()
 {
 
 
@@ -12,13 +12,13 @@ void ui_Scene::Init()
 
 	CEGUI::Window *Root = CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow();
 	static_cast<CEGUI::FrameWindow*>(Root->getChild("Frame2"))->subscribeEvent(CEGUI::FrameWindow::EventCloseClicked,
-		CEGUI::Event::Subscriber(&ui_Scene::CloseWindow, this));
+		CEGUI::Event::Subscriber(&ui_SceneOutliner::CloseWindow, this));
 
 
 
 	Listbox = static_cast<CEGUI::Listbox*>(Root->getChild("Frame2/SceneOutliner"));
 	Listbox->subscribeEvent(CEGUI::Listbox::EventSelectionChanged,
-		CEGUI::Event::Subscriber(&ui_Scene::SelectionChanged, this));
+		CEGUI::Event::Subscriber(&ui_SceneOutliner::SelectionChanged, this));
 
 
 }
@@ -26,7 +26,7 @@ void ui_Scene::Init()
 
 
 
-void ui_Scene::Clean()
+void ui_SceneOutliner::Clean()
 {
 
 
@@ -38,7 +38,7 @@ void ui_Scene::Clean()
 
 
 
-void ui_Scene::AddItem(std::string name, glm::ivec2 data)
+void ui_SceneOutliner::AddItem(std::string name, glm::ivec2 data)
 {
 
 
@@ -55,7 +55,7 @@ void ui_Scene::AddItem(std::string name, glm::ivec2 data)
 
 
 
-bool ui_Scene::SelectionChanged(const CEGUI::EventArgs& e)
+bool ui_SceneOutliner::SelectionChanged(const CEGUI::EventArgs& e)
 {
 
 
@@ -72,7 +72,7 @@ bool ui_Scene::SelectionChanged(const CEGUI::EventArgs& e)
 
 
 
-void ui_Scene::ClearSelectedDataFromScene()
+void ui_SceneOutliner::ClearSelectedDataFromScene()
 {
 
 
@@ -97,7 +97,7 @@ void ui_Scene::ClearSelectedDataFromScene()
 
 
 
-void ui_Scene::UpdateSceneData(GLint ind, GLint pos)
+void ui_SceneOutliner::UpdateSceneData(GLint ind, GLint pos)
 {
 
 

@@ -1,16 +1,6 @@
-/*
-
-
-Storing transform data for entity instancing
-
-
-*/
-
-
-
-
 #ifndef TRANSFORM_INFO_HPP
 #define TRANSFORM_INFO_HPP
+
 
 
 
@@ -22,7 +12,13 @@ Storing transform data for entity instancing
 
 
 
+/**
 
+
+Storing transform data for entity instancing
+
+
+*/
 class TransformInfo
 {
 
@@ -43,10 +39,25 @@ public:
 
 
 
-
+	/**
+	Render current instance of entity with provided info
+	*/
 	void Render(ViewInfo * info, View * view,
 		ResourceLoader * res, Techniques * tech,
 		MeshShader *shader, Entity * entity);
+
+
+
+
+	/**
+	Call Clean()
+	*/
+	inline TransformInfo(){ Clean(); }
+	/**
+	Cleans data
+	*/
+	void Clean();
+
 
 
 };

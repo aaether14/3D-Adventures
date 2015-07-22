@@ -16,6 +16,10 @@
 
 
 
+
+/**
+Using Assimp to convert from varius formats to engine's format (.aao)
+*/
 class AssimpConverter
 {
 
@@ -25,13 +29,22 @@ class AssimpConverter
 public:
 
 
+	/**
+	If valid file referenced, the function creates a .aao file representing the model
+	*/
 	bool ConvertModel(const std::string& Filename);
 
 
 private:
 
 
+	/**
+	Initializing Assimp on file
+	*/
 	bool InitFromScene(const aiScene* pScene, const std::string& Filename);
+	/**
+    Filling mesh data
+	*/
 	void InitMesh(GLuint MeshIndex,
 		const aiMesh* paiMesh,
 		std::vector<glm::vec3>& Positions,

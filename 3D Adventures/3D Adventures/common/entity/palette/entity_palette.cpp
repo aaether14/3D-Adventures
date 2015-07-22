@@ -10,14 +10,25 @@ void EntityPalette::Init()
 {
 
 
-	ui_scene = new ui_Scene();
-	ui_transform = new ui_Transform();
+	ui_scene_outliner = new ui_SceneOutliner();
+	ui_transform_tab = new ui_TransformTab();
 
 
 
 	visible = false;
 	entity_counter = 0;
 
+
+}
+
+
+
+void EntityPalette::Clean()
+{
+
+
+	delete ui_scene_outliner;
+	delete ui_transform_tab;
 
 }
 
@@ -34,7 +45,7 @@ glm::mat4 EntityPalette::GetMatrix(Entity *entity)
 	//make sure we're using the same model coords
 	
 	
-	glm::mat3 trans = ui_transform->GetPInfo()->trans;
+	glm::mat3 trans = ui_transform_tab->GetPInfo()->trans;
 	glm::mat4 model_matrix;
 
 
@@ -98,8 +109,8 @@ void EntityPalette::ControlPalette(Controller * ctrl)
 
 	if (ctrl->GetKey(GLFW_KEY_LEFT_ALT))
 	{
-		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
-		ui_transform->UpdateData();
+		ui_transform_tab->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform_tab->UpdateData();
 		visible = true;
 	}
 
@@ -111,16 +122,16 @@ void EntityPalette::ControlPalette(Controller * ctrl)
 	if (entity_counter > 0 && ctrl->GetKeyOnce(GLFW_KEY_Q))
 	{
 		entity_counter--;
-		ui_transform->GetPInfo()->Reset();
-		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
-		ui_transform->UpdateData();
+		ui_transform_tab->GetPInfo()->Reset();
+		ui_transform_tab->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform_tab->UpdateData();
 	}
 	if (entity_counter < scene_info->GetNumberOfEntities() - 1 && ctrl->GetKeyOnce(GLFW_KEY_E))
 	{
 		entity_counter++;
-		ui_transform->GetPInfo()->Reset();
-		ui_transform->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
-		ui_transform->UpdateData();
+		ui_transform_tab->GetPInfo()->Reset();
+		ui_transform_tab->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform_tab->UpdateData();
 	}
 
 
@@ -137,15 +148,15 @@ void EntityPalette::ControlPalette(Controller * ctrl)
 
 
 
-		for (GLuint i = 0; i < ui_scene->GetSelectedData().size(); i++)
+		for (GLuint i = 0; i < ui_scene_outliner->GetSelectedData().size(); i++)
 		{
-			scene_info->GetEntityInfos()[ui_scene->GetSelectedData()[i].x].erase(
-				scene_info->GetEntityInfos()[ui_scene->GetSelectedData()[i].x].begin() + ui_scene->GetSelectedData()[i].y);
-			ui_scene->UpdateSceneData(ui_scene->GetSelectedData()[i].x, ui_scene->GetSelectedData()[i].y);
+			scene_info->GetEntityInfos()[ui_scene_outliner->GetSelectedData()[i].x].erase(
+				scene_info->GetEntityInfos()[ui_scene_outliner->GetSelectedData()[i].x].begin() + ui_scene_outliner->GetSelectedData()[i].y);
+			ui_scene_outliner->UpdateSceneData(ui_scene_outliner->GetSelectedData()[i].x, ui_scene_outliner->GetSelectedData()[i].y);
 
 		}
 
-			ui_scene->ClearSelectedDataFromScene();
+			ui_scene_outliner->ClearSelectedDataFromScene();
 
 
 	}
@@ -184,9 +195,9 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 
 		new_instance->entity_name = ic->GetInfo()->entity_name;
 		new_instance->matrix = GetMatrix(current_entity);
-		new_instance->pos = ui_transform->GetPInfo()->trans[0];
-		new_instance->rot = ui_transform->GetPInfo()->trans[1];
-		new_instance->scale = ui_transform->GetPInfo()->trans[2];
+		new_instance->pos = ui_transform_tab->GetPInfo()->trans[0];
+		new_instance->rot = ui_transform_tab->GetPInfo()->trans[1];
+		new_instance->scale = ui_transform_tab->GetPInfo()->trans[2];
 
 
 		if (ic)
@@ -199,7 +210,7 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 		GLuint ind = ctrl->GetGameObject()->GetInd(ctrl->GetCameraPointer()->GetInfo()->getCameraPos());
 
 
-		ui_scene->AddItem(ic->GetInfo()->entity_name, glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
+		ui_scene_outliner->AddItem(ic->GetInfo()->entity_name, glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
 		scene_info->GetEntityInfos()[ind].push_back(new_instance);
 
 

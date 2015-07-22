@@ -1,4 +1,11 @@
-/*
+#ifndef BASE_COMPONENT_HPP
+#define BASE_COMPONENT_HPP
+
+
+
+
+
+/**
 
 
 Base component implementation
@@ -7,17 +14,6 @@ Dependent on file's extension to determine it's actions
 
 
 */
-
-
-
-
-#ifndef BASE_COMPONENT_HPP
-#define BASE_COMPONENT_HPP
-
-
-
-
-
 class AComponent
 {
 
@@ -30,7 +26,13 @@ protected:
 public:
 
 
+	/**
+	Check if the component can handle the extension
+	*/
 	virtual bool isValid(char * extension) = 0;
+	/**
+	Provide resource loading function for the component based on extension
+	*/
 	virtual void Load(char * path, char * extension) = 0;
 
 

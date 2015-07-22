@@ -39,8 +39,13 @@ class SceneInfo : public AStateSaver
 private:
 
 
-
+	/*
+	Instance information
+	*/
 	std::vector<TransformInfo*> * entity_infos;
+
+
+
 	GLuint number_of_tiles;
 	glm::vec2 map_size;
 

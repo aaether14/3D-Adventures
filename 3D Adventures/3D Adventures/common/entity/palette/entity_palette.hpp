@@ -1,15 +1,3 @@
-/*
-
-
-entity palette implementation
-also stores information affecting scene outliner and transform tab from ui
-
-
-*/
-
-
-
-
 #ifndef STATIC_BUILDER_HPP
 #define STATIC_BUILDER_HPP
 
@@ -19,7 +7,7 @@ also stores information affecting scene outliner and transform tab from ui
 
 #include <entity_info/transform_info.hpp>
 #include "../ui/scene_outliner.hpp"
-#include "../ui/ui_transform.hpp"
+#include "../ui/ui_transform_tab.hpp"
 #include <CEGUI/CEGUI.h>
 #include <util/string_helper.hpp>
 
@@ -27,15 +15,22 @@ also stores information affecting scene outliner and transform tab from ui
 
 
 
+/**
 
+
+entity palette implementation
+also stores information affecting scene outliner and transform tab from ui
+
+
+*/
 class EntityPalette
 {
 
 
 	//UI data
 
-	ui_Scene * ui_scene;
-	ui_Transform * ui_transform;
+	ui_SceneOutliner * ui_scene_outliner;
+	ui_TransformTab * ui_transform_tab;
 
 
 
@@ -45,9 +40,17 @@ class EntityPalette
 
 
 
-
+	/**
+	Initialize data*/
 	void Init();
-	glm::mat4 GetMatrix(Entity * entity); // function to compute matrix for entity
+	/**
+	Cleans data
+	*/
+	void Clean();
+	/**
+	Compute Model matrix from entity information
+	*/
+	glm::mat4 GetMatrix(Entity * entity); 
 
 
 
@@ -55,14 +58,30 @@ class EntityPalette
 public:
 
 
+	/**
+	Get pointer to scene outliner
+	*/
+	inline ui_SceneOutliner * GetSceneOutliner(){ return ui_scene_outliner; }
+	/**
+	Call Init
+	*/
+	inline EntityPalette(){ Init(); }
+	/**
+	Call Clean
+	*/
+	inline ~EntityPalette(){ Clean(); }
 
-	inline ui_Scene * GetSceneOutliner(){ return this->ui_scene; }
-	inline EntityPalette(){ this->Init(); }
-
-
-
+	/**
+	Render the currently selected entity
+	*/
 	void Render(Controller*ctrl, MeshShader *u_data);
+	/**
+	Manage input
+	*/
 	void ControlPalette(Controller * ctrl);
+	/**
+	Entity placement
+	*/
 	void PlacePalette(Controller * ctrl);
 
 

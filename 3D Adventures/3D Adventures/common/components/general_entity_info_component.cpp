@@ -26,7 +26,7 @@ void InfoComponent::Load(char * path, char* extension)
 
 	//Read if valid file
 
-	info->Read(std::ifstream(path));
+	info->Read(AString::char_to_str(path));
 
 
 
@@ -47,7 +47,7 @@ void InfoComponent::Init()
 
 
 
-void InfoComponent::GeneralEntityInfo::Read(std::ifstream & is)
+void InfoComponent::GeneralEntityInfo::Read(std::string path)
 {
 
 
@@ -56,7 +56,7 @@ void InfoComponent::GeneralEntityInfo::Read(std::ifstream & is)
 
 	using boost::property_tree::ptree;
 	ptree pt;
-	read_xml(is, pt);
+	read_xml(path, pt);
 
 
 

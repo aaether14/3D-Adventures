@@ -1,15 +1,3 @@
-/*
-
-
-Storing basic filters like null filter,
-gamma correction, additive and multiplicative blending
-
-
-*/
-
-
-
-
 #ifndef BASIC_FILTER_HPP
 #define BASIC_FILTER_HPP
 
@@ -25,6 +13,15 @@ gamma correction, additive and multiplicative blending
 
 
 
+
+/**
+
+
+Storing basic filters like null filter,
+gamma correction, additive and multiplicative blending
+
+
+*/
 class BasicFilterImplementation
 {
 

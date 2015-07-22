@@ -240,9 +240,6 @@
     <ClCompile Include="common\entity\ui\scene_outliner.cpp">
       <Filter>common\entity\ui</Filter>
     </ClCompile>
-    <ClCompile Include="common\entity\ui\ui_transform.cpp">
-      <Filter>common\entity\ui</Filter>
-    </ClCompile>
     <ClCompile Include="common\ui_implementation\view_root.cpp">
       <Filter>common\ui_implementation</Filter>
     </ClCompile>
@@ -281,6 +278,9 @@
     </ClCompile>
     <ClCompile Include="common\converter\assimp_converter.cpp">
       <Filter>common\converter</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity\ui\ui_transform_tab.cpp">
+      <Filter>common\entity\ui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -529,9 +529,6 @@
     <ClInclude Include="common\entity\ui\scene_outliner.hpp">
       <Filter>common\entity\ui</Filter>
     </ClInclude>
-    <ClInclude Include="common\entity\ui\ui_transform.hpp">
-      <Filter>common\entity\ui</Filter>
-    </ClInclude>
     <ClInclude Include="common\ui_implementation\view_root.hpp">
       <Filter>common\ui_implementation</Filter>
     </ClInclude>
@@ -582,6 +579,9 @@
     </ClInclude>
     <ClInclude Include="common\converter\assimp_converter.hpp">
       <Filter>common\converter</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity\ui\ui_transform_tab.hpp">
+      <Filter>common\entity\ui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

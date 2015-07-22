@@ -1,14 +1,3 @@
-/*
-
-
-Entity implmentation
-Stores components
-
-
-*/
-
-
-
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
@@ -28,7 +17,14 @@ Stores components
 
 
 
+/**
 
+
+Entity implmentation
+Stores components
+
+
+*/
 class Entity
 {
 
@@ -44,22 +40,38 @@ public:
 
 
 
-
+	/**
+	Render if components have required info
+	*/
 	void Render(ViewInfo * info, View * view,
 		ResourceLoader * res, Techniques * tech,
 		MeshShader *shader, glm::mat4 matrix);
 
 
 
+	/**
+	Add a component to the entity
+	*/
 	inline void AddComponent(std::string name, AComponent *comp){ components[name] = comp; }
+	/**
+	Get component by key
+	*/
 	inline AComponent*GetComponent(std::string name){ return components[name]; }
+	/**
+	Get number of components
+	*/
 	inline GLuint GetComponentsSize(){ return components.size(); }
 
 
 
 
-
+	/**
+	Calls Clean()
+	*/
 	inline ~Entity(){ this->Clean(); }
+	/**
+	Cleans data
+	*/
 	void Clean();
 
 

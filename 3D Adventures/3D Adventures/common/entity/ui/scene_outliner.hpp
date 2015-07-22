@@ -1,14 +1,3 @@
-/*
-
-
-Scene outliner
-WIP
-
-
-*/
-
-
-
 #ifndef SCENE_OUTLINER_HPP
 #define SCENE_OUTLINER_HPP
 
@@ -20,8 +9,15 @@ WIP
 
 
 
+/**
 
-class ui_Scene
+
+Scene outliner
+WIP
+
+
+*/
+class ui_SceneOutliner
 {
 
 
@@ -30,10 +26,15 @@ class ui_Scene
 	std::vector<glm::ivec2>selected_data;
 
 
+	/**
+	Callback triggered EventSelectionChanged event
+	*/
 	bool SelectionChanged(const CEGUI::EventArgs& e);
 
 
-
+	/**
+	Callback to process clicking 'X'
+	*/
 	inline bool CloseWindow(const CEGUI::EventArgs& e)
 	{
 		CEGUI::System::getSingleton().getDefaultGUIContext().getRootWindow()->getChild("Frame2")->hide();
@@ -45,26 +46,49 @@ class ui_Scene
 public:
 
 
-
-	inline ui_Scene(){ this->Init(); }
+	/**
+	Calls Init()
+	*/
+	inline ui_SceneOutliner(){ this->Init(); }
+	/**
+	Initialize data
+	*/
 	void Init();
 
 
 
-
-	inline ~ui_Scene(){ this->Clean(); }
+	/**
+	Calls Clean()
+	*/
+	inline ~ui_SceneOutliner(){ this->Clean(); }
+	/**
+	Cleans data
+	*/
 	void Clean();
 
 
-
+	/**
+	Add item to scene outliner (UI wise)
+	*/
 	void AddItem(std::string name, glm::ivec2 data);
+	/**
+	Get data selected in the scene outliner
+	*/
 	inline std::vector<glm::ivec2>GetSelectedData(){ return selected_data; }
 
-
+	/**
+	Clear data selected from scene outliner
+	*/
 	inline void ClearSelectedData(){ selected_data.clear(); }
 
 
+	/**
+	Delete selected data (UI wise)
+	*/
 	void ClearSelectedDataFromScene();
+	/**
+	Update scene outliner data due to deletion
+	*/
 	void UpdateSceneData(GLint ind, GLint pos);
 
 

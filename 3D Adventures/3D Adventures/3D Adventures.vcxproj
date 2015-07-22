@@ -88,7 +88,7 @@
     <ClCompile Include="common\entity\palette\entity_palette.cpp" />
     <ClCompile Include="common\entity\entity_manager.cpp" />
     <ClCompile Include="common\entity\ui\scene_outliner.cpp" />
-    <ClCompile Include="common\entity\ui\ui_transform.cpp" />
+    <ClCompile Include="common\entity\ui\ui_transform_tab.cpp" />
     <ClCompile Include="common\entity_info\transform_info.cpp" />
     <ClCompile Include="common\filters\basic_filter.cpp" />
     <ClCompile Include="common\filters\blur.cpp" />
@@ -192,7 +192,7 @@
     <ClInclude Include="common\entity\palette\entity_palette.hpp" />
     <ClInclude Include="common\entity\entity_manager.hpp" />
     <ClInclude Include="common\entity\ui\scene_outliner.hpp" />
-    <ClInclude Include="common\entity\ui\ui_transform.hpp" />
+    <ClInclude Include="common\entity\ui\ui_transform_tab.hpp" />
     <ClInclude Include="common\entity_info\transform_info.hpp" />
     <ClInclude Include="common\filters\basic_filter.hpp" />
     <ClInclude Include="common\filters\blur.hpp" />

@@ -16,6 +16,16 @@ void TransformInfo::Render(ViewInfo * info, View * view,
 
 
 
+void TransformInfo::Clean()
+{
+
+
+
+
+}
+
+
+
 
 
 
