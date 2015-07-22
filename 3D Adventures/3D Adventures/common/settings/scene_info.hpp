@@ -22,6 +22,7 @@ Entity data is stored here
 #include <base/base_state_saver.hpp>
 #include <components/model_component.hpp>
 #include <components/general_entity_info_component.hpp>
+#include <converter/assimp_converter.hpp>
 
 
 
@@ -45,6 +46,9 @@ private:
 
 
 	std::map<std::string, Entity*> entity_map;
+	void AddComponentsToEntity(char * path, Entity * new_entity);
+	void AddEntity(Entity* new_entity);
+
 
 
 public:
@@ -65,10 +69,7 @@ public:
 	inline GLuint GetNumberOfEntities(){ return entity_map.size(); }
 
 
-
-	void AddComponentsToEntity(char * path, Entity * new_entity);
-	void AddEntity(Entity* new_entity);
-
+	void InsertNewEntity(std::string path);
 
 
 };

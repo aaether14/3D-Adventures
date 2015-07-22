@@ -265,7 +265,8 @@ void SceneInfo::Save()
 
 
 	pt.add_child("Scene", rootNode);
-	write_xml(GetPath(), pt);
+	boost::property_tree::xml_writer_settings<std::string> settings(' ', 4);
+	write_xml(GetPath(), pt, std::locale(), settings);
 
 
 
@@ -282,4 +283,72 @@ void SceneInfo::Reset()
 
 }
 
+
+
+
+void SceneInfo::InsertNewEntity(std::string path)
+{
+
+	try
+	{
+
+
+		std::string copied_folder_path = "data\\objects\\";
+		std::string entity_name = path.substr(path.find_last_of("\\") + 1);
+		copied_folder_path += entity_name;
+
+
+		if (AFile::copyDir(boost::filesystem::path(path),
+			boost::filesystem::path(copied_folder_path)))
+		{
+
+			InfoComponent * ic = new InfoComponent();
+			ic->GetInfo()->base_rot = glm::vec3(0.0);
+			ic->GetInfo()->base_scale = glm::vec3(1.0);
+			ic->GetInfo()->entity_name = entity_name;
+			ic->GetInfo()->cull = 1;
+			ic->GetInfo()->affected_by_ssao = 1;
+			ic->GetInfo()->radius = 12.5;
+
+
+
+			boost::property_tree::xml_writer_settings<std::string> settings(' ', 4);
+			boost::property_tree::write_xml(AString::char_to_str(std::string(copied_folder_path + "\\general_info.ainfo"))
+				, ic->GetInfo()->GetPtree(), std::locale(), settings);
+
+
+			delete ic;
+
+
+			if (AFile::GetFileWithExtension(copied_folder_path, ".obj"))
+			{
+				AssimpConverter * ac = new AssimpConverter();
+				ac->ConvertModel(AFile::GetFileWithExtension(copied_folder_path, ".obj"));
+				delete ac;
+
+
+
+				Entity * new_entity = new Entity();
+				AddComponentsToEntity(AString::char_to_str(copied_folder_path), new_entity);
+				AddEntity(new_entity);
+
+
+			}
+			else
+				throw std::string("No model file detected!");
+
+		}
+		else
+			throw std::string("Could not create entity - most likely there's another entity with the same name!");
+
+
+
+	}
+	catch (std::string e)
+	{
+		std::cerr << e;
+	}
+
+
+}
 
