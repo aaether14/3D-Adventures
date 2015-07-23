@@ -164,7 +164,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <a class="code" href="class_terrain_shader.html">TerrainShader</a> * shader;</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> RenderQuad(<a class="code" href="class_frustum.html">Frustum</a> * <a class="code" href="structfrustum.html">frustum</a>, <a class="code" href="class_quad_node.html">QuadNode</a> * node);</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> RenderQuad(<a class="code" href="class_frustum.html">Frustum</a> * frustum, <a class="code" href="class_quad_node.html">QuadNode</a> * node);</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
@@ -230,7 +230,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_terrain_html_a20fddbebc927109fe9c5ced658adda3c"><div class="ttname"><a href="class_terrain.html#a20fddbebc927109fe9c5ced658adda3c">Terrain::GetTree</a></div><div class="ttdeci">QuadTree * GetTree()</div><div class="ttdef"><b>Definition:</b> terrain.hpp:96</div></div>
 <div class="ttc" id="math__helper_8hpp_html"><div class="ttname"><a href="math__helper_8hpp.html">math_helper.hpp</a></div></div>
 <div class="ttc" id="class_frustum_html"><div class="ttname"><a href="class_frustum.html">Frustum</a></div><div class="ttdef"><b>Definition:</b> view.hpp:154</div></div>
-<div class="ttc" id="class_quad_node_html"><div class="ttname"><a href="class_quad_node.html">QuadNode</a></div><div class="ttdef"><b>Definition:</b> quad_tree.hpp:22</div></div>
+<div class="ttc" id="class_quad_node_html"><div class="ttname"><a href="class_quad_node.html">QuadNode</a></div><div class="ttdef"><b>Definition:</b> quad_tree.hpp:23</div></div>
 <div class="ttc" id="class_terrain_html_a4a62448057b8f2a5a14462070c62b611"><div class="ttname"><a href="class_terrain.html#a4a62448057b8f2a5a14462070c62b611">Terrain::SaveChunks</a></div><div class="ttdeci">void SaveChunks(char *path, BYTE *bits, GLfloat fSizeX, GLfloat fSizeZ, GLfloat fSizeY1, GLuint chunk_height, GLuint chunk_width, GLuint height, GLuint width, GLuint mipmaps)</div><div class="ttdef"><b>Definition:</b> terrain.cpp:204</div></div>
 <div class="ttc" id="class_terrain_html"><div class="ttname"><a href="class_terrain.html">Terrain</a></div><div class="ttdef"><b>Definition:</b> terrain.hpp:47</div></div>
 <div class="ttc" id="class_terrain_html_af1edc96aebd5c2604443ed6a5a17b1a5"><div class="ttname"><a href="class_terrain.html#af1edc96aebd5c2604443ed6a5a17b1a5">Terrain::LoadChunks</a></div><div class="ttdeci">void LoadChunks(char *path)</div><div class="ttdef"><b>Definition:</b> terrain.cpp:513</div></div>
@@ -238,7 +238,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_terrain_shader_html"><div class="ttname"><a href="class_terrain_shader.html">TerrainShader</a></div><div class="ttdef"><b>Definition:</b> terrain_shader.hpp:15</div></div>
 <div class="ttc" id="class_terrain_html_a29fb3d09ffc7b82077021dd3447c1f8e"><div class="ttname"><a href="class_terrain.html#a29fb3d09ffc7b82077021dd3447c1f8e">Terrain::getHeight</a></div><div class="ttdeci">GLfloat getHeight(GLint x, GLint z)</div><div class="ttdef"><b>Definition:</b> terrain.hpp:99</div></div>
 <div class="ttc" id="terrain_8hpp_html_a5ff539cd21c424d3efcf7502fc465362"><div class="ttname"><a href="terrain_8hpp.html#a5ff539cd21c424d3efcf7502fc465362">HeightAt</a></div><div class="ttdeci">GLfloat HeightAt(Terrain *terrain, GLfloat x, GLfloat z)</div><div class="ttdef"><b>Definition:</b> terrain.cpp:153</div></div>
-<div class="ttc" id="class_quad_tree_html"><div class="ttname"><a href="class_quad_tree.html">QuadTree</a></div><div class="ttdef"><b>Definition:</b> quad_tree.hpp:106</div></div>
+<div class="ttc" id="class_quad_tree_html"><div class="ttname"><a href="class_quad_tree.html">QuadTree</a></div><div class="ttdef"><b>Definition:</b> quad_tree.hpp:146</div></div>
 <div class="ttc" id="class_terrain_html_a277c8635670840bc3c3af1f0c520c9d8"><div class="ttname"><a href="class_terrain.html#a277c8635670840bc3c3af1f0c520c9d8">Terrain::ScaleX</a></div><div class="ttdeci">GLfloat ScaleX()</div><div class="ttdef"><b>Definition:</b> terrain.hpp:91</div></div>
 <div class="ttc" id="terrain__shader_8hpp_html"><div class="ttname"><a href="terrain__shader_8hpp.html">terrain_shader.hpp</a></div></div>
 <div class="ttc" id="class_terrain_html_a5738928db8e803d8cd3e319f902572af"><div class="ttname"><a href="class_terrain.html#a5738928db8e803d8cd3e319f902572af">Terrain::ScaleZ</a></div><div class="ttdeci">GLfloat ScaleZ()</div><div class="ttdef"><b>Definition:</b> terrain.hpp:92</div></div>
@@ -249,7 +249,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="class_terrain_html_a52389332f58fa3bd25646e09082d20a4"><div class="ttname"><a href="class_terrain.html#a52389332f58fa3bd25646e09082d20a4">Terrain::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> terrain.cpp:17</div></div>
 <div class="ttc" id="terrain__strip_8hpp_html"><div class="ttname"><a href="terrain__strip_8hpp.html">terrain_strip.hpp</a></div></div>
 <div class="ttc" id="quad__tree_8hpp_html"><div class="ttname"><a href="quad__tree_8hpp.html">quad_tree.hpp</a></div></div>
-<div class="ttc" id="structfrustum_html"><div class="ttname"><a href="structfrustum.html">frustum</a></div><div class="ttdef"><b>Definition:</b> shadow_calculator.hpp:27</div></div>
 <div class="ttc" id="class_terrain_html_a8f2d5cf9f9c60e0ebc9abfbf3eec7cc6"><div class="ttname"><a href="class_terrain.html#a8f2d5cf9f9c60e0ebc9abfbf3eec7cc6">Terrain::Init</a></div><div class="ttdeci">void Init(TerrainShader *shader)</div><div class="ttdef"><b>Definition:</b> terrain.cpp:7</div></div>
 <div class="ttc" id="class_terrain_html_a948eb42212b6f9feefbc89a35b688a75"><div class="ttname"><a href="class_terrain.html#a948eb42212b6f9feefbc89a35b688a75">Terrain::Terrain</a></div><div class="ttdeci">Terrain(TerrainShader *shader)</div><div class="ttdef"><b>Definition:</b> terrain.hpp:81</div></div>
 <div class="ttc" id="class_terrain_shader_1_1_texture_attributes_html"><div class="ttname"><a href="class_terrain_shader_1_1_texture_attributes.html">TerrainShader::TextureAttributes</a></div><div class="ttdef"><b>Definition:</b> terrain_shader.hpp:28</div></div>

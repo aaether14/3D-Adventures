@@ -117,15 +117,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:af7ec86784bd338d890ea1ad17d8db7e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28bbb113a8e11f51fba238ce678a4788"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#a28bbb113a8e11f51fba238ce678a4788">BindBlurTexture</a> ()</td></tr>
 <tr class="separator:a28bbb113a8e11f51fba238ce678a4788"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4d598a1fbaa85f1538324d2822531092"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#a4d598a1fbaa85f1538324d2822531092">GenKernel</a> ()</td></tr>
-<tr class="separator:a4d598a1fbaa85f1538324d2822531092"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f6394f8434674b39b35b1c0f60dd9f5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#a8f6394f8434674b39b35b1c0f60dd9f5">GenerateNoiseTexture</a> (GLuint size)</td></tr>
-<tr class="separator:a8f6394f8434674b39b35b1c0f60dd9f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa67b455b4e7352a8141e9cd8d2d588fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#aa67b455b4e7352a8141e9cd8d2d588fd">SetUniforms</a> (glm::mat4 proj, GLfloat radius, GLfloat aspect, GLfloat tan_fov, GLfloat power, GLint num_samples)</td></tr>
 <tr class="separator:aa67b455b4e7352a8141e9cd8d2d588fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a472cdd72172c171efcea3e2d49345d7c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#a472cdd72172c171efcea3e2d49345d7c">SetGeometryPassUniforms</a> (glm::mat4 MVP, glm::mat4 MV)</td></tr>
 <tr class="separator:a472cdd72172c171efcea3e2d49345d7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adcc804496c4292dec8f789b6e017f638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#adcc804496c4292dec8f789b6e017f638">SetGrannyBoneTransform</a> (GLuint numBones, granny_matrix_4x4 GrannyBones[<a class="el" href="granny__loader_8h.html#abdb86b63a3ac2d2b3d6ad946ea404087">MAX_BONES</a>])</td></tr>
+<tr class="memitem:adcc804496c4292dec8f789b6e017f638"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#adcc804496c4292dec8f789b6e017f638">SetGrannyBoneTransform</a> (GLuint numBones, granny_matrix_4x4 GrannyBones[<a class="el" href="granny__loader_8hpp.html#abdb86b63a3ac2d2b3d6ad946ea404087">MAX_BONES</a>])</td></tr>
 <tr class="separator:adcc804496c4292dec8f789b6e017f638"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c82f30470fee2f47c491fa97c91c4f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#a5c82f30470fee2f47c491fa97c91c4f4">SetOnMeshRender</a> (GLfloat on_mesh_render)</td></tr>
 <tr class="separator:a5c82f30470fee2f47c491fa97c91c4f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -146,7 +142,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8535cc460856d80d275ff9659375165c"><td class="memItemLeft" align="right" valign="top">GLuint&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_s_s_a_o_implementation.html#a8535cc460856d80d275ff9659375165c">GetHeight</a> ()</td></tr>
 <tr class="separator:a8535cc460856d80d275ff9659375165c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Hemispherical SSAO with noise texture and blur </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="a029a72d843db990454cad816db3fc9e2"></a>
 <div class="memitem">
 <div class="memproto">
@@ -178,6 +176,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Calls Init() </p>
 
 </div>
 </div>
@@ -201,6 +200,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Initializes textures with given size </p>
 
 </div>
 </div>
@@ -225,6 +225,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Bind texture unit in ssao blur </p>
 
 </div>
 </div>
@@ -240,37 +241,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a8f6394f8434674b39b35b1c0f60dd9f5"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SSAOImplementation::GenerateNoiseTexture </td>
-          <td>(</td>
-          <td class="paramtype">GLuint&#160;</td>
-          <td class="paramname"><em>size</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a4d598a1fbaa85f1538324d2822531092"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SSAOImplementation::GenKernel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
+<p>Bind ssao textures required in shader </p>
 
 </div>
 </div>
@@ -294,6 +265,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get texture target for geometry pass </p>
 
 </div>
 </div>
@@ -317,6 +289,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get height of ssao textures </p>
 
 </div>
 </div>
@@ -340,6 +313,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get noise texture reference </p>
 
 </div>
 </div>
@@ -363,6 +337,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get secondary SSAO texture object </p>
 
 </div>
 </div>
@@ -386,6 +361,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get primary SSAO texture object </p>
 
 </div>
 </div>
@@ -409,6 +385,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Get width of ssao textures </p>
 
 </div>
 </div>
@@ -432,6 +409,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Query geometry pass </p>
 
 </div>
 </div>
@@ -456,6 +434,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set if on geometry pass </p>
 
 </div>
 </div>
@@ -482,6 +461,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Link required data to geometry pass uniforms </p>
 
 </div>
 </div>
@@ -516,6 +496,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Link bone information to geomtry pass uniforms </p>
 
 </div>
 </div>
@@ -540,6 +521,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set if meshes are currently rendered </p>
 
 </div>
 </div>
@@ -563,6 +545,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set first texture unit (ssao shader) </p>
 
 </div>
 </div>
@@ -586,6 +569,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set second texture unit (ssao shader) </p>
 
 </div>
 </div>
@@ -609,6 +593,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Set third texture unit (ssao shader) </p>
 
 </div>
 </div>
@@ -659,6 +644,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Link required data to ssao shader uniforms </p>
 
 </div>
 </div>
@@ -682,6 +668,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Use shader program for ssao texture computation </p>
 
 </div>
 </div>
@@ -705,6 +692,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Use shader program for ssao blur </p>
 
 </div>
 </div>
@@ -728,6 +716,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Use shader program for geometry pass </p>
 
 </div>
 </div>

@@ -91,109 +91,97 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="title">scene_info.hpp</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a href="scene__info_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment">Entity data is stored here</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"></span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment">*/</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<a href="scene__info_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef SCENE_INFO_HPP</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define SCENE_INFO_HPP</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="transform__info_8hpp.html">entity_info/transform_info.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="base__state__saver_8hpp.html">base/base_state_saver.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="model__component_8hpp.html">components/model_component.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="general__entity__info__component_8hpp.html">components/general_entity_info_component.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assimp__converter_8hpp.html">converter/assimp_converter.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#ifndef SCENE_INFO_HPP</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define SCENE_INFO_HPP</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="scene__info_8hpp.html#a65d64890567a199a118fcb356274e583">   16</a></span>&#160;<span class="preprocessor">#define OBJECT_FOLDER &quot;data\\objects\\&quot;</span></div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="transform__info_8hpp.html">entity_info/transform_info.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="base__state__saver_8hpp.html">base/base_state_saver.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="model__component_8hpp.html">components/model_component.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="general__entity__info__component_8hpp.html">components/general_entity_info_component.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="assimp__converter_8hpp.html">converter/assimp_converter.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="scene__info_8hpp.html#a65d64890567a199a118fcb356274e583">   30</a></span>&#160;<span class="preprocessor">#define OBJECT_FOLDER &quot;data\\objects\\&quot;</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="class_scene_info.html">   31</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_scene_info.html">SceneInfo</a> : <span class="keyword">public</span> <a class="code" href="class_a_state_saver.html">AStateSaver</a></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;{</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_scene_info.html">   35</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_scene_info.html">SceneInfo</a> : <span class="keyword">public</span> <a class="code" href="class_a_state_saver.html">AStateSaver</a></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;{</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="comment">/*</span></div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">    Instance information</span></div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="comment">    */</span></div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    std::vector&lt;TransformInfo*&gt; * entity_infos;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="comment">/*</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;<span class="comment">    Instance information</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="comment">    */</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    std::vector&lt;TransformInfo*&gt; * entity_infos;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    GLuint number_of_tiles;</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    glm::vec2 map_size;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    GLuint number_of_tiles;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    glm::vec2 map_size;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    std::map&lt;std::string, Entity*&gt; entity_map;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> AddComponentsToEntity(<span class="keywordtype">char</span> * path, <a class="code" href="class_entity.html">Entity</a> * new_entity);</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> AddEntity(<a class="code" href="class_entity.html">Entity</a>* new_entity);</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    std::map&lt;std::string, Entity*&gt; entity_map;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> AddComponentsToEntity(<span class="keywordtype">char</span> * path, <a class="code" href="class_entity.html">Entity</a> * new_entity);</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">void</span> AddEntity(<a class="code" href="class_entity.html">Entity</a>* new_entity);</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    </div>
-<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="class_scene_info.html#adf63f2a427a087e1eaa519614a4c603a">   62</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_scene_info.html#adf63f2a427a087e1eaa519614a4c603a">SceneInfo</a>(<span class="keywordtype">char</span> * path){ <a class="code" href="class_a_state_saver.html#a18118ecfa1146a5170c3d9750516e804">SetPath</a>(path); }</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene_info.html#ab0f84380eefed000cd38dbb02ef2455e">Load</a>();</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene_info.html#a363516b527f049e8f21930216bd42631">Save</a>();</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene_info.html#a934df67ed5eb0ef49194baeaf33cf7fd">Reset</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    </div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="class_scene_info.html#adf63f2a427a087e1eaa519614a4c603a">   67</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_scene_info.html#adf63f2a427a087e1eaa519614a4c603a">SceneInfo</a>(<span class="keywordtype">char</span> * path){ <a class="code" href="class_a_state_saver.html#a18118ecfa1146a5170c3d9750516e804">SetPath</a>(path); }</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="class_scene_info.html#a49497dc72611784307c98c8c479c7721">   71</a></span>&#160;    <span class="keyword">inline</span> std::vector&lt;TransformInfo*&gt; * <a class="code" href="class_scene_info.html#a49497dc72611784307c98c8c479c7721">GetEntityInfos</a>(){ <span class="keywordflow">return</span> entity_infos; }</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_scene_info.html#ac86f548bceadde6baaf3ae119f2eec9d">   72</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_entity.html">Entity</a>* <a class="code" href="class_scene_info.html#ac86f548bceadde6baaf3ae119f2eec9d">GetEntity</a>(std::string name){ <span class="keywordflow">return</span> entity_map[name]; }</div>
-<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="class_scene_info.html#abdecb6ef4cafce8e8edcadf6efa2d03a">   73</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_entity.html">Entity</a>* <a class="code" href="class_scene_info.html#abdecb6ef4cafce8e8edcadf6efa2d03a">GetEntity</a>(GLuint counter){ std::map&lt;std::string, Entity*&gt;::iterator it(entity_map.begin()); std::advance(it, counter); <span class="keywordflow">return</span> it-&gt;second; }</div>
-<div class="line"><a name="l00074"></a><span class="lineno"><a class="line" href="class_scene_info.html#ae770e8c75ec142be9240f121b17a7092">   74</a></span>&#160;    <span class="keyword">inline</span> GLuint <a class="code" href="class_scene_info.html#ae770e8c75ec142be9240f121b17a7092">GetNumberOfEntities</a>(){ <span class="keywordflow">return</span> entity_map.size(); }</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene_info.html#aa8bed4cdb001c1d03be42770e07399a1">InsertNewEntity</a>(std::string path);</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;};</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene_info.html#ab0f84380eefed000cd38dbb02ef2455e">Load</a>();</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene_info.html#a363516b527f049e8f21930216bd42631">Save</a>();</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene_info.html#a934df67ed5eb0ef49194baeaf33cf7fd">Reset</a>();</div>
 <div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_scene_info_html_a363516b527f049e8f21930216bd42631"><div class="ttname"><a href="class_scene_info.html#a363516b527f049e8f21930216bd42631">SceneInfo::Save</a></div><div class="ttdeci">void Save()</div><div class="ttdef"><b>Definition:</b> scene_info.cpp:218</div></div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_scene_info.html#a49497dc72611784307c98c8c479c7721">   90</a></span>&#160;    <span class="keyword">inline</span> std::vector&lt;TransformInfo*&gt; * <a class="code" href="class_scene_info.html#a49497dc72611784307c98c8c479c7721">GetEntityInfos</a>(){ <span class="keywordflow">return</span> entity_infos; }</div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="class_scene_info.html#ac86f548bceadde6baaf3ae119f2eec9d">   94</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_entity.html">Entity</a>* <a class="code" href="class_scene_info.html#ac86f548bceadde6baaf3ae119f2eec9d">GetEntity</a>(std::string name){ <span class="keywordflow">return</span> entity_map[name]; }</div>
+<div class="line"><a name="l00098"></a><span class="lineno"><a class="line" href="class_scene_info.html#abdecb6ef4cafce8e8edcadf6efa2d03a">   98</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_entity.html">Entity</a>* <a class="code" href="class_scene_info.html#abdecb6ef4cafce8e8edcadf6efa2d03a">GetEntity</a>(GLuint counter){ std::map&lt;std::string, Entity*&gt;::iterator it(entity_map.begin()); std::advance(it, counter); <span class="keywordflow">return</span> it-&gt;second; }</div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="class_scene_info.html#ae770e8c75ec142be9240f121b17a7092">  102</a></span>&#160;    <span class="keyword">inline</span> GLuint <a class="code" href="class_scene_info.html#ae770e8c75ec142be9240f121b17a7092">GetNumberOfEntities</a>(){ <span class="keywordflow">return</span> entity_map.size(); }</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_scene_info.html#aa8bed4cdb001c1d03be42770e07399a1">InsertNewEntity</a>(std::string path);</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;};</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_scene_info_html_a363516b527f049e8f21930216bd42631"><div class="ttname"><a href="class_scene_info.html#a363516b527f049e8f21930216bd42631">SceneInfo::Save</a></div><div class="ttdeci">void Save()</div><div class="ttdef"><b>Definition:</b> scene_info.cpp:208</div></div>
 <div class="ttc" id="base__state__saver_8hpp_html"><div class="ttname"><a href="base__state__saver_8hpp.html">base_state_saver.hpp</a></div></div>
 <div class="ttc" id="general__entity__info__component_8hpp_html"><div class="ttname"><a href="general__entity__info__component_8hpp.html">general_entity_info_component.hpp</a></div></div>
-<div class="ttc" id="class_scene_info_html_ae770e8c75ec142be9240f121b17a7092"><div class="ttname"><a href="class_scene_info.html#ae770e8c75ec142be9240f121b17a7092">SceneInfo::GetNumberOfEntities</a></div><div class="ttdeci">GLuint GetNumberOfEntities()</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:74</div></div>
-<div class="ttc" id="class_scene_info_html_ac86f548bceadde6baaf3ae119f2eec9d"><div class="ttname"><a href="class_scene_info.html#ac86f548bceadde6baaf3ae119f2eec9d">SceneInfo::GetEntity</a></div><div class="ttdeci">Entity * GetEntity(std::string name)</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:72</div></div>
+<div class="ttc" id="class_scene_info_html_ae770e8c75ec142be9240f121b17a7092"><div class="ttname"><a href="class_scene_info.html#ae770e8c75ec142be9240f121b17a7092">SceneInfo::GetNumberOfEntities</a></div><div class="ttdeci">GLuint GetNumberOfEntities()</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:102</div></div>
+<div class="ttc" id="class_scene_info_html_ac86f548bceadde6baaf3ae119f2eec9d"><div class="ttname"><a href="class_scene_info.html#ac86f548bceadde6baaf3ae119f2eec9d">SceneInfo::GetEntity</a></div><div class="ttdeci">Entity * GetEntity(std::string name)</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:94</div></div>
 <div class="ttc" id="class_a_state_saver_html_a18118ecfa1146a5170c3d9750516e804"><div class="ttname"><a href="class_a_state_saver.html#a18118ecfa1146a5170c3d9750516e804">AStateSaver::SetPath</a></div><div class="ttdeci">void SetPath(std::string source_path)</div><div class="ttdef"><b>Definition:</b> base_state_saver.hpp:68</div></div>
-<div class="ttc" id="class_scene_info_html"><div class="ttname"><a href="class_scene_info.html">SceneInfo</a></div><div class="ttdef"><b>Definition:</b> scene_info.hpp:35</div></div>
+<div class="ttc" id="class_scene_info_html"><div class="ttname"><a href="class_scene_info.html">SceneInfo</a></div><div class="ttdef"><b>Definition:</b> scene_info.hpp:31</div></div>
 <div class="ttc" id="transform__info_8hpp_html"><div class="ttname"><a href="transform__info_8hpp.html">transform_info.hpp</a></div></div>
 <div class="ttc" id="class_scene_info_html_ab0f84380eefed000cd38dbb02ef2455e"><div class="ttname"><a href="class_scene_info.html#ab0f84380eefed000cd38dbb02ef2455e">SceneInfo::Load</a></div><div class="ttdeci">void Load()</div><div class="ttdef"><b>Definition:</b> scene_info.cpp:99</div></div>
-<div class="ttc" id="class_scene_info_html_a49497dc72611784307c98c8c479c7721"><div class="ttname"><a href="class_scene_info.html#a49497dc72611784307c98c8c479c7721">SceneInfo::GetEntityInfos</a></div><div class="ttdeci">std::vector&lt; TransformInfo * &gt; * GetEntityInfos()</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:71</div></div>
+<div class="ttc" id="class_scene_info_html_a49497dc72611784307c98c8c479c7721"><div class="ttname"><a href="class_scene_info.html#a49497dc72611784307c98c8c479c7721">SceneInfo::GetEntityInfos</a></div><div class="ttdeci">std::vector&lt; TransformInfo * &gt; * GetEntityInfos()</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:90</div></div>
 <div class="ttc" id="class_entity_html"><div class="ttname"><a href="class_entity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> entity.hpp:28</div></div>
-<div class="ttc" id="class_scene_info_html_aa8bed4cdb001c1d03be42770e07399a1"><div class="ttname"><a href="class_scene_info.html#aa8bed4cdb001c1d03be42770e07399a1">SceneInfo::InsertNewEntity</a></div><div class="ttdeci">void InsertNewEntity(std::string path)</div><div class="ttdef"><b>Definition:</b> scene_info.cpp:289</div></div>
+<div class="ttc" id="class_scene_info_html_aa8bed4cdb001c1d03be42770e07399a1"><div class="ttname"><a href="class_scene_info.html#aa8bed4cdb001c1d03be42770e07399a1">SceneInfo::InsertNewEntity</a></div><div class="ttdeci">void InsertNewEntity(std::string path)</div><div class="ttdef"><b>Definition:</b> scene_info.cpp:279</div></div>
 <div class="ttc" id="model__component_8hpp_html"><div class="ttname"><a href="model__component_8hpp.html">model_component.hpp</a></div></div>
-<div class="ttc" id="class_scene_info_html_abdecb6ef4cafce8e8edcadf6efa2d03a"><div class="ttname"><a href="class_scene_info.html#abdecb6ef4cafce8e8edcadf6efa2d03a">SceneInfo::GetEntity</a></div><div class="ttdeci">Entity * GetEntity(GLuint counter)</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:73</div></div>
+<div class="ttc" id="class_scene_info_html_abdecb6ef4cafce8e8edcadf6efa2d03a"><div class="ttname"><a href="class_scene_info.html#abdecb6ef4cafce8e8edcadf6efa2d03a">SceneInfo::GetEntity</a></div><div class="ttdeci">Entity * GetEntity(GLuint counter)</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:98</div></div>
 <div class="ttc" id="assimp__converter_8hpp_html"><div class="ttname"><a href="assimp__converter_8hpp.html">assimp_converter.hpp</a></div></div>
 <div class="ttc" id="class_a_state_saver_html"><div class="ttname"><a href="class_a_state_saver.html">AStateSaver</a></div><div class="ttdef"><b>Definition:</b> base_state_saver.hpp:18</div></div>
-<div class="ttc" id="class_scene_info_html_a934df67ed5eb0ef49194baeaf33cf7fd"><div class="ttname"><a href="class_scene_info.html#a934df67ed5eb0ef49194baeaf33cf7fd">SceneInfo::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdef"><b>Definition:</b> scene_info.cpp:279</div></div>
-<div class="ttc" id="class_scene_info_html_adf63f2a427a087e1eaa519614a4c603a"><div class="ttname"><a href="class_scene_info.html#adf63f2a427a087e1eaa519614a4c603a">SceneInfo::SceneInfo</a></div><div class="ttdeci">SceneInfo(char *path)</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:62</div></div>
+<div class="ttc" id="class_scene_info_html_a934df67ed5eb0ef49194baeaf33cf7fd"><div class="ttname"><a href="class_scene_info.html#a934df67ed5eb0ef49194baeaf33cf7fd">SceneInfo::Reset</a></div><div class="ttdeci">void Reset()</div><div class="ttdef"><b>Definition:</b> scene_info.cpp:269</div></div>
+<div class="ttc" id="class_scene_info_html_adf63f2a427a087e1eaa519614a4c603a"><div class="ttname"><a href="class_scene_info.html#adf63f2a427a087e1eaa519614a4c603a">SceneInfo::SceneInfo</a></div><div class="ttdeci">SceneInfo(char *path)</div><div class="ttdef"><b>Definition:</b> scene_info.hpp:67</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

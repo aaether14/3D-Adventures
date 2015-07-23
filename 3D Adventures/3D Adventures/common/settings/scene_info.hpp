@@ -1,17 +1,3 @@
-/*
-
-
-
-Entity data is stored here
-
-
-
-*/
-
-
-
-
-
 #ifndef SCENE_INFO_HPP
 #define SCENE_INFO_HPP
 
@@ -32,6 +18,16 @@ Entity data is stored here
 
 
 
+
+/**
+
+
+
+Entity data is stored here
+
+
+
+*/
 class SceneInfo : public AStateSaver
 {
 
@@ -51,7 +47,13 @@ private:
 
 
 	std::map<std::string, Entity*> entity_map;
+	/**
+	Based on the files in path you provide ScenInfo adds specific components to the given entity
+	*/
 	void AddComponentsToEntity(char * path, Entity * new_entity);
+	/**
+	Adds entity to the entity map
+	*/
 	void AddEntity(Entity* new_entity);
 
 
@@ -59,21 +61,49 @@ private:
 public:
 
 	
+	/**
+	Sets path of the file the class will affect
+	*/
 	inline SceneInfo(char * path){ SetPath(path); }
 
 
+
+
+	/**
+	Load data from file
+	*/
 	void Load();
+	/**
+	Save data to file
+	*/
 	void Save();
+	/**
+	Reset data
+	*/
 	void Reset();
 
 
 
+	/**
+	Get vector of entity instances
+	*/
 	inline std::vector<TransformInfo*> * GetEntityInfos(){ return entity_infos; }
+	/**
+	Get entity with provided key
+	*/
 	inline Entity* GetEntity(std::string name){ return entity_map[name]; }
+	/**
+	Get entity with provided index
+	*/
 	inline Entity* GetEntity(GLuint counter){ std::map<std::string, Entity*>::iterator it(entity_map.begin()); std::advance(it, counter); return it->second; }
+	/**
+	Get number of entities in map
+	*/
 	inline GLuint GetNumberOfEntities(){ return entity_map.size(); }
 
-
+	/**
+	Insert new entity from given folder
+	*/
 	void InsertNewEntity(std::string path);
 
 

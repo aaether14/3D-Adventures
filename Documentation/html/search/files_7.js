@@ -7,6 +7,6 @@ var searchData=
   ['general_5fentity_5finfo_5fcomponent_2ecpp',['general_entity_info_component.cpp',['../general__entity__info__component_8cpp.html',1,'']]],
   ['general_5fentity_5finfo_5fcomponent_2ehpp',['general_entity_info_component.hpp',['../general__entity__info__component_8hpp.html',1,'']]],
   ['granny_5floader_2ecpp',['granny_loader.cpp',['../granny__loader_8cpp.html',1,'']]],
-  ['granny_5floader_2eh',['granny_loader.h',['../granny__loader_8h.html',1,'']]],
+  ['granny_5floader_2ehpp',['granny_loader.hpp',['../granny__loader_8hpp.html',1,'']]],
   ['granny_5floader_5fhelper_2ecpp',['granny_loader_helper.cpp',['../granny__loader__helper_8cpp.html',1,'']]]
 ];

@@ -97,8 +97,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aeb5df09a25a32f19fdffa761268ba24f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#aeb5df09a25a32f19fdffa761268ba24f">Light</a> ()</td></tr>
-<tr class="separator:aeb5df09a25a32f19fdffa761268ba24f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af0371762b46bc9631a4d20af0b6cad90"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#af0371762b46bc9631a4d20af0b6cad90">Light</a> (<a class="el" href="class_shader.html">Shader</a> *shader)</td></tr>
 <tr class="separator:af0371762b46bc9631a4d20af0b6cad90"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab6c729f23c76827dd9610ce106bcb579"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#ab6c729f23c76827dd9610ce106bcb579">Init</a> (<a class="el" href="class_shader.html">Shader</a> *shader)</td></tr>
@@ -107,8 +105,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ad0e59fad13bb6cfadc25b2c477e9ddc7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa3b4435467b3a82c5f88a139a72305e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#aa3b4435467b3a82c5f88a139a72305e9">Clean</a> ()</td></tr>
 <tr class="separator:aa3b4435467b3a82c5f88a139a72305e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a1dd130b0f3eb7d57783f6e54b2ee49"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#a3a1dd130b0f3eb7d57783f6e54b2ee49">SetLight</a> (glm::vec3 color, glm::vec3 direction, float a_intensity, float d_intensity)</td></tr>
-<tr class="separator:a3a1dd130b0f3eb7d57783f6e54b2ee49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5d127adb013d582f60deaae69b5679e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#af5d127adb013d582f60deaae69b5679e">SetDirectionalLight</a> (glm::vec3 color, glm::vec3 direction, float a_intensity, float d_intensity)</td></tr>
+<tr class="separator:af5d127adb013d582f60deaae69b5679e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b4d32512d1bdbf3c4258324d616afaf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#a2b4d32512d1bdbf3c4258324d616afaf">SetPointLights</a> (int Index, glm::vec3 color, glm::vec3 position, float a_intensity, float d_intensity, float constant, float linear, float exp)</td></tr>
 <tr class="separator:a2b4d32512d1bdbf3c4258324d616afaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8f98873b9a97b436747467ebac9628fd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#a8f98873b9a97b436747467ebac9628fd">SetSpotLights</a> (int Index, glm::vec3 color, glm::vec3 position, float a_intensity, float d_intensity, float constant, float linear, float exp, glm::vec3 direction, GLfloat Cutoff)</td></tr>
@@ -116,22 +114,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2e7267b9cd2ca8db396719f25b143418"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_light.html#a2e7267b9cd2ca8db396719f25b143418">SetFog</a> (glm::vec3 color, GLfloat density)</td></tr>
 <tr class="separator:a2e7267b9cd2ca8db396719f25b143418"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="aeb5df09a25a32f19fdffa761268ba24f"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">Light::Light </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Storing light uniforms for passing light data Provides support for directional, point and spot lights </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a class="anchor" id="af0371762b46bc9631a4d20af0b6cad90"></a>
 <div class="memitem">
 <div class="memproto">
@@ -145,6 +130,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Calls <a class="el" href="class_light.html#ab6c729f23c76827dd9610ce106bcb579">Init()</a> </p>
 
 </div>
 </div>
@@ -168,6 +154,7 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Calls <a class="el" href="class_light.html#aa3b4435467b3a82c5f88a139a72305e9">Clean()</a> </p>
 
 </div>
 </div>
@@ -184,6 +171,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Cleans data </p>
 
 </div>
 </div>
@@ -200,41 +188,16 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Initialize data on a given shader </p>
 
 </div>
 </div>
-<a class="anchor" id="a2e7267b9cd2ca8db396719f25b143418"></a>
+<a class="anchor" id="af5d127adb013d582f60deaae69b5679e"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Light::SetFog </td>
-          <td>(</td>
-          <td class="paramtype">glm::vec3&#160;</td>
-          <td class="paramname"><em>color</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">GLfloat&#160;</td>
-          <td class="paramname"><em>density</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a class="anchor" id="a3a1dd130b0f3eb7d57783f6e54b2ee49"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Light::SetLight </td>
+          <td class="memname">void Light::SetDirectionalLight </td>
           <td>(</td>
           <td class="paramtype">glm::vec3&#160;</td>
           <td class="paramname"><em>color</em>, </td>
@@ -264,6 +227,34 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Provide data for directional light </p>
+
+</div>
+</div>
+<a class="anchor" id="a2e7267b9cd2ca8db396719f25b143418"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Light::SetFog </td>
+          <td>(</td>
+          <td class="paramtype">glm::vec3&#160;</td>
+          <td class="paramname"><em>color</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">GLfloat&#160;</td>
+          <td class="paramname"><em>density</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Provide data for fog </p>
 
 </div>
 </div>
@@ -326,6 +317,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Provide data for point lights </p>
 
 </div>
 </div>
@@ -400,6 +392,7 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Provide data for spot lights </p>
 
 </div>
 </div>

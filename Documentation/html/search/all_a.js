@@ -1,7 +1,7 @@
 var searchData=
 [
   ['lerp',['LERP',['../math__helper_8hpp.html#ae965d815a766807c1599cbd83b1c047f',1,'math_helper.hpp']]],
-  ['light',['Light',['../class_light.html',1,'Light'],['../class_light.html#aeb5df09a25a32f19fdffa761268ba24f',1,'Light::Light()'],['../class_light.html#af0371762b46bc9631a4d20af0b6cad90',1,'Light::Light(Shader *shader)']]],
+  ['light',['Light',['../class_light.html',1,'Light'],['../class_light.html#af0371762b46bc9631a4d20af0b6cad90',1,'Light::Light()']]],
   ['light_2ecpp',['light.cpp',['../light_8cpp.html',1,'']]],
   ['light_2ehpp',['light.hpp',['../light_8hpp.html',1,'']]],
   ['lighting_5froot_2ecpp',['lighting_root.cpp',['../lighting__root_8cpp.html',1,'']]],

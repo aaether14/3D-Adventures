@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['attachedto',['AttachedTo',['../struct_demo_model.html#af9e65895e4a65de9b601e005f157d45e',1,'DemoModel']]],
-  ['attachmodelbone',['AttachModelBone',['../struct_demo_model.html#a227eb4b04082abc093523c1ebb280382',1,'DemoModel']]]
+  ['attachedto',['AttachedTo',['../struct_granny_model_binding.html#ab4c37b2cda49b3d63b2a990f294901d5',1,'GrannyModelBinding']]],
+  ['attachmodelbone',['AttachModelBone',['../struct_granny_model_binding.html#a4ba7624858de7105b14f7afb5cac30fd',1,'GrannyModelBinding']]]
 ];

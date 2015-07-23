@@ -2,10 +2,6 @@ var searchData=
 [
   ['debugmsg',['DebugMsg',['../texture_8hpp.html#af1fb753d176a5921acab33cc893b8443',1,'texture.hpp']]],
   ['delta',['Delta',['../class_f_p_s.html#a1e4cf12a67b349771aab666272d85c7c',1,'FPS']]],
-  ['demomesh',['DemoMesh',['../struct_demo_mesh.html',1,'DemoMesh'],['../struct_demo_mesh.html#a8f3ea0b13bfa5ee2c6f50eccff589ce4',1,'DemoMesh::DemoMesh()']]],
-  ['demomodel',['DemoModel',['../struct_demo_model.html',1,'DemoModel'],['../struct_demo_model.html#ab8ef816049a2a0bbe6a0ad87a7449301',1,'DemoModel::DemoModel()']]],
-  ['demoscene',['DemoScene',['../struct_demo_scene.html',1,'DemoScene'],['../struct_demo_scene.html#ad18c036c40b7c14ec5fab6eb42773de4',1,'DemoScene::DemoScene()']]],
-  ['demotexture',['DemoTexture',['../struct_demo_texture.html',1,'DemoTexture'],['../struct_demo_texture.html#a759fe1a0fc8de3523b2eeb4c408c8ba6',1,'DemoTexture::DemoTexture()']]],
   ['depth_5fshader',['DEPTH_SHADER',['../technique_8hpp.html#a718cbc101048ee11eb009e08ad66a6e1',1,'technique.hpp']]],
   ['depth_5ftype',['DEPTH_TYPE',['../texture_8hpp.html#ad0490d8212da6f4a60f61c7eb71f24b5',1,'texture.hpp']]],
   ['detail_5fscale',['detail_scale',['../class_terrain_shader_1_1_texture_attributes.html#a4a1488737ea00a1504bf187b4349e25f',1,'TerrainShader::TextureAttributes']]],

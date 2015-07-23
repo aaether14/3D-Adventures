@@ -6,7 +6,7 @@ var searchData=
   ['base_5fresource_5floader_2ecpp',['base_resource_loader.cpp',['../base__resource__loader_8cpp.html',1,'']]],
   ['base_5fresource_5floader_2ehpp',['base_resource_loader.hpp',['../base__resource__loader_8hpp.html',1,'']]],
   ['base_5fstate_5fsaver_2ehpp',['base_state_saver.hpp',['../base__state__saver_8hpp.html',1,'']]],
-  ['basemodelbone',['BaseModelBone',['../struct_demo_model.html#a1d00cfa553fd412f8b2d98faa38097f6',1,'DemoModel']]],
+  ['basemodelbone',['BaseModelBone',['../struct_granny_model_binding.html#a6744d25d9a65a08085ce7851b7e76f64',1,'GrannyModelBinding']]],
   ['baseresourceloader',['BaseResourceLoader',['../class_base_resource_loader.html',1,'']]],
   ['basic_5ffilter_2ecpp',['basic_filter.cpp',['../basic__filter_8cpp.html',1,'']]],
   ['basic_5ffilter_2ehpp',['basic_filter.hpp',['../basic__filter_8hpp.html',1,'']]],
@@ -26,8 +26,8 @@ var searchData=
   ['blur_2ecpp',['blur.cpp',['../blur_8cpp.html',1,'']]],
   ['blur_2ehpp',['blur.hpp',['../blur_8hpp.html',1,'']]],
   ['blurimplementation',['BlurImplementation',['../class_blur_implementation.html',1,'BlurImplementation'],['../class_blur_implementation.html#a1749ddd2cecb68ae206f9f51df9558f4',1,'BlurImplementation::BlurImplementation()']]],
-  ['bone_5fid_5flocation',['BONE_ID_LOCATION',['../granny__loader_8h.html#ae8e50307089ab33e9e68d662f40db92c',1,'granny_loader.h']]],
-  ['bone_5fweight_5flocation',['BONE_WEIGHT_LOCATION',['../granny__loader_8h.html#a8698d3f0c0473d96772cbf90f7e83f39',1,'granny_loader.h']]],
-  ['boundmeshes',['BoundMeshes',['../struct_demo_model.html#ab92ca7727bece0ff89316a76d0a4aa2b',1,'DemoModel']]],
+  ['bone_5fid_5flocation',['BONE_ID_LOCATION',['../granny__loader_8hpp.html#ae8e50307089ab33e9e68d662f40db92c',1,'granny_loader.hpp']]],
+  ['bone_5fweight_5flocation',['BONE_WEIGHT_LOCATION',['../granny__loader_8hpp.html#a8698d3f0c0473d96772cbf90f7e83f39',1,'granny_loader.hpp']]],
+  ['boundmeshes',['BoundMeshes',['../struct_granny_model_binding.html#a83313d22147c54a32b3d3736e08a2438',1,'GrannyModelBinding']]],
   ['bright_5ffilter',['BRIGHT_FILTER',['../technique_8hpp.html#aa2ad1fccdda5ebf1c00b24719ecf91c2',1,'technique.hpp']]]
 ];

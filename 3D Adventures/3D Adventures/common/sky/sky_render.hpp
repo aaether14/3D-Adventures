@@ -1,14 +1,3 @@
-/*
-
-
-Skydome implementation
-
-
-*/
-
-
-
-
 #ifndef SKY_RENDER
 #define SKY_REDNER
 
@@ -23,7 +12,13 @@ Skydome implementation
 
 
 
+/**
 
+
+Skydome implementation
+
+
+*/
 class SkyRender
 {
 
@@ -36,10 +31,25 @@ class SkyRender
 public:
 
 
+	/**
+	Calls Init()
+	*/
 	SkyRender();
+	/**
+	Calls Clean()
+	*/
 	~SkyRender();
+	/**
+	Inits model
+	*/
 	void Init();
+	/**
+	Cleans model and textures
+	*/
 	void Clean();
+	/**
+	Loads a cube map and stores it
+	*/
 	void LoadCube(const char *Directory,
 		const char *PosXFilename,
 		const char *NegXFilename,
@@ -48,6 +58,9 @@ public:
 		const char *PosZFilename,
 		const char *NegZFilename);
 
+	/**
+	Renders to scene
+	*/
 	void Render(Controller * ctrl);
 
 

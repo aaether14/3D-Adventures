@@ -2,7 +2,6 @@ var searchData=
 [
   ['radius',['Radius',['../struct_filter_settings_1_1_s_s_a_o_data.html#a23f3f1851faa9919e294ba22e358d514',1,'FilterSettings::SSAOData::Radius()'],['../class_math_1_1_circle.html#a599d1f43848f65a0a279dc3aa5655a11',1,'Math::Circle::radius()']]],
   ['randomf',['randomf',['../namespace_math.html#aec5d7239238a714ce7b4165b3fe5f4d1',1,'Math']]],
-  ['ratio',['ratio',['../structfrustum.html#a8606aabca1bb8067a4efdea720e3cb51',1,'frustum']]],
   ['read',['Read',['../class_quad_node.html#aeea93c934be4014bd0f7b5eb418bdb67',1,'QuadNode']]],
   ['readfromfile',['ReadFromFile',['../namespace_a_file.html#a88052692f0c0b3ca1be4cee13bfc6f8d',1,'AFile']]],
   ['readrawfile',['readRawFile',['../class_texture_object.html#a4ebe4de0291752fe36bb64a0ba24c024',1,'TextureObject']]],

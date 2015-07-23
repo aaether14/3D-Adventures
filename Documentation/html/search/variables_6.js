@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['indexbufferobject',['IndexBufferObject',['../struct_demo_mesh.html#afd1d859e08cbe75a95435abe2e40b09f',1,'DemoMesh']]],
-  ['initialmatrix',['InitialMatrix',['../struct_demo_model.html#aa26e707031455300ab8354470c7d4c36',1,'DemoModel']]]
+  ['indexbufferobject',['IndexBufferObject',['../struct_granny_mesh.html#a64aded3b6b9e57433565331b9fa97e63',1,'GrannyMesh']]],
+  ['initialmatrix',['InitialMatrix',['../struct_granny_model_binding.html#a8b25c15ea4a1715d73dec2364b651d24',1,'GrannyModelBinding']]]
 ];

@@ -5,15 +5,15 @@
 
 SkyRender::SkyRender()
 {
-	this->Init();
+	Init();
 }
 
 
 
 void SkyRender::Init()
 {
-	this->model = new Aa_model();
-	this->model->Load("data/objects/sphere/skybox.aao");
+	model = new Aa_model();
+	model->Load("data/objects/sphere/skybox.aao");
 }
 
 
@@ -21,7 +21,7 @@ void SkyRender::Init()
 
 SkyRender::~SkyRender()
 {
-	this->Clean();
+	Clean();
 }
 
 

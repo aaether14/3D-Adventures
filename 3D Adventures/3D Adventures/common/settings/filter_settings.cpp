@@ -171,7 +171,6 @@ void FilterSettings::Load()
 
 
 
-		break;
 
 	}
 

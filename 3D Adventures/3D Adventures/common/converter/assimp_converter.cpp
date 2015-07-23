@@ -81,29 +81,44 @@ bool AssimpConverter::InitFromScene(const aiScene* pScene, const std::string& Fi
 
 
 	std::string path = Filename.substr(0, Filename.find_last_of("\\") + 1);
-
-
-
-	GLint size1;
 	std::ofstream os(AString::char_to_str(std::string(path + "model.aao")), std::ios::binary);
-	size1 = Positions.size();
-	os.write((const char*)&size1, sizeof(GLint));
-	os.write((const char*)&Positions[0], size1 * sizeof(glm::vec3));
-	size1 = Normals.size();
-	os.write((const char*)&size1, sizeof(GLint));
-	os.write((const char*)&Normals[0], size1 * sizeof(glm::vec3));
-	size1 = TexCoords.size();
-	os.write((const char*)&size1, sizeof(GLint));
-	os.write((const char*)&TexCoords[0], size1 * sizeof(glm::vec2));
-	size1 = Indices.size();
-	os.write((const char*)&size1, sizeof(GLint));
-	os.write((const char*)&Indices[0], size1 * sizeof(GLuint));
-	size1 = m_Entries.size();
-	os.write((const char*)&size1, sizeof(GLint));
-	os.write((const char*)&m_Entries[0], size1 * sizeof(MeshEntry));
-	size1 = pScene->mNumMaterials;
-	os.write((const char*)&size1, sizeof(GLuint));
+	
+	
+	GLint positions_size = Positions.size();
+	AFile::WriteToFile(os, positions_size);
+	os.write((const char*)&Positions[0], positions_size * sizeof(glm::vec3));
+
+
+	GLint normals_size = Normals.size();
+	AFile::WriteToFile(os, normals_size);
+	os.write((const char*)&Normals[0], normals_size * sizeof(glm::vec3));
+
+
+
+	GLint tex_coords_size = TexCoords.size();
+	AFile::WriteToFile(os, tex_coords_size);
+	os.write((const char*)&TexCoords[0], tex_coords_size * sizeof(glm::vec2));
+
+
+
+	GLint indices_size = Indices.size();
+	AFile::WriteToFile(os, indices_size);
+	os.write((const char*)&Indices[0], indices_size * sizeof(GLuint));
+
+
+
+	GLint entries_size = m_Entries.size();
+	AFile::WriteToFile(os, entries_size);
+	os.write((const char*)&m_Entries[0], entries_size * sizeof(MeshEntry));
+
+
+
+	GLint number_of_materials = pScene->mNumMaterials;
+	AFile::WriteToFile(os, number_of_materials);
 	os.close();
+
+
+
 
 	os.open(AString::char_to_str(std::string(path + "model.aam")));
 	for (int i = 0; i < pScene->mNumMaterials; i++)
