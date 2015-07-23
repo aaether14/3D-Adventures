@@ -4,16 +4,15 @@
 
 
 
+
 #include <filters/ssao.hpp>
-#include <filters/shadow.hpp>
+#include <filters/exponential_shadow_map.hpp>
 #include <filters/g_buffer.hpp>
 #include <filters/blur.hpp>
 #include <filters/dof.hpp>
 #include <filters/hdr.hpp>
 #include <filters/basic_filter.hpp>
 #include <filters/fxaa.hpp>
-
-
 
 
 
@@ -43,7 +42,7 @@ class Techniques
 
 	BasicFilterImplementation * basic_filter_implementation;
 	SSAOImplementation * ssao_implementation;
-	ShadowImplementation * shadow_implementation;
+	ESMImplementation * esm_implementation;
 	BlurImplementation * blur_implementation;
 	DofImplementation * dof_implementation;
 	HdrImplementation * hdr_implementation;
@@ -67,7 +66,7 @@ public:
 
 
 
-	inline ~Techniques(){ this->Clean(); }
+	inline ~Techniques(){ Clean(); }
 	void Clean();
 
 
@@ -82,13 +81,13 @@ public:
 
 
 
-	inline BasicFilterImplementation * GetBasic(){ return this->basic_filter_implementation; }
-	inline SSAOImplementation * GetSSAO(){ return this->ssao_implementation; }
-	inline ShadowImplementation * GetShadow(){ return this->shadow_implementation; }
-	inline BlurImplementation * GetBlur(){ return this->blur_implementation; }
-	inline DofImplementation * GetDof(){ return this->dof_implementation; }
-	inline HdrImplementation * GetHdr(){ return this->hdr_implementation; }
-	inline FXAAImplementation * GetFXAA(){ return this->fxaa_implementation; }
+	inline BasicFilterImplementation * GetBasic(){ return basic_filter_implementation; }
+	inline SSAOImplementation * GetSSAO(){ return ssao_implementation; }
+	inline ESMImplementation * GetShadow(){ return esm_implementation; }
+	inline BlurImplementation * GetBlur(){ return blur_implementation; }
+	inline DofImplementation * GetDof(){ return dof_implementation; }
+	inline HdrImplementation * GetHdr(){ return hdr_implementation; }
+	inline FXAAImplementation * GetFXAA(){ return fxaa_implementation; }
 	inline GBuffer * GetGBuffer(){ return g_buffer; }
 
 

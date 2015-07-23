@@ -63,7 +63,7 @@ void MeshWrapper::FirstPass(Controller*ctrl)
 
 
 
-	this->MeshLight->SetLight(env->model_bright*
+	this->MeshLight->SetDirectionalLight(env->model_bright*
 		glm::pow(env->sun_color, glm::vec3(2.2)),
 		glm::vec3(glm::normalize(-view->getViewMatrix() * glm::vec4(env->sun_dir, 0.0))),
 		env->model_ambient,

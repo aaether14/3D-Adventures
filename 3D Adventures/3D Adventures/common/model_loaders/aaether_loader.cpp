@@ -15,7 +15,6 @@ Aa_model::Aa_model()
 {
 
 
-	m_VAO = 0;
 
 
 }

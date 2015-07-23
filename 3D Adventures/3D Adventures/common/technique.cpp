@@ -6,9 +6,6 @@
 
 
 
-
-
-
 bool Techniques::Create(GLuint window_width, GLuint window_height, 
 	GLuint shadow_width, GLuint shadow_height,
 	GLuint dof_width, GLuint dof_height,
@@ -18,14 +15,14 @@ bool Techniques::Create(GLuint window_width, GLuint window_height,
 
 
 
-	this->basic_filter_implementation = new BasicFilterImplementation();
-	this->ssao_implementation = new SSAOImplementation(window_width, window_height);
-	this->shadow_implementation = new ShadowImplementation(shadow_width, shadow_height);
-	this->blur_implementation = new BlurImplementation();
-	this->dof_implementation = new DofImplementation(dof_width, dof_height);
-	this->hdr_implementation = new HdrImplementation(bright_width, bright_height);
-	this->fxaa_implementation = new FXAAImplementation();
-	this->g_buffer = new GBuffer(window_width, window_height);
+	basic_filter_implementation = new BasicFilterImplementation();
+	ssao_implementation = new SSAOImplementation(window_width, window_height);
+    esm_implementation = new ESMImplementation(shadow_width, shadow_height);
+	blur_implementation = new BlurImplementation();
+	dof_implementation = new DofImplementation(dof_width, dof_height);
+	hdr_implementation = new HdrImplementation(bright_width, bright_height);
+	fxaa_implementation = new FXAAImplementation();
+	g_buffer = new GBuffer(window_width, window_height);
 
 
 
@@ -57,15 +54,16 @@ void Techniques::Unbind()
 {
 
 
-	this->shadow_implementation->SetShadowPass(false);
-	this->ssao_implementation->SetGeometryPass(false);
+	esm_implementation->SetShadowPass(false);
+	ssao_implementation->SetGeometryPass(false);
+
 
 	glBindTexture(GL_TEXTURE_2D, 0);
 	glBindFramebuffer(GL_FRAMEBUFFER, 0);
 	glUseProgram(0);
 
 
-	this->g_buffer->GetBuffer()->SetViewport();
+	g_buffer->GetBuffer()->SetViewport();
 
 
 }
@@ -83,23 +81,33 @@ void Techniques::ApplyFilter(GLuint prog_target, GLuint tex_source, TextureObjec
 
 
 
-
-	if (prog_target == NULL_FILTER)
-		this->basic_filter_implementation->BindNullTexture();
-	else if (prog_target == GAUS_BLUR_SHADER)
-		this->blur_implementation->BindGausBlurTexture1();
-	else if (prog_target == GAUS_BLUR_SHADER2)
-		this->blur_implementation->BindGausBlurTexture2();
-	else if (prog_target == BRIGHT_FILTER)
-		this->hdr_implementation->BindBrightTexture();
-	else if (prog_target == SSAO_FILTER)
-		this->ssao_implementation->BindSSAOTexture();
-	else if (prog_target == SSAO_BLUR)
-		this->ssao_implementation->BindBlurTexture();
-	else if (prog_target == GAMMA_CORRECTION_FILTER)
-		this->basic_filter_implementation->BindGammaTexture();
-	else if (prog_target = FXAA_FILTER)
-		this->fxaa_implementation->BindFxaaTexture();
+	switch (prog_target)
+	{
+	case NULL_FILTER:
+		basic_filter_implementation->BindNullTexture();
+		break;
+	case GAUS_BLUR_SHADER :
+		blur_implementation->BindGausBlurTexture1();
+		break;
+	case GAUS_BLUR_SHADER2 :
+		blur_implementation->BindGausBlurTexture2();
+		break;
+	case BRIGHT_FILTER :
+		hdr_implementation->BindBrightTexture();
+		break;
+	case SSAO_FILTER :
+		ssao_implementation->BindSSAOTexture();
+		break;
+	case SSAO_BLUR :
+	    ssao_implementation->BindBlurTexture();
+		break;
+	case GAMMA_CORRECTION_FILTER : 
+	    basic_filter_implementation->BindGammaTexture();
+		break;
+	case FXAA_FILTER :
+	    fxaa_implementation->BindFxaaTexture();
+		break;
+	}
 
 
 
@@ -119,26 +127,44 @@ void Techniques::ApplyFilter(GLuint prog_target, GLuint tex_source, TextureObjec
 void Techniques::RunProgram(GLuint prog_target)
 {
 
-	if (prog_target == DEPTH_SHADER)
-		this->shadow_implementation->Use();
-	else if (prog_target == NULL_FILTER)
-		this->basic_filter_implementation->GetNullFilter()->Use();
-	else if (prog_target == GAUS_BLUR_SHADER)
-		this->blur_implementation->GetGausBlur1()->Use();
-	else if (prog_target == GAUS_BLUR_SHADER2)
-		this->blur_implementation->GetGausBlur2()->Use();
-	else if (prog_target == BRIGHT_FILTER)
-		this->hdr_implementation->GetBrightShader()->Use();
-	else if (prog_target == SSAO_FILTER)
-		this->ssao_implementation->Use();
-	else if (prog_target == SSAO_BLUR)
-		this->ssao_implementation->UseBlur();
-	else if (prog_target == GAMMA_CORRECTION_FILTER)
-		this->basic_filter_implementation->GetGammaFilter()->Use();
-	else if (prog_target == GEOMETRY_PASS)
-		this->ssao_implementation->UseGeometryPass();
-	else if (prog_target == FXAA_FILTER)
-		this->fxaa_implementation->GetFxaaFilter()->Use();
+
+	switch (prog_target)
+	{
+
+
+	case DEPTH_SHADER :
+			esm_implementation->Use();
+			break;
+	case NULL_FILTER :
+			basic_filter_implementation->GetNullFilter()->Use();
+			break;
+	case GAUS_BLUR_SHADER :
+			blur_implementation->GetGausBlur1()->Use();
+			break;
+	case GAUS_BLUR_SHADER2 :
+			blur_implementation->GetGausBlur2()->Use();
+			break;
+	case BRIGHT_FILTER : 
+			hdr_implementation->GetBrightShader()->Use();
+			break;
+	case SSAO_FILTER :
+			ssao_implementation->Use();
+			break;
+	case SSAO_BLUR : 
+			ssao_implementation->UseBlur();
+			break;
+	case GAMMA_CORRECTION_FILTER :
+			basic_filter_implementation->GetGammaFilter()->Use();
+			break;
+	case GEOMETRY_PASS :
+			ssao_implementation->UseGeometryPass();
+			break;
+	case FXAA_FILTER :
+			fxaa_implementation->GetFxaaFilter()->Use();
+			break;
+
+
+	}
 
 
 }
@@ -154,7 +180,7 @@ void Techniques::Clean()
 
 	delete basic_filter_implementation;
 	delete ssao_implementation;
-	delete shadow_implementation;
+	delete esm_implementation;
 	delete blur_implementation;
 	delete dof_implementation;
 	delete hdr_implementation;

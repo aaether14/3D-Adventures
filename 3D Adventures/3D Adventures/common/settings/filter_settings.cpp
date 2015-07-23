@@ -27,18 +27,18 @@ void FilterSettings::Reset()
 	//Bloom
 
 
-	this->HDR.Bloom.Enabled = false;
-	this->HDR.Bloom.Whitepoint = 1.0;
+	HDR.Bloom.Enabled = false;
+	HDR.Bloom.Whitepoint = 1.0;
 
 
 
 	//FXAA
 
 
-	this->FXAA.Enabled = false;
-	this->FXAA.span_max = 8.0;
-	this->FXAA.reduce_min = 0.0078125;
-	this->FXAA.reduce_mul = 0.125;
+	FXAA.Enabled = false;
+	FXAA.span_max = 8.0;
+	FXAA.reduce_min = 0.0078125;
+	FXAA.reduce_mul = 0.125;
 
 
 
@@ -70,19 +70,47 @@ void FilterSettings::Save()
 {
 
 
-	std::ofstream fout(GetPath(), std::ios::binary);
-	AFile::WriteToFile(fout, SSAO.Enabled);
-	AFile::WriteToFile(fout, SSAO.NumSamples);
-	AFile::WriteToFile(fout, SSAO.Power);
-	AFile::WriteToFile(fout, SSAO.Radius);
-	AFile::WriteToFile(fout, DoF.Enabled);
-	AFile::WriteToFile(fout, HDR.Bloom.Enabled);
-	AFile::WriteToFile(fout, HDR.Bloom.Whitepoint);
-	AFile::WriteToFile(fout, FXAA.Enabled);
-	AFile::WriteToFile(fout, FXAA.reduce_min);
-	AFile::WriteToFile(fout, FXAA.reduce_mul);
-	AFile::WriteToFile(fout, FXAA.span_max);
-	fout.close();
+	using boost::property_tree::ptree;
+	ptree pt;
+	ptree rootNode;
+
+
+
+	ptree new_info;
+	new_info.push_back(ptree::value_type("Enabled", ptree(std::to_string(SSAO.Enabled))));
+	new_info.push_back(ptree::value_type("Radius", ptree(std::to_string(SSAO.Radius))));
+	new_info.push_back(ptree::value_type("Power", ptree(std::to_string(SSAO.Power))));
+	new_info.push_back(ptree::value_type("NumberOfSamples", ptree(std::to_string(SSAO.NumSamples))));
+	rootNode.add_child("SSAO", new_info);
+
+
+
+	new_info.clear();
+	new_info.push_back(ptree::value_type("Enabled", ptree(std::to_string(DoF.Enabled))));
+	rootNode.add_child("DoF", new_info);
+
+
+
+	new_info.clear();
+	new_info.push_back(ptree::value_type("BloomEnabled", ptree(std::to_string(HDR.Bloom.Enabled))));
+	new_info.push_back(ptree::value_type("Whitepoint", ptree(std::to_string(HDR.Bloom.Whitepoint))));
+	rootNode.add_child("HDR", new_info);
+
+
+	new_info.clear();
+	new_info.push_back(ptree::value_type("Enabled", ptree(std::to_string(FXAA.Enabled))));
+	new_info.push_back(ptree::value_type("ReduceMul", ptree(std::to_string(FXAA.reduce_mul))));
+	new_info.push_back(ptree::value_type("ReduceMin", ptree(std::to_string(FXAA.reduce_min))));
+	new_info.push_back(ptree::value_type("SpanMax", ptree(std::to_string(FXAA.span_max))));
+	rootNode.add_child("FXAA", new_info);
+
+
+
+
+
+	pt.add_child("Scene", rootNode);
+	boost::property_tree::xml_writer_settings<std::string> settings(' ', 4);
+	write_xml(GetPath(), pt, std::locale(), settings);
 
 
 
@@ -95,19 +123,57 @@ void FilterSettings::Load()
 {
 
 
-	std::ifstream fin(GetPath(), std::ios::binary);
-	AFile::ReadFromFile(fin, SSAO.Enabled);
-	AFile::ReadFromFile(fin, SSAO.NumSamples);
-	AFile::ReadFromFile(fin, SSAO.Power);
-	AFile::ReadFromFile(fin, SSAO.Radius);
-	AFile::ReadFromFile(fin, DoF.Enabled);
-	AFile::ReadFromFile(fin, HDR.Bloom.Enabled);
-	AFile::ReadFromFile(fin, HDR.Bloom.Whitepoint);
-	AFile::ReadFromFile(fin, FXAA.Enabled);
-	AFile::ReadFromFile(fin, FXAA.reduce_min);
-	AFile::ReadFromFile(fin, FXAA.reduce_mul);
-	AFile::ReadFromFile(fin, FXAA.span_max);
-	fin.close();
+
+	using boost::property_tree::ptree;
+	ptree pt;
+	read_xml(GetPath(), pt);
+
+
+
+
+	BOOST_FOREACH(ptree::value_type const& v, pt.get_child("Scene"))
+	{
+
+
+		if (v.first == "SSAO")
+		{
+
+
+			SSAO.Enabled = v.second.get<GLboolean>("Enabled");
+			SSAO.Radius = v.second.get<GLfloat>("Radius");
+			SSAO.Power = v.second.get<GLfloat>("Power");
+			SSAO.NumSamples = v.second.get<GLint>("NumberOfSamples");
+
+
+		}
+		else if (v.first == "DoF")
+		{
+
+			DoF.Enabled = v.second.get<GLboolean>("Enabled");
+
+		}
+		else if (v.first == "HDR")
+		{
+
+			HDR.Bloom.Enabled = v.second.get<GLboolean>("BloomEnabled");
+		    HDR.Bloom.Whitepoint = v.second.get<GLfloat>("Whitepoint");
+
+		}
+		else if (v.first == "FXAA")
+		{
+
+			FXAA.Enabled = v.second.get<GLboolean>("Enabled");
+			FXAA.reduce_mul = v.second.get<GLfloat>("ReduceMul");
+			FXAA.reduce_min = v.second.get<GLfloat>("ReduceMin");
+			FXAA.span_max = v.second.get<GLfloat>("SpanMax");
+
+		}
+
+
+
+		break;
+
+	}
 
 
 	SetShouldReset(true);

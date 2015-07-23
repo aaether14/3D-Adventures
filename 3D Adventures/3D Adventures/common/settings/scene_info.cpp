@@ -104,14 +104,12 @@ void SceneInfo::Load()
 	//reading components
 
 
-	try
-	{
 
 
 		boost::filesystem::directory_iterator iterator(std::string(OBJECT_FOLDER));
 		for (; iterator != boost::filesystem::directory_iterator(); ++iterator)
 		{
-		
+
 
 
 			Entity * new_entity = new Entity();
@@ -121,13 +119,6 @@ void SceneInfo::Load()
 
 
 		}
-
-
-	}
-	catch (const boost::filesystem::filesystem_error& ex)
-	{
-	std::cout << ex.what() << '\n';
-	}
 
 
 
@@ -155,10 +146,10 @@ void SceneInfo::Load()
 		{
 
 
-		   map_size.x = v.second.get<float>("Width");
-		   map_size.y = v.second.get<float>("Height");
-		   number_of_tiles = v.second.get<int>("Tiles");
-		   entity_infos = new std::vector<TransformInfo*>[number_of_tiles];
+			map_size.x = v.second.get<float>("Width");
+			map_size.y = v.second.get<float>("Height");
+			number_of_tiles = v.second.get<int>("Tiles");
+			entity_infos = new std::vector<TransformInfo*>[number_of_tiles];
 
 
 
@@ -191,7 +182,7 @@ void SceneInfo::Load()
 				Math::Scale(new_info->scale);
 
 
-			GLuint ind = GLuint(new_info->pos.z / (map_size.y / sqrt(number_of_tiles)))*sqrt(number_of_tiles) + 
+			GLuint ind = GLuint(new_info->pos.z / (map_size.y / sqrt(number_of_tiles)))*sqrt(number_of_tiles) +
 				GLuint(new_info->pos.x / (map_size.x / sqrt(number_of_tiles)));
 
 
@@ -199,7 +190,6 @@ void SceneInfo::Load()
 
 
 		}
-
 
 
 
@@ -289,8 +279,7 @@ void SceneInfo::Reset()
 void SceneInfo::InsertNewEntity(std::string path)
 {
 
-	try
-	{
+
 
 
 		std::string copied_folder_path = "data\\objects\\";
@@ -335,19 +324,24 @@ void SceneInfo::InsertNewEntity(std::string path)
 
 			}
 			else
-				throw std::string("No model file detected!");
+			{
+				const std::string &ex("No model file detected!");
+				boost::system::error_code er;
+				throw boost::filesystem::filesystem_error(ex, er);
+			}
 
 		}
 		else
-			throw std::string("Could not create entity - most likely there's another entity with the same name!");
+		{
+			const std::string &ex("Could not create entity - most likely there's another entity with the same name!");
+			boost::system::error_code er;
+			throw boost::filesystem::filesystem_error(ex, er);
+		}
 
 
 
-	}
-	catch (std::string e)
-	{
-		std::cerr << e;
-	}
+
+
 
 
 }

@@ -1,18 +1,6 @@
-/*
-
-
-
-Storing various settings for filters
-
-
-
-*/
-
-
-
-
 #ifndef FILTER_SETTINGS_HPP
 #define FILTER_SETTINGS_HPP
+
 
 
 
@@ -24,6 +12,16 @@ Storing various settings for filters
 
 
 
+
+/**
+
+
+
+Storing various settings for filters
+
+
+
+*/
 class FilterSettings : public AStateSaver
 {
 
@@ -75,15 +73,28 @@ public:
 
 
 
-
+	/**
+	Call Init()
+	*/
 	inline FilterSettings(char * path){ this->Init(path); }
+	/**
+	Initialize state saver with the path of the file it will affect
+	*/
 	void Init(char *path);
 
 
 
-
+	/**
+	Reset data
+	*/
 	void Reset();
+	/**
+	Save data to file
+	*/
 	void Save();
+	/**
+	Load data from file
+	*/
 	void Load();
 
 

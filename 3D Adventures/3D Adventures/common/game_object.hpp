@@ -6,7 +6,6 @@
 
 
 #include <terrain/quad_tree.hpp>
-#include <filters/shadow_calculator.hpp>
 #include <settings/settings.hpp>
 #include "resource_loader.hpp"
 #include "technique.hpp"
@@ -21,7 +20,6 @@ class GameObject
 
 
 	QuadTree *q_tree;
-	ShadowBBox * shadow_bbox;
 	ResourceLoader * res;
 	Techniques * techniques;
 
@@ -43,7 +41,6 @@ public:
 
 
 	inline Techniques * GetTechniques(){ return this->techniques; }
-	inline ShadowBBox * GetShadowBBox(){ return this->shadow_bbox; }
 	inline ResourceLoader* GetResource(){ return this->res; }
 	inline QuadTree *GetTree(){ return this->q_tree; }
 

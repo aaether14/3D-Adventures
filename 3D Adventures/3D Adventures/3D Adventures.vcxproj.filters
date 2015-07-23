@@ -159,12 +159,6 @@
     <ClCompile Include="common\filters\hdr.cpp">
       <Filter>common\filters</Filter>
     </ClCompile>
-    <ClCompile Include="common\filters\shadow.cpp">
-      <Filter>common\filters</Filter>
-    </ClCompile>
-    <ClCompile Include="common\filters\shadow_calculator.cpp">
-      <Filter>common\filters</Filter>
-    </ClCompile>
     <ClCompile Include="common\filters\ssao.cpp">
       <Filter>common\filters</Filter>
     </ClCompile>
@@ -281,6 +275,9 @@
     </ClCompile>
     <ClCompile Include="common\entity\ui\ui_transform_tab.cpp">
       <Filter>common\entity\ui</Filter>
+    </ClCompile>
+    <ClCompile Include="common\filters\exponential_shadow_map.cpp">
+      <Filter>common\filters</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -451,17 +448,8 @@
     <ClInclude Include="common\filters\hdr.hpp">
       <Filter>common\filters</Filter>
     </ClInclude>
-    <ClInclude Include="common\filters\shadow.hpp">
-      <Filter>common\filters</Filter>
-    </ClInclude>
-    <ClInclude Include="common\filters\shadow_calculator.hpp">
-      <Filter>common\filters</Filter>
-    </ClInclude>
     <ClInclude Include="common\filters\ssao.hpp">
       <Filter>common\filters</Filter>
-    </ClInclude>
-    <ClInclude Include="common\model_loaders\granny_loader.h">
-      <Filter>common\model_loaders</Filter>
     </ClInclude>
     <ClInclude Include="common\model_loaders\aaether_loader.hpp">
       <Filter>common\model_loaders</Filter>
@@ -582,6 +570,12 @@
     </ClInclude>
     <ClInclude Include="common\entity\ui\ui_transform_tab.hpp">
       <Filter>common\entity\ui</Filter>
+    </ClInclude>
+    <ClInclude Include="common\filters\exponential_shadow_map.hpp">
+      <Filter>common\filters</Filter>
+    </ClInclude>
+    <ClInclude Include="common\model_loaders\granny_loader.hpp">
+      <Filter>common\model_loaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

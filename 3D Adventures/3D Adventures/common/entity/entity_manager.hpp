@@ -6,7 +6,7 @@
 
 
 #include <model_loaders/aaether_loader.hpp>
-#include <model_loaders/granny_loader.h>
+#include <model_loaders/granny_loader.hpp>
 #include <entity_info/transform_info.hpp>
 #include "palette/entity_palette.hpp"
 

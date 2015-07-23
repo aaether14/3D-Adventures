@@ -114,13 +114,13 @@ void Pipeline::ShadowPass(Controller * ctrl)
 
 
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	ShadowImplementation * shadow = tech->GetShadow();
+	ESMImplementation * esm_shadow = tech->GetShadow();
 
 
 
-	shadow->GetShadowMap()->WriteTexture(ShadowMapWidth, ShadowMapHeight);
-	shadow->SetShadowPass(true);
-	shadow->Use();
+	esm_shadow->GetShadowMap()->WriteTexture(ShadowMapWidth, ShadowMapHeight);
+	esm_shadow->SetShadowPass(true);
+	esm_shadow->Use();
 
 
 
@@ -129,8 +129,8 @@ void Pipeline::ShadowPass(Controller * ctrl)
 
 
 	this->ApplyGausBlur(0, ctrl, 
-		shadow->GetTempShadowMap(), 
-		shadow->GetShadowMap(),
+		esm_shadow->GetTempShadowMap(), 
+		esm_shadow->GetShadowMap(),
 		ShadowMapWidth,
 		ShadowMapHeight, 
 		0.3f);

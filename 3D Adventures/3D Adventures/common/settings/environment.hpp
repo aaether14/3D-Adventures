@@ -1,15 +1,3 @@
-/*
-
-
-Storing lighting state
-WIP
-
-
-*/
-
-
-
-
 #ifndef ENVIRONMENT_HPP
 #define ENVIRONMENT_HPP
 
@@ -27,6 +15,14 @@ WIP
 
 
 
+/**
+
+
+Storing lighting state
+WIP
+
+
+*/
 class Environment : public AStateSaver
 {
 
@@ -53,13 +49,27 @@ public:
 
 
 
+	/**
+	Calls Init()
+	*/
 	inline Environment(char * path){ this->Init(path); }
+	/**
+	Initialize state saver with the path of the file it will affect
+	*/
 	void Init(char * path);
 
 	
-
+	/**
+	Reset data
+	*/
 	void Reset();
+	/**
+    Save data to file
+	*/
 	void Save();
+	/**
+	Load data from file
+	*/
 	void Load();
 
 

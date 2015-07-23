@@ -6,8 +6,6 @@ void GameObject::Init(GLuint window_width, GLuint window_height)
 {
 
 
-	this->shadow_bbox = new ShadowBBox();
-
 
 	GLuint dof_factor = 2;
 	GLuint bright_factor = 2;
@@ -32,8 +30,6 @@ void GameObject::Clean()
 {
 
 
-	if (shadow_bbox)
-	delete this->shadow_bbox;
 
 	if (res)
 	delete this->res;

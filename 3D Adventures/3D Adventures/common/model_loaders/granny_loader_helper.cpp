@@ -1,28 +1,22 @@
-//Checked 2015/1
-
-// ========================================================================
-// $File: //jeffr/granny/tutorial/rendering/opengl/opengl_rendering_helpers.cpp $
-// $DateTime: 2007/06/19 22:57:25 $
-// $Change: 15236 $
-// $Revision: #3 $
-//
-// (C) Copyright 1999-2007 by RAD Game Tools, All Rights Reserved.
-// ========================================================================
+#include "granny_loader.hpp"
 
 
 
-#include "granny_loader.h"
 
 #define CHECKED_RELEASE(x) { if (x) { (x)->Release(); } (x) = NULL; } 0
 
-DemoTexture::DemoTexture()  : Name(NULL), TextureName(0)
+
+
+
+
+GrannyTexture::GrannyTexture()  : Name(NULL), TextureName(0)
 {
 
 
 
 }
 
-DemoTexture::~DemoTexture()
+GrannyTexture::~GrannyTexture()
 {
 
 
@@ -45,7 +39,7 @@ DemoTexture::~DemoTexture()
 
 }
 
-DemoMesh::DemoMesh() : Mesh(NULL), MeshBinding(NULL), VertexBufferObject(0), IndexBufferObject(0)
+GrannyMesh::GrannyMesh() : Mesh(NULL), MeshBinding(NULL), VertexBufferObject(0), IndexBufferObject(0)
 {
    
 
@@ -53,7 +47,7 @@ DemoMesh::DemoMesh() : Mesh(NULL), MeshBinding(NULL), VertexBufferObject(0), Ind
 
 }
 
-DemoMesh::~DemoMesh()
+GrannyMesh::~GrannyMesh()
 {
 
 
@@ -81,7 +75,7 @@ DemoMesh::~DemoMesh()
 
 }
 
-DemoModel::DemoModel()  : ModelInstance(NULL)
+GrannyModelBinding::GrannyModelBinding()  : ModelInstance(NULL)
 {
 
 
@@ -89,7 +83,7 @@ DemoModel::DemoModel()  : ModelInstance(NULL)
 
 }
 
-DemoModel::~DemoModel()
+GrannyModelBinding::~GrannyModelBinding()
 {
 
 
@@ -123,24 +117,25 @@ DemoModel::~DemoModel()
 
 }
 
-DemoScene::DemoScene()
 
+
+
+
+GrannyScene::GrannyScene()
   : SceneFile(NULL),
-
     SceneFileInfo(NULL),
-
     SharedLocalPose(NULL),
-
     SharedWorldPose(NULL),
-
-
     MaxBoneCount(-1)
 
 {
-    // Nada
 }
 
-DemoScene::~DemoScene()
+
+
+
+
+GrannyScene::~GrannyScene()
 {
     for(granny_uint32x i = 0; i < Textures.size(); ++i)
     {

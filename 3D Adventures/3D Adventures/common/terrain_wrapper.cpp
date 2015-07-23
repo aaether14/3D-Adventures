@@ -93,7 +93,7 @@ void TerrainWrapper::FirstPass(Controller*ctrl)
 
 
 
-	this->TerrainLight->SetLight(env->terrain_bright*
+	this->TerrainLight->SetDirectionalLight(env->terrain_bright*
 		glm::pow(env->sun_color, glm::vec3(2.2)),
 		env->sun_dir,
 		env->terrain_ambient,

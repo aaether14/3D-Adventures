@@ -96,8 +96,7 @@
     <ClCompile Include="common\filters\fxaa.cpp" />
     <ClCompile Include="common\filters\g_buffer.cpp" />
     <ClCompile Include="common\filters\hdr.cpp" />
-    <ClCompile Include="common\filters\shadow.cpp" />
-    <ClCompile Include="common\filters\shadow_calculator.cpp" />
+    <ClCompile Include="common\filters\exponential_shadow_map.cpp" />
     <ClCompile Include="common\filters\ssao.cpp" />
     <ClCompile Include="common\game_object.cpp" />
     <ClCompile Include="common\light\light.cpp" />
@@ -200,13 +199,12 @@
     <ClInclude Include="common\filters\fxaa.hpp" />
     <ClInclude Include="common\filters\g_buffer.hpp" />
     <ClInclude Include="common\filters\hdr.hpp" />
-    <ClInclude Include="common\filters\shadow.hpp" />
-    <ClInclude Include="common\filters\shadow_calculator.hpp" />
+    <ClInclude Include="common\filters\exponential_shadow_map.hpp" />
     <ClInclude Include="common\filters\ssao.hpp" />
     <ClInclude Include="common\game_object.hpp" />
     <ClInclude Include="common\light\light.hpp" />
     <ClInclude Include="common\model_loaders\aaether_loader.hpp" />
-    <ClInclude Include="common\model_loaders\granny_loader.h" />
+    <ClInclude Include="common\model_loaders\granny_loader.hpp" />
     <ClInclude Include="common\settings\environment.hpp" />
     <ClInclude Include="common\settings\filter_settings.hpp" />
     <ClInclude Include="common\settings\scene_info.hpp" />

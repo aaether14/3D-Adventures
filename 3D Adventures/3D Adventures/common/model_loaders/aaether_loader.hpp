@@ -1,15 +1,3 @@
-/*
-
-
-Own model format implementation
-Using Assimp to convert from other formats into binary data
-for faster acces
-
-
-*/
-
-
-
 #ifndef AAETHER_LOADER
 #define AAETHER_LOADER
 
@@ -30,11 +18,23 @@ for faster acces
 
 
 
+
+/**
+
+
+Own model format implementation
+Using Assimp to convert from other formats into binary data
+for faster acces
+
+
+*/
 class Aa_model : public AModel
 {
 
 
-
+	/**
+	In order to allocate OpenGL memory for vertex data
+	*/
 	enum VB_TYPES
 	{
 		INDEX_BUFFER,
@@ -51,6 +51,9 @@ class Aa_model : public AModel
 
 
 
+	/**
+	Mesh entry of a 3d model
+	*/
 	struct Aa_entry {
 		Aa_entry()
 		{
@@ -74,13 +77,29 @@ class Aa_model : public AModel
 public:
 
 
+	/**
+	Initializes data
+	*/
 	Aa_model();
+	/**
+	Calls Clean()
+	*/
 	~Aa_model();
-
-
-	int Load(const char*path);
-	void Render();
+	/**
+	Cleans data
+	*/
 	void Clean();
+
+
+	/**
+	Loads a .aao
+	*/
+	int Load(const char*path);
+	/**
+	Renders model 
+	*/
+	void Render();
+
 
 
 };

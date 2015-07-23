@@ -131,14 +131,14 @@ Light::Light(Shader * shader)
 {
 
 
-	this->Init(shader);
+	Init(shader);
 
 
 }
 
 
 
-void Light::SetLight(glm::vec3 color, glm::vec3 direction, float a_intensity, float d_intensity)
+void Light::SetDirectionalLight(glm::vec3 color, glm::vec3 direction, float a_intensity, float d_intensity)
 {
 
 

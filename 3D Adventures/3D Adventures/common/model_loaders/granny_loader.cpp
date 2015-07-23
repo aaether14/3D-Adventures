@@ -1,4 +1,4 @@
-#include "granny_loader.h"
+#include "granny_loader.hpp"
 
 
 
@@ -80,12 +80,12 @@ bool GrannyModel::CreateDemoTextures()
 	{
 
 
-		granny_texture* GrannyTexture = Info->Textures[TexIdx];
-		assert(GrannyTexture);
+		granny_texture* g_tex = Info->Textures[TexIdx];
+		assert(g_tex);
 
-		DemoTexture* NewTex = new DemoTexture;
-		NewTex->Name = new char[strlen(GrannyTexture->FromFileName) + 1];
-		strcpy(NewTex->Name, GrannyTexture->FromFileName);
+		GrannyTexture* NewTex = new GrannyTexture();
+		NewTex->Name = new char[strlen(g_tex->FromFileName) + 1];
+		strcpy(NewTex->Name, g_tex->FromFileName);
 
 
 		string p(NewTex->Name);
@@ -120,20 +120,20 @@ bool GrannyModel::CreateDemoTextures()
 
 
 
-DemoMesh* GrannyModel::CreateBoundMesh(granny_mesh* GrannyMesh,
+GrannyMesh* GrannyModel::CreateBoundMesh(granny_mesh* g_mesh,
 	granny_model_instance* ModelInstance)
 {
 
 
 
-	assert(GrannyMesh);
+	assert(g_mesh);
 	assert(ModelInstance);
 	granny_model* SourceModel = GrannyGetSourceModel(ModelInstance);
-	DemoMesh* NewMesh = new DemoMesh;
+	GrannyMesh* NewMesh = new GrannyMesh();
 
 
-	NewMesh->Mesh = GrannyMesh;
-	NewMesh->MeshBinding = GrannyNewMeshBinding(GrannyMesh,
+	NewMesh->Mesh = g_mesh;
+	NewMesh->MeshBinding = GrannyNewMeshBinding(g_mesh,
 		SourceModel->Skeleton,
 		SourceModel->Skeleton);
 
@@ -206,13 +206,13 @@ DemoMesh* GrannyModel::CreateBoundMesh(granny_mesh* GrannyMesh,
 
 
 
-	for (granny_int32x MatIdx = 0; MatIdx < GrannyMesh->MaterialBindingCount; ++MatIdx)
+	for (granny_int32x MatIdx = 0; MatIdx < g_mesh->MaterialBindingCount; ++MatIdx)
 	{
 
 
 
-		granny_material* Material = GrannyMesh->MaterialBindings[MatIdx].Material;
-		DemoTexture* Found = NULL;
+		granny_material* Material = g_mesh->MaterialBindings[MatIdx].Material;
+		GrannyTexture* Found = NULL;
 
 
 		if (Material->MapCount >= 1)
@@ -271,7 +271,7 @@ bool GrannyModel::CreateDemoModels()
 		if (GrannyModel->MeshBindingCount > 0)
 		{
 
-			DemoModel* NewModel = new DemoModel;
+			GrannyModelBinding* NewModel = new GrannyModelBinding();
 			GlobalScene.Models.push_back(NewModel);
 
 
@@ -285,10 +285,10 @@ bool GrannyModel::CreateDemoModels()
 			{
 
 
-				granny_mesh* GrannyMesh = GrannyModel->MeshBindings[MeshIdx].Mesh;
-				assert(GrannyMesh);
+				granny_mesh* g_mesh = GrannyModel->MeshBindings[MeshIdx].Mesh;
+				assert(g_mesh);
 
-				DemoMesh* NewMesh = CreateBoundMesh(GrannyMesh, NewModel->ModelInstance);
+				GrannyMesh* NewMesh = CreateBoundMesh(g_mesh, NewModel->ModelInstance);
 				assert(NewMesh);
 				NewModel->BoundMeshes.push_back(NewMesh);
 
@@ -439,7 +439,7 @@ void GrannyModel::Update(granny_real32 const CurrentTime)
 
 	for (size_t Idx = 0; Idx < GlobalScene.Models.size(); Idx++)
 	{
-		DemoModel* Model = GlobalScene.Models[Idx];
+		GrannyModelBinding* Model = GlobalScene.Models[Idx];
 		GrannySetModelClock(Model->ModelInstance, CurrentTime);
 	}
 
@@ -487,7 +487,7 @@ void GrannyModel::Render(GLuint anim_num)
 
 
 
-void GrannyModel::RenderMeshBindings(DemoModel* Model, granny_world_pose* Pose)
+void GrannyModel::RenderMeshBindings(GrannyModelBinding* Model, granny_world_pose* Pose)
 {
 
 
@@ -496,7 +496,7 @@ void GrannyModel::RenderMeshBindings(DemoModel* Model, granny_world_pose* Pose)
 	{
 
 
-		DemoMesh* Mesh = Model->BoundMeshes[MeshIndex];
+		GrannyMesh* Mesh = Model->BoundMeshes[MeshIndex];
 		int const *ToBoneIndices =
 			GrannyGetMeshBindingToBoneIndices(Mesh->MeshBinding);
 
@@ -586,7 +586,7 @@ void GrannyModel::RenderMeshBindings(DemoModel* Model, granny_world_pose* Pose)
 			if (Group->MaterialIndex < int(Mesh->MaterialBindings.size()) &&
 				Mesh->MaterialBindings[Group->MaterialIndex] != NULL)
 			{
-				DemoTexture* Texture = Mesh->MaterialBindings[Group->MaterialIndex];
+				GrannyTexture* Texture = Mesh->MaterialBindings[Group->MaterialIndex];
 				texName = Texture->TextureName;
 			}
 
@@ -619,7 +619,7 @@ void GrannyModel::RenderAttachedModel(GrannyModel *AttachedGrannyModel)
 
 
 
-	DemoModel * AttachedModel = AttachedGrannyModel->GlobalScene.Models[0];
+	GrannyModelBinding * AttachedModel = AttachedGrannyModel->GlobalScene.Models[0];
 
 	assert(AttachedModel && AttachedModel->AttachedTo);
 	assert(AttachedModel->BaseModelBone != -1);
@@ -680,7 +680,7 @@ void GrannyModel::RenderAttachedModel(GrannyModel *AttachedGrannyModel)
 
 
 
-void GrannyModel::RenderModel(DemoModel* Model, GLuint anim_num)
+void GrannyModel::RenderModel(GrannyModelBinding* Model, GLuint anim_num)
 {
 
 
