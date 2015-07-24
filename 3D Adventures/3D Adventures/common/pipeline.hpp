@@ -9,7 +9,7 @@
 #include "mesh_wrapper.hpp"
 #include "terrain_wrapper.hpp"
 #include "skybox.hpp"
-#include "2d.hpp"
+#include "screen_render.hpp"
 
 
 
@@ -23,7 +23,7 @@ class Pipeline
 	MeshWrapper *m_wrapper;
 	TerrainWrapper *t_wrapper;
 	Skybox * sky_box;
-	Aaether2D * quad_render;
+	ScreenRender * screen_render;
 
 
 

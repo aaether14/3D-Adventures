@@ -88,8 +88,21 @@ void MeshDrawer::Draw(Controller *ctrl){
 
 
 	shader->SetSpecular(0.0f, 1.0f);
-    entity_manager->Render(ctrl, shader);
-	entity_manager->GetPalette()->Render(ctrl, shader);
+	if (ctrl->GetGameObject()->GetTechniques()->GetShadow()->OnShadowPass())
+	{
+		glCullFace(GL_FRONT);
+		entity_manager->Render(ctrl, shader);
+		entity_manager->GetPalette()->Render(ctrl, shader);
+		glCullFace(GL_BACK);
+	}
+	else
+	{
+		entity_manager->Render(ctrl, shader);
+		entity_manager->GetPalette()->Render(ctrl, shader);
+	}
+
+
+
 
 
 

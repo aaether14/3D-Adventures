@@ -122,4 +122,14 @@ void ui_SceneOutliner::UpdateSceneData(GLint ind, GLint pos)
 
 
 
+void ui_SceneOutliner::ClearItems()
+{
+
+
+	while (Listbox->getItemCount())
+		Listbox->removeItem(Listbox->getListboxItemFromIndex(0));
+
+
+}
+
 

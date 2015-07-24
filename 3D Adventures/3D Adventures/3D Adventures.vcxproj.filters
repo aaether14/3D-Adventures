@@ -123,9 +123,6 @@
     <ClCompile Include="common\resource_loader.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="common\2d.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="common\technique.cpp">
       <Filter>common</Filter>
     </ClCompile>
@@ -279,6 +276,9 @@
     <ClCompile Include="common\filters\exponential_shadow_map.cpp">
       <Filter>common\filters</Filter>
     </ClCompile>
+    <ClCompile Include="common\screen_render.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\shaders\skybox_frag.txt">
@@ -410,9 +410,6 @@
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="common\resource_loader.hpp">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="common\2d.hpp">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="common\technique.hpp">
@@ -576,6 +573,9 @@
     </ClInclude>
     <ClInclude Include="common\model_loaders\granny_loader.hpp">
       <Filter>common\model_loaders</Filter>
+    </ClInclude>
+    <ClInclude Include="common\screen_render.hpp">
+      <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

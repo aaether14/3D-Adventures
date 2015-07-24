@@ -221,7 +221,7 @@ GLvoid ControllerSource::key_callback(GLFWwindow* window, GLint key, GLint scanc
 
 
 
-	CEGUI::Key::Scan ceguiKey = GlfwToCeguiKey(key);
+	CEGUI::Key::Scan ceguiKey = UI_UTIL::GlfwToCeguiKey(key);
 	CEGUI::GUIContext& context = CEGUI::System::getSingleton().getDefaultGUIContext();
 
 
@@ -265,7 +265,7 @@ GLvoid ControllerSource::mouse_callback(GLFWwindow* window, GLint button, GLint 
 {
 
 
-	CEGUI::MouseButton ceguiMouseButton = GlfwToCeguiMouseButton(button);
+	CEGUI::MouseButton ceguiMouseButton = UI_UTIL::GlfwToCeguiMouseButton(button);
 	CEGUI::GUIContext& context = CEGUI::System::getSingleton().getDefaultGUIContext();
 
 

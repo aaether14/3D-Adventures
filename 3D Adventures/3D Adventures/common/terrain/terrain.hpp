@@ -1,15 +1,3 @@
-/*
-
-
-Terrain implementation
-supporting splatting and bump-mapping
-
-
-*/
-
-
-
-
 #ifndef TERRAIN_HPP
 #define TERRAIN_HPP
 
@@ -43,18 +31,18 @@ supporting splatting and bump-mapping
 
 
 
+/**
 
+
+Terrain implementation
+supporting splatting and bump-mapping
+
+
+*/
 class Terrain
 {
 
-	enum VB_TYPES {
-		INDEX_BUFFER,
-		POS_VB,
-		NORMAL_VB,
-		TEXCOORD_VB,
-		TANGENT_VB,
-		NUM_VBs
-	};
+
 
 
 
@@ -71,6 +59,10 @@ class Terrain
 
 	TerrainShader * shader;
 
+
+	/**
+	The engine is using a quad tree to render
+	*/
 	void RenderQuad(Frustum * frustum, QuadNode * node);
 
 
@@ -78,31 +70,69 @@ class Terrain
 public:
 
 
+
+	/**
+	Calls Init()
+	*/
 	inline Terrain(TerrainShader * shader) { this->Init(shader); }
+	/**
+	Calls Clean()
+	*/
 	inline ~Terrain() { this->Clean(); }
 
 
+	/**
+	Initializes data
+	*/
 	void Init(TerrainShader * shader);
+	/**
+	Cleans Data
+	*/
 	void Clean();
 
 
+
+	/**
+	Returns width of heightmap
+	*/
 	inline GLint Width(){ return this->WIDTH; }
+	/**
+	Returns height of heightmap
+	*/
 	inline GLint Height(){ return this->HEIGHT; }
+	/**
+	Returns scale on X axis
+	*/
 	inline GLfloat ScaleX(){ return this->fSizeX; }
+	/**
+	Returns scale on Z axis
+	*/
 	inline GLfloat ScaleZ(){ return this->fSizeZ; }
 
 
 
+
+	/**
+	Get pointer to quad tree
+	*/
 	inline QuadTree * GetTree(){ return this->q_tree; }
-
-
+	/**
+	Compute height at given (X,Z) point
+	*/
 	inline GLfloat getHeight(GLint x, GLint z) { return heightField[z*WIDTH + x]; }
 
 
+	/**
+	Load splat map, splat textures and normal textures
+	*/
 	void LoadColorFiles(char*tile_path, char*texture_set_path, char*normal_set_path,
 		char* texture_attributes_set);
 
 
+
+	/**
+	Create own's engine format of terrain from 8 or 16 bit heightmap (ch1) and export to 'path'
+	*/
 	void CreateTerra(char *path, 
 		char*ch1,
 		GLfloat fSizeX, GLfloat fSizeZ, GLfloat fSizeY1,
@@ -110,10 +140,16 @@ public:
 		GLuint mipmaps);
 
 
+	/**
+	Render terrain with frustum culling
+	*/
 	void Render(Frustum * frustum, bool wired = false);
 
 
 
+	/**
+	Save chunks of terrain
+	*/
 	void SaveChunks(char * path,
 		BYTE * bits,
 		GLfloat fSizeX, GLfloat fSizeZ, GLfloat fSizeY1,
@@ -123,10 +159,16 @@ public:
 		);
 
 
+	/**
+	Load chunks of terrain
+	*/
 	void LoadChunks(char * path);
 };
 
 
+/**
+Compute interpolated height at given (X,Z) point
+*/
 GLfloat HeightAt(Terrain*terrain, GLfloat x, GLfloat z);
 
 

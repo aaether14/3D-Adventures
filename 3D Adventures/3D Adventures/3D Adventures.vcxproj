@@ -75,7 +75,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="common\2d.cpp" />
+    <ClCompile Include="common\screen_render.cpp" />
     <ClCompile Include="common\application.cpp" />
     <ClCompile Include="common\base\base_resource_loader.cpp" />
     <ClCompile Include="common\camera_implementation\camera.cpp" />
@@ -175,7 +175,7 @@
     <Text Include="data\shaders\terrain_vert.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common\2d.hpp" />
+    <ClInclude Include="common\screen_render.hpp" />
     <ClInclude Include="common\application.hpp" />
     <ClInclude Include="common\base\base_component.hpp" />
     <ClInclude Include="common\base\base_model_loader.hpp" />

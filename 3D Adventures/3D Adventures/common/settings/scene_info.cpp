@@ -86,8 +86,7 @@ void SceneInfo::AddEntity(Entity * new_entity)
 			else
 			{
 				const std::string &ex("No info component found");
-				boost::system::error_code er;
-				throw boost::filesystem::filesystem_error(ex, er);
+				printf("%s\n", ex);
 			}
 		}
 
@@ -104,6 +103,9 @@ void SceneInfo::Load()
 	//reading components
 
 
+
+
+	entity_map.clear();
 
 
 		boost::filesystem::directory_iterator iterator(std::string(OBJECT_FOLDER));
@@ -186,6 +188,7 @@ void SceneInfo::Load()
 				GLuint(new_info->pos.x / (map_size.x / sqrt(number_of_tiles)));
 
 
+			if (entity_map.count(new_info->entity_name))
 			GetEntityInfos()[ind].push_back(new_info);
 
 
@@ -280,6 +283,8 @@ void SceneInfo::InsertNewEntity(std::string path)
 {
 
 
+	if (AFile::GetFileWithExtension(path, ".obj").compare(STRING_ERROR) != 0)
+	{
 
 
 		std::string copied_folder_path = "data\\objects\\";
@@ -309,8 +314,6 @@ void SceneInfo::InsertNewEntity(std::string path)
 			delete ic;
 
 
-			if (AFile::GetFileWithExtension(copied_folder_path, ".obj"))
-			{
 				AssimpConverter * ac = new AssimpConverter();
 				ac->ConvertModel(AFile::GetFileWithExtension(copied_folder_path, ".obj"));
 				delete ac;
@@ -322,24 +325,22 @@ void SceneInfo::InsertNewEntity(std::string path)
 				AddEntity(new_entity);
 
 
-			}
-			else
-			{
-				const std::string &ex("No model file detected!");
-				boost::system::error_code er;
-				throw boost::filesystem::filesystem_error(ex, er);
-			}
+
 
 		}
 		else
 		{
 			const std::string &ex("Could not create entity - most likely there's another entity with the same name!");
-			boost::system::error_code er;
-			throw boost::filesystem::filesystem_error(ex, er);
+			printf("%s\n", ex);
 		}
 
 
-
+	}
+	else
+	{
+		const std::string &ex("No model file detected!");
+		printf("%s\n", ex);
+	}
 
 
 

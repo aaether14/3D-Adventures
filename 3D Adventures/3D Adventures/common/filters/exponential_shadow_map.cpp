@@ -70,7 +70,8 @@ glm::mat4 ESMImplementation::GetDirectionalShadow(Environment * env, ViewInfo * 
 	shadow_pos = glm::inverse(glm::mat3(glm::lookAt(position, position + env->sun_dir, glm::vec3(0, 1, 0)))) * shadow_pos;
 
 
-	return glm::ortho<float>(-shadow_size, shadow_size, -shadow_size, shadow_size, shadow_size, -shadow_size)*
-		glm::lookAt(shadow_pos, shadow_pos + env->sun_dir, glm::vec3(0, 1, 0));
+
+	return glm::ortho<float>(-shadow_size, shadow_size, -shadow_size, shadow_size, -shadow_size, shadow_size)*
+		glm::lookAt(shadow_pos, shadow_pos - env->sun_dir, glm::vec3(0, 1, 0));
 
 }

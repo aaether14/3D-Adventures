@@ -1,13 +1,3 @@
-/*
-
-
-Provinding callbacks for Save/Load on ui layout
-
-
-*/
-
-
-
 #ifndef PROJECT_ROOT_HPP
 #define PROJECT_ROOT_HPP
 
@@ -24,6 +14,14 @@ Provinding callbacks for Save/Load on ui layout
 
 
 
+
+/**
+
+
+Provinding callbacks for Save/Load on ui layout
+
+
+*/
 class ui_ProjectRoot
 {
 
@@ -34,7 +32,9 @@ class ui_ProjectRoot
 
 
 
-
+	/**
+	Callback for handling project saving
+	*/
 	inline bool SaveProject(const CEGUI::EventArgs &args)
 	{
 		ctrl->GetGameObject()->GetResource()->SaveChanges();
@@ -42,7 +42,9 @@ class ui_ProjectRoot
 	}
 
 
-
+	/**
+	Callback for handling project loading
+	*/
 	inline bool LoadProject(const CEGUI::EventArgs &args)
 	{
 		ctrl->GetGameObject()->GetResource()->LoadChanges();
@@ -56,16 +58,31 @@ public:
 
 
 
+	/**
+	Calls Init()
+	*/
 	inline ui_ProjectRoot(Controller * ctrl, CEGUI::Window * Root){ this->Init(ctrl, Root); }
+	/**
+	Initializes out of UI layout
+	*/
 	void Init(Controller * ctrl, CEGUI::Window * Root);
 
 
 
+	/**
+	Calls Clean()
+	*/
 	inline ~ui_ProjectRoot(){ this->Clean(); }
+	/**
+	Cleans data
+	*/
 	void Clean();
 
 
-
+	 
+	/**
+	Sync UI with internal data when requested
+	*/
 	void SyncUI();
 
 

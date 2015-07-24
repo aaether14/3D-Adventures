@@ -1,12 +1,3 @@
-/*
-
-
-Just a class to provide quads for WTT
-
-
-*/
-
-
 #ifndef UTILS_HPP
 #define UTILS_HPP
 
@@ -18,6 +9,15 @@ Just a class to provide quads for WTT
 
 
 
+
+
+/**
+
+
+Just a class to provide quads for WTT
+
+
+*/
 class Quad
 {
 
@@ -30,15 +30,29 @@ public:
 
 
 
+	/**
+	Calls Init()
+	*/
 	inline Quad(){ this->Init(); }
+	/**
+	Initializes data
+	*/
 	void Init();
 
 
+	/**
+	Calls Clean()
+	*/
 	inline ~Quad(){ this->Clean(); }
+	/**
+	Cleans data
+	*/
 	void Clean();
 
 
-
+	/**
+	Renders quad
+	*/
 	void Render();
 
 

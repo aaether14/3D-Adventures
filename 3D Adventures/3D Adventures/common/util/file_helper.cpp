@@ -89,7 +89,7 @@ namespace AFile
 
 
 
-	char * GetFileWithExtension(std::string path, std::string extension)
+	std::string GetFileWithExtension(std::string path, std::string extension)
 	{
 
 
@@ -97,9 +97,9 @@ namespace AFile
 		for (; iterator != boost::filesystem::directory_iterator(); ++iterator)
 			if (boost::filesystem::is_regular_file(iterator->path()))
 				if (!extension.compare(boost::filesystem::extension(iterator->path())))
-					return AString::char_to_str(iterator->path().string());
+					return iterator->path().string();
 
-		return NULL;
+		return STRING_ERROR;
 
 
 	}

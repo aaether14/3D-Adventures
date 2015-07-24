@@ -11,10 +11,10 @@ void Pipeline::Init(Controller * ctrl)
 
 
 
-	this->t_wrapper = new TerrainWrapper(ctrl);
-	this->m_wrapper = new MeshWrapper(ctrl);
-	this->sky_box = new Skybox();
-	this->quad_render = new Aaether2D();
+	t_wrapper = new TerrainWrapper(ctrl);
+	m_wrapper = new MeshWrapper(ctrl);
+	sky_box = new Skybox();
+	screen_render = new ScreenRender();
 
 
 
@@ -393,7 +393,7 @@ void Pipeline::Render(Controller*ctrl)
 
 
 
-	this->quad_render->Render(
+	screen_render->Render(
 		tech->GetGBuffer()->GetTexture()->GetTexture()[0],
 		tech->GetGBuffer()->GetBuffer()->GetDepth(),
 		tech->GetDof()->GetDofTexture()->GetTexture()[0],
@@ -412,7 +412,7 @@ void Pipeline::Clean()
 	this->m_wrapper->Clean();
 	this->t_wrapper->Clean();
 	delete sky_box;
-	delete quad_render;
+	delete screen_render;
 
 }
 

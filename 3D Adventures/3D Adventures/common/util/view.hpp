@@ -1,14 +1,3 @@
-/*
-
-
-Classes for storing any type of view info
-
-
-*/
-
-
-
-
 #ifndef VIEW_HPP
 #define VIEW_HPP
 
@@ -38,6 +27,9 @@ Classes for storing any type of view info
 
 
 
+/**
+Storing info that can ve used by View to create view projection matrix
+*/
 class ViewInfo
 
 {
@@ -63,6 +55,9 @@ public:
 	/*SOME MORE INFO*/
 
 
+	/**
+	Gets values of another ViewInfo
+	*/
 	inline void SetFromOther(ViewInfo * other)
 	{
 		this->position = other->getCameraPos();
@@ -76,6 +71,9 @@ public:
 
 	}
 
+	/*
+	Setters and getters
+	*/
 	inline glm::vec3 getCameraPos() { return position; }
 	inline void setUpVec(glm::vec3 t_vec) { this->up = t_vec; }
 	inline glm::vec3 getDirection() { return direction; }
@@ -103,6 +101,12 @@ public:
 };
 
 
+
+
+
+/**
+Using information from ViewInfo, this class creates a view projection matrix for world to camera to clipspace transformation
+*/
 class View
 {
 
@@ -111,19 +115,49 @@ class View
 	glm::mat4 ProjectionMatrix;
 
 
+
+	/**
+	Creates a 3rd person view from parameters
+	*/
+	void Create3rd(GLfloat FoV, GLfloat ratio, GLfloat z_near, GLfloat z_far, GLfloat distance, glm::vec3 position, glm::vec3 direction, glm::vec3 up);
+	/**
+	Creates a 1st person view from parameters
+	*/
+	void Create1st(GLfloat FoV, GLfloat ratio, GLfloat z_near, GLfloat z_far, glm::vec3 position, glm::vec3 direction, glm::vec3 up);
+
+
+
 public:
 
 
-	inline View() {}
-	inline void Init(GLint w, GLint h) {}
+
+	/**
+	Creates a 3rd person view from a ViewInfo
+	*/
 	void Create3rd(ViewInfo *info);
+	/**
+	Creates a 1st person view from a ViewInfo
+	*/
 	void Create1st(ViewInfo *info);
-	void Create3rd(GLfloat FoV, GLfloat ratio, GLfloat z_near, GLfloat z_far, GLfloat distance, glm::vec3 position, glm::vec3 direction, glm::vec3 up);
-	void Create1st(GLfloat FoV, GLfloat ratio, GLfloat z_near, GLfloat z_far, glm::vec3 position, glm::vec3 direction, glm::vec3 up);
+	/**
+	Returns view matrix aka world matrix
+	*/
 	inline glm::mat4 getViewMatrix() { return ViewMatrix; };
+	/**
+	Returns projection matrix aka camera matrix
+	*/
 	inline glm::mat4 getProjectionMatrix() { return ProjectionMatrix; }
+	/**
+	Returns view projection matrix
+	*/
 	inline glm::mat4 getCamera(){ return ProjectionMatrix*ViewMatrix; }
+	/**
+	Set projection
+	*/
 	inline void SetProjection(glm::mat4 ProjectionMatrix){ this->ProjectionMatrix = ProjectionMatrix; }
+	/**
+	Set view matrix
+	*/
 	inline void SetView(glm::mat4 ViewMatrix){ this->ViewMatrix = ViewMatrix; }
 
 
@@ -132,6 +166,9 @@ public:
 
 
 
+/**
+Class storing plane equation ax + by + cz + d = 0
+*/
 class Plane
 
 {
@@ -144,6 +181,9 @@ public:
 	GLfloat distance;
 
 
+	/**
+	Normalizes plane
+	*/
 	void Normalize();
 
 
@@ -151,6 +191,9 @@ public:
 
 
 
+/**
+Camera model consiting of 6 planes, resembles how human eye does projection
+*/
 class Frustum
 {
 
@@ -163,13 +206,26 @@ class Frustum
 public:
 
 
+
+	/**
+	Initialize planes
+	*/
 	inline Frustum() { planes = new Plane[6]; }
+	/**
+	Delete planes
+	*/
 	inline ~Frustum() { delete planes; }
 
     
+	/**
+	Pointer to plane array
+	*/
 	inline Plane*getPlanes(){ return planes; }
 
 
+	/**
+	Create out of matrix
+	*/
 	void Create(glm::mat4 MVP);
 
 

@@ -1,15 +1,15 @@
-//Checked 2014
-
-/*
-Terrain_strip.cpp - Aaether 
-Terrain Chunk Implementation
-*/
-
 #include "terrain_strip.hpp"
 #include <assert.h>
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <fstream>
+
+
+
+
+
+
+
 
 void TerrainStrip::Init()
 {
@@ -17,11 +17,19 @@ void TerrainStrip::Init()
 	glGenBuffers(ARRAY_SIZE_IN_ELEMENTS(m_Buffers), m_Buffers);
 }
 
+
+
+
+
 void TerrainStrip::Clear()
 {
 	glDeleteVertexArrays(1, &this->m_VAO);
 	glDeleteBuffers(ARRAY_SIZE_IN_ELEMENTS(m_Buffers), m_Buffers);
 }
+
+
+
+
 
 
 void TerrainStrip::Render(GLuint lod)

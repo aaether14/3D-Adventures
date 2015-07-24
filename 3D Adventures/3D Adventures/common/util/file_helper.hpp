@@ -1,13 +1,3 @@
-/*
-
-
-Using Templates for easier binary data storing/loading
-
-
-*/
-
-
-
 #ifndef FILE_HELPER_HPP
 #define FILE_HELPER_HPP
 
@@ -26,23 +16,50 @@ Using Templates for easier binary data storing/loading
 
 
 
+
+
+
+/**
+
+
+Using Templates for easier binary data storing/loading
+Also provides tools for directory copying
+
+
+*/
 namespace AFile
 {
 
 
+
+    #define STRING_ERROR "_$#$_STRING_ERROR"
+
+
 	template <class T>
+	/**
+	Writes anytype of data to binary file
+	*/
 	inline void WriteToFile(std::ofstream& os, const T& obj){ os.write((const char*)&(obj), sizeof(T)); }
 	template <class T>
+	/**
+	Reads anytype of data from binary file
+	*/
 	inline void ReadFromFile(std::ifstream& is, const T& obj){ is.read((char*)&(obj), sizeof(T)); }
 
 
+	/**
+	Copy folder from a location to another. Returns true if succesful
+	*/
 	bool copyDir(
 		boost::filesystem::path const & source,
 		boost::filesystem::path const & destination
 		);
 
 
-	char *GetFileWithExtension(std::string path, std::string extension);
+	/**
+    If in the folder specified by 'path' exists a file that has 'extension' return path of that file. Returns NULL otherwise
+	*/
+	std::string GetFileWithExtension(std::string path, std::string extension);
 
 
 }

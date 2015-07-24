@@ -80,7 +80,10 @@ public:
 	Clear data selected from scene outliner
 	*/
 	inline void ClearSelectedData(){ selected_data.clear(); }
-
+	/**
+	Clear all items from scene outliner
+	*/
+	void ClearItems();
 
 	/**
 	Delete selected data (UI wise)

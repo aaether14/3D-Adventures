@@ -29,9 +29,9 @@ void ui_LightingRoot::Reset()
 	static_cast<CEGUI::Spinner*>((Root->getChild(def + "Spinner2")))->setCurrentValue(env->model_diffuse);
 	static_cast<CEGUI::Spinner*>((Root->getChild(def + "Spinner3")))->setCurrentValue(env->terrain_ambient);
 	static_cast<CEGUI::Spinner*>((Root->getChild(def + "Spinner4")))->setCurrentValue(env->terrain_diffuse);
-	static_cast<CEGUI::ColourPicker*>((Root->getChild(def + "ColourPicker")))->setColour(GetCEGUIColour(env->sun_color));
+	static_cast<CEGUI::ColourPicker*>((Root->getChild(def + "ColourPicker")))->setColour(UI_UTIL::GetCEGUIColour(env->sun_color));
 	static_cast<CEGUI::Spinner*>((Root->getChild(def + "Spinner5")))->setCurrentValue(env->fog_density);
-	static_cast<CEGUI::ColourPicker*>((Root->getChild(def + "ColourPicker2")))->setColour(GetCEGUIColour(env->fog_color));
+	static_cast<CEGUI::ColourPicker*>((Root->getChild(def + "ColourPicker2")))->setColour(UI_UTIL::GetCEGUIColour(env->fog_color));
 
 
 }
@@ -77,9 +77,9 @@ void ui_LightingRoot::SyncUI()
 		env->model_diffuse = static_cast<CEGUI::Spinner*>((Root->getChild(def + "Spinner2")))->getCurrentValue();
 		env->terrain_ambient = static_cast<CEGUI::Spinner*>((Root->getChild(def + "Spinner3")))->getCurrentValue();
 		env->terrain_diffuse = static_cast<CEGUI::Spinner*>((Root->getChild(def + "Spinner4")))->getCurrentValue();
-		env->sun_color = glm::vec3(GetGLMColour(static_cast<CEGUI::ColourPicker*>((Root->getChild(def + "ColourPicker")))->getColour()));
+		env->sun_color = glm::vec3(UI_UTIL::GetGLMColour(static_cast<CEGUI::ColourPicker*>((Root->getChild(def + "ColourPicker")))->getColour()));
 		env->fog_density = static_cast<CEGUI::Spinner*>((Root->getChild(def + "Spinner5")))->getCurrentValue();
-		env->fog_color = glm::vec3(GetGLMColour(static_cast<CEGUI::ColourPicker*>((Root->getChild(def + "ColourPicker2")))->getColour()));
+		env->fog_color = glm::vec3(UI_UTIL::GetGLMColour(static_cast<CEGUI::ColourPicker*>((Root->getChild(def + "ColourPicker2")))->getColour()));
 
 
 

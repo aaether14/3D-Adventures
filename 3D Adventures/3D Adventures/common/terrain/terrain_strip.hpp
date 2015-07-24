@@ -1,15 +1,6 @@
-/*
-
-
-Used to store terrain chunks
-
-
-*/
-
-
-
 #ifndef TERRAIN_STRIP_HPP
 #define TERRAIN_STRIP_HPP
+
 
 
 
@@ -30,9 +21,23 @@ Used to store terrain chunks
 
 
 
-	class TerrainStrip
-	{
 
+
+/**
+
+
+Used to store terrain chunks
+
+
+*/
+class TerrainStrip
+{
+
+
+
+	/**
+	In order to allocate OpenGL memory for vertex data
+	*/
 		enum VB_TYPES {
 			INDEX_BUFFER,
 			POS_VB,
@@ -57,19 +62,38 @@ Used to store terrain chunks
 	public:
 
 
+
+		/**
+		Initializes data
+		*/
 		void Init();
+		/**
+		Clears data
+		*/
 		void Clear();
 
 
+
+		/**
+		Calls Init()
+		*/
 		inline TerrainStrip() { this->Init(); }
+		/**
+		Calls Clear()
+		*/
 		inline ~TerrainStrip(){ this->Clear(); }
 
 
 
-
+		/**
+		Renders the given 'lod'
+		*/
 		void Render(GLuint lod);
 
 
+		/**
+		Create out of data
+		*/
 		void Create(GLuint strip_width, GLuint strip_height,
 			glm::vec3 * heightData,
 			glm::vec2 * uvData,

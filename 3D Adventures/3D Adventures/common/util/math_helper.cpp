@@ -132,18 +132,6 @@ namespace Math
 
 
 
-	bool CircleRectangleCollision(Rectangle *rect, Circle * circ)
-	{
-
-
-		GLfloat closestX = glm::clamp(circ->point.x, rect->point.x, rect->point.x + rect->width);
-		GLfloat closestY = glm::clamp(circ->point.y, rect->point.y, rect->point.y + rect->height);
-		glm::vec2 dist = circ->point - glm::vec2(closestX, closestY);
-		return dist.x*dist.x + dist.y*dist.y < circ->radius *circ->radius;
-
-
-	}
-
 
 
 
@@ -180,6 +168,9 @@ namespace Math
 		return stream.str();
 
 	}
+
+
+
 
 
 

@@ -1,14 +1,3 @@
-/*
-
-
-Top bar ui layout management
-
-
-*/
-
-
-
-
 #ifndef TOP_ROOT_HPP
 #define TOP_ROOT_HPP
 
@@ -25,6 +14,14 @@ Top bar ui layout management
 
 
 
+
+/**
+
+
+Top bar ui layout management
+
+
+*/
 class TopRoot
 {
 
@@ -37,15 +34,30 @@ public:
 
 
 
+	/**
+	Calls Init()
+	*/
 	inline TopRoot(Controller * ctrl, CEGUI::Window * Root){ this->Init(ctrl, Root); }
+	/**
+	Initializes top bar layout
+	*/
 	void Init(Controller * ctrl, CEGUI::Window * Root);
 
 
+	/**
+	Calls Clean()
+	*/
 	inline ~TopRoot(){ this->Clean(); }
+	/**
+	Cleans data
+	*/
 	void Clean();
 
 
 
+	/**
+	Renders top bar ui layout to screen
+	*/
 	void Render(Controller * ctrl, CEGUI::Window * Root);
 
 
