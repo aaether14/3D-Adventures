@@ -11,12 +11,15 @@
 
 
 
-int Application::Init()
+
+
+
+void Application::Init()
 {
 
 
-	ctrl = new Controller(WINDOW_WIDTH, WINDOW_HEIGHT, FULLSCREEN, "3D Adventures 0.2.5", 4, 3);
-	return 1;
+	SetManager(NULL);
+
 
 
 }
@@ -24,8 +27,11 @@ int Application::Init()
 
 
 
-void Application::SetFlags()
+
+
+void Application::Load(char *path)
 {
+
 
 
 	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
@@ -36,19 +42,21 @@ void Application::SetFlags()
 
 
 
-}
 
 
-
-
-
-void Application::Load(char *path)
-{
-
-
+	Add("Controller", new Controller(WINDOW_WIDTH, WINDOW_HEIGHT, FULLSCREEN, "3D Adventures 0.2.5", 4, 3));
+	Controller * ctrl = static_cast<Controller*>(Get("Controller"));
 	ctrl->Load(path);
-	root_ui = new RootUI(ctrl);
-	pipe = new Pipeline(ctrl);
+
+
+
+	Add("RootUI", new RootUI());
+	static_cast<RootUI*>(Get("RootUI"))->Init();
+
+
+
+	Add("Pipeline", new Pipeline());
+	static_cast<Pipeline*>(Get("Pipeline"))->Init();
 
 
 }
@@ -57,17 +65,18 @@ void Application::Load(char *path)
 
 
 
-void Application::Render()
+void Application::Enable()
 {
+
+	Controller * ctrl = static_cast<Controller*>(Get("Controller"));
 
 
 	do{
 
 
-
-		ctrl->Enable();
-		pipe->Render(ctrl);
-		root_ui->Render(ctrl);
+		Get("Controller")->Enable();
+		Get("Pipeline")->Enable();
+		Get("RootUI")->Enable();
 
 
 
@@ -86,14 +95,13 @@ void Application::Render()
 
 
 
-void Application::Terminate()
+void Application::Clean()
 {
 
 
-
-	delete pipe;
-	delete ctrl;
-	delete root_ui;
+	Get("Pipeline")->Clean();
+	Get("Controller")->Clean();
+	Get("RootUI")->Clean();
 
 
 }

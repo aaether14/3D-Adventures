@@ -79,10 +79,11 @@ void UIManager::Clean()
 
 
 
-void UIManager::Render(ControllerSource * ctrl)
+void UIManager::Enable()
 {
 
 
+	ControllerSource * ctrl = static_cast<ControllerSource*>(GetManager()->Get("Controller"));
 
 	//Basic CEGUI context rendering
 

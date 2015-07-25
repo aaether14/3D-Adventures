@@ -38,11 +38,11 @@ public:
 	/**
 	Calls Init()
 	*/
-	inline RootUI(Controller * ctrl) : UIManager() { this->Init(ctrl); }
+	inline RootUI() : UIManager() { }
 	/**
 	Initializes UI layouts
 	*/
-	void Init(Controller * ctrl);
+	void Init();
 
 
 
@@ -62,7 +62,7 @@ public:
 	/**
 	Renders all layouts to screen
 	*/
-	void Render(Controller * ctrl);
+	void Enable();
 
 
 

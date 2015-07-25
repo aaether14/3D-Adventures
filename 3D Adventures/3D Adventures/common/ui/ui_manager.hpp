@@ -9,6 +9,7 @@
 #include <CEGUI/RendererModules/OpenGL/GL3Renderer.h>
 #include <CEGUI/CommonDialogs/ColourPicker/ColourPicker.h>
 #include <CEGUI/CEGUI.h>
+#include <base/base_module.hpp>
 
 
 
@@ -20,7 +21,7 @@ CEGUI initialisation
 
 
 */
-class UIManager
+class UIManager : public AModule
 {
 
 
@@ -55,7 +56,7 @@ public:
 	/**
 	Renders UI to scene 
 	*/
-	void Render(ControllerSource * ctrl);
+	void Enable();
 
 
 

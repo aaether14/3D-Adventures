@@ -10,12 +10,12 @@
 #include "terrain_wrapper.hpp"
 #include "skybox.hpp"
 #include "screen_render.hpp"
+#include <base/base_module.hpp>
 
 
 
 
-
-class Pipeline
+class Pipeline : public AModule
 {
 
 
@@ -32,9 +32,9 @@ public:
 
 
 
-	inline Pipeline(Controller * ctrl){ this->Init(ctrl); }
+
 	inline ~Pipeline(){ this->Clean(); }
-	void Init(Controller * ctrl);
+	void Init();
 
 
 
@@ -58,7 +58,7 @@ public:
 	void HandleFXAA(Controller * ctrl);
 
 
-	void Render(Controller *ctrl);
+	void Enable();
 	void Clean();
 
 

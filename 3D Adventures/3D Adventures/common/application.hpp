@@ -6,36 +6,29 @@
 #include "controls.hpp"
 #include "pipeline.hpp"
 #include <ui_implementation/ui_root.hpp>
+#include <base/base_module.hpp>
 
 
 
 
-class Application
+class Application : public AModule
 {
 
-
-
-	Controller * ctrl;
-	Pipeline * pipe;
-	RootUI * root_ui;
 
 
 
 public:
 
 	inline Application() { this->Init(); }
-	inline ~Application() { this->Terminate(); }
+	inline ~Application() { this->Clean(); }
 
 
-	int Init();
-	void Terminate();
+	void Init();
+	void Clean();
 
 
-	void SetFlags();
 	void Load(char*path);
-
-
-	void Render();
+	void Enable();
 
 
 };

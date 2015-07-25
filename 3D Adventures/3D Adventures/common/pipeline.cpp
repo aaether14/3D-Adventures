@@ -6,10 +6,10 @@
 
 
 
-void Pipeline::Init(Controller * ctrl)
+void Pipeline::Init()
 {
 
-
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 
 	t_wrapper = new TerrainWrapper(ctrl);
 	m_wrapper = new MeshWrapper(ctrl);
@@ -362,10 +362,12 @@ void Pipeline::HandleSSAO(Controller * ctrl)
 }
 
 
-void Pipeline::Render(Controller*ctrl)
+void Pipeline::Enable()
 {
 
 
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
 	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
