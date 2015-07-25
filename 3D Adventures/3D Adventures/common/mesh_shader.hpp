@@ -6,7 +6,6 @@
 
 #include <shader/shader.hpp>
 #include <util/math_helper.hpp>
-#include <light/light.hpp>
 #include <granny.h>
 
 
@@ -20,21 +19,15 @@
 
 
 
-
 class MeshShader : public Shader
 {
-
-
-	Light *m_light;
 
 
 public:
 
 
-	inline MeshShader() : Shader(){ Init(); }
+	inline MeshShader() : Shader(){ this->Init(); }
 	void Init();
-	inline ~MeshShader() { Clean(); }
-	void Clean();
 
 
 	void Space(glm::mat4 ModelMatrix, glm::mat4 ViewMatrix, glm::mat4 ProjectionMatrix, glm::mat4 NormalMatrix);
@@ -53,9 +46,6 @@ public:
 		Set("specular_intensity", specular_intensity);
 		Set("specular_power", specular_power);
 	}
-
-
-	inline Light * GetLight(){ return m_light; }
 
 
 

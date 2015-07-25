@@ -12,7 +12,6 @@
 #include <string.h>
 #include <time.h>
 #include <ui/ui_util.hpp>
-#include <base/base_module.hpp>
 
 
 
@@ -81,7 +80,7 @@ Used to acces window and input
 
 
 */
-class ControllerSource: public AModule
+class ControllerSource
 {
 
 

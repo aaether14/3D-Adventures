@@ -3,6 +3,8 @@
 
 
 
+
+#include <light/light.hpp>
 #include "mesh_drawer.hpp"
 
 
@@ -13,6 +15,7 @@ class MeshWrapper : public MeshShader
 {
 
 	
+	Light *MeshLight;
 	MeshDrawer * Drawer;
 
 
@@ -30,6 +33,9 @@ public:
 	void Init(Controller * ctrl);
 	void Clean();
 
+
+
+	inline Light*getLight(){ return this->MeshLight; }
 
 
 

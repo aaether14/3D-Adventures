@@ -78,23 +78,4 @@ void Controller::Enable()
 	camera->SetFrustum(camera->GetView()->getCamera());
 
 
-
-
-
-	if (GetDropFiles().size() > 0)
-	{
-
-
-		ResourceLoader * res = GetGameObject()->GetResource();
-		SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
-
-
-		scene_info->InsertNewEntity(GetDropFiles()[0]);
-		ResetDropList();
-
-
-	}
-
-
-
 }

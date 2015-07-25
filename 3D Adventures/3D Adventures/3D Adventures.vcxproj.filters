@@ -279,9 +279,6 @@
     <ClCompile Include="common\screen_render.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="common\base\base_module.cpp">
-      <Filter>common\base</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\shaders\skybox_frag.txt">
@@ -579,9 +576,6 @@
     </ClInclude>
     <ClInclude Include="common\screen_render.hpp">
       <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="common\base\base_module.hpp">
-      <Filter>common\base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

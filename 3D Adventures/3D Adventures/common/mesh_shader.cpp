@@ -29,8 +29,6 @@ void MeshShader::Init()
 
 
 
-	m_light = new Light(this);
-
 
 }
 
@@ -43,17 +41,6 @@ void MeshShader::Space(glm::mat4 ModelMatrix, glm::mat4 ViewMatrix, glm::mat4 Pr
 	Set("V", ViewMatrix);
 	Set("P", ProjectionMatrix); 
 	Set("N", NormalMatrix);
-
-}
-
-
-
-void MeshShader::Clean()
-{
-
-	Shader::Clean();
-	delete m_light;
-
 
 }
 
