@@ -6,12 +6,11 @@
 #include "controls.hpp"
 #include "pipeline.hpp"
 #include <ui_implementation/ui_root.hpp>
-#include <base/base_module.hpp>
 
 
 
 
-class Application : public AModule
+class Application
 {
 
 
@@ -29,7 +28,7 @@ public:
 
 
 	int Init();
-	void Clean();
+	void Terminate();
 
 
 	void SetFlags();
