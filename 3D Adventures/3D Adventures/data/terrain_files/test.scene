@@ -6,7 +6,13 @@
         <Tiles>64</Tiles>
     </GeneralInfo>
     <Entity>
-        <Position>276.064, 0, 233.269</Position>
+        <Position>236.971, 0, 227.557</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>fireA</EntityName>
+    </Entity>
+    <Entity>
+        <Position>252.793, 0, 233.664</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
         <EntityName>ArmourRack</EntityName>

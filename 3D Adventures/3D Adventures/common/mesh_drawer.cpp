@@ -61,22 +61,6 @@ void MeshDrawer::Enable(Controller * ctrl)
 
 
 
-	if (ctrl->GetDropFiles().size() > 0)
-	{
-
-
-		ResourceLoader * res = ctrl->GetGameObject()->GetResource();
-		SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
-
-
-		scene_info->InsertNewEntity(ctrl->GetDropFiles()[0]);
-		ctrl->ResetDropList();
-
-
-	}
-
-
-
 
 }
 

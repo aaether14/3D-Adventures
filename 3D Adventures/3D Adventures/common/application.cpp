@@ -15,7 +15,9 @@ int Application::Init()
 {
 
 
-	ctrl = new Controller(WINDOW_WIDTH, WINDOW_HEIGHT, FULLSCREEN, "3D Adventures 0.2.5", 4, 3);
+
+
+
 	return 1;
 
 
@@ -46,8 +48,16 @@ void Application::Load(char *path)
 {
 
 
-	ctrl->Load(path);
-	root_ui = new RootUI(ctrl);
+	SetManager(NULL);
+
+
+
+	Controller * ctrl = static_cast<Controller*>
+		(Add("Controller", new Controller(WINDOW_WIDTH, WINDOW_HEIGHT, FULLSCREEN, "3D Adventures 0.2.5", 4, 3)));
+	     ctrl->Load(path);
+
+
+    root_ui = new RootUI(ctrl);
 	pipe = new Pipeline(ctrl);
 
 
@@ -61,14 +71,16 @@ void Application::Render()
 {
 
 
+	Controller * ctrl = static_cast<Controller*>(Get("Controller"));
+
+
 	do{
 
 
 
-		ctrl->Enable();
-		pipe->Render(ctrl);
-		root_ui->Render(ctrl);
 
+		Enable();
+		pipe->Render(ctrl);
 
 
 		glfwSwapBuffers(ctrl->GetWindow());
@@ -90,10 +102,8 @@ void Application::Terminate()
 {
 
 
-
+	Clean();
 	delete pipe;
-	delete ctrl;
-	delete root_ui;
 
 
 }

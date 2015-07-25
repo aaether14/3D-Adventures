@@ -1,3 +1,14 @@
+/*
+
+
+Accesing UI through UIManager and getting pointer of window root
+
+
+*/
+
+
+
+
 #ifndef ROOT_UI_HPP
 #define ROOT_UI_HPP
 
@@ -12,14 +23,6 @@
 
 
 
-
-/**
-
-
-Accesing UI through UIManager and getting pointer of window root
-
-
-*/
 class RootUI : public UIManager
 {
 
@@ -35,33 +38,17 @@ public:
 
 
 
-	/**
-	Calls Init()
-	*/
 	inline RootUI(Controller * ctrl) : UIManager() { this->Init(ctrl); }
-	/**
-	Initializes UI layouts
-	*/
 	void Init(Controller * ctrl);
 
 
 
 
-
-	/**
-	Calls Clean()
-	*/
 	inline ~RootUI(){ this->Clean(); }
-	/**
-	Cleans UI layouts data
-	*/
 	void Clean();
 
 
 
-	/**
-	Renders all layouts to screen
-	*/
 	void Render(Controller * ctrl);
 
 

@@ -13,7 +13,6 @@ void MeshWrapper::Init(Controller * ctrl)
 
 
 	this->Drawer = new MeshDrawer(this, ctrl);
-	this->MeshLight = new Light(this);
 
 
 }
@@ -58,12 +57,12 @@ void MeshWrapper::FirstPass(Controller*ctrl)
 
 
 	Set("has_ssao", GLfloat(f_settings->SSAO.Enabled));
-	this->MeshLight->SetFog(glm::pow(env->fog_color, glm::vec3(2.2)), env->fog_density);
+	GetLight()->SetFog(glm::pow(env->fog_color, glm::vec3(2.2)), env->fog_density);
 
 
 
 
-	this->MeshLight->SetDirectionalLight(env->model_bright*
+	GetLight()->SetDirectionalLight(env->model_bright*
 		glm::pow(env->sun_color, glm::vec3(2.2)),
 		glm::vec3(glm::normalize(-view->getViewMatrix() * glm::vec4(env->sun_dir, 0.0))),
 		env->model_ambient,
@@ -97,9 +96,7 @@ void MeshWrapper::Clean()
 
 
 	MeshShader::Clean();
-
 	delete Drawer;
-	delete MeshLight;
 
 
 }

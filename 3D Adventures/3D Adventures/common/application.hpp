@@ -6,16 +6,16 @@
 #include "controls.hpp"
 #include "pipeline.hpp"
 #include <ui_implementation/ui_root.hpp>
+#include <base/base_module.hpp>
 
 
 
 
-class Application
+class Application : public AModule
 {
 
 
 
-	Controller * ctrl;
 	Pipeline * pipe;
 	RootUI * root_ui;
 
