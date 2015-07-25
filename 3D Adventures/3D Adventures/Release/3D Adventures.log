@@ -1,10 +1,76 @@
-﻿Build started 7/24/2015 6:44:51 PM.
+﻿Build started 7/25/2015 2:22:52 PM.
      1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\settings\scene_info.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\application.cpp common\camera_implementation\camera.cpp common\controller\controls_source.cpp common\controls.cpp common\entity\entity.cpp common\entity\entity_manager.cpp common\entity\palette\entity_palette.cpp common\entity\ui\scene_outliner.cpp common\entity\ui\ui_transform_tab.cpp common\entity_info\transform_info.cpp common\game_object.cpp common\mesh_drawer.cpp common\mesh_shader.cpp common\mesh_wrapper.cpp common\pipeline.cpp common\settings\scene_info.cpp common\sky\sky_render.cpp common\skybox.cpp common\terrain_wrapper.cpp common\ui\ui_manager.cpp common\ui_implementation\project_root.cpp common\ui_implementation\settings_root.cpp common\ui_implementation\top_root.cpp common\ui_implementation\ui_root.cpp common\ui_implementation\view_root.cpp main.cpp
+         application.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         camera.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\camera_implementation\camera.cpp(17): warning C4305: '=' : truncation from 'double' to 'GLfloat'
+     1>common\camera_implementation\camera.cpp(95): warning C4244: 'argument' : conversion from 'GLdouble' to 'GLfloat', possible loss of data
+         controls_source.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\controller\controls_source.cpp(74): warning C4805: '==' : unsafe mix of type 'GLboolean' and type 'bool' in operation
+     1>common\controller\controls_source.cpp(120): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>common\controller\controls_source.cpp(206): warning C4244: '=' : conversion from 'GLdouble' to 'GLfloat', possible loss of data
+     1>common\controller\controls_source.cpp(328): warning C4018: '<' : signed/unsigned mismatch
+         controls.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         entity.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         entity_manager.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\entity\entity_manager.cpp(78): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+         entity_palette.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         scene_outliner.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         ui_transform_tab.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\entity\ui\ui_transform_tab.cpp(127): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>common\entity\ui\ui_transform_tab.cpp(136): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+     1>common\entity\ui\ui_transform_tab.cpp(145): warning C4244: '=' : conversion from 'double' to 'float', possible loss of data
+         transform_info.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         game_object.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         mesh_drawer.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         mesh_shader.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         mesh_wrapper.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         pipeline.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\pipeline.cpp(69): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>common\pipeline.cpp(182): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>common\pipeline.cpp(237): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
          scene_info.cpp
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
      1>common\settings\scene_info.cpp(188): warning C4244: 'initializing' : conversion from 'double' to 'GLuint', possible loss of data
+         sky_render.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         skybox.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         terrain_wrapper.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         ui_manager.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\ui\ui_manager.cpp(91): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+     1>common\ui\ui_manager.cpp(92): warning C4244: 'argument' : conversion from 'GLdouble' to 'float', possible loss of data
+         Compiling...
+         project_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         settings_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         top_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         ui_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         view_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         main.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
        Link:
          D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe" /NOLOGO /LIBPATH:..\..\Dependencies\lib "CEGUICommonDialogs-0.lib" "CEGUIBase-0.lib" "CEGUIOpenGLRenderer-0.lib" granny2.lib assimpd.lib FreeImaged.lib freetype.lib glfw3.lib glew32.lib glu32.lib opengl32.lib gdi32.lib winmm.lib user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.lib" /MACHINE:X86 /SAFESEH Release\res.res
          Release\screen_render.obj
@@ -77,4 +143,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:28.76
+Time Elapsed 00:02:36.60
