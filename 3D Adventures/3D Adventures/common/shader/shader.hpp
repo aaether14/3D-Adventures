@@ -7,6 +7,7 @@
 #include <map>
 #include <GL/glew.h>
 #include <util/math_helper.hpp>
+#include <base/base_module.hpp>
 
 
 
@@ -19,7 +20,7 @@ Shader class for which makes for easy uniform management using std::map
 
 
 */
-class Shader
+class Shader : public AModule
 {
 
 
@@ -46,7 +47,7 @@ public:
 	/**
 	Deletes shader program from OpenGL memory and clears uniforms
 	*/
-	inline void Clean(){ glDeleteProgram(this->program); this->uniforms.clear(); }
+	void Clean(){ glDeleteProgram(this->program); this->uniforms.clear(); }
 
 
 	/**
@@ -60,7 +61,7 @@ public:
 	/**
 	OpenGL context is bound to using this program
 	*/
-	inline void Use(){ glUseProgram(program); }
+	inline void Enable(){ glUseProgram(program); }
 	/**
 	OpenGL context is no longer bound to a shader program
 	*/

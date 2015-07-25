@@ -114,7 +114,7 @@
     <ClCompile Include="common\mesh_wrapper.cpp" />
     <ClCompile Include="common\pipeline.cpp" />
     <ClCompile Include="common\resource_loader.cpp" />
-    <ClCompile Include="common\skybox.cpp" />
+    <ClCompile Include="common\sky_wrapper.cpp" />
     <ClCompile Include="common\terrain\quad_tree.cpp" />
     <ClCompile Include="common\terrain\terrain.cpp" />
     <ClCompile Include="common\terrain\terrain_strip.cpp" />
@@ -218,7 +218,7 @@
     <ClInclude Include="common\mesh_wrapper.hpp" />
     <ClInclude Include="common\pipeline.hpp" />
     <ClInclude Include="common\resource_loader.hpp" />
-    <ClInclude Include="common\skybox.hpp" />
+    <ClInclude Include="common\sky_wrapper.hpp" />
     <ClInclude Include="common\terrain\quad_tree.hpp" />
     <ClInclude Include="common\terrain\terrain.hpp" />
     <ClInclude Include="common\terrain\terrain_strip.hpp" />

@@ -9,11 +9,17 @@
 void Pipeline::Init()
 {
 
-	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 
-	t_wrapper = new TerrainWrapper(ctrl);
-	m_wrapper = new MeshWrapper(ctrl);
-	sky_box = new Skybox();
+
+	Add("MeshWrapper", new MeshWrapper());
+	static_cast<MeshWrapper*>(Get("MeshWrapper"))->Init();
+	Add("TerrainWrapper", new TerrainWrapper());
+	static_cast<TerrainWrapper*>(Get("TerrainWrapper"))->Init();
+	Add("SkyWrapper", new SkyWrapper());
+	static_cast<SkyWrapper*>(Get("SkyWrapper"))->Init();
+
+
+
 	screen_render = new ScreenRender();
 
 
@@ -22,12 +28,14 @@ void Pipeline::Init()
 
 
 
-void Pipeline::GeometryPass(Controller * ctrl)
+void Pipeline::GeometryPass()
 {
 
 
-
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+	MeshWrapper * mesh_wrapper = static_cast<MeshWrapper*>(Get("MeshWrapper"));
+	TerrainWrapper * terrain_wrapper = static_cast<TerrainWrapper*>(Get("TerrainWrapper"));
 
 
 
@@ -36,9 +44,9 @@ void Pipeline::GeometryPass(Controller * ctrl)
 	tech->GetSSAO()->UseGeometryPass();
 	tech->GetSSAO()->SetGeometryPass(true);
 	tech->GetSSAO()->SetOnMeshRender(0.0);
-	this->t_wrapper->Render(ctrl);
+	terrain_wrapper->Render();
 	tech->GetSSAO()->SetOnMeshRender(1.0);
-	this->m_wrapper->Render(ctrl);
+	mesh_wrapper->Render();
 	tech->Unbind();
 
 
@@ -48,15 +56,21 @@ void Pipeline::GeometryPass(Controller * ctrl)
 
 
 
-void Pipeline::LightPass(Controller*ctrl)
+void Pipeline::LightPass()
 {
 
 
 
-
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
 	View * view = ctrl->GetCameraPointer()->GetView();
 	ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
+
+
+
+	MeshWrapper * mesh_wrapper = static_cast<MeshWrapper*>(Get("MeshWrapper"));
+	TerrainWrapper * terrain_wrapper = static_cast<TerrainWrapper*>(Get("TerrainWrapper"));
+	SkyWrapper * sky_wrapper = static_cast<SkyWrapper*>(Get("SkyWrapper"));
 
 
 
@@ -66,26 +80,16 @@ void Pipeline::LightPass(Controller*ctrl)
 
 
 
-	glm::mat4 m_rot = Math::Rotate(0, glfwGetTime() / 150.0, 0);
-
-
-	sky_box->Render(ctrl, view->getCamera()*
-		Math::Translation(info->getCameraPos() - info->getDirection()*info->getDistance())*
-		m_rot*
-		Math::Scale(glm::vec3(info->getRenderDistance())),
-		view->getViewMatrix()*
-		Math::Translation(info->getCameraPos() - info->getDirection()*info->getDistance())*
-		m_rot*
-		Math::Scale(glm::vec3(info->getRenderDistance())));
 
 
 
 
 
-	this->t_wrapper->FirstPass(ctrl);
-	this->t_wrapper->Render(ctrl);
-	this->m_wrapper->FirstPass(ctrl);
-	this->m_wrapper->Render(ctrl);
+	sky_wrapper->Enable();
+	terrain_wrapper->Enable();
+	terrain_wrapper->Render();
+	mesh_wrapper->Enable();
+	mesh_wrapper->Render();
 
 
 
@@ -109,12 +113,15 @@ void Pipeline::LightPass(Controller*ctrl)
 
 
 
-void Pipeline::ShadowPass(Controller * ctrl)
+void Pipeline::ShadowPass()
 {
 
 
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
 	ESMImplementation * esm_shadow = tech->GetShadow();
+	MeshWrapper * mesh_wrapper = static_cast<MeshWrapper*>(Get("MeshWrapper"));
 
 
 
@@ -124,11 +131,11 @@ void Pipeline::ShadowPass(Controller * ctrl)
 
 
 
-	this->m_wrapper->Render(ctrl);
+	mesh_wrapper->Render();
 
 
 
-	this->ApplyGausBlur(0, ctrl, 
+	this->ApplyGausBlur(0, 
 		esm_shadow->GetTempShadowMap(), 
 		esm_shadow->GetShadowMap(),
 		ShadowMapWidth,
@@ -145,10 +152,12 @@ void Pipeline::ShadowPass(Controller * ctrl)
 
 
 
-void Pipeline::HandleDoF(Controller * ctrl)
+void Pipeline::HandleDoF()
 {
 
 
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
@@ -174,7 +183,7 @@ void Pipeline::HandleDoF(Controller * ctrl)
 
 		GLuint blur_passes = 3;
 		for (GLuint i = 0; i < blur_passes; i++)
-			this->ApplyGausBlur(1, ctrl, 
+			this->ApplyGausBlur(1, 
 			dof->GetDofTempTexture(),
 			dof->GetDofTexture(),
 			dof->GetDofTexture()->GetWidth(),
@@ -195,10 +204,12 @@ void Pipeline::HandleDoF(Controller * ctrl)
 
 
 
-void Pipeline::HandleBloom(Controller * ctrl)
+void Pipeline::HandleBloom()
 {
 
 
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
@@ -229,7 +240,7 @@ void Pipeline::HandleBloom(Controller * ctrl)
 
 		GLuint blur_passes = 3;
 		for (GLuint i = 0; i < blur_passes; i++)
-			this->ApplyGausBlur(1, ctrl, 
+			this->ApplyGausBlur(1,
 			hdr->GetBrightTextureTemp(), 
 			hdr->GetBrightTexture(),
 			hdr->GetBrightTexture()->GetWidth(),
@@ -259,10 +270,12 @@ void Pipeline::HandleBloom(Controller * ctrl)
 
 
 
-void Pipeline::HandleFXAA(Controller * ctrl)
+void Pipeline::HandleFXAA()
 {
 
 
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
@@ -309,10 +322,12 @@ void Pipeline::HandleFXAA(Controller * ctrl)
 
 
 
-void Pipeline::HandleSSAO(Controller * ctrl)
+void Pipeline::HandleSSAO()
 {
 
 
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
@@ -374,24 +389,20 @@ void Pipeline::Enable()
 
 
 
-	t_wrapper->Enable(ctrl);
-	m_wrapper->Enable(ctrl);
+	this->GeometryPass();
+	this->HandleSSAO();
 
 
-	this->GeometryPass(ctrl);
-	this->HandleSSAO(ctrl);
-
-
-	this->ShadowPass(ctrl);
-	this->LightPass(ctrl);
+	this->ShadowPass();
+	this->LightPass();
 
 
 	tech->GetGBuffer()->Reset();
 
 
-	this->HandleDoF(ctrl);
-	this->HandleBloom(ctrl);
-	this->HandleFXAA(ctrl);
+	this->HandleDoF();
+	this->HandleBloom();
+	this->HandleFXAA();
 
 
 
@@ -411,9 +422,9 @@ void Pipeline::Enable()
 void Pipeline::Clean()
 {
 
-	this->m_wrapper->Clean();
-	this->t_wrapper->Clean();
-	delete sky_box;
+	Get("MeshWrapper")->Clean();
+	Get("TerrainWrapper")->Clean();
+	Get("SkyWrapper")->Clean();
 	delete screen_render;
 
 }
@@ -422,7 +433,6 @@ void Pipeline::Clean()
 
 
 void Pipeline::ApplyGausBlur(GLuint type,
-	Controller * ctrl,
 	TextureObject * tex_source, TextureObject * tex_target,
 	GLuint width, GLuint height,
 	GLfloat blur_amount)
@@ -430,6 +440,7 @@ void Pipeline::ApplyGausBlur(GLuint type,
 
 
 
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
 
 

@@ -6,27 +6,39 @@
         <Tiles>64</Tiles>
     </GeneralInfo>
     <Entity>
-        <Position>276.064, 0, 233.269</Position>
-        <Rotation>-1.57, 0, 0</Rotation>
-        <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>ArmourRack</EntityName>
+        <Position>253.694, 0, 225.566</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>GrassC</EntityName>
     </Entity>
     <Entity>
-        <Position>284.399, 0, 233.837</Position>
+        <Position>248.858, 0, 221.432</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>ArmourRack</EntityName>
+        <EntityName>Board</EntityName>
     </Entity>
     <Entity>
-        <Position>287.81, 0, 249.143</Position>
+        <Position>253.369, 0, 235.999</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>HouseB</EntityName>
+        <EntityName>Carriage</EntityName>
     </Entity>
     <Entity>
-        <Position>309.132, 0, 227.779</Position>
+        <Position>275.137, 0, 239.065</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>HouseC</EntityName>
+        <EntityName>Flag</EntityName>
+    </Entity>
+    <Entity>
+        <Position>264.978, 0, 231.621</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Crate</EntityName>
+    </Entity>
+    <Entity>
+        <Position>272.275, 0, 225.124</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Fire</EntityName>
     </Entity>
 </Scene>

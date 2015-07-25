@@ -68,7 +68,7 @@ public:
 	/**
 	Use shadow shader program
 	*/
-	inline void Use(){ this->shadow_shader->Use(); }
+	inline void Use(){ this->shadow_shader->Enable(); }
 	/**
 	Get primary shadow map
 	*/

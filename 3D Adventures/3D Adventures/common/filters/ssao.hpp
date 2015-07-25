@@ -105,15 +105,15 @@ public:
 	/**
 	Use shader program for ssao texture computation
 	*/
-	inline void Use(){ ssao_shader->Use(); }
+	inline void Use(){ ssao_shader->Enable(); }
 	/**
 	Use shader program for ssao blur 
 	*/
-	inline void UseBlur(){ ssao_blur->Use(); }
+	inline void UseBlur(){ ssao_blur->Enable(); }
 	/**
 	Use shader program for geometry pass
 	*/
-	inline void UseGeometryPass(){ geometry_pass->Use(); }
+	inline void UseGeometryPass(){ geometry_pass->Enable(); }
 
 	/**
 	Bind texture unit in ssao blur

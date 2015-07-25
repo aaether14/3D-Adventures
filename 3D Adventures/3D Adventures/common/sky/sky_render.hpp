@@ -8,6 +8,7 @@
 #include "texture/texture.hpp"
 #include <model_loaders/aaether_loader.hpp>
 #include "controls.hpp"
+#include <shader/shader.hpp>
 
 
 
@@ -19,7 +20,7 @@ Skydome implementation
 
 
 */
-class SkyRender
+class SkyRender : public Shader
 {
 
 
@@ -31,10 +32,11 @@ class SkyRender
 public:
 
 
+
 	/**
 	Calls Init()
 	*/
-	SkyRender();
+	SkyRender() : Shader() { Init(); }
 	/**
 	Calls Clean()
 	*/
@@ -61,7 +63,7 @@ public:
 	/**
 	Renders to scene
 	*/
-	void Render(Controller * ctrl);
+	void Enable();
 
 
 

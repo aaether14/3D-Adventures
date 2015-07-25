@@ -3,17 +3,30 @@
 
 
 
-SkyRender::SkyRender()
-{
-	Init();
-}
 
 
 
 void SkyRender::Init()
 {
+
+
 	model = new Aa_model();
 	model->Load("data/objects/sphere/skybox.aao");
+
+
+
+	Add("data/shaders/skybox_vert.txt", GL_VERTEX_SHADER);
+	Add("data/shaders/skybox_frag.txt", GL_FRAGMENT_SHADER);
+	Link();
+
+
+	AddVariable("MVP");
+	AddVariable("MV");
+	AddVariable("cube");
+	AddVariable("fog_color");
+
+
+
 }
 
 
@@ -29,6 +42,11 @@ SkyRender::~SkyRender()
 
 void SkyRender::Clean()
 {
+
+
+	Shader::Clean();
+
+
 	glDeleteTextures(m_textures.size(), &m_textures[0]);
 
 	if (model)
@@ -70,7 +88,8 @@ void SkyRender::LoadCube(const char *Directory,
 
 
 
-void SkyRender::Render(Controller * ctrl){
+void SkyRender::Enable()
+{
 
 
 	GLint OldCullFaceMode;
@@ -83,8 +102,8 @@ void SkyRender::Render(Controller * ctrl){
 	glDepthFunc(GL_LEQUAL);
 
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_CUBE_MAP, this->m_textures[0]);
-	this->model->Render();
+	glBindTexture(GL_TEXTURE_CUBE_MAP, m_textures[0]);
+	model->Render();
 	glBindTexture(GL_TEXTURE_CUBE_MAP, 0);
 
 

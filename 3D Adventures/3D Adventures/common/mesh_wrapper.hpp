@@ -25,12 +25,10 @@ public:
 
 
 
-
-	inline MeshWrapper(Controller *ctrl){ this->Init(ctrl); }
 	inline ~MeshWrapper(){ this->Clean(); }
 
 
-	void Init(Controller * ctrl);
+	void Init();
 	void Clean();
 
 
@@ -39,9 +37,8 @@ public:
 
 
 
-	void FirstPass(Controller *ctrl);
-	void Enable(Controller * ctrl);
-	void Render(Controller * ctrl);
+	void Enable();
+	void Render();
 
 
 

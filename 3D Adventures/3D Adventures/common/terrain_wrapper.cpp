@@ -3,10 +3,12 @@
 
 
 
-void TerrainWrapper::Init(Controller * ctrl)
+void TerrainWrapper::Init()
 {
 
 
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	ResourceLoader * resource = ctrl->GetGameObject()->GetResource();
 
 
@@ -54,20 +56,12 @@ void TerrainWrapper::ManagePlayerCollision(Controller*ctrl, bool null_gravity)
 
 
 
-void TerrainWrapper::Enable(Controller * ctrl)
+void TerrainWrapper::Enable()
 {
 
 
-
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	ManagePlayerCollision(ctrl, false);
-
-
-}
-
-
-
-void TerrainWrapper::FirstPass(Controller*ctrl)
-{
 
 
 
@@ -79,7 +73,7 @@ void TerrainWrapper::FirstPass(Controller*ctrl)
 
 
 
-	Use();
+	Shader::Enable();
 
 
 	Set("myTextureSampler", 0);
@@ -97,7 +91,7 @@ void TerrainWrapper::FirstPass(Controller*ctrl)
 		glm::pow(env->sun_color, glm::vec3(2.2)),
 		env->sun_dir,
 		env->terrain_ambient,
-	    env->terrain_diffuse);
+		env->terrain_diffuse);
 
 
 
@@ -119,15 +113,22 @@ void TerrainWrapper::FirstPass(Controller*ctrl)
 
 	tech->GetShadow()->GetShadowMap()->BindTexture(0, GL_TEXTURE3);
 	tech->GetShadow()->GetShadowMap()->ResetTextureState();
-	
+
+
 
 }
 
 
-void TerrainWrapper::Render(Controller*ctrl)
+
+
+
+void TerrainWrapper::Render()
 {
 
 
+
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	View * view = ctrl->GetCameraPointer()->GetView();
 	ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();

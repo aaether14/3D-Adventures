@@ -8,8 +8,12 @@
 
 
 
-void MeshWrapper::Init(Controller * ctrl)
+void MeshWrapper::Init()
 {
+
+
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 
 
 	this->Drawer = new MeshDrawer(this, ctrl);
@@ -21,21 +25,16 @@ void MeshWrapper::Init(Controller * ctrl)
 
 
 
-void MeshWrapper::Enable(Controller * ctrl)
+void MeshWrapper::Enable()
 
 {
 
 
-	this->Drawer->Enable(ctrl);
 
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 
-}
-
-
-
-void MeshWrapper::FirstPass(Controller*ctrl)
-{
-
+	
+	Drawer->Enable(ctrl);
 
 
 	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
@@ -43,11 +42,7 @@ void MeshWrapper::FirstPass(Controller*ctrl)
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 	View * view = ctrl->GetCameraPointer()->GetView();
-
-
-
-	Use();
-
+	Shader::Enable();
 
 
 	Set("texture_material", 0);
@@ -77,16 +72,16 @@ void MeshWrapper::FirstPass(Controller*ctrl)
 	tech->GetShadow()->GetShadowMap()->ResetTextureState();
 
 
-
 }
 
 
-void MeshWrapper::Render(Controller*ctrl)
+
+
+void MeshWrapper::Render()
 {
 
-
-
-	this->Drawer->Draw(ctrl);
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
+	Drawer->Draw(ctrl);
 
 
 }

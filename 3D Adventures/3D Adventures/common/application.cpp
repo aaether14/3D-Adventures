@@ -18,7 +18,7 @@ void Application::Init()
 {
 
 
-	SetManager(NULL);
+	SetManager(this);
 
 
 
@@ -67,6 +67,8 @@ void Application::Load(char *path)
 
 void Application::Enable()
 {
+
+
 
 	Controller * ctrl = static_cast<Controller*>(Get("Controller"));
 

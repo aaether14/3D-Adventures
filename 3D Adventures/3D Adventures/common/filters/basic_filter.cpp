@@ -94,7 +94,7 @@ void BasicFilterImplementation::MultTextures(TextureObject * target, GLuint tex1
 
 
 	target->WriteTexture(window_size.x, window_size.y);
-	this->mult_shader->Use();
+	this->mult_shader->Enable();
 
 
 	glActiveTexture(GL_TEXTURE0);
@@ -118,7 +118,7 @@ void BasicFilterImplementation::AddTextures(TextureObject * target, GLuint tex1,
 
 
 	target->WriteTexture(window_size.x, window_size.y);
-	this->add_shader->Use();
+	this->add_shader->Enable();
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, tex1);

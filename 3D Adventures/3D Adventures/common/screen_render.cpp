@@ -51,7 +51,7 @@ void ScreenRender::Render(GLuint texture,
 
 
 	glViewport(0, 0, window_size.x, window_size.y);
-	this->shader2d->Use();
+	this->shader2d->Enable();
 
 
 	this->shader2d->Set("use_dof", use_dof);

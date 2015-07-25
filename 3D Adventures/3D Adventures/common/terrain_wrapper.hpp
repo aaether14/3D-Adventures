@@ -21,29 +21,31 @@ class TerrainWrapper : public TerrainShader
 
 
 
+	void ManagePlayerCollision(Controller*ctrl, bool null_gravity);
+
+
+
 public:
 
 
 
-	inline TerrainWrapper(Controller * ctrl){ this->Init(ctrl); }
 	inline ~TerrainWrapper(){ this->Clean(); }
 
 
 
-	void Init(Controller * ctrl);
+	void Init();
 	void Clean();
 
 
 	inline  Light*getLight() { return this->TerrainLight; }
 
 
-	void Enable(Controller*ctrl);
-	void FirstPass(Controller *ctrl);
-	void Render(Controller * ctrl);
+	void Enable();
+	void Render();
 
 
 
-	void ManagePlayerCollision(Controller*ctrl, bool null_gravity);
+
 
 
 };

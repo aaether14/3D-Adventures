@@ -136,16 +136,16 @@ void Techniques::RunProgram(GLuint prog_target)
 			esm_implementation->Use();
 			break;
 	case NULL_FILTER :
-			basic_filter_implementation->GetNullFilter()->Use();
+			basic_filter_implementation->GetNullFilter()->Enable();
 			break;
 	case GAUS_BLUR_SHADER :
-			blur_implementation->GetGausBlur1()->Use();
+			blur_implementation->GetGausBlur1()->Enable();
 			break;
 	case GAUS_BLUR_SHADER2 :
-			blur_implementation->GetGausBlur2()->Use();
+			blur_implementation->GetGausBlur2()->Enable();
 			break;
 	case BRIGHT_FILTER : 
-			hdr_implementation->GetBrightShader()->Use();
+			hdr_implementation->GetBrightShader()->Enable();
 			break;
 	case SSAO_FILTER :
 			ssao_implementation->Use();
@@ -154,13 +154,13 @@ void Techniques::RunProgram(GLuint prog_target)
 			ssao_implementation->UseBlur();
 			break;
 	case GAMMA_CORRECTION_FILTER :
-			basic_filter_implementation->GetGammaFilter()->Use();
+			basic_filter_implementation->GetGammaFilter()->Enable();
 			break;
 	case GEOMETRY_PASS :
 			ssao_implementation->UseGeometryPass();
 			break;
 	case FXAA_FILTER :
-			fxaa_implementation->GetFxaaFilter()->Use();
+			fxaa_implementation->GetFxaaFilter()->Enable();
 			break;
 
 
