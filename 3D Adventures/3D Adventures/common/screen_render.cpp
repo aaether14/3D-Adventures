@@ -7,16 +7,15 @@ void ScreenRender::Init()
 {
 
 
-	shader2d = new Shader();
-	shader2d->Add("data/shaders/2d_vert.txt", GL_VERTEX_SHADER);
-	shader2d->Add("data/shaders/2d_frag.txt", GL_FRAGMENT_SHADER);
-	shader2d->Link();
+	Add("data/shaders/2d_vert.txt", GL_VERTEX_SHADER);
+	Add("data/shaders/2d_frag.txt", GL_FRAGMENT_SHADER);
+	Link();
 	
-	shader2d->AddVariable("texture");
-	shader2d->AddVariable("texture1");
-	shader2d->AddVariable("texture2");
-	shader2d->AddVariable("use_dof");
-	shader2d->AddVariable("white_point");
+	AddVariable("texture");
+	AddVariable("texture1");
+	AddVariable("texture2");
+	AddVariable("use_dof");
+	AddVariable("white_point");
 
 
 
@@ -32,7 +31,6 @@ void ScreenRender::Init()
 void ScreenRender::Clean()
 {
 
-	delete shader2d;
 	delete quad;
 
 }
@@ -50,28 +48,29 @@ void ScreenRender::Render(GLuint texture,
 
 
 
+
 	glViewport(0, 0, window_size.x, window_size.y);
-	this->shader2d->Enable();
+	Shader::Enable();
 
 
-	this->shader2d->Set("use_dof", use_dof);
-	this->shader2d->Set("white_point", white_point);
+	Set("use_dof", use_dof);
+	Set("white_point", white_point);
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, texture);
-	this->shader2d->Set("texture", 0);
+	Set("texture", 0);
 
 	glActiveTexture(GL_TEXTURE1);
 	glBindTexture(GL_TEXTURE_2D, texture1);
-	this->shader2d->Set("texture1", 1);
+	Set("texture1", 1);
 
 	glActiveTexture(GL_TEXTURE2);
 	glBindTexture(GL_TEXTURE_2D, texture2);
-	this->shader2d->Set("texture2", 2);
+	Set("texture2", 2);
 
 
-	this->quad->Render();
-	this->shader2d->Stop();
+	quad->Render();
+	Stop();
 
 
 }

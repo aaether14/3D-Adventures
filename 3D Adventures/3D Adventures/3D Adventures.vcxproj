@@ -76,6 +76,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="common\base\base_module.cpp" />
+    <ClCompile Include="common\mesh_implementation\mesh_drawer.cpp" />
+    <ClCompile Include="common\mesh_implementation\mesh_shader.cpp" />
+    <ClCompile Include="common\mesh_implementation\mesh_wrapper.cpp" />
     <ClCompile Include="common\screen_render.cpp" />
     <ClCompile Include="common\application.cpp" />
     <ClCompile Include="common\base\base_resource_loader.cpp" />
@@ -108,13 +111,11 @@
     <ClCompile Include="common\settings\filter_settings.cpp" />
     <ClCompile Include="common\settings\scene_info.cpp" />
     <ClCompile Include="common\shader\shader.cpp" />
-    <ClCompile Include="common\sky\sky_render.cpp" />
+    <ClCompile Include="common\sky_implementation\sky_render.cpp" />
+    <ClCompile Include="common\sky_implementation\sky_wrapper.cpp" />
     <ClCompile Include="common\technique.cpp" />
-    <ClCompile Include="common\mesh_drawer.cpp" />
-    <ClCompile Include="common\mesh_wrapper.cpp" />
     <ClCompile Include="common\pipeline.cpp" />
     <ClCompile Include="common\resource_loader.cpp" />
-    <ClCompile Include="common\sky_wrapper.cpp" />
     <ClCompile Include="common\terrain\quad_tree.cpp" />
     <ClCompile Include="common\terrain\terrain.cpp" />
     <ClCompile Include="common\terrain\terrain_strip.cpp" />
@@ -130,7 +131,6 @@
     <ClCompile Include="common\ui_implementation\top_root.cpp" />
     <ClCompile Include="common\ui_implementation\ui_root.cpp" />
     <ClCompile Include="common\ui_implementation\view_root.cpp" />
-    <ClCompile Include="common\mesh_shader.cpp" />
     <ClCompile Include="common\util\math_helper.cpp" />
     <ClCompile Include="common\util\file_helper.cpp" />
     <ClCompile Include="common\util\string_helper.cpp" />
@@ -177,6 +177,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\base\base_module.hpp" />
+    <ClInclude Include="common\mesh_implementation\mesh_drawer.hpp" />
+    <ClInclude Include="common\mesh_implementation\mesh_shader.hpp" />
+    <ClInclude Include="common\mesh_implementation\mesh_wrapper.hpp" />
     <ClInclude Include="common\screen_render.hpp" />
     <ClInclude Include="common\application.hpp" />
     <ClInclude Include="common\base\base_component.hpp" />
@@ -212,13 +215,11 @@
     <ClInclude Include="common\settings\scene_info.hpp" />
     <ClInclude Include="common\settings\settings.hpp" />
     <ClInclude Include="common\shader\shader.hpp" />
-    <ClInclude Include="common\sky\sky_render.hpp" />
+    <ClInclude Include="common\sky_implementation\sky_render.hpp" />
+    <ClInclude Include="common\sky_implementation\sky_wrapper.hpp" />
     <ClInclude Include="common\technique.hpp" />
-    <ClInclude Include="common\mesh_drawer.hpp" />
-    <ClInclude Include="common\mesh_wrapper.hpp" />
     <ClInclude Include="common\pipeline.hpp" />
     <ClInclude Include="common\resource_loader.hpp" />
-    <ClInclude Include="common\sky_wrapper.hpp" />
     <ClInclude Include="common\terrain\quad_tree.hpp" />
     <ClInclude Include="common\terrain\terrain.hpp" />
     <ClInclude Include="common\terrain\terrain_strip.hpp" />
@@ -234,7 +235,6 @@
     <ClInclude Include="common\ui_implementation\top_root.hpp" />
     <ClInclude Include="common\ui_implementation\ui_root.hpp" />
     <ClInclude Include="common\ui_implementation\view_root.hpp" />
-    <ClInclude Include="common\mesh_shader.hpp" />
     <ClInclude Include="common\util\math_helper.hpp" />
     <ClInclude Include="common\util\file_helper.hpp" />
     <ClInclude Include="common\util\string_helper.hpp" />

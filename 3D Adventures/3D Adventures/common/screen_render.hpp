@@ -20,12 +20,11 @@ Class for combining all textures from deffered process
 
 
 */
-class ScreenRender
+class ScreenRender : public Shader
 {
 
 
 
-	Shader * shader2d;
 	Quad * quad;
 
 
@@ -34,10 +33,7 @@ class ScreenRender
 public:
 
 
-	/**
-	Calls Init()
-	*/
-	inline ScreenRender(){this->Init(); }
+
 	/**
 	Initializes shader and quad
 	*/
@@ -52,6 +48,10 @@ public:
 	Cleans data
 	*/
 	void Clean();
+	/**
+	Empty Enable() to ensure it can access the interface
+	*/
+	inline void Enable(){}
 
 
 	/**

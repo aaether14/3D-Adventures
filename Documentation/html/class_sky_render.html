@@ -94,6 +94,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="sky__render_8hpp_source.html">sky_render.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for SkyRender:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_sky_render.png" usemap="#SkyRender_map" alt=""/>
+  <map id="SkyRender_map" name="SkyRender_map">
+<area href="class_shader.html" alt="Shader" shape="rect" coords="0,56,82,80"/>
+<area href="class_a_module.html" alt="AModule" shape="rect" coords="0,0,82,24"/>
+<area href="class_sky_wrapper.html" alt="SkyWrapper" shape="rect" coords="0,168,82,192"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -107,8 +118,56 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:afd305a6b0777cebca671ef74bf799b87"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aede1ecb3f5ced523e44dbea132926836"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sky_render.html#aede1ecb3f5ced523e44dbea132926836">LoadCube</a> (const char *Directory, const char *PosXFilename, const char *NegXFilename, const char *PosYFilename, const char *NegYFilename, const char *PosZFilename, const char *NegZFilename)</td></tr>
 <tr class="separator:aede1ecb3f5ced523e44dbea132926836"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a848a7147f8b95b55377cd44638561f21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sky_render.html#a848a7147f8b95b55377cd44638561f21">Render</a> (<a class="el" href="class_controller.html">Controller</a> *ctrl)</td></tr>
-<tr class="separator:a848a7147f8b95b55377cd44638561f21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38c2612b1ad178440daefe75c458f559"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_sky_render.html#a38c2612b1ad178440daefe75c458f559">Enable</a> ()</td></tr>
+<tr class="separator:a38c2612b1ad178440daefe75c458f559"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_shader"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_shader')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_shader.html">Shader</a></td></tr>
+<tr class="memitem:a0d654ebaca4e0555197c0724c6d30610 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a0d654ebaca4e0555197c0724c6d30610">Shader</a> ()</td></tr>
+<tr class="separator:a0d654ebaca4e0555197c0724c6d30610 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff01df87e8a102f270b5b135a295e59d inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#aff01df87e8a102f270b5b135a295e59d">~Shader</a> ()</td></tr>
+<tr class="separator:aff01df87e8a102f270b5b135a295e59d inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ef2af51a806758258b7c3c5ee2192d6 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a9ef2af51a806758258b7c3c5ee2192d6">Add</a> (char *path, GLenum type)</td></tr>
+<tr class="separator:a9ef2af51a806758258b7c3c5ee2192d6 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af8f02a3a21176e8c9b728661038212eb inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#af8f02a3a21176e8c9b728661038212eb">Link</a> ()</td></tr>
+<tr class="separator:af8f02a3a21176e8c9b728661038212eb inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a25f2188c9a925a6804bbe8da6c918b44 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a25f2188c9a925a6804bbe8da6c918b44">Stop</a> ()</td></tr>
+<tr class="separator:a25f2188c9a925a6804bbe8da6c918b44 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0e2398391424b6470bdc5b8b852e163f inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a0e2398391424b6470bdc5b8b852e163f">AddVariable</a> (char *name)</td></tr>
+<tr class="separator:a0e2398391424b6470bdc5b8b852e163f inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29e46a8316efc4265782aadfe1684597 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a29e46a8316efc4265782aadfe1684597">Set</a> (char *name, GLint v)</td></tr>
+<tr class="separator:a29e46a8316efc4265782aadfe1684597 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab3db230721adacf9c2a47c8f354ccc8e inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#ab3db230721adacf9c2a47c8f354ccc8e">Set</a> (char *name, GLfloat v)</td></tr>
+<tr class="separator:ab3db230721adacf9c2a47c8f354ccc8e inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a764fd440b7a79e130452086d7f4a5a4b inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a764fd440b7a79e130452086d7f4a5a4b">Set</a> (char *name, GLdouble v)</td></tr>
+<tr class="separator:a764fd440b7a79e130452086d7f4a5a4b inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ea36bc24b8da9cc62f516cc5547fc66 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a5ea36bc24b8da9cc62f516cc5547fc66">Set</a> (char *name, glm::vec3 v)</td></tr>
+<tr class="separator:a5ea36bc24b8da9cc62f516cc5547fc66 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6a8e52ed9b8d9a607603220bbfb3ee45 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a6a8e52ed9b8d9a607603220bbfb3ee45">Set</a> (char *name, GLfloat x, GLfloat y, GLfloat z)</td></tr>
+<tr class="separator:a6a8e52ed9b8d9a607603220bbfb3ee45 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a223a3ce4405c0b801cdd370220112685 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a223a3ce4405c0b801cdd370220112685">Set</a> (char *name, glm::vec3 *v, GLuint n)</td></tr>
+<tr class="separator:a223a3ce4405c0b801cdd370220112685 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af3ff9e2071e0211008a8c96999a48dd8 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#af3ff9e2071e0211008a8c96999a48dd8">Set</a> (char *name, glm::vec4 v)</td></tr>
+<tr class="separator:af3ff9e2071e0211008a8c96999a48dd8 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c0ad62bdc07961cff022c9fe8d12153 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a4c0ad62bdc07961cff022c9fe8d12153">Set</a> (char *name, GLfloat x, GLfloat y, GLfloat z, GLfloat w)</td></tr>
+<tr class="separator:a4c0ad62bdc07961cff022c9fe8d12153 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8bf324b6e46a82362bb1274a58393a78 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a8bf324b6e46a82362bb1274a58393a78">Set</a> (char *name, glm::mat4 v)</td></tr>
+<tr class="separator:a8bf324b6e46a82362bb1274a58393a78 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01669565ab9f33c7166aa13a111bdad2 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a01669565ab9f33c7166aa13a111bdad2">Set</a> (char *name, granny_matrix_4x4 *v, GLuint n)</td></tr>
+<tr class="separator:a01669565ab9f33c7166aa13a111bdad2 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9ae95e1316c2ab641bd2edd55827d998 inherit pub_methods_class_shader"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a9ae95e1316c2ab641bd2edd55827d998">Print</a> (char *name)</td></tr>
+<tr class="separator:a9ae95e1316c2ab641bd2edd55827d998 inherit pub_methods_class_shader"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_a_module"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_a_module')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_a_module.html">AModule</a></td></tr>
+<tr class="memitem:adcd435bad69d9abf8c526e266fbb7ade inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#adcd435bad69d9abf8c526e266fbb7ade">Add</a> (std::string key, <a class="el" href="class_a_module.html">AModule</a> *module)</td></tr>
+<tr class="separator:adcd435bad69d9abf8c526e266fbb7ade inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6cbd31dc202d53684cdb9efe408a03 inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_module.html">AModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a4c6cbd31dc202d53684cdb9efe408a03">Get</a> (std::string key)</td></tr>
+<tr class="separator:a4c6cbd31dc202d53684cdb9efe408a03 inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d5f5183ecf1e5804f1a28c2e4b9e03 inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_module.html">AModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a99d5f5183ecf1e5804f1a28c2e4b9e03">GetManager</a> ()</td></tr>
+<tr class="separator:a99d5f5183ecf1e5804f1a28c2e4b9e03 inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_a_module"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_module')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_module.html">AModule</a></td></tr>
+<tr class="memitem:a47e2ba7d981d89912a0f1ed020a2fafd inherit pro_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a47e2ba7d981d89912a0f1ed020a2fafd">SetManager</a> (<a class="el" href="class_a_module.html">AModule</a> *module)</td></tr>
+<tr class="separator:a47e2ba7d981d89912a0f1ed020a2fafd inherit pro_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Skydome implementation </p>
@@ -116,6 +175,9 @@ Public Member Functions</h2></td></tr>
 <a class="anchor" id="a14f0fe3f97f22b0d08cf02aeaa392012"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">SkyRender::SkyRender </td>
@@ -124,6 +186,11 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Calls <a class="el" href="class_sky_render.html#ad6f61c0e1f86e194be7f848d17f8ebba">Init()</a> </p>
 
@@ -149,6 +216,9 @@ Public Member Functions</h2></td></tr>
 <a class="anchor" id="afd305a6b0777cebca671ef74bf799b87"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void SkyRender::Clean </td>
@@ -157,14 +227,54 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Cleans model and textures </p>
+
+<p>Reimplemented from <a class="el" href="class_shader.html#a62d1ed79bd44e4cf8f788522dcfd853d">Shader</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_sky_wrapper.html#a331eaa978cff5e49ecf27f554769072e">SkyWrapper</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a38c2612b1ad178440daefe75c458f559"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SkyRender::Enable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Renders to scene </p>
+
+<p>Reimplemented from <a class="el" href="class_shader.html#a1e1e8f38bf4908281fcc515744bd3f7d">Shader</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_sky_wrapper.html#a08a5c5e9f48d8914e861aaa56770a986">SkyWrapper</a>.</p>
 
 </div>
 </div>
 <a class="anchor" id="ad6f61c0e1f86e194be7f848d17f8ebba"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void SkyRender::Init </td>
@@ -173,8 +283,17 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Inits model </p>
+
+<p>Reimplemented from <a class="el" href="class_shader.html#a9143ecbc145cc7d16f0ccd352e576540">Shader</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_sky_wrapper.html#aa0758a863517b16a89fbccbb838d5d01">SkyWrapper</a>.</p>
 
 </div>
 </div>
@@ -235,26 +354,9 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a848a7147f8b95b55377cd44638561f21"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void SkyRender::Render </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_controller.html">Controller</a> *&#160;</td>
-          <td class="paramname"><em>ctrl</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<p>Renders to scene </p>
-
-</div>
-</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>C:/Users/Aaether/Desktop/3D-Adventures/3D Adventures/3D Adventures/common/sky/<a class="el" href="sky__render_8hpp_source.html">sky_render.hpp</a></li>
-<li>C:/Users/Aaether/Desktop/3D-Adventures/3D Adventures/3D Adventures/common/sky/<a class="el" href="sky__render_8cpp.html">sky_render.cpp</a></li>
+<li>C:/Users/Aaether/Desktop/3D-Adventures/3D Adventures/3D Adventures/common/sky_implementation/<a class="el" href="sky__render_8hpp_source.html">sky_render.hpp</a></li>
+<li>C:/Users/Aaether/Desktop/3D-Adventures/3D Adventures/3D Adventures/common/sky_implementation/<a class="el" href="sky__render_8cpp.html">sky_render.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

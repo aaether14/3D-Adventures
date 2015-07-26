@@ -13,7 +13,7 @@ void TerrainWrapper::Init()
 
 
 	this->TerrainLight = new Light(this);
-	this->PipeTerrain = new Terrain(this);
+	PipeTerrain = new Terrain();
 
 
 
@@ -80,6 +80,7 @@ void TerrainWrapper::Enable()
 	Set("myTextureSampler2", 1);
 	Set("myTextureSampler3", 2);
 	Set("shadow_map", 3);
+	SendTextureAttributes(PipeTerrain->GetTextureAttributes(), 4);
 
 
 

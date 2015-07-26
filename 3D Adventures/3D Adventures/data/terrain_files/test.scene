@@ -41,4 +41,64 @@
         <Scale>0.01, 0.01, 0.01</Scale>
         <EntityName>Fire</EntityName>
     </Entity>
+    <Entity>
+        <Position>269.571, 0, 230.099</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>ArmourRack</EntityName>
+    </Entity>
+    <Entity>
+        <Position>275.32, 0, 228.427</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>ArmourRack</EntityName>
+    </Entity>
+    <Entity>
+        <Position>262.878, 0, 225.005</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>ArmourRack</EntityName>
+    </Entity>
+    <Entity>
+        <Position>271.688, 0, 233.565</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>ArmourRack</EntityName>
+    </Entity>
+    <Entity>
+        <Position>279.303, 0, 247.41</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>ArmourRack</EntityName>
+    </Entity>
+    <Entity>
+        <Position>290.569, 0, 244.123</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Axe</EntityName>
+    </Entity>
+    <Entity>
+        <Position>281.486, 0, 231.633</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Board</EntityName>
+    </Entity>
+    <Entity>
+        <Position>281.675, 0, 222.928</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Carriage</EntityName>
+    </Entity>
+    <Entity>
+        <Position>265.289, 0, 253.393</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Carriage</EntityName>
+    </Entity>
+    <Entity>
+        <Position>272.472, 0, 220.44</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Crate</EntityName>
+    </Entity>
 </Scene>

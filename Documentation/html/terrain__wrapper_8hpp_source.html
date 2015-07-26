@@ -114,52 +114,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <span class="keywordtype">void</span> ManagePlayerCollision(<a class="code" href="class_controller.html">Controller</a>*ctrl, <span class="keywordtype">bool</span> null_gravity);</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_terrain_wrapper.html#a55fe39d6d715d743482636ac2ac77d93">   28</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_terrain_wrapper.html#a55fe39d6d715d743482636ac2ac77d93">TerrainWrapper</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl){ this-&gt;<a class="code" href="class_terrain_shader.html#ac937aebe6387a081dd4e7db21a4796b5">Init</a>(ctrl); }</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_terrain_wrapper.html#af71f4bd4c974016a10919090d245ed23">   29</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_terrain_wrapper.html#af71f4bd4c974016a10919090d245ed23">~TerrainWrapper</a>(){ this-&gt;<a class="code" href="class_terrain_wrapper.html#a25cfb498181ba65875e6895885c813c0">Clean</a>(); }</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_shader.html#ac937aebe6387a081dd4e7db21a4796b5">Init</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#a25cfb498181ba65875e6895885c813c0">Clean</a>();</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="class_terrain_wrapper.html#af71f4bd4c974016a10919090d245ed23">   32</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_terrain_wrapper.html#af71f4bd4c974016a10919090d245ed23">~TerrainWrapper</a>(){ this-&gt;<a class="code" href="class_terrain_wrapper.html#a25cfb498181ba65875e6895885c813c0">Clean</a>(); }</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
 <div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_terrain_wrapper.html#a83f887d53e031b74fb86b1cedded8b19">   37</a></span>&#160;    <span class="keyword">inline</span>  <a class="code" href="class_light.html">Light</a>*<a class="code" href="class_terrain_wrapper.html#a83f887d53e031b74fb86b1cedded8b19">getLight</a>() { <span class="keywordflow">return</span> this-&gt;TerrainLight; }</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#a838d87e84eb87b7f1e521b506c504b91">Init</a>();</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#a25cfb498181ba65875e6895885c813c0">Clean</a>();</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#a5785d1204f7ce4b1d33f5a9630d74183">Enable</a>(<a class="code" href="class_controller.html">Controller</a>*ctrl);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#ab47ce8cf6067dac78ccb315c4b1239a0">FirstPass</a>(<a class="code" href="class_controller.html">Controller</a> *ctrl);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#a30cb2eca58758b4f49f153d0b9cf1fc0">Render</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="class_terrain_wrapper.html#a83f887d53e031b74fb86b1cedded8b19">   40</a></span>&#160;    <span class="keyword">inline</span>  <a class="code" href="class_light.html">Light</a>*<a class="code" href="class_terrain_wrapper.html#a83f887d53e031b74fb86b1cedded8b19">getLight</a>() { <span class="keywordflow">return</span> this-&gt;TerrainLight; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#a0cbba8ba1ba146adf2e90e657d4f8cc2">Enable</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#a666b9f09e6bc077b2b5bde5eb32cad80">Render</a>();</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_terrain_wrapper.html#a0ecdc3977a5692f2d025e7efd6e901d7">ManagePlayerCollision</a>(<a class="code" href="class_controller.html">Controller</a>*ctrl, <span class="keywordtype">bool</span> null_gravity);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="controls_8hpp_html"><div class="ttname"><a href="controls_8hpp.html">controls.hpp</a></div></div>
+<div class="ttc" id="class_terrain_wrapper_html_a0cbba8ba1ba146adf2e90e657d4f8cc2"><div class="ttname"><a href="class_terrain_wrapper.html#a0cbba8ba1ba146adf2e90e657d4f8cc2">TerrainWrapper::Enable</a></div><div class="ttdeci">void Enable()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:59</div></div>
 <div class="ttc" id="class_terrain_wrapper_html"><div class="ttname"><a href="class_terrain_wrapper.html">TerrainWrapper</a></div><div class="ttdef"><b>Definition:</b> terrain_wrapper.hpp:14</div></div>
+<div class="ttc" id="class_terrain_wrapper_html_a666b9f09e6bc077b2b5bde5eb32cad80"><div class="ttname"><a href="class_terrain_wrapper.html#a666b9f09e6bc077b2b5bde5eb32cad80">TerrainWrapper::Render</a></div><div class="ttdeci">void Render()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:126</div></div>
 <div class="ttc" id="class_light_html"><div class="ttname"><a href="class_light.html">Light</a></div><div class="ttdef"><b>Definition:</b> light.hpp:31</div></div>
-<div class="ttc" id="class_terrain_html"><div class="ttname"><a href="class_terrain.html">Terrain</a></div><div class="ttdef"><b>Definition:</b> terrain.hpp:47</div></div>
+<div class="ttc" id="class_terrain_html"><div class="ttname"><a href="class_terrain.html">Terrain</a></div><div class="ttdef"><b>Definition:</b> terrain.hpp:42</div></div>
 <div class="ttc" id="terrain_8hpp_html"><div class="ttname"><a href="terrain_8hpp.html">terrain.hpp</a></div></div>
-<div class="ttc" id="class_terrain_wrapper_html_ab47ce8cf6067dac78ccb315c4b1239a0"><div class="ttname"><a href="class_terrain_wrapper.html#ab47ce8cf6067dac78ccb315c4b1239a0">TerrainWrapper::FirstPass</a></div><div class="ttdeci">void FirstPass(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:69</div></div>
-<div class="ttc" id="class_terrain_wrapper_html_a25cfb498181ba65875e6895885c813c0"><div class="ttname"><a href="class_terrain_wrapper.html#a25cfb498181ba65875e6895885c813c0">TerrainWrapper::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:174</div></div>
+<div class="ttc" id="class_terrain_wrapper_html_a25cfb498181ba65875e6895885c813c0"><div class="ttname"><a href="class_terrain_wrapper.html#a25cfb498181ba65875e6895885c813c0">TerrainWrapper::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:176</div></div>
 <div class="ttc" id="class_terrain_shader_html"><div class="ttname"><a href="class_terrain_shader.html">TerrainShader</a></div><div class="ttdef"><b>Definition:</b> terrain_shader.hpp:15</div></div>
-<div class="ttc" id="class_terrain_shader_html_ac937aebe6387a081dd4e7db21a4796b5"><div class="ttname"><a href="class_terrain_shader.html#ac937aebe6387a081dd4e7db21a4796b5">TerrainShader::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> terrain_shader.cpp:18</div></div>
-<div class="ttc" id="class_terrain_wrapper_html_a5785d1204f7ce4b1d33f5a9630d74183"><div class="ttname"><a href="class_terrain_wrapper.html#a5785d1204f7ce4b1d33f5a9630d74183">TerrainWrapper::Enable</a></div><div class="ttdeci">void Enable(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:57</div></div>
-<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> controls.hpp:15</div></div>
+<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> controls.hpp:21</div></div>
+<div class="ttc" id="class_terrain_wrapper_html_a838d87e84eb87b7f1e521b506c504b91"><div class="ttname"><a href="class_terrain_wrapper.html#a838d87e84eb87b7f1e521b506c504b91">TerrainWrapper::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:6</div></div>
 <div class="ttc" id="light_8hpp_html"><div class="ttname"><a href="light_8hpp.html">light.hpp</a></div></div>
-<div class="ttc" id="class_terrain_wrapper_html_a55fe39d6d715d743482636ac2ac77d93"><div class="ttname"><a href="class_terrain_wrapper.html#a55fe39d6d715d743482636ac2ac77d93">TerrainWrapper::TerrainWrapper</a></div><div class="ttdeci">TerrainWrapper(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.hpp:28</div></div>
-<div class="ttc" id="class_terrain_wrapper_html_af71f4bd4c974016a10919090d245ed23"><div class="ttname"><a href="class_terrain_wrapper.html#af71f4bd4c974016a10919090d245ed23">TerrainWrapper::~TerrainWrapper</a></div><div class="ttdeci">~TerrainWrapper()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.hpp:29</div></div>
-<div class="ttc" id="class_terrain_wrapper_html_a30cb2eca58758b4f49f153d0b9cf1fc0"><div class="ttname"><a href="class_terrain_wrapper.html#a30cb2eca58758b4f49f153d0b9cf1fc0">TerrainWrapper::Render</a></div><div class="ttdeci">void Render(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:127</div></div>
-<div class="ttc" id="class_terrain_wrapper_html_a83f887d53e031b74fb86b1cedded8b19"><div class="ttname"><a href="class_terrain_wrapper.html#a83f887d53e031b74fb86b1cedded8b19">TerrainWrapper::getLight</a></div><div class="ttdeci">Light * getLight()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.hpp:37</div></div>
-<div class="ttc" id="class_terrain_wrapper_html_a0ecdc3977a5692f2d025e7efd6e901d7"><div class="ttname"><a href="class_terrain_wrapper.html#a0ecdc3977a5692f2d025e7efd6e901d7">TerrainWrapper::ManagePlayerCollision</a></div><div class="ttdeci">void ManagePlayerCollision(Controller *ctrl, bool null_gravity)</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.cpp:34</div></div>
+<div class="ttc" id="class_terrain_wrapper_html_af71f4bd4c974016a10919090d245ed23"><div class="ttname"><a href="class_terrain_wrapper.html#af71f4bd4c974016a10919090d245ed23">TerrainWrapper::~TerrainWrapper</a></div><div class="ttdeci">~TerrainWrapper()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.hpp:32</div></div>
+<div class="ttc" id="class_terrain_wrapper_html_a83f887d53e031b74fb86b1cedded8b19"><div class="ttname"><a href="class_terrain_wrapper.html#a83f887d53e031b74fb86b1cedded8b19">TerrainWrapper::getLight</a></div><div class="ttdeci">Light * getLight()</div><div class="ttdef"><b>Definition:</b> terrain_wrapper.hpp:40</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

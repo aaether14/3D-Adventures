@@ -4,10 +4,10 @@
 
 
 
-void Terrain::Init(TerrainShader * shader)
+void Terrain::Init()
 {
 
-	this->shader = shader;
+
 
 }
 
@@ -82,7 +82,7 @@ void Terrain::Render(Frustum * frustum, bool wired)
 	glBindTexture(GL_TEXTURE_2D_ARRAY, this->texture_array);
 	glActiveTexture(GL_TEXTURE2);
 	glBindTexture(GL_TEXTURE_2D_ARRAY, this->normal_texture_array);
-	this->shader->SendTextureAttributes(this->tex_data, 4);
+
 
 
 	this->RenderQuad(frustum, q_tree->GetStartNode());

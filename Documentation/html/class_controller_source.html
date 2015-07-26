@@ -101,7 +101,8 @@ Inheritance diagram for ControllerSource:</div>
  <div class="center">
   <img src="class_controller_source.png" usemap="#ControllerSource_map" alt=""/>
   <map id="ControllerSource_map" name="ControllerSource_map">
-<area href="class_controller.html" alt="Controller" shape="rect" coords="0,56,109,80"/>
+<area href="class_a_module.html" alt="AModule" shape="rect" coords="0,0,109,24"/>
+<area href="class_controller.html" alt="Controller" shape="rect" coords="0,112,109,136"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -149,11 +150,24 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a33d174952b8b88c2712c4e847cf5c096"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa6bd50fa8a814bda5e30bf357a1def7f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_source.html#aa6bd50fa8a814bda5e30bf357a1def7f">~ControllerSource</a> ()</td></tr>
 <tr class="separator:aa6bd50fa8a814bda5e30bf357a1def7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_a_module"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_a_module')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_a_module.html">AModule</a></td></tr>
+<tr class="memitem:adcd435bad69d9abf8c526e266fbb7ade inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#adcd435bad69d9abf8c526e266fbb7ade">Add</a> (std::string key, <a class="el" href="class_a_module.html">AModule</a> *module)</td></tr>
+<tr class="separator:adcd435bad69d9abf8c526e266fbb7ade inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6cbd31dc202d53684cdb9efe408a03 inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_module.html">AModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a4c6cbd31dc202d53684cdb9efe408a03">Get</a> (std::string key)</td></tr>
+<tr class="separator:a4c6cbd31dc202d53684cdb9efe408a03 inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d5f5183ecf1e5804f1a28c2e4b9e03 inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_module.html">AModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a99d5f5183ecf1e5804f1a28c2e4b9e03">GetManager</a> ()</td></tr>
+<tr class="separator:a99d5f5183ecf1e5804f1a28c2e4b9e03 inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a6cf5058ac86cd94aaa83e511ca46f02c"><td class="memItemLeft" align="right" valign="top">static GLboolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_controller_source.html#a6cf5058ac86cd94aaa83e511ca46f02c">CreateWindow</a> (GLuint window_width, GLuint window_height, GLboolean fullscreen, char *title, GLuint opengl_major_version, GLuint opengl_minor_version)</td></tr>
 <tr class="separator:a6cf5058ac86cd94aaa83e511ca46f02c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_a_module"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_module')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_module.html">AModule</a></td></tr>
+<tr class="memitem:a47e2ba7d981d89912a0f1ed020a2fafd inherit pro_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a47e2ba7d981d89912a0f1ed020a2fafd">SetManager</a> (<a class="el" href="class_a_module.html">AModule</a> *module)</td></tr>
+<tr class="separator:a47e2ba7d981d89912a0f1ed020a2fafd inherit pro_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for controller Used to acces window and input </p>
@@ -210,6 +224,9 @@ Static Public Member Functions</h2></td></tr>
 <a class="anchor" id="a33d174952b8b88c2712c4e847cf5c096"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ControllerSource::Clean </td>
@@ -218,8 +235,17 @@ Static Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Clean data </p>
+
+<p>Implements <a class="el" href="class_a_module.html#aadfc1cf6dbe1733be50f01218a410b27">AModule</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_controller.html#a7ad1d607d33c2655cbf2acf06db2090c">Controller</a>.</p>
 
 </div>
 </div>
@@ -285,6 +311,9 @@ Static Public Member Functions</h2></td></tr>
 <a class="anchor" id="acd5b1401754c3d3c63b397fa9d82ead1"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ControllerSource::Enable </td>
@@ -293,8 +322,17 @@ Static Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Compute data </p>
+
+<p>Implements <a class="el" href="class_a_module.html#a6385cc4dd1286579a01dd12f5ba35ff7">AModule</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_controller.html#a879b70076a73a4f496930fa2f7eb806c">Controller</a>.</p>
 
 </div>
 </div>
@@ -593,6 +631,9 @@ Static Public Member Functions</h2></td></tr>
 <a class="anchor" id="abedbe60c05c1930c4aaf7a862e37db6b"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ControllerSource::Init </td>
@@ -601,8 +642,17 @@ Static Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Initialize data </p>
+
+<p>Implements <a class="el" href="class_a_module.html#a758c9fedc6db4773c850317c1eb8b4d2">AModule</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_controller.html#a7435bf00c8ce1b3fcca76ebe939f2b9e">Controller</a>.</p>
 
 </div>
 </div>

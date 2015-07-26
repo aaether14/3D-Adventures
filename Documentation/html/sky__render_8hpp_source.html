@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>3D Adventures: C:/Users/Aaether/Desktop/3D-Adventures/3D Adventures/3D Adventures/common/sky/sky_render.hpp Source File</title>
+<title>3D Adventures: C:/Users/Aaether/Desktop/3D-Adventures/3D Adventures/3D Adventures/common/sky_implementation/sky_render.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a62758f00d96c80d3923ab60397ffde5.html">3D Adventures</a></li><li class="navelem"><a class="el" href="dir_05c0f629e8d309fc1111c5635ea80df7.html">3D Adventures</a></li><li class="navelem"><a class="el" href="dir_ea1f1ebba3bb9f5ea7b7adcf8dfa70ec.html">common</a></li><li class="navelem"><a class="el" href="dir_767dbcd4254614b9c0a3217b53144c04.html">sky</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a62758f00d96c80d3923ab60397ffde5.html">3D Adventures</a></li><li class="navelem"><a class="el" href="dir_05c0f629e8d309fc1111c5635ea80df7.html">3D Adventures</a></li><li class="navelem"><a class="el" href="dir_ea1f1ebba3bb9f5ea7b7adcf8dfa70ec.html">common</a></li><li class="navelem"><a class="el" href="dir_d8ac0bef2c0513208372d02f96b8fd79.html">sky_implementation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -101,53 +101,56 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="texture_8hpp.html">texture/texture.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="aaether__loader_8hpp.html">model_loaders/aaether_loader.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="controls_8hpp.html">controls.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="shader_8hpp.html">shader/shader.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="class_sky_render.html">   22</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sky_render.html">SkyRender</a></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;{</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_sky_render.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_sky_render.html">SkyRender</a> : <span class="keyword">public</span> <a class="code" href="class_shader.html">Shader</a></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    std::vector&lt;GLuint&gt; m_textures;</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <a class="code" href="class_aa__model.html">Aa_model</a> * model;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    std::vector&lt;GLuint&gt; m_textures;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="class_aa__model.html">Aa_model</a> * model;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <a class="code" href="class_sky_render.html#a14f0fe3f97f22b0d08cf02aeaa392012">SkyRender</a>();</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="class_sky_render.html#af8680b45e747668d342936553932e18f">~SkyRender</a>();</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sky_render.html#ad6f61c0e1f86e194be7f848d17f8ebba">Init</a>();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sky_render.html#afd305a6b0777cebca671ef74bf799b87">Clean</a>();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sky_render.html#aede1ecb3f5ced523e44dbea132926836">LoadCube</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *Directory,</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *PosXFilename,</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *NegXFilename,</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *PosYFilename,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *NegYFilename,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *PosZFilename,</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *NegZFilename);</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sky_render.html#a848a7147f8b95b55377cd44638561f21">Render</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_sky_render.html#a14f0fe3f97f22b0d08cf02aeaa392012">   39</a></span>&#160;    <a class="code" href="class_sky_render.html#a14f0fe3f97f22b0d08cf02aeaa392012">SkyRender</a>() : <a class="code" href="class_shader.html">Shader</a>() { <a class="code" href="class_sky_render.html#ad6f61c0e1f86e194be7f848d17f8ebba">Init</a>(); }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="class_sky_render.html#af8680b45e747668d342936553932e18f">~SkyRender</a>();</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sky_render.html#ad6f61c0e1f86e194be7f848d17f8ebba">Init</a>();</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sky_render.html#afd305a6b0777cebca671ef74bf799b87">Clean</a>();</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sky_render.html#aede1ecb3f5ced523e44dbea132926836">LoadCube</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *Directory,</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *PosXFilename,</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *NegXFilename,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *PosYFilename,</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *NegYFilename,</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *PosZFilename,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span> *NegZFilename);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_sky_render.html#a38c2612b1ad178440daefe75c458f559">Enable</a>();</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;};</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;};</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="controls_8hpp_html"><div class="ttname"><a href="controls_8hpp.html">controls.hpp</a></div></div>
-<div class="ttc" id="class_sky_render_html_aede1ecb3f5ced523e44dbea132926836"><div class="ttname"><a href="class_sky_render.html#aede1ecb3f5ced523e44dbea132926836">SkyRender::LoadCube</a></div><div class="ttdeci">void LoadCube(const char *Directory, const char *PosXFilename, const char *NegXFilename, const char *PosYFilename, const char *NegYFilename, const char *PosZFilename, const char *NegZFilename)</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:43</div></div>
-<div class="ttc" id="class_sky_render_html_a848a7147f8b95b55377cd44638561f21"><div class="ttname"><a href="class_sky_render.html#a848a7147f8b95b55377cd44638561f21">SkyRender::Render</a></div><div class="ttdeci">void Render(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:73</div></div>
-<div class="ttc" id="class_sky_render_html_ad6f61c0e1f86e194be7f848d17f8ebba"><div class="ttname"><a href="class_sky_render.html#ad6f61c0e1f86e194be7f848d17f8ebba">SkyRender::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:13</div></div>
-<div class="ttc" id="class_sky_render_html"><div class="ttname"><a href="class_sky_render.html">SkyRender</a></div><div class="ttdef"><b>Definition:</b> sky_render.hpp:22</div></div>
-<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> controls.hpp:15</div></div>
-<div class="ttc" id="class_sky_render_html_af8680b45e747668d342936553932e18f"><div class="ttname"><a href="class_sky_render.html#af8680b45e747668d342936553932e18f">SkyRender::~SkyRender</a></div><div class="ttdeci">~SkyRender()</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:22</div></div>
+<div class="ttc" id="class_sky_render_html_aede1ecb3f5ced523e44dbea132926836"><div class="ttname"><a href="class_sky_render.html#aede1ecb3f5ced523e44dbea132926836">SkyRender::LoadCube</a></div><div class="ttdeci">void LoadCube(const char *Directory, const char *PosXFilename, const char *NegXFilename, const char *PosYFilename, const char *NegYFilename, const char *PosZFilename, const char *NegZFilename)</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:61</div></div>
+<div class="ttc" id="shader_8hpp_html"><div class="ttname"><a href="shader_8hpp.html">shader.hpp</a></div></div>
+<div class="ttc" id="class_sky_render_html_ad6f61c0e1f86e194be7f848d17f8ebba"><div class="ttname"><a href="class_sky_render.html#ad6f61c0e1f86e194be7f848d17f8ebba">SkyRender::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:9</div></div>
+<div class="ttc" id="class_sky_render_html"><div class="ttname"><a href="class_sky_render.html">SkyRender</a></div><div class="ttdef"><b>Definition:</b> sky_render.hpp:23</div></div>
+<div class="ttc" id="class_sky_render_html_af8680b45e747668d342936553932e18f"><div class="ttname"><a href="class_sky_render.html#af8680b45e747668d342936553932e18f">SkyRender::~SkyRender</a></div><div class="ttdeci">~SkyRender()</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:35</div></div>
+<div class="ttc" id="class_sky_render_html_a38c2612b1ad178440daefe75c458f559"><div class="ttname"><a href="class_sky_render.html#a38c2612b1ad178440daefe75c458f559">SkyRender::Enable</a></div><div class="ttdeci">void Enable()</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:91</div></div>
 <div class="ttc" id="texture_8hpp_html"><div class="ttname"><a href="texture_8hpp.html">texture.hpp</a></div></div>
 <div class="ttc" id="aaether__loader_8hpp_html"><div class="ttname"><a href="aaether__loader_8hpp.html">aaether_loader.hpp</a></div></div>
-<div class="ttc" id="class_sky_render_html_a14f0fe3f97f22b0d08cf02aeaa392012"><div class="ttname"><a href="class_sky_render.html#a14f0fe3f97f22b0d08cf02aeaa392012">SkyRender::SkyRender</a></div><div class="ttdeci">SkyRender()</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:6</div></div>
+<div class="ttc" id="class_sky_render_html_a14f0fe3f97f22b0d08cf02aeaa392012"><div class="ttname"><a href="class_sky_render.html#a14f0fe3f97f22b0d08cf02aeaa392012">SkyRender::SkyRender</a></div><div class="ttdeci">SkyRender()</div><div class="ttdef"><b>Definition:</b> sky_render.hpp:39</div></div>
+<div class="ttc" id="class_shader_html"><div class="ttname"><a href="class_shader.html">Shader</a></div><div class="ttdef"><b>Definition:</b> shader.hpp:23</div></div>
 <div class="ttc" id="class_aa__model_html"><div class="ttname"><a href="class_aa__model.html">Aa_model</a></div><div class="ttdef"><b>Definition:</b> aaether_loader.hpp:31</div></div>
-<div class="ttc" id="class_sky_render_html_afd305a6b0777cebca671ef74bf799b87"><div class="ttname"><a href="class_sky_render.html#afd305a6b0777cebca671ef74bf799b87">SkyRender::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:30</div></div>
+<div class="ttc" id="class_sky_render_html_afd305a6b0777cebca671ef74bf799b87"><div class="ttname"><a href="class_sky_render.html#afd305a6b0777cebca671ef74bf799b87">SkyRender::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> sky_render.cpp:43</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

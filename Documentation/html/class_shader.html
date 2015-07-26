@@ -100,10 +100,14 @@ Inheritance diagram for Shader:</div>
  <div class="center">
   <img src="class_shader.png" usemap="#Shader_map" alt=""/>
   <map id="Shader_map" name="Shader_map">
-<area href="class_mesh_shader.html" alt="MeshShader" shape="rect" coords="0,56,102,80"/>
-<area href="class_terrain_shader.html" alt="TerrainShader" shape="rect" coords="112,56,214,80"/>
-<area href="class_mesh_wrapper.html" alt="MeshWrapper" shape="rect" coords="0,112,102,136"/>
-<area href="class_terrain_wrapper.html" alt="TerrainWrapper" shape="rect" coords="112,112,214,136"/>
+<area href="class_a_module.html" alt="AModule" shape="rect" coords="168,0,270,24"/>
+<area href="class_mesh_shader.html" alt="MeshShader" shape="rect" coords="0,112,102,136"/>
+<area href="class_screen_render.html" alt="ScreenRender" shape="rect" coords="112,112,214,136"/>
+<area href="class_sky_render.html" alt="SkyRender" shape="rect" coords="224,112,326,136"/>
+<area href="class_terrain_shader.html" alt="TerrainShader" shape="rect" coords="336,112,438,136"/>
+<area href="class_mesh_wrapper.html" alt="MeshWrapper" shape="rect" coords="0,168,102,192"/>
+<area href="class_sky_wrapper.html" alt="SkyWrapper" shape="rect" coords="224,168,326,192"/>
+<area href="class_terrain_wrapper.html" alt="TerrainWrapper" shape="rect" coords="336,168,438,192"/>
 </map>
  </div></div>
 <table class="memberdecls">
@@ -121,8 +125,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a9ef2af51a806758258b7c3c5ee2192d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af8f02a3a21176e8c9b728661038212eb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#af8f02a3a21176e8c9b728661038212eb">Link</a> ()</td></tr>
 <tr class="separator:af8f02a3a21176e8c9b728661038212eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6b11327cff651ffdb22988b6917b1650"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a6b11327cff651ffdb22988b6917b1650">Use</a> ()</td></tr>
-<tr class="separator:a6b11327cff651ffdb22988b6917b1650"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1e1e8f38bf4908281fcc515744bd3f7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a1e1e8f38bf4908281fcc515744bd3f7d">Enable</a> ()</td></tr>
+<tr class="separator:a1e1e8f38bf4908281fcc515744bd3f7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a25f2188c9a925a6804bbe8da6c918b44"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a25f2188c9a925a6804bbe8da6c918b44">Stop</a> ()</td></tr>
 <tr class="separator:a25f2188c9a925a6804bbe8da6c918b44"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e2398391424b6470bdc5b8b852e163f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a0e2398391424b6470bdc5b8b852e163f">AddVariable</a> (char *name)</td></tr>
@@ -149,6 +153,19 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a01669565ab9f33c7166aa13a111bdad2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9ae95e1316c2ab641bd2edd55827d998"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_shader.html#a9ae95e1316c2ab641bd2edd55827d998">Print</a> (char *name)</td></tr>
 <tr class="separator:a9ae95e1316c2ab641bd2edd55827d998"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_a_module"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_a_module')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_a_module.html">AModule</a></td></tr>
+<tr class="memitem:adcd435bad69d9abf8c526e266fbb7ade inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#adcd435bad69d9abf8c526e266fbb7ade">Add</a> (std::string key, <a class="el" href="class_a_module.html">AModule</a> *module)</td></tr>
+<tr class="separator:adcd435bad69d9abf8c526e266fbb7ade inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c6cbd31dc202d53684cdb9efe408a03 inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_module.html">AModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a4c6cbd31dc202d53684cdb9efe408a03">Get</a> (std::string key)</td></tr>
+<tr class="separator:a4c6cbd31dc202d53684cdb9efe408a03 inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a99d5f5183ecf1e5804f1a28c2e4b9e03 inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_a_module.html">AModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a99d5f5183ecf1e5804f1a28c2e4b9e03">GetManager</a> ()</td></tr>
+<tr class="separator:a99d5f5183ecf1e5804f1a28c2e4b9e03 inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_a_module"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_module')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_module.html">AModule</a></td></tr>
+<tr class="memitem:a47e2ba7d981d89912a0f1ed020a2fafd inherit pro_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a47e2ba7d981d89912a0f1ed020a2fafd">SetManager</a> (<a class="el" href="class_a_module.html">AModule</a> *module)</td></tr>
+<tr class="separator:a47e2ba7d981d89912a0f1ed020a2fafd inherit pro_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="class_shader.html">Shader</a> class for which makes for easy uniform management using std::map </p>
@@ -270,11 +287,43 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Deletes shader program from OpenGL memory and clears uniforms </p>
+
+<p>Implements <a class="el" href="class_a_module.html#aadfc1cf6dbe1733be50f01218a410b27">AModule</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_sky_render.html#afd305a6b0777cebca671ef74bf799b87">SkyRender</a>, <a class="el" href="class_sky_wrapper.html#a331eaa978cff5e49ecf27f554769072e">SkyWrapper</a>, and <a class="el" href="class_terrain_wrapper.html#a25cfb498181ba65875e6895885c813c0">TerrainWrapper</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a1e1e8f38bf4908281fcc515744bd3f7d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Shader::Enable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>OpenGL context is bound to using this program </p>
+
+<p>Implements <a class="el" href="class_a_module.html#a6385cc4dd1286579a01dd12f5ba35ff7">AModule</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_sky_render.html#a38c2612b1ad178440daefe75c458f559">SkyRender</a>, <a class="el" href="class_sky_wrapper.html#a08a5c5e9f48d8914e861aaa56770a986">SkyWrapper</a>, and <a class="el" href="class_terrain_wrapper.html#a0cbba8ba1ba146adf2e90e657d4f8cc2">TerrainWrapper</a>.</p>
 
 </div>
 </div>
@@ -294,11 +343,15 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 <p>Creates a shader program in OpenGL memory </p>
+
+<p>Implements <a class="el" href="class_a_module.html#a758c9fedc6db4773c850317c1eb8b4d2">AModule</a>.</p>
+
+<p>Reimplemented in <a class="el" href="class_sky_render.html#ad6f61c0e1f86e194be7f848d17f8ebba">SkyRender</a>, <a class="el" href="class_sky_wrapper.html#aa0758a863517b16a89fbccbb838d5d01">SkyWrapper</a>, <a class="el" href="class_terrain_wrapper.html#a838d87e84eb87b7f1e521b506c504b91">TerrainWrapper</a>, and <a class="el" href="class_terrain_shader.html#ac937aebe6387a081dd4e7db21a4796b5">TerrainShader</a>.</p>
 
 </div>
 </div>
@@ -756,30 +809,6 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>OpenGL context is no longer bound to a shader program </p>
-
-</div>
-</div>
-<a class="anchor" id="a6b11327cff651ffdb22988b6917b1650"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void Shader::Use </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>OpenGL context is bound to using this program </p>
 
 </div>
 </div>

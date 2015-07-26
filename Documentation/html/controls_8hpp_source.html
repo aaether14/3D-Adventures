@@ -99,67 +99,67 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="camera_8hpp.html">camera_implementation/camera.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="file__helper_8hpp.html">util/file_helper.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="game__object_8hpp.html">game_object.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="class_controller.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controller.html">Controller</a> : <span class="keyword">public</span> <a class="code" href="class_controller_source.html">ControllerSource</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <a class="code" href="class_camera.html">Camera</a> * camera;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <a class="code" href="class_game_object.html">GameObject</a> * g_obj;</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="class_controller.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_controller.html">Controller</a> : <span class="keyword">public</span> <a class="code" href="class_controller_source.html">ControllerSource</a></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;{</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_camera.html">Camera</a> * camera;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_game_object.html">GameObject</a> * g_obj;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_controller.html#aed0962adbc3e2ceb106b32c62449e97a">   28</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_camera.html">Camera</a> * <a class="code" href="class_controller.html#aed0962adbc3e2ceb106b32c62449e97a">GetCameraPointer</a>(){ <span class="keywordflow">return</span> this-&gt;camera; }</div>
-<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="class_controller.html#aa1b7faf9ad9c9d2b99190279619d9289">   29</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_game_object.html">GameObject</a> * <a class="code" href="class_controller.html#aa1b7faf9ad9c9d2b99190279619d9289">GetGameObject</a>(){ <span class="keywordflow">return</span> this-&gt;g_obj; }</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_controller.html#a879b70076a73a4f496930fa2f7eb806c">Enable</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_controller.html#abe67e982c657a8dfd06400aa5b5fe242">Load</a>(<span class="keywordtype">char</span>*path);</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_controller.html#a7ad1d607d33c2655cbf2acf06db2090c">Clean</a>();</div>
-<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">   38</a></span>&#160;    <span class="keyword">inline</span>  <a class="code" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">~Controller</a>(){ this-&gt;<a class="code" href="class_controller.html#a7ad1d607d33c2655cbf2acf06db2090c">Clean</a>(); }</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="class_controller.html#abc788ba5484b5d4b2a45cc08971dc459">   42</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_controller.html#abc788ba5484b5d4b2a45cc08971dc459">Controller</a>(GLint width, GLint height, GLboolean fullscreen, <a class="code" href="controls__source_8hpp.html#af7575655ac056b187ea385966b95a22d">GLchar</a> * title, GLuint major, GLuint minor) : </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;        <a class="code" href="class_controller_source.html">ControllerSource</a>() </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    { this-&gt;<a class="code" href="class_controller_source.html#abedbe60c05c1930c4aaf7a862e37db6b">Init</a>(width, height, fullscreen, title, major, minor); }</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_controller_source.html#abedbe60c05c1930c4aaf7a862e37db6b">Init</a>(GLint width, GLint height, GLboolean fullscreen, <a class="code" href="controls__source_8hpp.html#af7575655ac056b187ea385966b95a22d">GLchar</a> * title, GLuint major, GLuint minor);</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;};</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="class_controller.html#aed0962adbc3e2ceb106b32c62449e97a">   37</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_camera.html">Camera</a> * <a class="code" href="class_controller.html#aed0962adbc3e2ceb106b32c62449e97a">GetCameraPointer</a>(){ <span class="keywordflow">return</span> this-&gt;camera; }</div>
+<div class="line"><a name="l00041"></a><span class="lineno"><a class="line" href="class_controller.html#aa1b7faf9ad9c9d2b99190279619d9289">   41</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_game_object.html">GameObject</a> * <a class="code" href="class_controller.html#aa1b7faf9ad9c9d2b99190279619d9289">GetGameObject</a>(){ <span class="keywordflow">return</span> this-&gt;g_obj; }</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_controller.html#a879b70076a73a4f496930fa2f7eb806c">Enable</a>();</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_controller_source_html"><div class="ttname"><a href="class_controller_source.html">ControllerSource</a></div><div class="ttdef"><b>Definition:</b> controls_source.hpp:83</div></div>
-<div class="ttc" id="class_controller_source_html_abedbe60c05c1930c4aaf7a862e37db6b"><div class="ttname"><a href="class_controller_source.html#abedbe60c05c1930c4aaf7a862e37db6b">ControllerSource::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> controls_source.cpp:115</div></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_controller.html#a7ad1d607d33c2655cbf2acf06db2090c">Clean</a>();</div>
+<div class="line"><a name="l00058"></a><span class="lineno"><a class="line" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">   58</a></span>&#160;    <span class="keyword">inline</span>  <a class="code" href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">~Controller</a>(){ this-&gt;<a class="code" href="class_controller.html#a7ad1d607d33c2655cbf2acf06db2090c">Clean</a>(); }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="class_controller.html#a95c56822d667e94b031451729ce069a9">   65</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_controller.html#a95c56822d667e94b031451729ce069a9">Controller</a>() : <a class="code" href="class_controller_source.html">ControllerSource</a>() {}</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_controller.html#a7435bf00c8ce1b3fcca76ebe939f2b9e">Init</a>();</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;};</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_controller_source_html"><div class="ttname"><a href="class_controller_source.html">ControllerSource</a></div><div class="ttdef"><b>Definition:</b> controls_source.hpp:84</div></div>
+<div class="ttc" id="class_controller_html_a7435bf00c8ce1b3fcca76ebe939f2b9e"><div class="ttname"><a href="class_controller.html#a7435bf00c8ce1b3fcca76ebe939f2b9e">Controller::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> controls.cpp:9</div></div>
+<div class="ttc" id="class_controller_html_a95c56822d667e94b031451729ce069a9"><div class="ttname"><a href="class_controller.html#a95c56822d667e94b031451729ce069a9">Controller::Controller</a></div><div class="ttdeci">Controller()</div><div class="ttdef"><b>Definition:</b> controls.hpp:65</div></div>
 <div class="ttc" id="camera_8hpp_html"><div class="ttname"><a href="camera_8hpp.html">camera.hpp</a></div></div>
 <div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> camera.hpp:23</div></div>
-<div class="ttc" id="class_controller_html_aed0962adbc3e2ceb106b32c62449e97a"><div class="ttname"><a href="class_controller.html#aed0962adbc3e2ceb106b32c62449e97a">Controller::GetCameraPointer</a></div><div class="ttdeci">Camera * GetCameraPointer()</div><div class="ttdef"><b>Definition:</b> controls.hpp:28</div></div>
-<div class="ttc" id="class_controller_html_abe67e982c657a8dfd06400aa5b5fe242"><div class="ttname"><a href="class_controller.html#abe67e982c657a8dfd06400aa5b5fe242">Controller::Load</a></div><div class="ttdeci">void Load(char *path)</div><div class="ttdef"><b>Definition:</b> controls.cpp:25</div></div>
-<div class="ttc" id="class_controller_html_a0ab87934c4f7a266cfdb86e0f36bc1b5"><div class="ttname"><a href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">Controller::~Controller</a></div><div class="ttdeci">~Controller()</div><div class="ttdef"><b>Definition:</b> controls.hpp:38</div></div>
-<div class="ttc" id="class_controller_html_a7ad1d607d33c2655cbf2acf06db2090c"><div class="ttname"><a href="class_controller.html#a7ad1d607d33c2655cbf2acf06db2090c">Controller::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> controls.cpp:47</div></div>
-<div class="ttc" id="class_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> game_object.hpp:17</div></div>
-<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> controls.hpp:15</div></div>
-<div class="ttc" id="class_controller_html_aa1b7faf9ad9c9d2b99190279619d9289"><div class="ttname"><a href="class_controller.html#aa1b7faf9ad9c9d2b99190279619d9289">Controller::GetGameObject</a></div><div class="ttdeci">GameObject * GetGameObject()</div><div class="ttdef"><b>Definition:</b> controls.hpp:29</div></div>
-<div class="ttc" id="class_controller_html_abc788ba5484b5d4b2a45cc08971dc459"><div class="ttname"><a href="class_controller.html#abc788ba5484b5d4b2a45cc08971dc459">Controller::Controller</a></div><div class="ttdeci">Controller(GLint width, GLint height, GLboolean fullscreen, GLchar *title, GLuint major, GLuint minor)</div><div class="ttdef"><b>Definition:</b> controls.hpp:42</div></div>
+<div class="ttc" id="class_controller_html_aed0962adbc3e2ceb106b32c62449e97a"><div class="ttname"><a href="class_controller.html#aed0962adbc3e2ceb106b32c62449e97a">Controller::GetCameraPointer</a></div><div class="ttdeci">Camera * GetCameraPointer()</div><div class="ttdef"><b>Definition:</b> controls.hpp:37</div></div>
+<div class="ttc" id="class_controller_html_a0ab87934c4f7a266cfdb86e0f36bc1b5"><div class="ttname"><a href="class_controller.html#a0ab87934c4f7a266cfdb86e0f36bc1b5">Controller::~Controller</a></div><div class="ttdeci">~Controller()</div><div class="ttdef"><b>Definition:</b> controls.hpp:58</div></div>
+<div class="ttc" id="class_controller_html_a7ad1d607d33c2655cbf2acf06db2090c"><div class="ttname"><a href="class_controller.html#a7ad1d607d33c2655cbf2acf06db2090c">Controller::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> controls.cpp:79</div></div>
+<div class="ttc" id="class_game_object_html"><div class="ttname"><a href="class_game_object.html">GameObject</a></div><div class="ttdef"><b>Definition:</b> game_object.hpp:20</div></div>
+<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> controls.hpp:21</div></div>
+<div class="ttc" id="class_controller_html_aa1b7faf9ad9c9d2b99190279619d9289"><div class="ttname"><a href="class_controller.html#aa1b7faf9ad9c9d2b99190279619d9289">Controller::GetGameObject</a></div><div class="ttdeci">GameObject * GetGameObject()</div><div class="ttdef"><b>Definition:</b> controls.hpp:41</div></div>
+<div class="ttc" id="file__helper_8hpp_html"><div class="ttname"><a href="file__helper_8hpp.html">file_helper.hpp</a></div></div>
 <div class="ttc" id="game__object_8hpp_html"><div class="ttname"><a href="game__object_8hpp.html">game_object.hpp</a></div></div>
-<div class="ttc" id="class_controller_html_a879b70076a73a4f496930fa2f7eb806c"><div class="ttname"><a href="class_controller.html#a879b70076a73a4f496930fa2f7eb806c">Controller::Enable</a></div><div class="ttdeci">void Enable()</div><div class="ttdef"><b>Definition:</b> controls.cpp:69</div></div>
-<div class="ttc" id="controls__source_8hpp_html_af7575655ac056b187ea385966b95a22d"><div class="ttname"><a href="controls__source_8hpp.html#af7575655ac056b187ea385966b95a22d">GLchar</a></div><div class="ttdeci">char GLchar</div><div class="ttdef"><b>Definition:</b> controls_source.hpp:20</div></div>
+<div class="ttc" id="class_controller_html_a879b70076a73a4f496930fa2f7eb806c"><div class="ttname"><a href="class_controller.html#a879b70076a73a4f496930fa2f7eb806c">Controller::Enable</a></div><div class="ttdeci">void Enable()</div><div class="ttdef"><b>Definition:</b> controls.cpp:101</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

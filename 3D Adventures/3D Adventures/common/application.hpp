@@ -19,15 +19,15 @@ class Application : public AModule
 
 public:
 
-	inline Application() { this->Init(); }
-	inline ~Application() { this->Clean(); }
+
+	inline Application() { Init(); }
+	inline ~Application() { Clean(); }
 
 
 	void Init();
 	void Clean();
 
 
-	void Load(char*path);
 	void Enable();
 
 

@@ -13,7 +13,7 @@ var searchData=
   ['updatedata',['UpdateData',['../classui___transform_tab.html#a10205e8a531341e178491a880806a7fd',1,'ui_TransformTab']]],
   ['updatescenedata',['UpdateSceneData',['../classui___scene_outliner.html#a7084c6b6258549ce933d2f92ef6e4246',1,'ui_SceneOutliner']]],
   ['updatestepdata',['UpdateStepData',['../classui___transform_tab.html#a0dc64e5fb76923d0415840b321a4a4a1',1,'ui_TransformTab']]],
-  ['use',['Use',['../class_e_s_m_implementation.html#a207bc9266d26aba79e13c8e65807ad43',1,'ESMImplementation::Use()'],['../class_s_s_a_o_implementation.html#ab69403853f38709ec9b60d5fc075f5fe',1,'SSAOImplementation::Use()'],['../class_shader.html#a6b11327cff651ffdb22988b6917b1650',1,'Shader::Use()']]],
+  ['use',['Use',['../class_e_s_m_implementation.html#a207bc9266d26aba79e13c8e65807ad43',1,'ESMImplementation::Use()'],['../class_s_s_a_o_implementation.html#ab69403853f38709ec9b60d5fc075f5fe',1,'SSAOImplementation::Use()']]],
   ['useblur',['UseBlur',['../class_s_s_a_o_implementation.html#a223a1b9ea4f1c25bb8d9847bd7b6850f',1,'SSAOImplementation']]],
   ['usegeometrypass',['UseGeometryPass',['../class_s_s_a_o_implementation.html#af7ec86784bd338d890ea1ad17d8db7e6',1,'SSAOImplementation']]]
 ];

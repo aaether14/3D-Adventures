@@ -94,8 +94,8 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Functions</h2></td></tr>
 <tr class="memitem:a2e369d863e09b3ad5242651fceafc851"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_file.html#a2e369d863e09b3ad5242651fceafc851">copyDir</a> (boost::filesystem::path const &amp;source, boost::filesystem::path const &amp;destination)</td></tr>
 <tr class="separator:a2e369d863e09b3ad5242651fceafc851"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a211165db8ffb26deabaa07690968ff1e"><td class="memItemLeft" align="right" valign="top">char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_file.html#a211165db8ffb26deabaa07690968ff1e">GetFileWithExtension</a> (std::string path, std::string extension)</td></tr>
-<tr class="separator:a211165db8ffb26deabaa07690968ff1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60ee56871206189c31a899c4b5c36ac0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_a_file.html#a60ee56871206189c31a899c4b5c36ac0">GetFileWithExtension</a> (std::string path, std::string extension)</td></tr>
+<tr class="separator:a60ee56871206189c31a899c4b5c36ac0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa9bdccf1e107ce056b55d81a4cb27370"><td class="memTemplParams" colspan="2">template&lt;class T &gt; </td></tr>
 <tr class="memitem:aa9bdccf1e107ce056b55d81a4cb27370"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_a_file.html#aa9bdccf1e107ce056b55d81a4cb27370">WriteToFile</a> (std::ofstream &amp;os, const T &amp;obj)</td></tr>
 <tr class="separator:aa9bdccf1e107ce056b55d81a4cb27370"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -103,7 +103,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a88052692f0c0b3ca1be4cee13bfc6f8d"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespace_a_file.html#a88052692f0c0b3ca1be4cee13bfc6f8d">ReadFromFile</a> (std::ifstream &amp;is, const T &amp;obj)</td></tr>
 <tr class="separator:a88052692f0c0b3ca1be4cee13bfc6f8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Using Templates for easier binary data storing/loading Also provides tools for directory copying </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a2e369d863e09b3ad5242651fceafc851"></a>
 <div class="memitem">
 <div class="memproto">
@@ -127,15 +129,16 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Copy folder from a location to another. Returns true if succesful </p>
 
 </div>
 </div>
-<a class="anchor" id="a211165db8ffb26deabaa07690968ff1e"></a>
+<a class="anchor" id="a60ee56871206189c31a899c4b5c36ac0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">char * AFile::GetFileWithExtension </td>
+          <td class="memname">std::string AFile::GetFileWithExtension </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
           <td class="paramname"><em>path</em>, </td>
@@ -153,6 +156,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>If in the folder specified by 'path' exists a file that has 'extension' return path of that file. Returns NULL otherwise </p>
 
 </div>
 </div>
@@ -189,6 +193,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Reads anytype of data from binary file </p>
 
 </div>
 </div>
@@ -225,6 +230,7 @@ template&lt;class T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Writes anytype of data to binary file </p>
 
 </div>
 </div>

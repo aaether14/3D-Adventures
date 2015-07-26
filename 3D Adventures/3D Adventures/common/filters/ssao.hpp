@@ -11,9 +11,6 @@
 
 
 
-#define MAX_BONES 128
-
-
 
 
 /**
@@ -27,6 +24,10 @@ Hemispherical SSAO with noise texture and blur
 */
 class SSAOImplementation
 {
+
+
+#define MAX_BONES 128
+
 
 	//SSAO PASS
 

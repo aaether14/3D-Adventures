@@ -12,15 +12,9 @@ void Pipeline::Init()
 
 
 	Add("MeshWrapper", new MeshWrapper());
-	static_cast<MeshWrapper*>(Get("MeshWrapper"))->Init();
 	Add("TerrainWrapper", new TerrainWrapper());
-	static_cast<TerrainWrapper*>(Get("TerrainWrapper"))->Init();
 	Add("SkyWrapper", new SkyWrapper());
-	static_cast<SkyWrapper*>(Get("SkyWrapper"))->Init();
-
-
-
-	screen_render = new ScreenRender();
+    Add("ScreenRender", new ScreenRender());
 
 
 
@@ -30,6 +24,7 @@ void Pipeline::Init()
 
 void Pipeline::GeometryPass()
 {
+
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
@@ -406,7 +401,7 @@ void Pipeline::Enable()
 
 
 
-	screen_render->Render(
+	static_cast<ScreenRender*>(Get("ScreenRender"))->Render(
 		tech->GetGBuffer()->GetTexture()->GetTexture()[0],
 		tech->GetGBuffer()->GetBuffer()->GetDepth(),
 		tech->GetDof()->GetDofTexture()->GetTexture()[0],
@@ -425,7 +420,7 @@ void Pipeline::Clean()
 	Get("MeshWrapper")->Clean();
 	Get("TerrainWrapper")->Clean();
 	Get("SkyWrapper")->Clean();
-	delete screen_render;
+	Get("ScreenRender")->Clean();
 
 }
 

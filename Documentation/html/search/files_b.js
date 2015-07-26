@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['pipeline_2ecpp',['pipeline.cpp',['../pipeline_8cpp.html',1,'']]],
-  ['pipeline_2ehpp',['pipeline.hpp',['../pipeline_8hpp.html',1,'']]],
-  ['project_5froot_2ecpp',['project_root.cpp',['../project__root_8cpp.html',1,'']]],
-  ['project_5froot_2ehpp',['project_root.hpp',['../project__root_8hpp.html',1,'']]]
+  ['quad_5ftree_2ecpp',['quad_tree.cpp',['../quad__tree_8cpp.html',1,'']]],
+  ['quad_5ftree_2ehpp',['quad_tree.hpp',['../quad__tree_8hpp.html',1,'']]]
 ];

@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.10"/>
-<title>3D Adventures: C:/Users/Aaether/Desktop/3D-Adventures/3D Adventures/3D Adventures/common/mesh_drawer.hpp Source File</title>
+<title>3D Adventures: C:/Users/Aaether/Desktop/3D-Adventures/3D Adventures/3D Adventures/common/mesh_implementation/mesh_drawer.hpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -83,7 +83,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><a class="el" href="dir_a62758f00d96c80d3923ab60397ffde5.html">3D Adventures</a></li><li class="navelem"><a class="el" href="dir_05c0f629e8d309fc1111c5635ea80df7.html">3D Adventures</a></li><li class="navelem"><a class="el" href="dir_ea1f1ebba3bb9f5ea7b7adcf8dfa70ec.html">common</a></li>  </ul>
+<li class="navelem"><a class="el" href="dir_a62758f00d96c80d3923ab60397ffde5.html">3D Adventures</a></li><li class="navelem"><a class="el" href="dir_05c0f629e8d309fc1111c5635ea80df7.html">3D Adventures</a></li><li class="navelem"><a class="el" href="dir_ea1f1ebba3bb9f5ea7b7adcf8dfa70ec.html">common</a></li><li class="navelem"><a class="el" href="dir_6a0d6662a9aefb47ad3bb1e9d291d2a1.html">mesh_implementation</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -97,64 +97,53 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;</div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="mesh__shader_8hpp.html">mesh_shader.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="mesh__shader_8hpp.html">mesh_shader.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="controls_8hpp.html">controls.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="entity__manager_8hpp.html">entity/entity_manager.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="base__module_8hpp.html">base/base_module.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="mesh__drawer_8hpp.html#abdb86b63a3ac2d2b3d6ad946ea404087">   14</a></span>&#160;<span class="preprocessor">#define MAX_BONES 128</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="mesh__drawer_8hpp.html#abdb86b63a3ac2d2b3d6ad946ea404087">   15</a></span>&#160;<span class="preprocessor">#define MAX_BONES 128</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="class_mesh_drawer.html">   20</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh_drawer.html">MeshDrawer</a></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;{</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    <a class="code" href="class_mesh_shader.html">MeshShader</a> * shader;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    <a class="code" href="class_entity_manager.html">EntityManager</a> * entity_manager;</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_mesh_drawer.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_mesh_drawer.html">MeshDrawer</a> : <span class="keyword">public</span> <a class="code" href="class_a_module.html">AModule</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <a class="code" href="class_entity_manager.html">EntityManager</a> * entity_manager;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="class_mesh_drawer.html#af7d18e099d12b732d5e72aed414d5b0b">   34</a></span>&#160;    <span class="keyword">inline</span>   <a class="code" href="class_mesh_drawer.html#af7d18e099d12b732d5e72aed414d5b0b">~MeshDrawer</a>() { this-&gt;<a class="code" href="class_mesh_drawer.html#ad09003d67140b2044bbc68fe0bfbb515">Clean</a>(); };</div>
-<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="class_mesh_drawer.html#abc200be785ab8746a54a15fe069268ce">   35</a></span>&#160;    <span class="keyword">inline</span>   <a class="code" href="class_mesh_drawer.html#abc200be785ab8746a54a15fe069268ce">MeshDrawer</a>() {}</div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="class_mesh_drawer.html#a2a912e5679246cd6c482b1f5716f995f">   39</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_mesh_drawer.html#a2a912e5679246cd6c482b1f5716f995f">MeshDrawer</a>(<a class="code" href="class_mesh_shader.html">MeshShader</a> * shader, <a class="code" href="class_controller.html">Controller</a> * ctrl) { this-&gt;<a class="code" href="class_mesh_drawer.html#a5256157cde9e517026bd0ba960a0cb72">Init</a>(shader, ctrl); }</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#a229ee3fd9f33942c2afc7fc4af91e8d3">LoadMeshes</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl);</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#a5256157cde9e517026bd0ba960a0cb72">Init</a>(<a class="code" href="class_mesh_shader.html">MeshShader</a> * shader, <a class="code" href="class_controller.html">Controller</a> * ctrl);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#a404d48288c2037b29d557ac27a5e3d8f">Draw</a>(<a class="code" href="class_controller.html">Controller</a> *ctrl);</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#ad09003d67140b2044bbc68fe0bfbb515">Clean</a>();</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#a9ef4822edebc144183b4a7134e28d472">Enable</a>(<a class="code" href="class_controller.html">Controller</a> *ctrl);</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;};</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#a587fb3be5411047d327d2d1272677cac">Init</a>();</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#ad09003d67140b2044bbc68fe0bfbb515">Clean</a>();</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#ac88a55d14759d3de3b152183fd7a180f">Enable</a>();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_mesh_drawer.html#a0a4e70ff25a25ba18c94b7d208feb0c9">Render</a>();</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;};</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="controls_8hpp_html"><div class="ttname"><a href="controls_8hpp.html">controls.hpp</a></div></div>
-<div class="ttc" id="class_mesh_shader_html"><div class="ttname"><a href="class_mesh_shader.html">MeshShader</a></div><div class="ttdef"><b>Definition:</b> mesh_shader.hpp:22</div></div>
-<div class="ttc" id="class_mesh_drawer_html_a404d48288c2037b29d557ac27a5e3d8f"><div class="ttname"><a href="class_mesh_drawer.html#a404d48288c2037b29d557ac27a5e3d8f">MeshDrawer::Draw</a></div><div class="ttdeci">void Draw(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:86</div></div>
-<div class="ttc" id="class_mesh_drawer_html_a2a912e5679246cd6c482b1f5716f995f"><div class="ttname"><a href="class_mesh_drawer.html#a2a912e5679246cd6c482b1f5716f995f">MeshDrawer::MeshDrawer</a></div><div class="ttdeci">MeshDrawer(MeshShader *shader, Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> mesh_drawer.hpp:39</div></div>
 <div class="ttc" id="class_entity_manager_html"><div class="ttname"><a href="class_entity_manager.html">EntityManager</a></div><div class="ttdef"><b>Definition:</b> entity_manager.hpp:28</div></div>
 <div class="ttc" id="entity__manager_8hpp_html"><div class="ttname"><a href="entity__manager_8hpp.html">entity_manager.hpp</a></div></div>
-<div class="ttc" id="class_mesh_drawer_html_abc200be785ab8746a54a15fe069268ce"><div class="ttname"><a href="class_mesh_drawer.html#abc200be785ab8746a54a15fe069268ce">MeshDrawer::MeshDrawer</a></div><div class="ttdeci">MeshDrawer()</div><div class="ttdef"><b>Definition:</b> mesh_drawer.hpp:35</div></div>
-<div class="ttc" id="class_mesh_drawer_html"><div class="ttname"><a href="class_mesh_drawer.html">MeshDrawer</a></div><div class="ttdef"><b>Definition:</b> mesh_drawer.hpp:20</div></div>
-<div class="ttc" id="class_mesh_drawer_html_ad09003d67140b2044bbc68fe0bfbb515"><div class="ttname"><a href="class_mesh_drawer.html#ad09003d67140b2044bbc68fe0bfbb515">MeshDrawer::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:22</div></div>
-<div class="ttc" id="class_mesh_drawer_html_af7d18e099d12b732d5e72aed414d5b0b"><div class="ttname"><a href="class_mesh_drawer.html#af7d18e099d12b732d5e72aed414d5b0b">MeshDrawer::~MeshDrawer</a></div><div class="ttdeci">~MeshDrawer()</div><div class="ttdef"><b>Definition:</b> mesh_drawer.hpp:34</div></div>
-<div class="ttc" id="class_mesh_drawer_html_a9ef4822edebc144183b4a7134e28d472"><div class="ttname"><a href="class_mesh_drawer.html#a9ef4822edebc144183b4a7134e28d472">MeshDrawer::Enable</a></div><div class="ttdeci">void Enable(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:52</div></div>
-<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> controls.hpp:15</div></div>
-<div class="ttc" id="class_mesh_drawer_html_a5256157cde9e517026bd0ba960a0cb72"><div class="ttname"><a href="class_mesh_drawer.html#a5256157cde9e517026bd0ba960a0cb72">MeshDrawer::Init</a></div><div class="ttdeci">void Init(MeshShader *shader, Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:7</div></div>
-<div class="ttc" id="class_mesh_drawer_html_a229ee3fd9f33942c2afc7fc4af91e8d3"><div class="ttname"><a href="class_mesh_drawer.html#a229ee3fd9f33942c2afc7fc4af91e8d3">MeshDrawer::LoadMeshes</a></div><div class="ttdeci">void LoadMeshes(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:37</div></div>
+<div class="ttc" id="class_mesh_drawer_html"><div class="ttname"><a href="class_mesh_drawer.html">MeshDrawer</a></div><div class="ttdef"><b>Definition:</b> mesh_drawer.hpp:24</div></div>
+<div class="ttc" id="class_mesh_drawer_html_ad09003d67140b2044bbc68fe0bfbb515"><div class="ttname"><a href="class_mesh_drawer.html#ad09003d67140b2044bbc68fe0bfbb515">MeshDrawer::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:21</div></div>
+<div class="ttc" id="class_mesh_drawer_html_a0a4e70ff25a25ba18c94b7d208feb0c9"><div class="ttname"><a href="class_mesh_drawer.html#a0a4e70ff25a25ba18c94b7d208feb0c9">MeshDrawer::Render</a></div><div class="ttdeci">void Render()</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:55</div></div>
+<div class="ttc" id="class_mesh_drawer_html_a587fb3be5411047d327d2d1272677cac"><div class="ttname"><a href="class_mesh_drawer.html#a587fb3be5411047d327d2d1272677cac">MeshDrawer::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:7</div></div>
+<div class="ttc" id="class_a_module_html"><div class="ttname"><a href="class_a_module.html">AModule</a></div><div class="ttdef"><b>Definition:</b> base_module.hpp:15</div></div>
+<div class="ttc" id="base__module_8hpp_html"><div class="ttname"><a href="base__module_8hpp.html">base_module.hpp</a></div></div>
+<div class="ttc" id="class_mesh_drawer_html_ac88a55d14759d3de3b152183fd7a180f"><div class="ttname"><a href="class_mesh_drawer.html#ac88a55d14759d3de3b152183fd7a180f">MeshDrawer::Enable</a></div><div class="ttdeci">void Enable()</div><div class="ttdef"><b>Definition:</b> mesh_drawer.cpp:38</div></div>
 <div class="ttc" id="mesh__shader_8hpp_html"><div class="ttname"><a href="mesh__shader_8hpp.html">mesh_shader.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

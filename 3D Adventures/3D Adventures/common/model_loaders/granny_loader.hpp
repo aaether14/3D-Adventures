@@ -17,9 +17,6 @@ using namespace std;
 
 
 #define Offset(type, member) (&(((type*)NULL)->member))
-
-
-
 #define POSITION_LOCATION    0
 #define TEX_COORD_LOCATION   1
 #define NORMAL_LOCATION      2
@@ -28,11 +25,7 @@ using namespace std;
 
 
 
-#define MAX_BONES 128
 #define TEX_DIR "data/model_textures/"
-
-
-
 #pragma warning(disable : 4505)	
 
 
@@ -139,6 +132,8 @@ Granny SDK implementation
 class GrannyModel : public AModel
 {
 
+
+#define MAX_BONES 128
 
 
 	GLuint m_VAO;

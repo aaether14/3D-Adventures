@@ -57,8 +57,6 @@ class Terrain
 	QuadTree * q_tree;
 	GLuint max_mips;
 
-	TerrainShader * shader;
-
 
 	/**
 	The engine is using a quad tree to render
@@ -74,17 +72,17 @@ public:
 	/**
 	Calls Init()
 	*/
-	inline Terrain(TerrainShader * shader) { this->Init(shader); }
+	inline Terrain() { Init(); }
 	/**
 	Calls Clean()
 	*/
-	inline ~Terrain() { this->Clean(); }
+	inline ~Terrain() { Clean(); }
 
 
 	/**
 	Initializes data
 	*/
-	void Init(TerrainShader * shader);
+	void Init();
 	/**
 	Cleans Data
 	*/
@@ -120,7 +118,10 @@ public:
 	Compute height at given (X,Z) point
 	*/
 	inline GLfloat getHeight(GLint x, GLint z) { return heightField[z*WIDTH + x]; }
-
+	/**
+	Get texture attributes data
+	*/
+	inline TerrainShader::TextureAttributes * GetTextureAttributes(){ return tex_data; }
 
 	/**
 	Load splat map, splat textures and normal textures

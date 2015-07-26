@@ -1,7 +1,6 @@
 var searchData=
 [
   ['_7eaa_5fmodel',['~Aa_model',['../class_aa__model.html#a064046b03d82329aa5ead70e32b6fe9b',1,'Aa_model']]],
-  ['_7eaaether2d',['~Aaether2D',['../class_aaether2_d.html#a37f28868fd232b749b8933d3c5ba5152',1,'Aaether2D']]],
   ['_7eapplication',['~Application',['../class_application.html#a748bca84fefb9c12661cfaa2f623748d',1,'Application']]],
   ['_7ebasicfilterimplementation',['~BasicFilterImplementation',['../class_basic_filter_implementation.html#a0a3ac3c90ae3e51312315b15efe228c6',1,'BasicFilterImplementation']]],
   ['_7eblurimplementation',['~BlurImplementation',['../class_blur_implementation.html#a6f4096eb1479c740b0bf145a8f7d9daa',1,'BlurImplementation']]],
@@ -23,8 +22,6 @@ var searchData=
   ['_7egrannytexture',['~GrannyTexture',['../struct_granny_texture.html#a9276924c7fa98c0a4e58732e732559c9',1,'GrannyTexture']]],
   ['_7ehdrimplementation',['~HdrImplementation',['../class_hdr_implementation.html#a125ee19e4ec09a12daf5523342580d23',1,'HdrImplementation']]],
   ['_7elight',['~Light',['../class_light.html#ad0e59fad13bb6cfadc25b2c477e9ddc7',1,'Light']]],
-  ['_7emeshdrawer',['~MeshDrawer',['../class_mesh_drawer.html#af7d18e099d12b732d5e72aed414d5b0b',1,'MeshDrawer']]],
-  ['_7emeshwrapper',['~MeshWrapper',['../class_mesh_wrapper.html#a5d30b737ddc492ff4a4565349077da86',1,'MeshWrapper']]],
   ['_7epipeline',['~Pipeline',['../class_pipeline.html#a527044d53a20f851d0579fbf313a2dec',1,'Pipeline']]],
   ['_7equad',['~Quad',['../class_quad.html#a5db77c0481b30c0b7c1014cc535284ad',1,'Quad']]],
   ['_7equadnode',['~QuadNode',['../class_quad_node.html#a62e3fd74e54116260c3e36bef2ad3c39',1,'QuadNode']]],
@@ -32,9 +29,10 @@ var searchData=
   ['_7eresourceloader',['~ResourceLoader',['../class_resource_loader.html#a863d8f58b5e67400e3f73f4eb0f0233e',1,'ResourceLoader']]],
   ['_7erootsettings',['~RootSettings',['../class_root_settings.html#a339c7b02a0e6c8eb46cc91828ec72886',1,'RootSettings']]],
   ['_7erootui',['~RootUI',['../class_root_u_i.html#a5d4c43e1f85976801b4d4e8ec56d98e0',1,'RootUI']]],
+  ['_7escreenrender',['~ScreenRender',['../class_screen_render.html#aa83a1b8dc7a161222af546a465a7d718',1,'ScreenRender']]],
   ['_7eshader',['~Shader',['../class_shader.html#aff01df87e8a102f270b5b135a295e59d',1,'Shader']]],
-  ['_7eskybox',['~Skybox',['../class_skybox.html#a62ad4c6b4b1965a0a6d8536a50d4c090',1,'Skybox']]],
   ['_7eskyrender',['~SkyRender',['../class_sky_render.html#af8680b45e747668d342936553932e18f',1,'SkyRender']]],
+  ['_7eskywrapper',['~SkyWrapper',['../class_sky_wrapper.html#a5d9a38cdd8688428a17e5951c001215f',1,'SkyWrapper']]],
   ['_7essaoimplementation',['~SSAOImplementation',['../class_s_s_a_o_implementation.html#ada80be77cc070739fd85877b2505b23f',1,'SSAOImplementation']]],
   ['_7etechniques',['~Techniques',['../class_techniques.html#a1807584f78a286431c488bdd610f0d73',1,'Techniques']]],
   ['_7eterrain',['~Terrain',['../class_terrain.html#a2f7f0a2aee54886324ccf48a6f321de0',1,'Terrain']]],

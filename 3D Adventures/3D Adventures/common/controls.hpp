@@ -6,6 +6,7 @@
 
 
 #include <camera_implementation/camera.hpp>
+#include <util/file_helper.hpp>
 #include "game_object.hpp"
 
 
@@ -45,10 +46,6 @@ public:
 	Enable controller source and camera computations
 	*/
 	void Enable();
-	/**
-	Load a certain project
-	*/
-	void Load(char*path);
 
 
 	/**
@@ -63,17 +60,15 @@ public:
 
 
 	/**
-	Calls Init()
+	Calls ControllerSource constructor
 	*/
-	inline Controller(GLint width, GLint height, GLboolean fullscreen, GLchar * title, GLuint major, GLuint minor) : 
-		ControllerSource() 
-	{ this->Init(width, height, fullscreen, title, major, minor); }
+	inline Controller() : ControllerSource() {}
 
 
 	/**
 	Initializes Controller Source, camera and game object
 	*/
-	void Init(GLint width, GLint height, GLboolean fullscreen, GLchar * title, GLuint major, GLuint minor);
+	void Init();
 
 
 };

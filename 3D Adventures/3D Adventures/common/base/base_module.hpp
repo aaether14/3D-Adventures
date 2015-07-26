@@ -28,7 +28,7 @@ public:
 	/**
 	Add 'module' to 'key'
 	*/
-	inline void Add(std::string key, AModule*module){ module_map[key] = module; module->SetManager(GetManager()); }
+	inline void Add(std::string key, AModule*module){ module_map[key] = module; module->SetManager(GetManager()); module->Init(); }
 	/**
 	Get module from 'key'
 	*/

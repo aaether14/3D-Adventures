@@ -70,9 +70,6 @@
     <Filter Include="common\camera_implementation">
       <UniqueIdentifier>{e65e87bf-e1a3-4ba5-a1e2-640f2a63acdb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="common\sky">
-      <UniqueIdentifier>{9c49929e-d9e9-44b2-85bf-24e7a9b6cf8c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ui_layout">
       <UniqueIdentifier>{86bd493a-30c6-4c0e-ad42-a91176b5ab56}</UniqueIdentifier>
     </Filter>
@@ -94,6 +91,12 @@
     <Filter Include="common\converter">
       <UniqueIdentifier>{668faad6-9e4a-49b0-865d-3df31b368f0e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common\sky_implementation">
+      <UniqueIdentifier>{9c49929e-d9e9-44b2-85bf-24e7a9b6cf8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common\mesh_implementation">
+      <UniqueIdentifier>{c8b085d6-5b00-4331-932a-04075bfa809a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\controls.cpp">
@@ -102,17 +105,11 @@
     <ClCompile Include="common\pipeline.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="common\mesh_drawer.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="common\application.cpp">
       <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="common\mesh_wrapper.cpp">
-      <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="common\terrain_wrapper.cpp">
       <Filter>common</Filter>
@@ -167,9 +164,6 @@
     </ClCompile>
     <ClCompile Include="common\camera_implementation\camera.cpp">
       <Filter>common\camera_implementation</Filter>
-    </ClCompile>
-    <ClCompile Include="common\sky\sky_render.cpp">
-      <Filter>common\sky</Filter>
     </ClCompile>
     <ClCompile Include="common\settings\environment.cpp">
       <Filter>common\settings</Filter>
@@ -255,9 +249,6 @@
     <ClCompile Include="common\terrain_shader.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="common\mesh_shader.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="common\components\general_entity_info_component.cpp">
       <Filter>common\components</Filter>
     </ClCompile>
@@ -279,8 +270,20 @@
     <ClCompile Include="common\base\base_module.cpp">
       <Filter>common\base</Filter>
     </ClCompile>
-    <ClCompile Include="common\sky_wrapper.cpp">
-      <Filter>common</Filter>
+    <ClCompile Include="common\sky_implementation\sky_render.cpp">
+      <Filter>common\sky_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\sky_implementation\sky_wrapper.cpp">
+      <Filter>common\sky_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\mesh_implementation\mesh_wrapper.cpp">
+      <Filter>common\mesh_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\mesh_implementation\mesh_drawer.cpp">
+      <Filter>common\mesh_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\mesh_implementation\mesh_shader.cpp">
+      <Filter>common\mesh_implementation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -397,13 +400,7 @@
     <ClInclude Include="common\pipeline.hpp">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="common\mesh_drawer.hpp">
-      <Filter>common</Filter>
-    </ClInclude>
     <ClInclude Include="common\application.hpp">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="common\mesh_wrapper.hpp">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="common\terrain_wrapper.hpp">
@@ -453,9 +450,6 @@
     </ClInclude>
     <ClInclude Include="common\camera_implementation\camera.hpp">
       <Filter>common\camera_implementation</Filter>
-    </ClInclude>
-    <ClInclude Include="common\sky\sky_render.hpp">
-      <Filter>common\sky</Filter>
     </ClInclude>
     <ClInclude Include="common\settings\environment.hpp">
       <Filter>common\settings</Filter>
@@ -553,9 +547,6 @@
     <ClInclude Include="common\terrain_shader.hpp">
       <Filter>common</Filter>
     </ClInclude>
-    <ClInclude Include="common\mesh_shader.hpp">
-      <Filter>common</Filter>
-    </ClInclude>
     <ClInclude Include="common\components\general_entity_info_component.hpp">
       <Filter>common\components</Filter>
     </ClInclude>
@@ -580,8 +571,20 @@
     <ClInclude Include="common\base\base_module.hpp">
       <Filter>common\base</Filter>
     </ClInclude>
-    <ClInclude Include="common\sky_wrapper.hpp">
-      <Filter>common</Filter>
+    <ClInclude Include="common\sky_implementation\sky_render.hpp">
+      <Filter>common\sky_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\sky_implementation\sky_wrapper.hpp">
+      <Filter>common\sky_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\mesh_implementation\mesh_wrapper.hpp">
+      <Filter>common\mesh_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\mesh_implementation\mesh_drawer.hpp">
+      <Filter>common\mesh_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\mesh_implementation\mesh_shader.hpp">
+      <Filter>common\mesh_implementation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

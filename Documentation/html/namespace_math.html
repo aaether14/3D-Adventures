@@ -114,8 +114,6 @@ Functions</h2></td></tr>
 <tr class="separator:a13dd912269a4768d6259251ba103d49c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a76bf59788e50396113db7cd1bdd4ad47"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_math.html#a76bf59788e50396113db7cd1bdd4ad47">ConvertGrannyMatrix</a> (granny_matrix_4x4 gr)</td></tr>
 <tr class="separator:a76bf59788e50396113db7cd1bdd4ad47"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a826b61845ce505d42be755820169d827"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_math.html#a826b61845ce505d42be755820169d827">CircleRectangleCollision</a> (<a class="el" href="class_math_1_1_rectangle.html">Rectangle</a> *rect, <a class="el" href="class_math_1_1_circle.html">Circle</a> *circ)</td></tr>
-<tr class="separator:a826b61845ce505d42be755820169d827"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9443b79fdb819527fe85aeee2db4e2fa"><td class="memItemLeft" align="right" valign="top">glm::vec3&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_math.html#a9443b79fdb819527fe85aeee2db4e2fa">GetVecFromString</a> (std::string str)</td></tr>
 <tr class="separator:a9443b79fdb819527fe85aeee2db4e2fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a46a656040476846f215c1f78b264d2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_math.html#a9a46a656040476846f215c1f78b264d2">GetStringFromVec</a> (glm::vec3 v)</td></tr>
@@ -133,33 +131,9 @@ Functions</h2></td></tr>
 <tr class="memitem:aec5d7239238a714ce7b4165b3fe5f4d1"><td class="memItemLeft" align="right" valign="top">GLfloat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespace_math.html#aec5d7239238a714ce7b4165b3fe5f4d1">randomf</a> (GLfloat LO, GLfloat HI)</td></tr>
 <tr class="separator:aec5d7239238a714ce7b4165b3fe5f4d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a class="anchor" id="a826b61845ce505d42be755820169d827"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">bool Math::CircleRectangleCollision </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="class_math_1_1_rectangle.html">Rectangle</a> *&#160;</td>
-          <td class="paramname"><em>rect</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="class_math_1_1_circle.html">Circle</a> *&#160;</td>
-          <td class="paramname"><em>circ</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Some useful math functions for matrix transformations </p>
+</div><h2 class="groupheader">Function Documentation</h2>
 <a class="anchor" id="a76bf59788e50396113db7cd1bdd4ad47"></a>
 <div class="memitem">
 <div class="memproto">
@@ -173,6 +147,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Convert matrix from a library to another </p>
 
 </div>
 </div>
@@ -189,6 +164,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Gets string from 3d vector </p>
 
 </div>
 </div>
@@ -205,6 +181,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Gets 3d vector from string </p>
 
 </div>
 </div>
@@ -221,6 +198,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print ivec2 to console </p>
 
 </div>
 </div>
@@ -237,6 +215,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print matrix to console </p>
 
 </div>
 </div>
@@ -253,6 +232,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Print vec3 to console </p>
 
 </div>
 </div>
@@ -287,6 +267,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns a random float number within the boundaries </p>
 
 </div>
 </div>
@@ -327,6 +308,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns rotation matrix from euler angles x,y,z </p>
 
 </div>
 </div>
@@ -351,6 +333,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns rotation matrix from euler angles v.x,v.y,v.z </p>
 
 </div>
 </div>
@@ -367,6 +350,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns scale matrix from 't_vec' </p>
 
 </div>
 </div>
@@ -407,6 +391,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns scale matrix from 3D vector(x,y,z) </p>
 
 </div>
 </div>
@@ -431,6 +416,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns scale matrix from 3D vector(v,v,v) </p>
 
 </div>
 </div>
@@ -463,6 +449,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Checks if sphere intersects with frustum </p>
 
 </div>
 </div>
@@ -479,6 +466,7 @@ Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+<p>Returns translation matrix from 't_vec' </p>
 
 </div>
 </div>
@@ -519,6 +507,7 @@ Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+<p>Returns translation matrix from 3D vector(x,y,z) </p>
 
 </div>
 </div>

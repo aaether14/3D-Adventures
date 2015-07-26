@@ -8,7 +8,7 @@
 #include <components/general_entity_info_component.hpp>
 #include <camera_implementation/camera.hpp>
 #include <util/view.hpp>
-#include <mesh_shader.hpp>
+#include <mesh_implementation/mesh_shader.hpp>
 #include "../technique.hpp"
 #include "../resource_loader.hpp"
 

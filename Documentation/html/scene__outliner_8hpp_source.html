@@ -138,17 +138,17 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="classui___scene_outliner.html#ab897d65acbc732082b0da14b83c257b8">   77</a></span>&#160;    <span class="keyword">inline</span> std::vector&lt;glm::ivec2&gt;<a class="code" href="classui___scene_outliner.html#ab897d65acbc732082b0da14b83c257b8">GetSelectedData</a>(){ <span class="keywordflow">return</span> selected_data; }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
 <div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="classui___scene_outliner.html#a497a1e58e482565283cbbeaa7ae4ca5e">   82</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classui___scene_outliner.html#a497a1e58e482565283cbbeaa7ae4ca5e">ClearSelectedData</a>(){ selected_data.clear(); }</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___scene_outliner.html#add6530b7efbaab6866028044870184ea">ClearSelectedDataFromScene</a>();</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___scene_outliner.html#a7084c6b6258549ce933d2f92ef6e4246">UpdateSceneData</a>(GLint ind, GLint pos);</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;};</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___scene_outliner.html#ac4b78d021cf21c01dfe802060de5981c">ClearItems</a>();</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___scene_outliner.html#add6530b7efbaab6866028044870184ea">ClearSelectedDataFromScene</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___scene_outliner.html#a7084c6b6258549ce933d2f92ef6e4246">UpdateSceneData</a>(GLint ind, GLint pos);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="controls_8hpp_html"><div class="ttname"><a href="controls_8hpp.html">controls.hpp</a></div></div>
 <div class="ttc" id="classui___scene_outliner_html_a4d8203bda9a21162428ff23518769377"><div class="ttname"><a href="classui___scene_outliner.html#a4d8203bda9a21162428ff23518769377">ui_SceneOutliner::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> scene_outliner.cpp:6</div></div>
 <div class="ttc" id="classui___scene_outliner_html_a497a1e58e482565283cbbeaa7ae4ca5e"><div class="ttname"><a href="classui___scene_outliner.html#a497a1e58e482565283cbbeaa7ae4ca5e">ui_SceneOutliner::ClearSelectedData</a></div><div class="ttdeci">void ClearSelectedData()</div><div class="ttdef"><b>Definition:</b> scene_outliner.hpp:82</div></div>
@@ -160,6 +160,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="ttc" id="classui___scene_outliner_html_a2ee44d525499cbe168f78cbb8122a007"><div class="ttname"><a href="classui___scene_outliner.html#a2ee44d525499cbe168f78cbb8122a007">ui_SceneOutliner::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> scene_outliner.cpp:29</div></div>
 <div class="ttc" id="classui___scene_outliner_html"><div class="ttname"><a href="classui___scene_outliner.html">ui_SceneOutliner</a></div><div class="ttdef"><b>Definition:</b> scene_outliner.hpp:20</div></div>
 <div class="ttc" id="classui___scene_outliner_html_a813b504727de38d044d49e0e54075f98"><div class="ttname"><a href="classui___scene_outliner.html#a813b504727de38d044d49e0e54075f98">ui_SceneOutliner::AddItem</a></div><div class="ttdeci">void AddItem(std::string name, glm::ivec2 data)</div><div class="ttdef"><b>Definition:</b> scene_outliner.cpp:41</div></div>
+<div class="ttc" id="classui___scene_outliner_html_ac4b78d021cf21c01dfe802060de5981c"><div class="ttname"><a href="classui___scene_outliner.html#ac4b78d021cf21c01dfe802060de5981c">ui_SceneOutliner::ClearItems</a></div><div class="ttdeci">void ClearItems()</div><div class="ttdef"><b>Definition:</b> scene_outliner.cpp:125</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
