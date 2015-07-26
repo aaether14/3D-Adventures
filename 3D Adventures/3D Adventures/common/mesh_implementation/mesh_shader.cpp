@@ -28,7 +28,7 @@ void MeshShader::Init()
 	AddVariable("has_ssao");
 
 
-	light = new Light(this);
+	m_light = new Light(this);
 
 
 
@@ -53,7 +53,8 @@ void MeshShader::Clean()
 
 
 	Shader::Clean();
-	delete light;
+	if (m_light)
+	delete m_light;
 
 
 }

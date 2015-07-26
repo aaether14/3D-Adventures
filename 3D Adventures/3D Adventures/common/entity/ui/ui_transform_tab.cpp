@@ -89,7 +89,7 @@ bool ui_TransformTab::RadioPositionChanged(const CEGUI::EventArgs& e)
 
 	update_id = 0;
 	UpdateData();
-	UpdateStepData(0.075f);
+	UpdateStepData(0.125f);
 	return 1;
 
 }
@@ -101,7 +101,7 @@ bool ui_TransformTab::RadioRotationChanged(const CEGUI::EventArgs& e)
 
 	update_id = 1;
 	UpdateData();
-	UpdateStepData(0.075f);
+	UpdateStepData(0.125f);
 	return 1;
 
 }
@@ -113,7 +113,7 @@ bool ui_TransformTab::RadioScaleChanged(const CEGUI::EventArgs& e)
 
 	update_id = 2;
 	UpdateData();
-	UpdateStepData(0.075f);
+	UpdateStepData(0.125f);
 	return 1;
 
 }

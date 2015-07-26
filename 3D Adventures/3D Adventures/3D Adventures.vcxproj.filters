@@ -97,6 +97,9 @@
     <Filter Include="common\mesh_implementation">
       <UniqueIdentifier>{c8b085d6-5b00-4331-932a-04075bfa809a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common\terrain_implementation">
+      <UniqueIdentifier>{0bde4387-6679-4dbf-8b5e-253420fc313f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\controls.cpp">
@@ -110,9 +113,6 @@
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="common\terrain_wrapper.cpp">
-      <Filter>common</Filter>
     </ClCompile>
     <ClCompile Include="common\resource_loader.cpp">
       <Filter>common</Filter>
@@ -246,9 +246,6 @@
     <ClCompile Include="common\entity_info\transform_info.cpp">
       <Filter>common\entity_info</Filter>
     </ClCompile>
-    <ClCompile Include="common\terrain_shader.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="common\components\general_entity_info_component.cpp">
       <Filter>common\components</Filter>
     </ClCompile>
@@ -284,6 +281,12 @@
     </ClCompile>
     <ClCompile Include="common\mesh_implementation\mesh_shader.cpp">
       <Filter>common\mesh_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\terrain_implementation\terrain_shader.cpp">
+      <Filter>common\terrain_implementation</Filter>
+    </ClCompile>
+    <ClCompile Include="common\terrain_implementation\terrain_wrapper.cpp">
+      <Filter>common\terrain_implementation</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -401,9 +404,6 @@
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="common\application.hpp">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="common\terrain_wrapper.hpp">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="common\resource_loader.hpp">
@@ -544,9 +544,6 @@
     <ClInclude Include="common\entity_info\transform_info.hpp">
       <Filter>common\entity_info</Filter>
     </ClInclude>
-    <ClInclude Include="common\terrain_shader.hpp">
-      <Filter>common</Filter>
-    </ClInclude>
     <ClInclude Include="common\components\general_entity_info_component.hpp">
       <Filter>common\components</Filter>
     </ClInclude>
@@ -585,6 +582,12 @@
     </ClInclude>
     <ClInclude Include="common\mesh_implementation\mesh_shader.hpp">
       <Filter>common\mesh_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\terrain_implementation\terrain_shader.hpp">
+      <Filter>common\terrain_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\terrain_implementation\terrain_wrapper.hpp">
+      <Filter>common\terrain_implementation</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

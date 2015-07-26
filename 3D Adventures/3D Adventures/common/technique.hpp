@@ -58,7 +58,9 @@ public:
 
 
 
-
+	/**
+	Initialize all techniques
+	*/
 	bool Create(GLuint window_width, GLuint window_height, 
 		GLuint shadow_width, GLuint shadow_height,
 		GLuint dof_width, GLuint dof_height,
@@ -66,15 +68,33 @@ public:
 
 
 
+
+	/**
+	Calls data
+	*/
 	inline ~Techniques(){ Clean(); }
+	/**
+	Cleans data used by techniques
+	*/
 	void Clean();
 
 
 
-
+	/**
+	Bind a certain texture object to be written to using the 'prog_target' shader
+	*/
 	void Bind(GLuint prog_target, TextureObject * tex_target, GLuint width, GLuint height);
+	/**
+	Apply certian filter and transform 'tex_source' into 'tex_target'
+	*/
 	void ApplyFilter(GLuint prog_target, GLuint tex_source, TextureObject * tex_target, GLuint width, GLuint height);
+	/**
+	Unbind any binding done by the class
+	*/
 	void Unbind();
+	/**
+	Run a certain shader program
+	*/
 	void RunProgram(GLuint prog_target);
 
 

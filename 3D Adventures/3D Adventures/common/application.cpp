@@ -11,14 +11,6 @@ void Application::Init()
 
 
 
-	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
-
-	glEnable(GL_CULL_FACE);
-	glEnable(GL_DEPTH_TEST);
-	glDepthFunc(GL_LESS);
-
-
-
 	SetManager(this);
 
 
@@ -37,6 +29,15 @@ void Application::Init()
 
 void Application::Enable()
 {
+
+
+
+	glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+
+	glEnable(GL_CULL_FACE);
+	glEnable(GL_DEPTH_TEST);
+	glDepthFunc(GL_LESS);
+
 
 
 

@@ -6,87 +6,315 @@
         <Tiles>64</Tiles>
     </GeneralInfo>
     <Entity>
-        <Position>253.694, 0, 225.566</Position>
+        <Position>181.648, 1.00864, 139.45</Position>
         <Rotation>0, 0, 0</Rotation>
         <Scale>1, 1, 1</Scale>
-        <EntityName>GrassC</EntityName>
+        <EntityName>TreeC</EntityName>
     </Entity>
     <Entity>
-        <Position>248.858, 0, 221.432</Position>
+        <Position>181.192, 0, 169.442</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Well</EntityName>
+    </Entity>
+    <Entity>
+        <Position>172.303, 0, 171.065</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Wheelbarrow</EntityName>
+    </Entity>
+    <Entity>
+        <Position>211.519, 0, 156.973</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>TreeC</EntityName>
+    </Entity>
+    <Entity>
+        <Position>197.446, 0.11187, 146.708</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Tribal</EntityName>
+    </Entity>
+    <Entity>
+        <Position>287.865, 0, 191.897</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>HouseZ</EntityName>
+    </Entity>
+    <Entity>
+        <Position>377.965, 0, 185.226</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>TreeB</EntityName>
+    </Entity>
+    <Entity>
+        <Position>346.713, 0, 176.417</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>TreeB</EntityName>
+    </Entity>
+    <Entity>
+        <Position>151.77, 0, 199.528</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>TreeC</EntityName>
+    </Entity>
+    <Entity>
+        <Position>160.179, 0, 218.913</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>TreeB</EntityName>
+    </Entity>
+    <Entity>
+        <Position>259.82, 0, 222.381</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
         <EntityName>Board</EntityName>
     </Entity>
     <Entity>
-        <Position>253.369, 0, 235.999</Position>
+        <Position>264.831, 0, 229.636</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Board</EntityName>
+    </Entity>
+    <Entity>
+        <Position>271.971, 0, 220.278</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
         <EntityName>Carriage</EntityName>
     </Entity>
     <Entity>
-        <Position>275.137, 0, 239.065</Position>
+        <Position>285.974, 0, 231.837</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>Flag</EntityName>
+        <EntityName>HouseA</EntityName>
     </Entity>
     <Entity>
-        <Position>264.978, 0, 231.621</Position>
+        <Position>284.877, 0, 250.184</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>Crate</EntityName>
+        <EntityName>HouseB</EntityName>
     </Entity>
     <Entity>
-        <Position>272.275, 0, 225.124</Position>
+        <Position>264.568, 0, 239.729</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>Fire</EntityName>
+        <EntityName>HouseC</EntityName>
     </Entity>
     <Entity>
-        <Position>269.571, 0, 230.099</Position>
+        <Position>293.778, 0, 209.486</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>ArmourRack</EntityName>
+        <EntityName>HouseD</EntityName>
     </Entity>
     <Entity>
-        <Position>275.32, 0, 228.427</Position>
+        <Position>281.425, 0, 217.135</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>ArmourRack</EntityName>
+        <EntityName>Jug</EntityName>
     </Entity>
     <Entity>
-        <Position>262.878, 0, 225.005</Position>
+        <Position>270.734, 0, 211.63</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>ArmourRack</EntityName>
+        <EntityName>Jug</EntityName>
     </Entity>
     <Entity>
-        <Position>271.688, 0, 233.565</Position>
+        <Position>265.427, 0, 211.319</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>ArmourRack</EntityName>
+        <EntityName>Lumber</EntityName>
     </Entity>
     <Entity>
-        <Position>279.303, 0, 247.41</Position>
+        <Position>273.508, 0, 200.115</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
-        <EntityName>ArmourRack</EntityName>
+        <EntityName>Lumber</EntityName>
     </Entity>
     <Entity>
-        <Position>290.569, 0, 244.123</Position>
+        <Position>368.62, 0, 214.053</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
         <EntityName>Axe</EntityName>
     </Entity>
     <Entity>
-        <Position>281.486, 0, 231.633</Position>
+        <Position>373.157, 0, 207.049</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
         <EntityName>Board</EntityName>
     </Entity>
     <Entity>
-        <Position>281.675, 0, 222.928</Position>
+        <Position>380.827, 0, 206.566</Position>
         <Rotation>-1.57, 0, 0</Rotation>
         <Scale>0.01, 0.01, 0.01</Scale>
         <EntityName>Carriage</EntityName>
+    </Entity>
+    <Entity>
+        <Position>382.496, 0, 253.335</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Crate</EntityName>
+    </Entity>
+    <Entity>
+        <Position>375.086, 0, 250.874</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Fire</EntityName>
+    </Entity>
+    <Entity>
+        <Position>381.254, 0, 250.979</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Fire</EntityName>
+    </Entity>
+    <Entity>
+        <Position>370.469, 0, 241.448</Position>
+        <Rotation>-1.57, 1.575, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Gate</EntityName>
+    </Entity>
+    <Entity>
+        <Position>369.437, 0, 253.923</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>GrassA</EntityName>
+    </Entity>
+    <Entity>
+        <Position>368.361, 0, 228.609</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>GrassB</EntityName>
+    </Entity>
+    <Entity>
+        <Position>372.298, 0, 217.515</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>GrassB</EntityName>
+    </Entity>
+    <Entity>
+        <Position>387.866, 0, 241.892</Position>
+        <Rotation>-1.57, -1.57, 0</Rotation>
+        <Scale>0.007, 0.007, 0.00775</Scale>
+        <EntityName>Market</EntityName>
+    </Entity>
+    <Entity>
+        <Position>387.029, 0, 205.278</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Carriage</EntityName>
+    </Entity>
+    <Entity>
+        <Position>388.034, 0, 253</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Crate</EntityName>
+    </Entity>
+    <Entity>
+        <Position>386.609, 0, 249.586</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Crate</EntityName>
+    </Entity>
+    <Entity>
+        <Position>391.168, 0, 233.631</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Hammer</EntityName>
+    </Entity>
+    <Entity>
+        <Position>391.749, 0, 231.663</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Hammer</EntityName>
+    </Entity>
+    <Entity>
+        <Position>392.572, 0, 252.301</Position>
+        <Rotation>-1.57, -1.5, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>SwordRack</EntityName>
+    </Entity>
+    <Entity>
+        <Position>287.604, 0, 257.846</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>SpearRack</EntityName>
+    </Entity>
+    <Entity>
+        <Position>282.512, 0.521084, 316.278</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Carriage</EntityName>
+    </Entity>
+    <Entity>
+        <Position>373.946, 0, 282.58</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>TreeA</EntityName>
+    </Entity>
+    <Entity>
+        <Position>368.282, 0.04887, 305.025</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>TreeA</EntityName>
+    </Entity>
+    <Entity>
+        <Position>339.116, 0, 316.897</Position>
+        <Rotation>-1.57, 1.575, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Flag</EntityName>
+    </Entity>
+    <Entity>
+        <Position>361.896, 0.00205, 300.941</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Fruits</EntityName>
+    </Entity>
+    <Entity>
+        <Position>365.61, 0.0011, 297.897</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Fruits</EntityName>
+    </Entity>
+    <Entity>
+        <Position>367.287, 0, 256.345</Position>
+        <Rotation>0, 0, 0</Rotation>
+        <Scale>1, 1, 1</Scale>
+        <EntityName>GrassA</EntityName>
+    </Entity>
+    <Entity>
+        <Position>349.475, 0, 265.697</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>TargetB</EntityName>
+    </Entity>
+    <Entity>
+        <Position>367.908, 0, 276.814</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>TragetA</EntityName>
+    </Entity>
+    <Entity>
+        <Position>362.786, 0.01933, 304.756</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>TragetA</EntityName>
+    </Entity>
+    <Entity>
+        <Position>377.147, 0.01137, 293.619</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>TragetA</EntityName>
+    </Entity>
+    <Entity>
+        <Position>365.033, 0.169142, 313.583</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Axe</EntityName>
+    </Entity>
+    <Entity>
+        <Position>367.489, 0, 289.244</Position>
+        <Rotation>-1.57, 0, 0</Rotation>
+        <Scale>0.01, 0.01, 0.01</Scale>
+        <EntityName>Axe</EntityName>
     </Entity>
 </Scene>

@@ -31,11 +31,23 @@ class ResourceLoader : public BaseResourceLoader
 public:
 
 
+	/**
+	Calls Init()
+	*/
 	ResourceLoader(){ Init(); }
+	/**
+	Initialize state savers and resource paths
+	*/
 	void Init();
 
 
+	/**
+	Calls Clean()
+	*/
 	~ResourceLoader(){ Clean(); }
+	/**
+	Cleans scene data
+	*/
 	void Clean();
 
 
@@ -50,6 +62,9 @@ public:
 	inline char* GetAFile(){ return char_to_str(a_file); }
 
 
+	/**
+	Loads all resrouce paths
+	*/
 	void LoadResourcePaths(char *path);
 
 

@@ -24,7 +24,7 @@ class MeshShader : public Shader
 #define MAX_BONES 128
 
 
-	Light *light;
+	Light *m_light;
 
 
 
@@ -77,7 +77,7 @@ public:
 	/**
 	Get light pointer
 	*/
-	inline Light*getLight(){ return light; }
+	inline Light*getLight(){ return m_light; }
 
 
 

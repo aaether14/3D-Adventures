@@ -119,8 +119,8 @@
     <ClCompile Include="common\terrain\quad_tree.cpp" />
     <ClCompile Include="common\terrain\terrain.cpp" />
     <ClCompile Include="common\terrain\terrain_strip.cpp" />
-    <ClCompile Include="common\terrain_shader.cpp" />
-    <ClCompile Include="common\terrain_wrapper.cpp" />
+    <ClCompile Include="common\terrain_implementation\terrain_shader.cpp" />
+    <ClCompile Include="common\terrain_implementation\terrain_wrapper.cpp" />
     <ClCompile Include="common\texture\texture.cpp" />
     <ClCompile Include="common\ui\ui_manager.cpp" />
     <ClCompile Include="common\ui\ui_util.cpp" />
@@ -223,8 +223,8 @@
     <ClInclude Include="common\terrain\quad_tree.hpp" />
     <ClInclude Include="common\terrain\terrain.hpp" />
     <ClInclude Include="common\terrain\terrain_strip.hpp" />
-    <ClInclude Include="common\terrain_wrapper.hpp" />
-    <ClInclude Include="common\terrain_shader.hpp" />
+    <ClInclude Include="common\terrain_implementation\terrain_shader.hpp" />
+    <ClInclude Include="common\terrain_implementation\terrain_wrapper.hpp" />
     <ClInclude Include="common\texture\texture.hpp" />
     <ClInclude Include="common\ui\ui_manager.hpp" />
     <ClInclude Include="common\ui\ui_util.hpp" />

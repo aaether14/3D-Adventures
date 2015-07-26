@@ -65,7 +65,7 @@ var searchData=
   ['getinfo',['GetInfo',['../class_camera.html#a0b763eec61ba40c052ad710d02f28311',1,'Camera::GetInfo()'],['../class_info_component.html#ad39c173940c6bfa21ca9207341fe949c',1,'InfoComponent::GetInfo()']]],
   ['getkey',['GetKey',['../class_controller_source.html#aa4fcc0b82893acdbc567c56491ef22b1',1,'ControllerSource']]],
   ['getkeyonce',['GetKeyOnce',['../class_controller_source.html#ad4300bd0087cd6de5d0abe7889c1e9da',1,'ControllerSource']]],
-  ['getlight',['getLight',['../class_mesh_shader.html#a63faea003bd95ed205d4fc1685067db7',1,'MeshShader::getLight()'],['../class_terrain_wrapper.html#a83f887d53e031b74fb86b1cedded8b19',1,'TerrainWrapper::getLight()']]],
+  ['getlight',['getLight',['../class_mesh_shader.html#a63faea003bd95ed205d4fc1685067db7',1,'MeshShader::getLight()'],['../class_terrain_shader.html#ab1367ae34b91ad7d11c92897449197a1',1,'TerrainShader::getLight()']]],
   ['getmanager',['GetManager',['../class_a_module.html#a99d5f5183ecf1e5804f1a28c2e4b9e03',1,'AModule']]],
   ['getminx',['GetMinX',['../class_quad_tree.html#a41b09e2bbd1308db6c82fe31fed8b3b2',1,'QuadTree']]],
   ['getminz',['GetMinZ',['../class_quad_tree.html#a7f8bf5b0c1dd9bb34cb14cae17a1ffd9',1,'QuadTree']]],

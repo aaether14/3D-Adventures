@@ -4,17 +4,20 @@
 
 
 
-#include <texture/texture.hpp>
+
 #include "terrain_strip.hpp"
+#include "quad_tree.hpp"
 #include <util/view.hpp>
 #include <util/math_helper.hpp>
-#include "quad_tree.hpp"
-#include <terrain_shader.hpp>
+#include <texture/texture.hpp>
+#include <terrain_implementation/terrain_shader.hpp>
+
 
 
 
 
 #define ARRAY_SIZE_IN_ELEMENTS(a) (sizeof(a)/sizeof(a[0]))
+
 
 
 
