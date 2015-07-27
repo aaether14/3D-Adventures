@@ -96,11 +96,29 @@ namespace AFile
 		boost::filesystem::directory_iterator iterator(path);
 		for (; iterator != boost::filesystem::directory_iterator(); ++iterator)
 			if (boost::filesystem::is_regular_file(iterator->path()))
-				if (!extension.compare(boost::filesystem::extension(iterator->path())))
-					return iterator->path().string();
+			{
+			std::string file_extension = boost::filesystem::extension(iterator->path());
+			std::transform(file_extension.begin(), file_extension.end(), file_extension.begin(), ::tolower);
+			if (!extension.compare(file_extension))
+				return iterator->path().string();
+			}
 
 		return STRING_ERROR;
 
+
+	}
+
+
+
+	std::string GetFileWithExtensionList(std::string path, std::vector<std::string>extensions)
+	{
+
+		for (GLuint i = 0; i < extensions.size(); i++)
+			if (GetFileWithExtension(path, extensions[i]).compare(STRING_ERROR) != 0)
+			return GetFileWithExtension(path, extensions[i]);
+
+
+		return STRING_ERROR;
 
 	}
 

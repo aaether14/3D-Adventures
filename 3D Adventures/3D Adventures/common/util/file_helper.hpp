@@ -12,6 +12,7 @@
 #include <boost/property_tree/xml_parser.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/foreach.hpp>
+#include <boost/functional/hash/hash.hpp>
 
 
 
@@ -60,6 +61,10 @@ namespace AFile
     If in the folder specified by 'path' exists a file that has 'extension' return path of that file. Returns NULL otherwise
 	*/
 	std::string GetFileWithExtension(std::string path, std::string extension);
+	/**
+	Same as GetFileWithExtension but for multiple extensions
+	*/
+	std::string GetFileWithExtensionList(std::string path, std::vector<std::string>extensions);
 
 
 }

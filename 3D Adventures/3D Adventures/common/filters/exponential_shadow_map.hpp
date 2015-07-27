@@ -101,7 +101,7 @@ public:
 	/**
 	Create ortographic projection from light direction, shadow size and ViewInfo (position and view direction)
 	*/
-	glm::mat4 GetDirectionalShadow(Environment * env, ViewInfo * info);
+	glm::mat4 GetDirectionalShadow(Environment * env, ViewInfo * info, View * view);
 
 
 

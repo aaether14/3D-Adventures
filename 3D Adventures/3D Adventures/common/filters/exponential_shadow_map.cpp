@@ -54,7 +54,7 @@ void ESMImplementation::Clean()
 
 
 
-glm::mat4 ESMImplementation::GetDirectionalShadow(Environment * env, ViewInfo * info)
+glm::mat4 ESMImplementation::GetDirectionalShadow(Environment * env, ViewInfo * info, View * view)
 {
 
 	glm::vec3 position = info->getCameraPos();

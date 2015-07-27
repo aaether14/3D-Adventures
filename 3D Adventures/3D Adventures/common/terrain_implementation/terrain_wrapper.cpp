@@ -107,7 +107,7 @@ void TerrainWrapper::Enable()
 
 
 	Set("LightMatrix", biasMatrix*
-		tech->GetShadow()->GetDirectionalShadow(env, info));
+		tech->GetShadow()->GetDirectionalShadow(env, info, view));
 
 
 
@@ -149,7 +149,7 @@ void TerrainWrapper::Render()
 	else if (tech->GetShadow()->OnShadowPass())
 	{
 
-		tech->GetShadow()->UniformMVP(tech->GetShadow()->GetDirectionalShadow(env, info));
+		tech->GetShadow()->UniformMVP(tech->GetShadow()->GetDirectionalShadow(env, info, view));
 
 
 	}

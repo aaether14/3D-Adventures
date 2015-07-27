@@ -28,7 +28,7 @@ void Entity::Render(ViewInfo * info, View * view,
 				view->getViewMatrix() * matrix);
 		else if (tech->GetShadow()->OnShadowPass())
 			tech->GetShadow()->UniformMVP(
-				tech->GetShadow()->GetDirectionalShadow(env, info)
+				tech->GetShadow()->GetDirectionalShadow(env, info, view)
 				*matrix);
 		else
 		{
@@ -53,7 +53,7 @@ void Entity::Render(ViewInfo * info, View * view,
 
 
 			shader->Set("LightMatrix", biasMatrix*
-				tech->GetShadow()->GetDirectionalShadow(env, info)*matrix);
+				tech->GetShadow()->GetDirectionalShadow(env, info, view)*matrix);
 
 		}
 

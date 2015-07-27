@@ -283,7 +283,18 @@ void SceneInfo::InsertNewEntity(std::string path)
 {
 
 
-	if (AFile::GetFileWithExtension(path, ".obj").compare(STRING_ERROR) != 0)
+
+	std::vector<std::string> extensions;
+	extensions.push_back(".obj");
+	extensions.push_back(".3ds");
+	extensions.push_back(".blend"); 
+	extensions.push_back(".ms3d");
+	extensions.push_back(".dae");
+
+
+
+
+	if (AFile::GetFileWithExtensionList(path, extensions).compare(STRING_ERROR) != 0)
 	{
 
 
@@ -315,7 +326,7 @@ void SceneInfo::InsertNewEntity(std::string path)
 
 
 				AssimpConverter * ac = new AssimpConverter();
-				ac->ConvertModel(AFile::GetFileWithExtension(copied_folder_path, ".obj"));
+				ac->ConvertModel(AFile::GetFileWithExtensionList(copied_folder_path, extensions));
 				delete ac;
 
 
