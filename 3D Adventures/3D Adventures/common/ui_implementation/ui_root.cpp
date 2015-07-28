@@ -14,8 +14,13 @@ void RootUI::Init()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	root_settings = new RootSettings(ctrl->GetGameObject()->GetResource(), Root);
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+	root_settings = new RootSettings(dm->GetResource(), Root);
 	top_root = new TopRoot(ctrl, Root);
+
+
 
 
 }

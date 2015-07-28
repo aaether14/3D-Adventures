@@ -71,37 +71,49 @@ glm::mat4 EntityPalette::GetMatrix(Entity *entity)
 
 
 
-void EntityPalette::Render(Controller*ctrl, MeshShader *u_data)
+void EntityPalette::Enable()
 {
 
 
 	//rendering entity depending on the palette id
 
 
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+	MeshShader * shader = static_cast<MeshShader*>((GetManager()->Get("Pipeline"))->Get("MeshWrapper"));
 
 
-	View * view = ctrl->GetCameraPointer()->GetView();
-	ViewInfo *info = ctrl->GetCameraPointer()->GetInfo();
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = dm->GetTechniques();
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+	View * view = camera->GetView();
+	ViewInfo *info = camera->GetInfo();
 
 
 
 	if (visible)
-		current_entity->Render(info, view, res, tech, u_data, GetMatrix(current_entity));
+		current_entity->Render(info, view, res, tech, shader, GetMatrix(current_entity));
 
 
 
 }
 
 
-void EntityPalette::ControlPalette(Controller * ctrl)
+void EntityPalette::ManagePaletteInput()
 {
 
 
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+
+	ResourceLoader * res = dm->GetResource();
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+
 
 
 	//applying transform & making visible
@@ -109,7 +121,7 @@ void EntityPalette::ControlPalette(Controller * ctrl)
 
 	if (ctrl->GetKey(GLFW_KEY_LEFT_ALT))
 	{
-		ui_transform_tab->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform_tab->GetPInfo()->trans[0] = camera->GetInfo()->getCameraPos();
 		ui_transform_tab->UpdateData();
 		visible = true;
 	}
@@ -123,14 +135,14 @@ void EntityPalette::ControlPalette(Controller * ctrl)
 	{
 		entity_counter--;
 		ui_transform_tab->GetPInfo()->Reset();
-		ui_transform_tab->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform_tab->GetPInfo()->trans[0] = camera->GetInfo()->getCameraPos();
 		ui_transform_tab->UpdateData();
 	}
 	if (entity_counter < scene_info->GetNumberOfEntities() - 1 && ctrl->GetKeyOnce(GLFW_KEY_E))
 	{
 		entity_counter++;
 		ui_transform_tab->GetPInfo()->Reset();
-		ui_transform_tab->GetPInfo()->trans[0] = ctrl->GetCameraPointer()->GetInfo()->getCameraPos();
+		ui_transform_tab->GetPInfo()->trans[0] = camera->GetInfo()->getCameraPos();
 		ui_transform_tab->UpdateData();
 	}
 
@@ -170,13 +182,19 @@ void EntityPalette::ControlPalette(Controller * ctrl)
 
 
 
-void EntityPalette::PlacePalette(Controller * ctrl)
+void EntityPalette::ManageEntityPlacing()
 {
 
 
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+
+	ResourceLoader * res = dm->GetResource();
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+
+
 	InfoComponent * ic = static_cast<InfoComponent*>(current_entity->GetComponent("InfoComponent"));
 
 
@@ -207,7 +225,7 @@ void EntityPalette::PlacePalette(Controller * ctrl)
 		}
 
 
-		GLuint ind = ctrl->GetGameObject()->GetInd(ctrl->GetCameraPointer()->GetInfo()->getCameraPos());
+		GLuint ind = static_cast<DataManager*>(ctrl->Get("DataManager"))->GetInd(camera->GetInfo()->getCameraPos());
 
 
 		ui_scene_outliner->AddItem(ic->GetInfo()->entity_name, glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));

@@ -6,6 +6,7 @@
 
 #include <controller/controls_source.hpp>
 #include <util/view.hpp>
+#include <base/base_module.hpp>
 
 
 
@@ -20,7 +21,7 @@ Also has frustum functionality for frustum culling
 
 
 */
-class Camera
+class Camera : public AModule
 {
 
 
@@ -60,20 +61,14 @@ class Camera
 public:
 
 
-	/**
-	Calls Init()
-	*/
-	inline Camera(){ this->Init(); }
+
 	/**
 	Initializes data
 	*/
 	void Init();
 
 
-	/**
-	Calls Clear()
-	*/
-	inline ~Camera(){ this->Clean(); }
+
 	/**
 	Cleans data
 	*/
@@ -112,7 +107,10 @@ public:
 
 
 
-
+	/**
+	Matches interface
+	*/
+	inline void Enable(){}
 
 
 	/**

@@ -120,9 +120,6 @@
     <ClCompile Include="common\technique.cpp">
       <Filter>common</Filter>
     </ClCompile>
-    <ClCompile Include="common\game_object.cpp">
-      <Filter>common</Filter>
-    </ClCompile>
     <ClCompile Include="common\texture\texture.cpp">
       <Filter>common\texture</Filter>
     </ClCompile>
@@ -288,6 +285,9 @@
     <ClCompile Include="common\terrain_implementation\terrain_wrapper.cpp">
       <Filter>common\terrain_implementation</Filter>
     </ClCompile>
+    <ClCompile Include="common\data_manager.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\shaders\skybox_frag.txt">
@@ -410,9 +410,6 @@
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="common\technique.hpp">
-      <Filter>common</Filter>
-    </ClInclude>
-    <ClInclude Include="common\game_object.hpp">
       <Filter>common</Filter>
     </ClInclude>
     <ClInclude Include="common\texture\texture.hpp">
@@ -588,6 +585,9 @@
     </ClInclude>
     <ClInclude Include="common\terrain_implementation\terrain_wrapper.hpp">
       <Filter>common\terrain_implementation</Filter>
+    </ClInclude>
+    <ClInclude Include="common\data_manager.hpp">
+      <Filter>common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

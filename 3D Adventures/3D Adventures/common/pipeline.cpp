@@ -28,7 +28,11 @@ void Pipeline::GeometryPass()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+
+	Techniques * tech = dm->GetTechniques();
 	MeshWrapper * mesh_wrapper = static_cast<MeshWrapper*>(Get("MeshWrapper"));
 	TerrainWrapper * terrain_wrapper = static_cast<TerrainWrapper*>(Get("TerrainWrapper"));
 
@@ -57,9 +61,15 @@ void Pipeline::LightPass()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	View * view = ctrl->GetCameraPointer()->GetView();
-	ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+
+
+	Techniques * tech = dm->GetTechniques();
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+	View * view = camera->GetView();
+	ViewInfo * info = camera->GetInfo();
 
 
 
@@ -98,6 +108,8 @@ void Pipeline::LightPass()
 
 
 
+
+
 	tech->Unbind();
 
 
@@ -114,7 +126,11 @@ void Pipeline::ShadowPass()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+
+	Techniques * tech = dm->GetTechniques();
 	ESMImplementation * esm_shadow = tech->GetShadow();
 	MeshWrapper * mesh_wrapper = static_cast<MeshWrapper*>(Get("MeshWrapper"));
 
@@ -153,7 +169,10 @@ void Pipeline::HandleDoF()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+	ResourceLoader * res = dm->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -163,7 +182,7 @@ void Pipeline::HandleDoF()
 
 
 
-		Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+		Techniques * tech = dm->GetTechniques();
 		DofImplementation * dof = tech->GetDof();
 
 
@@ -205,7 +224,10 @@ void Pipeline::HandleBloom()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+	ResourceLoader * res = dm->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -215,7 +237,7 @@ void Pipeline::HandleBloom()
 
 
 
-		Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+		Techniques * tech = dm->GetTechniques();
 		HdrImplementation * hdr = tech->GetHdr();
 
 
@@ -271,7 +293,10 @@ void Pipeline::HandleFXAA()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+	ResourceLoader * res = dm->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -280,7 +305,7 @@ void Pipeline::HandleFXAA()
 	{
 
 
-		Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+		Techniques * tech = dm->GetTechniques();
 		FXAAImplementation * fxaa = tech->GetFXAA();
 
 
@@ -323,7 +348,10 @@ void Pipeline::HandleSSAO()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+	ResourceLoader * res = dm->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -333,9 +361,10 @@ void Pipeline::HandleSSAO()
 
 
 
-		View * view = ctrl->GetCameraPointer()->GetView();
-		ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
-		Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+		Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+		View * view = camera->GetView();
+		ViewInfo * info = camera->GetInfo();
+		Techniques * tech = dm->GetTechniques();
 		SSAOImplementation * ssao = tech->GetSSAO();
 
 
@@ -378,8 +407,12 @@ void Pipeline::Enable()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+
+	Techniques * tech = dm->GetTechniques();
+	ResourceLoader * res = dm->GetResource();
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -436,7 +469,8 @@ void Pipeline::ApplyGausBlur(GLuint type,
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+	Techniques * tech = dm->GetTechniques();
 
 
 

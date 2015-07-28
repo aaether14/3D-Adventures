@@ -8,8 +8,8 @@ void MeshDrawer::Init()
 {
 
 
-	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	entity_manager = new EntityManager(ctrl);
+	Add("EntityManager", new EntityManager());
+	Add("EntityPalette", new EntityPalette());
 
 
 
@@ -23,8 +23,8 @@ void MeshDrawer::Clean()
 
 
 
-	if (entity_manager)
-	delete entity_manager;
+	Get("EntityManager")->Clean();
+	Get("EntityPalette")->Clean();
 
 
 
@@ -39,9 +39,13 @@ void MeshDrawer::Enable()
 {
 
 
-	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	entity_manager->GetPalette()->ControlPalette(ctrl);
-	entity_manager->GetPalette()->PlacePalette(ctrl);
+
+
+	EntityPalette * entity_palette = static_cast<EntityPalette*>(Get("EntityPalette"));
+
+
+	entity_palette->ManagePaletteInput();
+	entity_palette->ManageEntityPlacing();
 
 
 
@@ -58,22 +62,27 @@ void MeshDrawer::Render()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 	MeshShader * shader = static_cast<MeshShader*>((GetManager()->Get("Pipeline"))->Get("MeshWrapper"));
+	Techniques * tech = dm->GetTechniques();
+	EntityManager * entity_manager = static_cast<EntityManager*>(Get("EntityManager"));
+	EntityPalette * entity_palette = static_cast<EntityPalette*>(Get("EntityPalette"));
+
 
 
 
 	shader->SetSpecular(0.0f, 1.0f);
-	if (ctrl->GetGameObject()->GetTechniques()->GetShadow()->OnShadowPass())
+	if (tech->GetShadow()->OnShadowPass())
 	{
 		glCullFace(GL_FRONT);
-		entity_manager->Render(ctrl, shader);
-		entity_manager->GetPalette()->Render(ctrl, shader);
+		entity_manager->Enable();
+		entity_palette->Enable();
 		glCullFace(GL_BACK);
 	}
 	else
 	{
-		entity_manager->Render(ctrl, shader);
-		entity_manager->GetPalette()->Render(ctrl, shader);
+		entity_manager->Enable();
+		entity_palette->Enable();
 	}
 
 

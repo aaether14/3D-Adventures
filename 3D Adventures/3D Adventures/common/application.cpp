@@ -15,8 +15,12 @@ void Application::Init()
 
 
 	Add("Controller", new Controller());
+	Add("DataManager", new DataManager());
 	Add("RootUI", new RootUI());
 	Add("Pipeline", new Pipeline());
+
+
+
 
 
 
@@ -73,6 +77,7 @@ void Application::Clean()
 
 
 	Get("Pipeline")->Clean();
+	Get("DataManager")->Clean();
 	Get("Controller")->Clean();
 	Get("RootUI")->Clean();
 

@@ -162,6 +162,22 @@ Checks if sphere intersects with frustum
 	std::string GetStringFromVec(glm::vec3 v);
 
 
+
+	/**
+	Bias matrix for shadow calculations
+	*/
+	inline glm::mat4 GetBiasMatrix()
+	{
+		return glm::mat4(
+			0.5, 0.0, 0.0, 0.0,
+			0.0, 0.5, 0.0, 0.0,
+			0.0, 0.0, 0.5, 0.0,
+			0.5, 0.5, 0.5, 1.0
+			);
+
+	}
+
+
 }
 
 

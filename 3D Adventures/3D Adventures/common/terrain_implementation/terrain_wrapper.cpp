@@ -7,18 +7,13 @@ void TerrainWrapper::Init()
 {
 
 
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+	ResourceLoader * resource = dm->GetResource();
 
-	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	ResourceLoader * resource = ctrl->GetGameObject()->GetResource();
 
 
 	terra = new Terrain();
-
-
-
 	terra->LoadChunks(resource->GetTerrainFile());
-
-
 	terra->LoadColorFiles(resource->GetColorFile(),
 		resource->GetTFile(),
 		resource->GetNFile(),
@@ -26,7 +21,7 @@ void TerrainWrapper::Init()
 
 
 
-	ctrl->GetGameObject()->SetTree(terra->GetTree());
+	dm->SetTree(terra->GetTree());
 
 
 }
@@ -37,18 +32,24 @@ void TerrainWrapper::ManagePlayerCollision(Controller*ctrl, bool null_gravity)
 
 
 
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+
+
+
 	GLfloat terrain_height = HeightAt(terra,
-		ctrl->GetCameraPointer()->GetInfo()->getCameraPos().x,
-		ctrl->GetCameraPointer()->GetInfo()->getCameraPos().z);
+		camera->GetInfo()->getCameraPos().x,
+		camera->GetInfo()->getCameraPos().z);
 
 
 
-	if (ctrl->GetCameraPointer()->GetInfo()->getCameraPos().y < terrain_height)
-		ctrl->GetCameraPointer()->GetInfo()->SetCameraY(terrain_height);
+	if (camera->GetInfo()->getCameraPos().y < terrain_height)
+		camera->GetInfo()->SetCameraY(terrain_height);
 
 
 	if (!null_gravity)
-		ctrl->GetCameraPointer()->GetInfo()->SetCameraY(terrain_height);
+		camera->GetInfo()->SetCameraY(terrain_height);
+
+
 
 
 }
@@ -59,34 +60,34 @@ void TerrainWrapper::Enable()
 {
 
 
+
+
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	ManagePlayerCollision(ctrl, false);
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
 
-	View * view = ctrl->GetCameraPointer()->GetView();
-	ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	Techniques * tech = dm->GetTechniques();
+	ResourceLoader * res = dm->GetResource();
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+	View * view = camera->GetView();
+	ViewInfo * info = camera->GetInfo();
 
 
 
 	Shader::Enable();
+	Shader::Set("myTextureSampler", 0);
+	Shader::Set("myTextureSampler2", 1);
+	Shader::Set("myTextureSampler3", 2);
+	Shader::Set("shadow_map", 3);
+	TerrainShader::SendTextureAttributes(terra->GetTextureAttributes(), 4);
 
 
-	Set("myTextureSampler", 0);
-	Set("myTextureSampler2", 1);
-	Set("myTextureSampler3", 2);
-	Set("shadow_map", 3);
-	SendTextureAttributes(terra->GetTextureAttributes(), 4);
-
-
-
+	/**
+	Raising to power for gamma correction
+	*/
 	getLight()->SetFog(glm::pow(env->fog_color, glm::vec3(2.2)), env->fog_density);
-
-
-
 	getLight()->SetDirectionalLight(env->terrain_bright*
 		glm::pow(env->sun_color, glm::vec3(2.2)),
 		env->sun_dir,
@@ -95,24 +96,20 @@ void TerrainWrapper::Enable()
 
 
 
-	glm::mat4 biasMatrix(
-		0.5, 0.0, 0.0, 0.0,
-		0.0, 0.5, 0.0, 0.0,
-		0.0, 0.0, 0.5, 0.0,
-		0.5, 0.5, 0.5, 1.0
-		);
 
 
-
-
-
-	Set("LightMatrix", biasMatrix*
+	Set("LightMatrix", Math::GetBiasMatrix()*
 		tech->GetShadow()->GetDirectionalShadow(env, info, view));
 
 
 
 	tech->GetShadow()->GetShadowMap()->BindTexture(0, GL_TEXTURE3);
 	tech->GetShadow()->GetShadowMap()->ResetTextureState();
+
+
+
+
+	ManagePlayerCollision(ctrl, false);
 
 
 
@@ -129,11 +126,17 @@ void TerrainWrapper::Render()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	View * view = ctrl->GetCameraPointer()->GetView();
-	ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+	Techniques * tech = dm->GetTechniques();
+	ResourceLoader * res = dm->GetResource();
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+	View * view = camera->GetView();
+	ViewInfo * info = camera->GetInfo();
+
+
 
 
 
@@ -163,7 +166,8 @@ void TerrainWrapper::Render()
 	}
 
 
-	terra->Render(ctrl->GetCameraPointer()->GetFrustum(), false);
+
+	terra->Render(camera->GetFrustum(), false);
 
 
 

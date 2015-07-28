@@ -44,10 +44,15 @@ void SkyWrapper::Enable()
 
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	ViewInfo * info = ctrl->GetCameraPointer()->GetInfo();
-	View * view = ctrl->GetCameraPointer()->GetView();
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+
+	ResourceLoader * res = dm->GetResource();
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+	ViewInfo * info = camera->GetInfo();
+	View * view = camera->GetView();
 
 
 
@@ -61,18 +66,17 @@ void SkyWrapper::Enable()
 
 
 
-
 	Shader::Enable();
-	Set("cube", 0);
-    Set("MVP", view->getCamera()*ModelMatrix);
-	Set("MV", view->getViewMatrix() * ModelMatrix);
+	Shader::Set("cube", 0);
+    Shader::Set("MVP", view->getCamera()*ModelMatrix);
+	Shader::Set("MV", view->getViewMatrix() * ModelMatrix);
 	glm::vec4 f = glm::vec4(env->fog_color, 1.0);
-	Set("fog_color", f);
+	Shader::Set("fog_color", f);
 
 
 
 	SkyRender::Enable();
-	Stop();
+	Shader::Stop();
 
 
 

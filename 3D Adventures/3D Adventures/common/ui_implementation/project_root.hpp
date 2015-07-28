@@ -6,6 +6,7 @@
 
 
 #include <controls.hpp>
+#include <data_manager.hpp>
 #include <CEGUI/CEGUI.h>
 #include <util/string_helper.hpp>
 #include <ui/ui_util.hpp>
@@ -37,7 +38,7 @@ class ui_ProjectRoot
 	*/
 	inline bool SaveProject(const CEGUI::EventArgs &args)
 	{
-		ctrl->GetGameObject()->GetResource()->SaveChanges();
+		static_cast<DataManager*>(ctrl->Get("DataManager"))->GetResource()->SaveChanges();
 		return 1;
 	}
 
@@ -47,7 +48,7 @@ class ui_ProjectRoot
 	*/
 	inline bool LoadProject(const CEGUI::EventArgs &args)
 	{
-		ctrl->GetGameObject()->GetResource()->LoadChanges();
+		static_cast<DataManager*>(ctrl->Get("DataManager"))->GetResource()->LoadChanges();
 		return 1;
 	}
 

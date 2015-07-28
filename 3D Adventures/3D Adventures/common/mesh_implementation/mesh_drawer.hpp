@@ -7,6 +7,7 @@
 #include "mesh_shader.hpp"
 #include "controls.hpp"
 #include <entity/entity_manager.hpp>
+#include <entity/palette/entity_palette.hpp>
 #include <base/base_module.hpp>
 
 
@@ -25,8 +26,6 @@ class MeshDrawer : public AModule
 {
 
 
-
-	EntityManager * entity_manager;
 
 
 

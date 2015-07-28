@@ -3,8 +3,11 @@
 
 
 
-#include "controls.hpp"
-#include "pipeline.hpp"
+
+
+#include <controls.hpp>
+#include <pipeline.hpp>
+#include <data_manager.hpp>
 #include <ui_implementation/ui_root.hpp>
 #include <base/base_module.hpp>
 

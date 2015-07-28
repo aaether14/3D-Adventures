@@ -4,11 +4,10 @@
 
 
 
-void EntityManager::Init(Controller *ctrl)
+void EntityManager::Init()
 {
 
 
-	palette = new EntityPalette();
 
 
 }
@@ -19,17 +18,24 @@ void EntityManager::Init(Controller *ctrl)
 
 
 
-
-
-void EntityManager::RenderPatch(Controller*ctrl, MeshShader *shader, std::vector<TransformInfo*> patch_info)
+void EntityManager::RenderPatch(std::vector<TransformInfo*> patch_info)
 {
 
 
-	View * view = ctrl->GetCameraPointer()->GetView();
-	ViewInfo *info = ctrl->GetCameraPointer()->GetInfo();
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
-	Techniques * tech = ctrl->GetGameObject()->GetTechniques();
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+	MeshShader * shader = static_cast<MeshShader*>(GetManager()->Get("Pipeline")->Get("MeshWrapper"));
+
+
+
+	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = dm->GetTechniques();
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
+	View * view = camera->GetView();
+	ViewInfo *info = camera->GetInfo();
+
+
 
 
 	for (GLuint i = 0; i < patch_info.size(); i++)
@@ -44,18 +50,26 @@ void EntityManager::RenderPatch(Controller*ctrl, MeshShader *shader, std::vector
 
 
 
-void EntityManager::RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * node)
+void EntityManager::RenderQuad(QuadNode * node)
 {
+	
+
+
+	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+	MeshShader * shader = static_cast<MeshShader*>(GetManager()->Get("Pipeline")->Get("MeshWrapper"));
 
 
 
-	QuadTree * tree = ctrl->GetGameObject()->GetTree();
-	ResourceLoader * res = ctrl->GetGameObject()->GetResource();
+	QuadTree * tree = dm->GetTree();
+	ResourceLoader * res = dm->GetResource();
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 
 
 
 
+	/*
 	if (scene_info->ShouldReset())
 	{
 
@@ -70,12 +84,12 @@ void EntityManager::RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * 
 
 		scene_info->SetShouldReset(false);
 	}
+	*/
 
 
 
 
-
-	GLuint result = Math::SphereInFrustum(ctrl->GetCameraPointer()->GetFrustum(), node->GetCenter(), node->GetRadius() + 12.5);
+	GLuint result = Math::SphereInFrustum(camera->GetFrustum(), node->GetCenter(), node->GetRadius() + 12.5);
 
 
 	if (!result)
@@ -85,10 +99,10 @@ void EntityManager::RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * 
 	if (node->GetNodes())
 	{
 		for (GLuint i = 0; i < 4; i++)
-			this->RenderQuad(ctrl, shader, node->GetNodes()[i]);
+			this->RenderQuad(node->GetNodes()[i]);
 	}
 	else
-	this->RenderPatch(ctrl, shader, scene_info->GetEntityInfos()[node->GetInd()]);
+	this->RenderPatch(scene_info->GetEntityInfos()[node->GetInd()]);
 
 
 
@@ -97,12 +111,14 @@ void EntityManager::RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * 
 
 
 
-void EntityManager::Render(Controller *ctrl, MeshShader *shader)
+void EntityManager::Enable()
 {
 
 
-	QuadTree * tree = ctrl->GetGameObject()->GetTree();
-	this->RenderQuad(ctrl, shader,tree->GetStartNode());
+
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+	QuadTree * tree = dm->GetTree();
+	RenderQuad(tree->GetStartNode());
 
 
 }
@@ -117,8 +133,7 @@ void EntityManager::Clean()
 {
 
 
-	if (palette)
-	delete palette;
+
 
 
 }

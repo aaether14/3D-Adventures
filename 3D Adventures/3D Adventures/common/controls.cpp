@@ -40,18 +40,8 @@ void Controller::Init()
 
 
 			CreateWindow(window_width, window_height, fullscreen, AString::char_to_str(window_title), opengl_major_version, opengl_minor_version);
-			camera = new Camera();
-			g_obj = new GameObject(GetWindowWidth(), GetWindowHeight());
+			Add("Camera", new Camera());
 
-
-
-
-			ResourceLoader * res = g_obj->GetResource();
-			res->LoadResourcePaths(AString::char_to_str(project_name));
-			res->Add("Environment", new Environment(res->GetEnvFile()));
-			res->Add("FilterSettings", new FilterSettings(res->GetFSettingsFile()));
-			res->Add("Entities", new SceneInfo(res->GetSceneFile()));
-			res->LoadChanges();
 
 
 
@@ -80,14 +70,7 @@ void Controller::Clean()
 {
 
 	
-	if (camera)
-	delete camera;
-
-
-	if (g_obj)
-	delete g_obj;
-
-
+	Get("Camera")->Clean();
 	ControllerSource::Clean();
 
 
@@ -104,6 +87,7 @@ void Controller::Enable()
 
 
 	ControllerSource::Enable();
+	Camera * camera = static_cast<Camera*>(Get("Camera"));
 
 	camera->ProcessInput(this);
 	camera->ComputeAngles(this);
@@ -111,12 +95,12 @@ void Controller::Enable()
 
 
 
-
+	/*
 	if (GetDropFiles().size() > 0)
 	{
 
 
-		ResourceLoader * res = GetGameObject()->GetResource();
+		ResourceLoader * res = static_cast<DataManager*>(Get("GameObject"))->GetResource();
 		SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
 
 
@@ -124,7 +108,7 @@ void Controller::Enable()
 		ResetDropList();
 
 
-	}
+	}*/
 
 
 

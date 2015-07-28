@@ -8,7 +8,9 @@
 #include <model_loaders/aaether_loader.hpp>
 #include <model_loaders/granny_loader.hpp>
 #include <entity_info/transform_info.hpp>
-#include "palette/entity_palette.hpp"
+#include <data_manager.hpp>
+#include <controls.hpp>
+#include <base/base_module.hpp>
 
 
 
@@ -25,7 +27,7 @@ It uses the terrain quad tree for frustum culling
 
 
 */
-class EntityManager
+class EntityManager : public AModule
 
 
 {
@@ -35,14 +37,12 @@ class EntityManager
 	/**
 	Render entities bound to a patch
 	*/
-	void RenderPatch(Controller*ctrl, MeshShader * shader, std::vector<TransformInfo*> patch_info);
+	void RenderPatch(std::vector<TransformInfo*> patch_info);
 	/**
 	Check quad against frustum in order to render frustum-visible entities
 	*/
-	void RenderQuad(Controller*ctrl, MeshShader * shader, QuadNode * node);
+	void RenderQuad(QuadNode * node);
 
-
-	EntityPalette * palette;
 
 
 
@@ -51,22 +51,14 @@ public:
 
 
 
-
-	/**
-	Calls Init()
-	*/
-	inline EntityManager(Controller * ctrl){ Init(ctrl); }
 	/**
 	Initialize data
 	*/
-	void Init(Controller * ctrl);
+	void Init();
 
 
 
-	/**
-	Calls Clean()
-	*/
-	inline ~EntityManager(){ Clean(); }
+
 	/**
 	Clean data
 	*/
@@ -76,11 +68,7 @@ public:
 	/**
 	Try to render entities
 	*/
-	void Render(Controller *ctrl, MeshShader * shader);
-	/**
-	Get pointer to palette
-	*/
-	inline EntityPalette*GetPalette(){ return this->palette; }
+	void Enable();
 	
 
 };

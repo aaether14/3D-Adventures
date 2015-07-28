@@ -7,7 +7,6 @@
 
 #include <camera_implementation/camera.hpp>
 #include <util/file_helper.hpp>
-#include "game_object.hpp"
 
 
 
@@ -22,23 +21,10 @@ class Controller : public ControllerSource
 {
 
 
-	Camera * camera;
-	GameObject * g_obj;
-
 
 
 public:
 
-
-
-	/**
-	Get pointer to camera object
-	*/
-	inline Camera * GetCameraPointer(){ return this->camera; }
-	/**
-	Get pointer to game object
-	*/
-	inline GameObject * GetGameObject(){ return this->g_obj; }
 
 
 

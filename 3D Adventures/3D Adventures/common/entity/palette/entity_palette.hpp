@@ -5,11 +5,13 @@
 
 
 
-#include <entity_info/transform_info.hpp>
 #include "../ui/scene_outliner.hpp"
 #include "../ui/ui_transform_tab.hpp"
-#include <CEGUI/CEGUI.h>
+#include <entity_info/transform_info.hpp>
 #include <util/string_helper.hpp>
+#include <data_manager.hpp>
+#include <CEGUI/CEGUI.h>
+#include <base/base_module.hpp>
 
 
 
@@ -23,7 +25,7 @@ also stores information affecting scene outliner and transform tab from ui
 
 
 */
-class EntityPalette
+class EntityPalette : public AModule
 {
 
 
@@ -40,13 +42,7 @@ class EntityPalette
 
 
 
-	/**
-	Initialize data*/
-	void Init();
-	/**
-	Cleans data
-	*/
-	void Clean();
+
 	/**
 	Compute Model matrix from entity information
 	*/
@@ -62,27 +58,28 @@ public:
 	Get pointer to scene outliner
 	*/
 	inline ui_SceneOutliner * GetSceneOutliner(){ return ui_scene_outliner; }
-	/**
-	Call Init
-	*/
-	inline EntityPalette(){ Init(); }
-	/**
-	Call Clean
-	*/
-	inline ~EntityPalette(){ Clean(); }
 
+
+
+	/**
+	Initialize data*/
+	void Init();
+	/**
+	Cleans data
+	*/
+	void Clean();
 	/**
 	Render the currently selected entity
 	*/
-	void Render(Controller*ctrl, MeshShader *u_data);
+	void Enable();
 	/**
 	Manage input
 	*/
-	void ControlPalette(Controller * ctrl);
+	void ManagePaletteInput();
 	/**
 	Entity placement
 	*/
-	void PlacePalette(Controller * ctrl);
+	void ManageEntityPlacing();
 
 
 
