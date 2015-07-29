@@ -26,12 +26,12 @@ namespace AString
 
 
 		}
-		else{
+		else
+		{
 			printf("Impossible to open %s.\n", path);
 			getchar();
-			return "Nailed it!";
+			return "ERROR";
 		}
-
 
 
 	}
@@ -51,6 +51,8 @@ namespace AString
 
 
 	}
+
+
 
 
 

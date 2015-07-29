@@ -80,6 +80,10 @@ public:
 	Entity placement
 	*/
 	void ManageEntityPlacing();
+	/**
+	Manage filling of scene outliner with information
+	*/
+	void ManageSceneOutliner();
 
 
 

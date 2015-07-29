@@ -70,7 +70,7 @@ void Controller::Clean()
 {
 
 	
-	Get("Camera")->Clean();
+	CleanModule();
 	ControllerSource::Clean();
 
 
@@ -92,23 +92,6 @@ void Controller::Enable()
 	camera->ProcessInput(this);
 	camera->ComputeAngles(this);
 	camera->SetFrustum(camera->GetView()->getCamera());
-
-
-
-	/*
-	if (GetDropFiles().size() > 0)
-	{
-
-
-		ResourceLoader * res = static_cast<DataManager*>(Get("GameObject"))->GetResource();
-		SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
-
-
-		scene_info->InsertNewEntity(GetDropFiles()[0]);
-		ResetDropList();
-
-
-	}*/
 
 
 

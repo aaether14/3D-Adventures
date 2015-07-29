@@ -5,7 +5,6 @@
 
 
 
-#include <controls.hpp>
 #include <data_manager.hpp>
 #include <CEGUI/CEGUI.h>
 #include <util/string_helper.hpp>
@@ -28,7 +27,7 @@ class ui_ProjectRoot
 
 
 
-	Controller * ctrl;
+	DataManager * dm;
 	CEGUI::Window * Root;
 
 
@@ -38,7 +37,7 @@ class ui_ProjectRoot
 	*/
 	inline bool SaveProject(const CEGUI::EventArgs &args)
 	{
-		static_cast<DataManager*>(ctrl->Get("DataManager"))->GetResource()->SaveChanges();
+		dm->GetResource()->SaveChanges();
 		return 1;
 	}
 
@@ -48,7 +47,7 @@ class ui_ProjectRoot
 	*/
 	inline bool LoadProject(const CEGUI::EventArgs &args)
 	{
-		static_cast<DataManager*>(ctrl->Get("DataManager"))->GetResource()->LoadChanges();
+		dm->GetResource()->LoadChanges();
 		return 1;
 	}
 
@@ -62,11 +61,11 @@ public:
 	/**
 	Calls Init()
 	*/
-	inline ui_ProjectRoot(Controller * ctrl, CEGUI::Window * Root){ this->Init(ctrl, Root); }
+	inline ui_ProjectRoot(DataManager * dm, CEGUI::Window * Root){ this->Init(dm, Root); }
 	/**
 	Initializes out of UI layout
 	*/
-	void Init(Controller * ctrl, CEGUI::Window * Root);
+	void Init(DataManager * dm, CEGUI::Window * Root);
 
 
 

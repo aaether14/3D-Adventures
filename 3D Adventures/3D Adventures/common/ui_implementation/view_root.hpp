@@ -27,7 +27,6 @@ class ui_ViewRoot
 
 
 
-	Controller * ctrl;
 	CEGUI::Window * Root;
 
 
@@ -73,11 +72,11 @@ public:
 	/**
 	Calls Init()
 	*/
-	inline ui_ViewRoot(Controller * ctrl, CEGUI::Window * Root){ this->Init(ctrl, Root); }
+	inline ui_ViewRoot(CEGUI::Window * Root){ this->Init(Root); }
 	/**
 	Initializes data and sets callbacks
 	*/
-	void Init(Controller * ctrl, CEGUI::Window * Root);
+	void Init(CEGUI::Window * Root);
 
 
 	/**

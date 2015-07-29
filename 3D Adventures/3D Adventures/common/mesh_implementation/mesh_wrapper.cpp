@@ -83,7 +83,7 @@ void MeshWrapper::Clean()
 
 
 	MeshShader::Clean();
-	Get("MeshDrawer")->Clean();
+	CleanModule();
 
 
 }

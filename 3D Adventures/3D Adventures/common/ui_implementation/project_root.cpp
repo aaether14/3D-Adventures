@@ -4,12 +4,12 @@
 
 
 
-void ui_ProjectRoot::Init(Controller * ctrl, CEGUI::Window * Root)
+void ui_ProjectRoot::Init(DataManager * dm, CEGUI::Window * Root)
 {
 
 
 
-	this->ctrl = ctrl;
+	this->dm = dm;
 	this->Root = Root;
 
 

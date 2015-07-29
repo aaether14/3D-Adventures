@@ -5,11 +5,11 @@
 
 
 
-void TopRoot::Init(Controller * ctrl, CEGUI::Window * Root)
+void TopRoot::Init(DataManager * dm, CEGUI::Window * Root)
 {
 
-	ui_project_root = new ui_ProjectRoot(ctrl, Root);
-	ui_view_root = new ui_ViewRoot(ctrl, Root);
+	ui_project_root = new ui_ProjectRoot(dm, Root);
+	ui_view_root = new ui_ViewRoot(Root);
 
 
 }

@@ -31,9 +31,6 @@ namespace AString
 	Succesfully converts std::string to char*
 	*/
 	char * char_to_str(std::string str);
-
-
-
 }
 
 

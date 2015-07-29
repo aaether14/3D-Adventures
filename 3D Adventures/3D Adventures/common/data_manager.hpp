@@ -4,7 +4,7 @@
 
 
 
-
+#include <controller/controls_source.hpp>
 #include <terrain/quad_tree.hpp>
 #include <settings/settings.hpp>
 #include <base/base_module.hpp>
@@ -39,9 +39,9 @@ public:
 	*/
 	void Init();
 	/**
-	Matches interface
+	Handles drag&drop entity adition
 	*/
-	inline void Enable(){}
+	void Enable();
 
 
 

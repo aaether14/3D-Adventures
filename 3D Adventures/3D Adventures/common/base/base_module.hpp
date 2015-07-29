@@ -28,15 +28,16 @@ public:
 	/**
 	Add 'module' to 'key'
 	*/
-	inline void Add(std::string key, AModule*module){ module_map[key] = module; module->SetManager(GetManager()); module->Init(); }
+	virtual void Add(std::string key, AModule*module);
 	/**
 	Get module from 'key'
 	*/
-	AModule * Get(std::string key){ return module_map[key]; }
+	virtual AModule * Get(std::string key);
+
 
 
 	/**
-	Determine how the module affects the engine
+	Determine how module affects engine
 	*/
 	virtual void Enable() = 0;
 	/**
@@ -50,7 +51,7 @@ public:
 	/**
 	Get manager
 	*/
-	AModule * GetManager(){ return manager; }
+	virtual AModule * GetManager();
 
 
 protected:
@@ -60,6 +61,10 @@ protected:
 	Set manager of module
 	*/
 	virtual void SetManager(AModule * module);
+	/**
+	Standardized cleaning routine
+	*/
+	virtual void CleanModule();
 
 
 };

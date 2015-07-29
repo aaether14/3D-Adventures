@@ -18,7 +18,7 @@ void RootUI::Init()
 
 
 	root_settings = new RootSettings(dm->GetResource(), Root);
-	top_root = new TopRoot(ctrl, Root);
+	top_root = new TopRoot(dm, Root);
 
 
 

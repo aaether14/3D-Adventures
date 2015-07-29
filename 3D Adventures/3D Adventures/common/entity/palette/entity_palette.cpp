@@ -225,7 +225,7 @@ void EntityPalette::ManageEntityPlacing()
 		}
 
 
-		GLuint ind = static_cast<DataManager*>(ctrl->Get("DataManager"))->GetInd(camera->GetInfo()->getCameraPos());
+		GLuint ind = dm->GetInd(camera->GetInfo()->getCameraPos());
 
 
 		ui_scene_outliner->AddItem(ic->GetInfo()->entity_name, glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
@@ -239,6 +239,41 @@ void EntityPalette::ManageEntityPlacing()
 }
 
 
+
+
+void EntityPalette::ManageSceneOutliner()
+{
+
+
+
+	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
+
+
+
+	ResourceLoader * res = dm->GetResource();
+	QuadTree * tree = dm->GetTree();
+	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+
+
+
+	if (scene_info->ShouldReset())
+	{
+
+
+	GetSceneOutliner()->ClearItems();
+
+
+	for (GLuint i = 0; i < tree->GetWidth() * tree->GetHeight(); i++)
+	for (GLuint j = 0; j < scene_info->GetEntityInfos()[i].size(); j++)
+	GetSceneOutliner()->AddItem(scene_info->GetEntityInfos()[i][j]->entity_name,
+	glm::ivec2(i, j));
+
+	scene_info->SetShouldReset(false);
+	}
+
+
+
+}
 
 
 

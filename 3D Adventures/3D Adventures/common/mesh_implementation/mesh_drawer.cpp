@@ -23,8 +23,7 @@ void MeshDrawer::Clean()
 
 
 
-	Get("EntityManager")->Clean();
-	Get("EntityPalette")->Clean();
+	CleanModule();
 
 
 
@@ -46,7 +45,7 @@ void MeshDrawer::Enable()
 
 	entity_palette->ManagePaletteInput();
 	entity_palette->ManageEntityPlacing();
-
+	entity_palette->ManageSceneOutliner();
 
 
 

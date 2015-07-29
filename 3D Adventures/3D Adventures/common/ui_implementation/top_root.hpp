@@ -5,7 +5,7 @@
 
 
 
-#include <controls.hpp>
+#include <data_manager.hpp>
 #include <CEGUI/CEGUI.h>
 #include "project_root.hpp"
 #include "view_root.hpp"
@@ -37,11 +37,11 @@ public:
 	/**
 	Calls Init()
 	*/
-	inline TopRoot(Controller * ctrl, CEGUI::Window * Root){ this->Init(ctrl, Root); }
+	inline TopRoot(DataManager * dm, CEGUI::Window * Root){ this->Init(dm, Root); }
 	/**
 	Initializes top bar layout
 	*/
-	void Init(Controller * ctrl, CEGUI::Window * Root);
+	void Init(DataManager * dm, CEGUI::Window * Root);
 
 
 	/**

@@ -69,25 +69,6 @@ void EntityManager::RenderQuad(QuadNode * node)
 
 
 
-	/*
-	if (scene_info->ShouldReset())
-	{
-
-
-		palette->GetSceneOutliner()->ClearItems();
-
-
-		for (GLuint i = 0; i < tree->GetWidth() * tree->GetHeight(); i++)
-			for (GLuint j = 0; j < scene_info->GetEntityInfos()[i].size(); j++)
-				palette->GetSceneOutliner()->AddItem(scene_info->GetEntityInfos()[i][j]->entity_name,
-				glm::ivec2(i, j));
-
-		scene_info->SetShouldReset(false);
-	}
-	*/
-
-
-
 
 	GLuint result = Math::SphereInFrustum(camera->GetFrustum(), node->GetCenter(), node->GetRadius() + 12.5);
 

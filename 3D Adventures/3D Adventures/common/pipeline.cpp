@@ -450,10 +450,7 @@ void Pipeline::Enable()
 void Pipeline::Clean()
 {
 
-	Get("MeshWrapper")->Clean();
-	Get("TerrainWrapper")->Clean();
-	Get("SkyWrapper")->Clean();
-	Get("ScreenRender")->Clean();
+	CleanModule();
 
 }
 

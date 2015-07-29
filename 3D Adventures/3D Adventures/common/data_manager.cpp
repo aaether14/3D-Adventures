@@ -7,16 +7,18 @@ void DataManager::Init()
 
 
 
-
+	ControllerSource * controller_source = static_cast<ControllerSource*>(GetManager()->Get("Controller"));
+	GLuint window_width = controller_source->GetWindowWidth();
+	GLuint window_height = controller_source->GetWindowHeight();
 
 
 
 	GLuint dof_factor = 2;
 	GLuint bright_factor = 2;
 	this->techniques = new Techniques();
-	this->techniques->Create(800, 600, ShadowMapWidth, ShadowMapHeight,
-		800 / dof_factor, 600 / dof_factor,
-		800 / bright_factor, 600 / bright_factor);
+	this->techniques->Create(window_width, window_height, ShadowMapWidth, ShadowMapHeight,
+		window_width / dof_factor, window_height / dof_factor,
+		window_width / bright_factor, window_height / bright_factor);
 
 
 
@@ -34,6 +36,31 @@ void DataManager::Init()
 }
 
 
+
+
+void DataManager::Enable()
+{
+
+
+
+	ControllerSource * ctrl = static_cast<ControllerSource*>(GetManager()->Get("Controller"));
+
+
+	if (ctrl->GetDropFiles().size() > 0)
+	{
+
+
+	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
+
+
+	scene_info->InsertNewEntity(ctrl->GetDropFiles()[0]);
+	ctrl->ResetDropList();
+
+
+	}
+
+
+}
 
 
 void DataManager::Clean()

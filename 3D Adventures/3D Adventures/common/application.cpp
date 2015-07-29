@@ -52,6 +52,7 @@ void Application::Enable()
 
 
 		Get("Controller")->Enable();
+		Get("DataManager")->Enable();
 		Get("Pipeline")->Enable();
 		Get("RootUI")->Enable();
 
@@ -76,10 +77,7 @@ void Application::Clean()
 {
 
 
-	Get("Pipeline")->Clean();
-	Get("DataManager")->Clean();
-	Get("Controller")->Clean();
-	Get("RootUI")->Clean();
+	CleanModule();
 
 
 }

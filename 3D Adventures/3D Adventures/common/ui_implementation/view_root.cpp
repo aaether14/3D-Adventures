@@ -4,12 +4,11 @@
 
 
 
-void ui_ViewRoot::Init(Controller * ctrl, CEGUI::Window * Root)
+void ui_ViewRoot::Init(CEGUI::Window * Root)
 {
 
 
 
-	this->ctrl = ctrl;
 	this->Root = Root;
 
 
