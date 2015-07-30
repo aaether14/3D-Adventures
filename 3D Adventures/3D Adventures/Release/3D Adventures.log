@@ -1,81 +1,9 @@
-﻿Build started 7/30/2015 9:29:45 PM.
-     1>Project "C:\Users\Aaether\Desktop\2015_utilitar_3D_adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
-     1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\util\file_helper.cpp
-         file_helper.cpp
-     1>C:\Users\Aaether\Desktop\2015_utilitar_3D_adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-       Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaether\Desktop\2015_utilitar_3D_adventures\3D Adventures\Release\3D Adventures.exe" /NOLOGO /LIBPATH:..\..\Dependencies\lib "CEGUICommonDialogs-0.lib" "CEGUIBase-0.lib" "CEGUIOpenGLRenderer-0.lib" granny2.lib assimpd.lib FreeImaged.lib freetype.lib glfw3.lib glew32.lib glu32.lib opengl32.lib gdi32.lib winmm.lib user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaether\Desktop\2015_utilitar_3D_adventures\3D Adventures\Release\3D Adventures.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaether\Desktop\2015_utilitar_3D_adventures\3D Adventures\Release\3D Adventures.lib" /MACHINE:X86 /SAFESEH Release\res.res
-         Release\base_module.obj
-         Release\BlowFish.obj
-         Release\mesh_drawer.obj
-         Release\mesh_shader.obj
-         Release\mesh_wrapper.obj
-         Release\screen_render.obj
-         Release\application.obj
-         Release\base_resource_loader.obj
-         Release\camera.obj
-         Release\general_entity_info_component.obj
-         Release\model_component.obj
-         Release\controls_source.obj
-         Release\controls.obj
-         Release\assimp_converter.obj
-         Release\entity.obj
-         Release\entity_palette.obj
-         Release\entity_manager.obj
-         Release\scene_outliner.obj
-         Release\ui_transform_tab.obj
-         Release\transform_info.obj
-         Release\basic_filter.obj
-         Release\blur.obj
-         Release\dof.obj
-         Release\fxaa.obj
-         Release\g_buffer.obj
-         Release\hdr.obj
-         Release\exponential_shadow_map.obj
-         Release\ssao.obj
-         Release\data_manager.obj
-         Release\light.obj
-         Release\aaether_loader.obj
-         Release\granny_loader.obj
-         Release\granny_loader_helper.obj
-         Release\environment.obj
-         Release\filter_settings.obj
-         Release\scene_info.obj
-         Release\shader.obj
-         Release\sky_render.obj
-         Release\sky_wrapper.obj
-         Release\technique.obj
-         Release\pipeline.obj
-         Release\resource_loader.obj
-         Release\quad_tree.obj
-         Release\terrain.obj
-         Release\terrain_strip.obj
-         Release\terrain_shader.obj
-         Release\terrain_wrapper.obj
-         Release\texture.obj
-         Release\ui_manager.obj
-         Release\ui_util.obj
-         Release\filter_root.obj
-         Release\lighting_root.obj
-         Release\project_root.obj
-         Release\settings_root.obj
-         Release\top_root.obj
-         Release\ui_root.obj
-         Release\view_root.obj
-         Release\math_helper.obj
-         Release\file_helper.obj
-         Release\string_helper.obj
-         Release\utils.obj
-         Release\view.obj
-         Release\main.obj
-         Generating code
-     1>c:\users\aaether\desktop\2015_utilitar_3d_adventures\3d adventures\3d adventures\common\data_manager.cpp(93): warning C4715: 'DataManager::GetInd' : not all control paths return a value
-     1>c:\users\aaether\desktop\2015_utilitar_3d_adventures\3d adventures\3d adventures\common\controller\controls_source.cpp(110): warning C4715: 'ControllerSource::CreateWindow' : not all control paths return a value
-         Finished generating code
-         3D Adventures.vcxproj -> C:\Users\Aaether\Desktop\2015_utilitar_3D_adventures\3D Adventures\Release\3D Adventures.exe
-     1>Done Building Project "C:\Users\Aaether\Desktop\2015_utilitar_3D_adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" (Build target(s)).
+﻿Build started 7/30/2015 11:15:33 PM.
+     1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
+     1>Link:
+         3D Adventures.vcxproj -> C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe
+     1>Done Building Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:26.57
+Time Elapsed 00:00:00.79
