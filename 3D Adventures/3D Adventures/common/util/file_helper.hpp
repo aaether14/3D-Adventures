@@ -13,6 +13,7 @@
 #include <boost/property_tree/ptree.hpp>
 #include <boost/foreach.hpp>
 #include <boost/functional/hash/hash.hpp>
+#include <crypt/Blowfish.h>
 
 
 
@@ -65,6 +66,18 @@ namespace AFile
 	Same as GetFileWithExtension but for multiple extensions
 	*/
 	std::string GetFileWithExtensionList(std::string path, std::vector<std::string>extensions);
+
+
+	/**
+	Return size of file
+	*/
+	long GetFileSize(const char* filePath);
+	/**
+	Read file content into memory and return pointer
+	*/
+	unsigned char * ReadFile(const char * filePath);
+	void EncryptFile(const char * path);
+	std::string DecryptFile(const char * path);
 
 
 }

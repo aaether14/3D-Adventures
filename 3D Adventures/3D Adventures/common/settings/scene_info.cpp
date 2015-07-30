@@ -133,7 +133,9 @@ void SceneInfo::Load()
 
 	using boost::property_tree::ptree;
 	ptree pt;
-	read_xml(GetPath(), pt);
+	std::istringstream iss;
+	iss.str(AFile::DecryptFile(AString::char_to_str(GetPath())));
+	read_xml(iss, pt);
 
 
 
@@ -260,6 +262,7 @@ void SceneInfo::Save()
 	pt.add_child("Scene", rootNode);
 	boost::property_tree::xml_writer_settings<std::string> settings(' ', 4);
 	write_xml(GetPath(), pt, std::locale(), settings);
+	AFile::EncryptFile(AString::char_to_str(GetPath()));
 
 
 

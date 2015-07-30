@@ -124,4 +124,165 @@ namespace AFile
 
 
 
+	long GetFileSize(const char* filePath)
+	{
+		FILE* pFile = fopen(filePath, "rb");
+
+		if (pFile == NULL)
+			exit(1);
+
+		fseek(pFile, 0, SEEK_END);
+		long lSize = ftell(pFile);
+		rewind(pFile);
+		fclose(pFile);
+
+		return lSize;
+	}
+
+
+
+	unsigned char * ReadFile(const char * filePath)
+	{
+		FILE * pFile;
+		long lSize;
+		unsigned char * buffer;
+		size_t result;
+
+		pFile = fopen(filePath, "rb");
+		if (pFile == NULL) { fputs("File error", stderr); exit(1); }
+
+		// obtain file size:
+		fseek(pFile, 0, SEEK_END);
+		lSize = ftell(pFile);
+		rewind(pFile);
+
+		// allocate memory to contain the whole file:
+		buffer = (unsigned char*)malloc(sizeof(unsigned char)*lSize);
+		if (buffer == NULL) { fputs("Memory error", stderr); exit(1); }
+
+		// copy the file into the buffer:
+		result = fread(buffer, 1, lSize, pFile);
+		if (result != lSize) { fputs("Reading error", stderr); exit(1); }
+
+		// terminate
+		fclose(pFile);
+
+		// the whole file is now loaded in the memory buffer. Return pointer to data.
+		return buffer;
+	}
+
+
+
+
+	void EncryptFile(const char * path)
+	{
+
+ 
+		long multiple_of_eight_size;
+		long file_size = GetFileSize(path);
+		if (double(file_size / 8.0) != long(file_size / 8))
+			multiple_of_eight_size = (file_size / 8 + 1) * 8;
+		else
+			multiple_of_eight_size = file_size;
+
+
+
+
+		int byte_pad = multiple_of_eight_size - file_size;
+		unsigned char * file = ReadFile(path);
+		unsigned char * buffer = (unsigned char*)malloc(multiple_of_eight_size);
+		unsigned char * buffer2 = (unsigned char*)malloc(multiple_of_eight_size);
+		memcpy(buffer, file, file_size);
+
+
+
+		for (int i = 0; i < byte_pad; i++)
+			buffer[file_size + i] = '\0';
+
+
+
+
+		try
+		{
+
+
+			CBlowFish oBlowFish((unsigned char*)"abcdefgh", 8);
+			oBlowFish.Encrypt((unsigned char*)buffer, (unsigned char*)buffer2, multiple_of_eight_size);
+			std::ofstream fout(path, std::ios::binary);
+			fout.write((const char*)(buffer2), multiple_of_eight_size);
+			fout.close();
+
+
+
+		}
+		catch (std::exception& roException)
+		{
+			std::cout << roException.what() << std::endl;
+		}
+
+	}
+
+
+
+	std::string DecryptFile(const char * path)
+	{
+
+
+
+		long multiple_of_eight_size;
+		long file_size = GetFileSize(path);
+		if (double(file_size / 8.0) != long(file_size / 8))
+			multiple_of_eight_size = (file_size / 8 + 1) * 8;
+		else
+			multiple_of_eight_size = file_size;
+
+
+
+
+
+
+		unsigned char * file = ReadFile(path);
+		unsigned char * buffer = (unsigned char*)malloc(multiple_of_eight_size);
+		unsigned char * buffer2 = (unsigned char*)malloc(multiple_of_eight_size);
+		memcpy(buffer, file, file_size);
+
+
+
+		std::string string_cypher;
+
+
+
+
+		try
+		{
+
+
+			CBlowFish oBlowFish((unsigned char*)"abcdefgh", 8);
+			oBlowFish.Decrypt((unsigned char*)buffer, (unsigned char*)buffer2, multiple_of_eight_size);
+
+
+			file_size--;
+			while (buffer2[file_size - 1] == 0)
+				file_size--;
+
+
+			string_cypher.resize(file_size);
+			memcpy(&string_cypher[0], buffer2, file_size);
+
+
+
+
+		}
+		catch (std::exception& roException)
+		{
+			std::cout << roException.what() << std::endl;
+		}
+
+
+		return string_cypher;
+
+	}
+
+
+
 }

@@ -100,6 +100,9 @@
     <Filter Include="common\terrain_implementation">
       <UniqueIdentifier>{0bde4387-6679-4dbf-8b5e-253420fc313f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common\crypt">
+      <UniqueIdentifier>{3d50e677-7c84-47fc-b2a8-15fd316862bf}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\controls.cpp">
@@ -287,6 +290,9 @@
     </ClCompile>
     <ClCompile Include="common\data_manager.cpp">
       <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="common\crypt\BlowFish.cpp">
+      <Filter>common\crypt</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -588,6 +594,9 @@
     </ClInclude>
     <ClInclude Include="common\data_manager.hpp">
       <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="common\crypt\Blowfish.h">
+      <Filter>common\crypt</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

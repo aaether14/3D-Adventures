@@ -76,6 +76,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="common\base\base_module.cpp" />
+    <ClCompile Include="common\crypt\BlowFish.cpp" />
     <ClCompile Include="common\mesh_implementation\mesh_drawer.cpp" />
     <ClCompile Include="common\mesh_implementation\mesh_shader.cpp" />
     <ClCompile Include="common\mesh_implementation\mesh_wrapper.cpp" />
@@ -177,6 +178,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="common\base\base_module.hpp" />
+    <ClInclude Include="common\crypt\Blowfish.h" />
     <ClInclude Include="common\mesh_implementation\mesh_drawer.hpp" />
     <ClInclude Include="common\mesh_implementation\mesh_shader.hpp" />
     <ClInclude Include="common\mesh_implementation\mesh_wrapper.hpp" />
