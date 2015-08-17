@@ -5,6 +5,7 @@
 
 
 
+#include <entity/entity.hpp>
 #include <entity_info/transform_info.hpp>
 #include <base/base_entity_instance.hpp>
 

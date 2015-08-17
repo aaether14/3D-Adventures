@@ -26,19 +26,11 @@ void DataManager::Init()
 
 
 	Add("Techniques", techniques);
+	Add("Resources", new ResourceLoader());
 
 
 
 
-
-
-	ResourceLoader * res = new ResourceLoader();
-	res->LoadResourcePaths(AString::char_to_str("map1.AAETHER"));
-	Add("Resources", res);
-	res->Add("Environment", new Environment(res->GetEnvFile()));
-	res->Add("FilterSettings", new FilterSettings(res->GetFSettingsFile()));
-	res->Add("Entities", new SceneInfo(res->GetSceneFile()));
-	res->LoadChanges();
 
 
 
@@ -78,6 +70,7 @@ void DataManager::Clean()
 {
 
 
+	CleanModule();
 
 
 }

@@ -4,11 +4,11 @@
 
 
 
-#include "controls.hpp"
 #include <CEGUI/CEGUI.h>
+#include <controls.hpp>
+#include <resource_loader.hpp>
 #include "lighting_root.hpp"
 #include "filter_root.hpp"
-#include "../settings/settings.hpp"
 
 
 

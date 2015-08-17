@@ -78,18 +78,6 @@ void EntityPalette::Enable()
 	//rendering entity depending on the palette id
 
 
-	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
-	MeshShader * shader = static_cast<MeshShader*>((GetManager()->Get("Pipeline"))->Get("MeshWrapper"));
-
-
-	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
-	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
-	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
-	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
-	View * view = camera->GetView();
-	ViewInfo *info = camera->GetInfo();
-
 
 
 	if (visible)

@@ -4,7 +4,10 @@
 
 
 
+
+
 #include <base/base_resource_loader.hpp>
+#include <settings/settings.hpp>
 
 
 

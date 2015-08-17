@@ -2,6 +2,9 @@
 
 
 
+
+
+
 void ResourceLoader::LoadResourcePaths(char *path)
 {
 
@@ -45,6 +48,10 @@ void ResourceLoader::Init()
 
 
 
+	LoadResourcePaths(AString::char_to_str("map1.AAETHER"));
+	Add("Environment", new Environment(GetEnvFile()));
+	Add("FilterSettings", new FilterSettings(GetFSettingsFile()));
+	LoadChanges();
 
 
 }
@@ -56,7 +63,7 @@ void ResourceLoader::Clean()
 {
 
 
-
+	CleanModule();
 
 
 }

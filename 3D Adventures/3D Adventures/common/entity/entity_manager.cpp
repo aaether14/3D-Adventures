@@ -42,7 +42,6 @@ void EntityManager::RenderQuad(QuadNode * node)
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
-	MeshShader * shader = static_cast<MeshShader*>(GetManager()->Get("Pipeline")->Get("MeshWrapper"));
 
 
 

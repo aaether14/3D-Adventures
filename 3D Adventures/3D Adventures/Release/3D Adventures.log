@@ -1,82 +1,50 @@
-﻿Build started 8/17/2015 5:14:10 PM.
+﻿Build started 8/17/2015 7:45:32 PM.
      1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\data_manager.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\mesh_implementation\mesh_drawer.cpp common\mesh_implementation\mesh_wrapper.cpp common\application.cpp common\base\base_resource_loader.cpp common\entity\palette\entity_palette.cpp common\entity\entity_manager.cpp common\data_manager.cpp common\settings\scene_info.cpp common\sky_implementation\sky_wrapper.cpp common\pipeline.cpp common\resource_loader.cpp common\terrain_implementation\terrain_wrapper.cpp common\ui_implementation\project_root.cpp common\ui_implementation\settings_root.cpp common\ui_implementation\top_root.cpp common\ui_implementation\ui_root.cpp main.cpp
+         mesh_drawer.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         mesh_wrapper.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         application.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         base_resource_loader.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\Dependencies\include\GL/glew.h(84): fatal error C1189: #error :  gl.h included before glew.h
+         entity_palette.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         entity_manager.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\entity\entity_manager.cpp(57): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
          data_manager.cpp
      1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-       Link:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe" /NOLOGO /LIBPATH:..\..\Dependencies\lib "CEGUICommonDialogs-0.lib" "CEGUIBase-0.lib" "CEGUIOpenGLRenderer-0.lib" granny2.lib assimpd.lib FreeImaged.lib freetype.lib glfw3.lib glew32.lib glu32.lib opengl32.lib gdi32.lib winmm.lib user32.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.lib" /MACHINE:X86 /SAFESEH Release\res.res
-         Release\base_module.obj
-         Release\BlowFish.obj
-         Release\entity_instance.obj
-         Release\mesh_drawer.obj
-         Release\mesh_shader.obj
-         Release\mesh_wrapper.obj
-         Release\screen_render.obj
-         Release\application.obj
-         Release\base_resource_loader.obj
-         Release\camera.obj
-         Release\general_entity_info_component.obj
-         Release\model_component.obj
-         Release\controls_source.obj
-         Release\controls.obj
-         Release\assimp_converter.obj
-         Release\entity.obj
-         Release\entity_palette.obj
-         Release\entity_manager.obj
-         Release\scene_outliner.obj
-         Release\ui_transform_tab.obj
-         Release\transform_info.obj
-         Release\basic_filter.obj
-         Release\blur.obj
-         Release\dof.obj
-         Release\fxaa.obj
-         Release\g_buffer.obj
-         Release\hdr.obj
-         Release\exponential_shadow_map.obj
-         Release\ssao.obj
-         Release\data_manager.obj
-         Release\light.obj
-         Release\aaether_loader.obj
-         Release\granny_loader.obj
-         Release\granny_loader_helper.obj
-         Release\environment.obj
-         Release\filter_settings.obj
-         Release\scene_info.obj
-         Release\shader.obj
-         Release\sky_render.obj
-         Release\sky_wrapper.obj
-         Release\technique.obj
-         Release\pipeline.obj
-         Release\resource_loader.obj
-         Release\quad_tree.obj
-         Release\terrain.obj
-         Release\terrain_strip.obj
-         Release\terrain_shader.obj
-         Release\terrain_wrapper.obj
-         Release\texture.obj
-         Release\ui_manager.obj
-         Release\ui_util.obj
-         Release\filter_root.obj
-         Release\lighting_root.obj
-         Release\project_root.obj
-         Release\settings_root.obj
-         Release\top_root.obj
-         Release\ui_root.obj
-         Release\view_root.obj
-         Release\math_helper.obj
-         Release\file_helper.obj
-         Release\string_helper.obj
-         Release\utils.obj
-         Release\view.obj
-         Release\main.obj
-         Generating code
-     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\data_manager.cpp(95): warning C4715: 'DataManager::GetInd' : not all control paths return a value
-     1>c:\users\aaether\desktop\3d-adventures\3d adventures\3d adventures\common\controller\controls_source.cpp(110): warning C4715: 'ControllerSource::CreateWindow' : not all control paths return a value
-         Finished generating code
-         3D Adventures.vcxproj -> C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\Release\3D Adventures.exe
-     1>Done Building Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" (Build target(s)).
+         scene_info.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\Dependencies\include\GL/glew.h(84): fatal error C1189: #error :  gl.h included before glew.h
+         sky_wrapper.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\sky_implementation\sky_wrapper.cpp(62): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+         pipeline.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\pipeline.cpp(206): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>common\pipeline.cpp(267): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+         resource_loader.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>C:\Users\Aaether\Desktop\3D-Adventures\Dependencies\include\GL/glew.h(84): fatal error C1189: #error :  gl.h included before glew.h
+         terrain_wrapper.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         project_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         settings_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         top_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         ui_root.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         main.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>Done Building Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" (Build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:25.90
+Time Elapsed 00:01:07.49

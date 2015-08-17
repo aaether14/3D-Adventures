@@ -47,7 +47,7 @@ void BaseResourceLoader::LoadChanges()
 
 
 		for (it = GetModuleMap().begin(); it != GetModuleMap().end(); it++)
-			printf("hello!\n");
+			static_cast<AStateSaver*>(it->second)->Load();
 
 
 	}

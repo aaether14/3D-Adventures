@@ -6,10 +6,7 @@
 
 #include <components/model_component.hpp>
 #include <components/general_entity_info_component.hpp>
-#include <camera_implementation/camera.hpp>
-#include <mesh_implementation/mesh_shader.hpp>
-#include <resource_loader.hpp>
-#include <technique.hpp>
+#include <base/base_module.hpp>
 
 
 

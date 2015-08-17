@@ -4,11 +4,9 @@
 
 
 
-#include <entity_instance/entity_instance.hpp>
 #include <base/base_state_saver.hpp>
-#include <components/model_component.hpp>
-#include <components/general_entity_info_component.hpp>
 #include <converter/assimp_converter.hpp>
+#include <entity_instance/entity_instance.hpp>
 
 
 
