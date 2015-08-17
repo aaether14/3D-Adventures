@@ -37,7 +37,7 @@ class ui_ProjectRoot
 	*/
 	inline bool SaveProject(const CEGUI::EventArgs &args)
 	{
-		dm->GetResource()->SaveChanges();
+		static_cast<BaseResourceLoader*>(dm->Get("Resrouces"))->SaveChanges();
 		return 1;
 	}
 
@@ -47,7 +47,7 @@ class ui_ProjectRoot
 	*/
 	inline bool LoadProject(const CEGUI::EventArgs &args)
 	{
-		dm->GetResource()->LoadChanges();
+		static_cast<BaseResourceLoader*>(dm->Get("Resrouces"))->LoadChanges();
 		return 1;
 	}
 
@@ -57,7 +57,7 @@ class ui_ProjectRoot
 	*/
 	inline bool ResetProject(const CEGUI::EventArgs &args)
 	{
-		dm->GetResource()->NoChanges();
+		static_cast<BaseResourceLoader*>(dm->Get("Resrouces"))->NoChanges();
 		return 1;
 	}
 

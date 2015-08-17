@@ -13,6 +13,7 @@
 #include <filters/hdr.hpp>
 #include <filters/basic_filter.hpp>
 #include <filters/fxaa.hpp>
+#include <base/base_module.hpp>
 
 
 
@@ -34,7 +35,7 @@
 
 
 
-class Techniques
+class Techniques : public AModule
 {
 
 
@@ -69,14 +70,20 @@ public:
 
 
 
-	/**
-	Calls data
-	*/
-	inline ~Techniques(){ Clean(); }
+
+
 	/**
 	Cleans data used by techniques
 	*/
 	void Clean();
+	/**
+	Initializes data
+	*/
+	void Init();
+	/**
+	Enables module to affect scene
+	*/
+	void Enable();
 
 
 

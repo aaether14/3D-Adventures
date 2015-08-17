@@ -4,10 +4,32 @@
 
 
 
-void Entity::Render(ViewInfo * info, View * view,
-	ResourceLoader * res, Techniques * tech,
-	MeshShader *shader, glm::mat4 matrix)
+void Entity::Render(AModule * manager, glm::mat4 matrix)
 {
+
+
+
+	/*
+	//Getting required branches
+
+	
+
+	DataManager * dm = static_cast<DataManager*>(manager->Get("DataManager"));
+	Camera * cam = static_cast<Camera*>(manager->Get("Controller")->Get("Camera"));
+
+
+	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = dm->GetTechniques();
+
+
+
+	View * view = cam->GetView();
+	ViewInfo * info = cam->GetInfo();
+
+
+
+
+
 
 
 
@@ -78,6 +100,9 @@ void Entity::Render(ViewInfo * info, View * view,
 
 
 	}
+
+
+	*/
 
 
 }

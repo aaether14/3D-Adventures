@@ -32,7 +32,7 @@ void Pipeline::GeometryPass()
 
 
 
-	Techniques * tech = dm->GetTechniques();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
 	MeshWrapper * mesh_wrapper = static_cast<MeshWrapper*>(Get("MeshWrapper"));
 	TerrainWrapper * terrain_wrapper = static_cast<TerrainWrapper*>(Get("TerrainWrapper"));
 
@@ -66,7 +66,7 @@ void Pipeline::LightPass()
 
 
 
-	Techniques * tech = dm->GetTechniques();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 	View * view = camera->GetView();
 	ViewInfo * info = camera->GetInfo();
@@ -130,7 +130,7 @@ void Pipeline::ShadowPass()
 
 
 
-	Techniques * tech = dm->GetTechniques();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
 	ESMImplementation * esm_shadow = tech->GetShadow();
 	MeshWrapper * mesh_wrapper = static_cast<MeshWrapper*>(Get("MeshWrapper"));
 
@@ -172,7 +172,8 @@ void Pipeline::HandleDoF()
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
-	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -182,7 +183,7 @@ void Pipeline::HandleDoF()
 
 
 
-		Techniques * tech = dm->GetTechniques();
+
 		DofImplementation * dof = tech->GetDof();
 
 
@@ -227,7 +228,8 @@ void Pipeline::HandleBloom()
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
-	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -237,7 +239,7 @@ void Pipeline::HandleBloom()
 
 
 
-		Techniques * tech = dm->GetTechniques();
+
 		HdrImplementation * hdr = tech->GetHdr();
 
 
@@ -296,7 +298,8 @@ void Pipeline::HandleFXAA()
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
-	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -305,7 +308,7 @@ void Pipeline::HandleFXAA()
 	{
 
 
-		Techniques * tech = dm->GetTechniques();
+
 		FXAAImplementation * fxaa = tech->GetFXAA();
 
 
@@ -351,7 +354,8 @@ void Pipeline::HandleSSAO()
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
-	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -364,7 +368,6 @@ void Pipeline::HandleSSAO()
 		Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 		View * view = camera->GetView();
 		ViewInfo * info = camera->GetInfo();
-		Techniques * tech = dm->GetTechniques();
 		SSAOImplementation * ssao = tech->GetSSAO();
 
 
@@ -411,8 +414,8 @@ void Pipeline::Enable()
 
 
 
-	Techniques * tech = dm->GetTechniques();
-	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 
 
@@ -467,7 +470,7 @@ void Pipeline::ApplyGausBlur(GLuint type,
 
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
-	Techniques * tech = dm->GetTechniques();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
 
 
 

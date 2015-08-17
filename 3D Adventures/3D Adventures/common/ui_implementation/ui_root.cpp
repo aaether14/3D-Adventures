@@ -17,7 +17,12 @@ void RootUI::Init()
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
-	root_settings = new RootSettings(dm->GetResource(), Root);
+
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
+
+
+
+	root_settings = new RootSettings(res, Root);
 	top_root = new TopRoot(dm, Root);
 
 

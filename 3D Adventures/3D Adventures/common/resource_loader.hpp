@@ -9,7 +9,6 @@
 
 
 
-
 class ResourceLoader : public BaseResourceLoader
 {
 
@@ -52,14 +51,14 @@ public:
 
 
 
-	inline char* GetTerrainFile(){ return char_to_str(terrain_file); }
-	inline char* GetColorFile(){ return char_to_str(color_file); }
-	inline char* GetEnvFile(){ return char_to_str(env_file); }
-	inline char* GetFSettingsFile(){ return char_to_str(fsettings_file); }
-	inline char* GetSceneFile(){ return char_to_str(scene_file); }
-	inline char* GetTFile(){ return char_to_str(t_file); }
-	inline char* GetNFile(){ return char_to_str(n_file); }
-	inline char* GetAFile(){ return char_to_str(a_file); }
+	inline char* GetTerrainFile(){ return AString::char_to_str(terrain_file); }
+	inline char* GetColorFile(){ return AString::char_to_str(color_file); }
+	inline char* GetEnvFile(){ return AString::char_to_str(env_file); }
+	inline char* GetFSettingsFile(){ return AString::char_to_str(fsettings_file); }
+	inline char* GetSceneFile(){ return AString::char_to_str(scene_file); }
+	inline char* GetTFile(){ return AString::char_to_str(t_file); }
+	inline char* GetNFile(){ return AString::char_to_str(n_file); }
+	inline char* GetAFile(){ return AString::char_to_str(a_file); }
 
 
 	/**

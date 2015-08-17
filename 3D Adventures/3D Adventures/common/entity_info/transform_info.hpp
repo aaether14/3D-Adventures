@@ -39,24 +39,12 @@ public:
 
 
 
-	/**
-	Render current instance of entity with provided info
-	*/
-	void Render(ViewInfo * info, View * view,
-		ResourceLoader * res, Techniques * tech,
-		MeshShader *shader, Entity * entity);
-
-
 
 
 	/**
 	Call Clean()
 	*/
-	inline TransformInfo(){ Clean(); }
-	/**
-	Cleans data
-	*/
-	void Clean();
+	inline TransformInfo(){}
 
 
 

@@ -24,8 +24,6 @@ class DataManager : public AModule
 
 
 	QuadTree *q_tree;
-	ResourceLoader * res;
-	Techniques * techniques;
 
 
 
@@ -39,6 +37,10 @@ public:
 	*/
 	void Init();
 	/**
+	Cleans data
+	*/
+	void Clean();
+	/**
 	Handles drag&drop entity adition
 	*/
 	void Enable();
@@ -46,21 +48,7 @@ public:
 
 
 
-	/**
-	Cleans data
-	*/
-	void Clean();
 
-
-
-	/**
-	Get pointer to filter pack Techniques
-	*/
-	inline Techniques * GetTechniques(){ return this->techniques; }
-	/**
-	Get pointer to Resource Loader
-	*/
-	inline ResourceLoader* GetResource(){ return this->res; }
 	/**
 	Get pointer to terrain quad tree
 	*/

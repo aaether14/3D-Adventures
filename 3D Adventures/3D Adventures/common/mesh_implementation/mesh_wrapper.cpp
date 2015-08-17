@@ -31,12 +31,14 @@ void MeshWrapper::Enable()
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
-	Techniques * tech = dm->GetTechniques();
-	ResourceLoader * res = dm->GetResource();
+
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
 	FilterSettings * f_settings = static_cast<FilterSettings*>(res->Get("FilterSettings"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 	View * view = camera->GetView();
+
 
 
 
@@ -45,6 +47,7 @@ void MeshWrapper::Enable()
 	Shader::Set("shadow_map", 1);
 	Shader::Set("ssao_map", 2);
 	Shader::Set("has_ssao", GLfloat(f_settings->SSAO.Enabled));
+
 
 
 

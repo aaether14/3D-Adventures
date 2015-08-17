@@ -83,8 +83,8 @@ void EntityPalette::Enable()
 	MeshShader * shader = static_cast<MeshShader*>((GetManager()->Get("Pipeline"))->Get("MeshWrapper"));
 
 
-	ResourceLoader * res = dm->GetResource();
-	Techniques * tech = dm->GetTechniques();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 	View * view = camera->GetView();
@@ -93,7 +93,7 @@ void EntityPalette::Enable()
 
 
 	if (visible)
-		current_entity->Render(info, view, res, tech, shader, GetMatrix(current_entity));
+		current_entity->Render(GetManager(), GetMatrix(current_entity));
 
 
 
@@ -110,7 +110,7 @@ void EntityPalette::ManagePaletteInput()
 
 
 
-	ResourceLoader * res = dm->GetResource();
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 
@@ -190,7 +190,7 @@ void EntityPalette::ManageEntityPlacing()
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
-	ResourceLoader * res = dm->GetResource();
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 
@@ -250,7 +250,7 @@ void EntityPalette::ManageSceneOutliner()
 
 
 
-	ResourceLoader * res = dm->GetResource();
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	QuadTree * tree = dm->GetTree();
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
 

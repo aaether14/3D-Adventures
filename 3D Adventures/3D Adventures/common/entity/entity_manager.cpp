@@ -22,25 +22,10 @@ void EntityManager::RenderPatch(std::vector<EntityInstance*> patch_info)
 {
 
 
-	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
-	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
-	MeshShader * shader = static_cast<MeshShader*>(GetManager()->Get("Pipeline")->Get("MeshWrapper"));
-
-
-
-	ResourceLoader * res = dm->GetResource();
-	Techniques * tech = dm->GetTechniques();
-	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
-	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
-	View * view = camera->GetView();
-	ViewInfo *info = camera->GetInfo();
-
-
 
 
 	for (GLuint i = 0; i < patch_info.size(); i++)
-		patch_info[i]->GetTransformInfo()->Render(info, view, res, tech, shader, scene_info->GetEntity(patch_info[i]->GetTransformInfo()->entity_name));
-
+		patch_info[i]->Enable(GetManager());
 
 
 
@@ -62,7 +47,7 @@ void EntityManager::RenderQuad(QuadNode * node)
 
 
 	QuadTree * tree = dm->GetTree();
-	ResourceLoader * res = dm->GetResource();
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	SceneInfo * scene_info = static_cast<SceneInfo*>(res->Get("Entities"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 

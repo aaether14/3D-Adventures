@@ -13,18 +13,28 @@ void DataManager::Init()
 
 
 
+
+
+
+
 	GLuint dof_factor = 2;
 	GLuint bright_factor = 2;
-	this->techniques = new Techniques();
-	this->techniques->Create(window_width, window_height, ShadowMapWidth, ShadowMapHeight,
+	Techniques * techniques = new Techniques();
+    techniques->Create(window_width, window_height, ShadowMapWidth, ShadowMapHeight,
 		window_width / dof_factor, window_height / dof_factor,
 		window_width / bright_factor, window_height / bright_factor);
 
 
+	Add("Techniques", techniques);
 
 
-	res = new ResourceLoader();
+
+
+
+
+	ResourceLoader * res = new ResourceLoader();
 	res->LoadResourcePaths(AString::char_to_str("map1.AAETHER"));
+	Add("Resources", res);
 	res->Add("Environment", new Environment(res->GetEnvFile()));
 	res->Add("FilterSettings", new FilterSettings(res->GetFSettingsFile()));
 	res->Add("Entities", new SceneInfo(res->GetSceneFile()));
@@ -44,6 +54,7 @@ void DataManager::Enable()
 
 
 	ControllerSource * ctrl = static_cast<ControllerSource*>(GetManager()->Get("Controller"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(Get("Resources"));
 
 
 	if (ctrl->GetDropFiles().size() > 0)
@@ -67,13 +78,6 @@ void DataManager::Clean()
 {
 
 
-
-	if (res)
-	delete this->res;
-
-
-	if (techniques)
-	delete this->techniques;
 
 
 }

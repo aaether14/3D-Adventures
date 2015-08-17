@@ -11,12 +11,12 @@ void BaseResourceLoader::SaveChanges()
 	try
 	{
 
-		std::map<std::string, AStateSaver*>::iterator it;
+		std::map<std::string, AModule*>::iterator it;
 
 
 
-		for (it = state_changers.begin(); it != state_changers.end(); it++)
-			it->second->Save();
+		for (it = GetModuleMap().begin(); it != GetModuleMap().end(); it++)
+			static_cast<AStateSaver*>(it->second)->Save();
 
 
 	}
@@ -34,17 +34,20 @@ void BaseResourceLoader::LoadChanges()
 {
 
 
+
+	printf("Debug....!!!!!\n");
+
+
+
 	try
 	{
 
-
-		std::map<std::string, AStateSaver*>::iterator it;
-
+		std::map<std::string, AModule*>::iterator it;
 
 
-		for (it = state_changers.begin(); it != state_changers.end(); it++)
-			it->second->Load();
 
+		for (it = GetModuleMap().begin(); it != GetModuleMap().end(); it++)
+			printf("hello!\n");
 
 
 	}
@@ -67,14 +70,12 @@ void BaseResourceLoader::NoChanges()
 	try
 	{
 
-
-		std::map<std::string, AStateSaver*>::iterator it;
-
+		std::map<std::string, AModule*>::iterator it;
 
 
-		for (it = state_changers.begin(); it != state_changers.end(); it++)
-			it->second->Reset();
 
+		for (it = GetModuleMap().begin(); it != GetModuleMap().end(); it++)
+			static_cast<AStateSaver*>(it->second)->Reset();
 
 
 	}
@@ -82,6 +83,38 @@ void BaseResourceLoader::NoChanges()
 	{
 		std::cerr << ex.what();
 	}
+
+
+
+
+}
+
+
+
+
+void BaseResourceLoader::Init()
+{
+
+
+
+}
+
+
+
+
+void BaseResourceLoader::Clean()
+{
+
+
+
+}
+
+
+
+
+void BaseResourceLoader::Enable()
+{
+
 
 
 }

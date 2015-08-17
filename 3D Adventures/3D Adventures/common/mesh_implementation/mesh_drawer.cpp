@@ -63,7 +63,7 @@ void MeshDrawer::Render()
 	Controller * ctrl = static_cast<Controller*>(GetManager()->Get("Controller"));
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 	MeshShader * shader = static_cast<MeshShader*>((GetManager()->Get("Pipeline"))->Get("MeshWrapper"));
-	Techniques * tech = dm->GetTechniques();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
 	EntityManager * entity_manager = static_cast<EntityManager*>(Get("EntityManager"));
 	EntityPalette * entity_palette = static_cast<EntityPalette*>(Get("EntityPalette"));
 

@@ -4,12 +4,11 @@
 
 
 
-#include <util/file_helper.hpp>
-#include <util/string_helper.hpp>
-#include <util/math_helper.hpp>
+
 #include <base/base_state_saver.hpp>
-#include <map>
-using namespace::AString;
+#include <util/file_helper.hpp>
+
+
 
 
 
@@ -22,25 +21,19 @@ for centralised save/load
 
 
 */
-class BaseResourceLoader
+class BaseResourceLoader : public AModule
 {
 
 
 private:
 
 
-	/**
-	Storing state changers in a map
-	*/
-	std::map < std::string, AStateSaver * > state_changers;
+
 
 
 protected:
 
-	/**
-	Map can only be accesed in classes that are deriving from this
-	*/
-	inline std::map < std::string, AStateSaver * >GetStateChangers(){ return state_changers; }
+
 
 
 public:
@@ -48,13 +41,19 @@ public:
 
 
 	/**
-	Map an instance of a state changer to a string
+	Initializes data
 	*/
-	inline void Add(std::string name, AStateSaver* state_changer){ state_changers[name] = state_changer; }
+	void Init();
 	/**
-	Get a state changer based on it's key
+	Cleans data
 	*/
-	inline AStateSaver* Get(std::string name){ return state_changers[name]; }
+	void Clean();
+	/**
+	Enables module to affect scene
+	*/
+	void Enable();
+
+
 
 
 	/**

@@ -48,7 +48,8 @@ void SkyWrapper::Enable()
 
 
 
-	ResourceLoader * res = dm->GetResource();
+
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 	ViewInfo * info = camera->GetInfo();

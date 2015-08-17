@@ -191,3 +191,26 @@ void Techniques::Clean()
 
 
 }
+
+
+
+
+void Techniques::Init()
+{
+
+
+
+
+
+}
+
+
+
+
+void Techniques::Enable()
+{
+
+
+
+
+}

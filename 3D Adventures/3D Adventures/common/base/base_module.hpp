@@ -65,6 +65,11 @@ protected:
 	Standardized cleaning routine
 	*/
 	virtual void CleanModule();
+	/**
+	Get module map
+	*/
+	std::map < std::string, AModule* > GetModuleMap(){ return module_map; }
+
 
 
 };

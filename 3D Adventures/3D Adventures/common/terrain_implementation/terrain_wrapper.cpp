@@ -8,16 +8,16 @@ void TerrainWrapper::Init()
 
 
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
-	ResourceLoader * resource = dm->GetResource();
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 
 
 
 	terra = new Terrain();
-	terra->LoadChunks(resource->GetTerrainFile());
-	terra->LoadColorFiles(resource->GetColorFile(),
-		resource->GetTFile(),
-		resource->GetNFile(),
-		resource->GetAFile());
+	terra->LoadChunks(res->GetTerrainFile());
+	terra->LoadColorFiles(res->GetColorFile(),
+		res->GetTFile(),
+		res->GetNFile(),
+		res->GetAFile());
 
 
 
@@ -67,8 +67,8 @@ void TerrainWrapper::Enable()
 
 
 
-	Techniques * tech = dm->GetTechniques();
-	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 	View * view = camera->GetView();
@@ -129,8 +129,8 @@ void TerrainWrapper::Render()
 	DataManager * dm = static_cast<DataManager*>(GetManager()->Get("DataManager"));
 
 
-	Techniques * tech = dm->GetTechniques();
-	ResourceLoader * res = dm->GetResource();
+	Techniques * tech = static_cast<Techniques*>(dm->Get("Techniques"));
+	ResourceLoader * res = static_cast<ResourceLoader*>(dm->Get("Resources"));
 	Environment * env = static_cast<Environment*>(res->Get("Environment"));
 	Camera * camera = static_cast<Camera*>(ctrl->Get("Camera"));
 	View * view = camera->GetView();

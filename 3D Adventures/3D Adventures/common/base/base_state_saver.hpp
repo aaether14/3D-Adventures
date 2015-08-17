@@ -3,8 +3,7 @@
 
 
 
-#include <string>
-
+#include <base/base_module.hpp>
 
 
 
@@ -15,7 +14,7 @@ Interface for storing any scene information prone to change
 
 
 */
-class AStateSaver
+class AStateSaver : public AModule
 {
 
 
@@ -34,6 +33,26 @@ private:
 
 
 public:
+
+
+
+
+
+	/**
+	Initializes data
+	*/
+	inline void Init() {}
+	/**
+	Cleans data
+	*/
+	inline void Clean(){}
+	/**
+	Enables module to affect scene
+	*/
+	inline void Enable(){}
+
+
+
 
 
 	/**

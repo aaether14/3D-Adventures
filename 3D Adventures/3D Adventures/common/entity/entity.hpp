@@ -7,13 +7,9 @@
 #include <components/model_component.hpp>
 #include <components/general_entity_info_component.hpp>
 #include <camera_implementation/camera.hpp>
-#include <util/view.hpp>
 #include <mesh_implementation/mesh_shader.hpp>
-#include "../technique.hpp"
-#include "../resource_loader.hpp"
-
-
-
+#include <resource_loader.hpp>
+#include <technique.hpp>
 
 
 
@@ -43,9 +39,7 @@ public:
 	/**
 	Render if components have required info
 	*/
-	void Render(ViewInfo * info, View * view,
-		ResourceLoader * res, Techniques * tech,
-		MeshShader *shader, glm::mat4 matrix);
+	void Render(AModule * manager, glm::mat4 matrix);
 
 
 
