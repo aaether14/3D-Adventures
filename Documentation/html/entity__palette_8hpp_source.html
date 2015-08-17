@@ -22,10 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="icon.ico"/></td>
+  <td id="projectlogo"><img alt="Logo" src="movie-genres-adventures-icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">3D Adventures
-   &#160;<span id="projectnumber">0.2.5</span>
+   &#160;<span id="projectnumber">0.2.6</span>
    </div>
   </td>
  </tr>
@@ -98,72 +98,78 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="transform__info_8hpp.html">entity_info/transform_info.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../ui/scene_outliner.hpp&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;../ui/ui_transform_tab.hpp&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;CEGUI/CEGUI.h&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="string__helper_8hpp.html">util/string_helper.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;../ui/scene_outliner.hpp&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;../ui/ui_transform_tab.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="transform__info_8hpp.html">entity_info/transform_info.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="string__helper_8hpp.html">util/string_helper.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="data__manager_8hpp.html">data_manager.hpp</a>&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;CEGUI/CEGUI.h&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="base__module_8hpp.html">base/base_module.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;</div>
-<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="class_entity_palette.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_entity_palette.html">EntityPalette</a></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;{</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <span class="comment">//UI data</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="class_entity_palette.html">   28</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_entity_palette.html">EntityPalette</a> : <span class="keyword">public</span> <a class="code" href="class_a_module.html">AModule</a></div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <a class="code" href="classui___scene_outliner.html">ui_SceneOutliner</a> * ui_scene_outliner;</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classui___transform_tab.html">ui_TransformTab</a> * ui_transform_tab;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    <span class="comment">//UI data</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classui___scene_outliner.html">ui_SceneOutliner</a> * ui_scene_outliner;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classui___transform_tab.html">ui_TransformTab</a> * ui_transform_tab;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;</div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    GLboolean visible;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <a class="code" href="class_entity.html">Entity</a> * current_entity;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    GLuint entity_counter;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    GLboolean visible;</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <a class="code" href="class_entity.html">Entity</a> * current_entity;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    GLuint entity_counter;</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;</div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">void</span> Init();</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keywordtype">void</span> Clean();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    glm::mat4 GetMatrix(<a class="code" href="class_entity.html">Entity</a> * entity); </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    glm::mat4 GetMatrix(<a class="code" href="class_entity.html">Entity</a> * entity); </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00064"></a><span class="lineno"><a class="line" href="class_entity_palette.html#a9a21cbe56d5a228bb8ff319c52a76374">   64</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classui___scene_outliner.html">ui_SceneOutliner</a> * <a class="code" href="class_entity_palette.html#a9a21cbe56d5a228bb8ff319c52a76374">GetSceneOutliner</a>(){ <span class="keywordflow">return</span> ui_scene_outliner; }</div>
-<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="class_entity_palette.html#ac6780bcb90bd21b67aab8a5a797476e5">   68</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_entity_palette.html#ac6780bcb90bd21b67aab8a5a797476e5">EntityPalette</a>(){ Init(); }</div>
-<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="class_entity_palette.html#ae2770c26901369854288c266f62345a1">   72</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_entity_palette.html#ae2770c26901369854288c266f62345a1">~EntityPalette</a>(){ Clean(); }</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#ac91bda7de061ac47993b6f6cdff6a799">Render</a>(<a class="code" href="class_controller.html">Controller</a>*ctrl, <a class="code" href="class_mesh_shader.html">MeshShader</a> *u_data);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#a40462c831050126ee1d0f71b516b251a">ControlPalette</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl);</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#abfb0223a6f679d07a791c77ff6463e42">PlacePalette</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl);</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="class_entity_palette.html#a9a21cbe56d5a228bb8ff319c52a76374">   60</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classui___scene_outliner.html">ui_SceneOutliner</a> * <a class="code" href="class_entity_palette.html#a9a21cbe56d5a228bb8ff319c52a76374">GetSceneOutliner</a>(){ <span class="keywordflow">return</span> ui_scene_outliner; }</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#a5afd7ecdb3061b5eb3de7870b1c1d81d">Init</a>();</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#a43f3238fe94b4e538d59b421aa12fca8">Clean</a>();</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#a59d1a7436e984dbe3e9168b939825f8c">Enable</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#adb27bd03e1af913d98cd12feee218458">ManagePaletteInput</a>();</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#a1be90d226b935796c9542096b98a9a06">ManageEntityPlacing</a>();</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_entity_palette.html#a26701bb47cd76556eb50134f31084e42">ManageSceneOutliner</a>();</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;};</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="ttc" id="class_mesh_shader_html"><div class="ttname"><a href="class_mesh_shader.html">MeshShader</a></div><div class="ttdef"><b>Definition:</b> mesh_shader.hpp:20</div></div>
-<div class="ttc" id="class_entity_palette_html_a9a21cbe56d5a228bb8ff319c52a76374"><div class="ttname"><a href="class_entity_palette.html#a9a21cbe56d5a228bb8ff319c52a76374">EntityPalette::GetSceneOutliner</a></div><div class="ttdeci">ui_SceneOutliner * GetSceneOutliner()</div><div class="ttdef"><b>Definition:</b> entity_palette.hpp:64</div></div>
-<div class="ttc" id="class_entity_palette_html"><div class="ttname"><a href="class_entity_palette.html">EntityPalette</a></div><div class="ttdef"><b>Definition:</b> entity_palette.hpp:26</div></div>
-<div class="ttc" id="class_entity_palette_html_ac6780bcb90bd21b67aab8a5a797476e5"><div class="ttname"><a href="class_entity_palette.html#ac6780bcb90bd21b67aab8a5a797476e5">EntityPalette::EntityPalette</a></div><div class="ttdeci">EntityPalette()</div><div class="ttdef"><b>Definition:</b> entity_palette.hpp:68</div></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="ttc" id="class_entity_palette_html_a9a21cbe56d5a228bb8ff319c52a76374"><div class="ttname"><a href="class_entity_palette.html#a9a21cbe56d5a228bb8ff319c52a76374">EntityPalette::GetSceneOutliner</a></div><div class="ttdeci">ui_SceneOutliner * GetSceneOutliner()</div><div class="ttdef"><b>Definition:</b> entity_palette.hpp:60</div></div>
+<div class="ttc" id="class_entity_palette_html_a43f3238fe94b4e538d59b421aa12fca8"><div class="ttname"><a href="class_entity_palette.html#a43f3238fe94b4e538d59b421aa12fca8">EntityPalette::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:26</div></div>
+<div class="ttc" id="class_entity_palette_html"><div class="ttname"><a href="class_entity_palette.html">EntityPalette</a></div><div class="ttdef"><b>Definition:</b> entity_palette.hpp:28</div></div>
+<div class="ttc" id="class_entity_palette_html_a26701bb47cd76556eb50134f31084e42"><div class="ttname"><a href="class_entity_palette.html#a26701bb47cd76556eb50134f31084e42">EntityPalette::ManageSceneOutliner</a></div><div class="ttdeci">void ManageSceneOutliner()</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:244</div></div>
+<div class="ttc" id="class_entity_palette_html_a1be90d226b935796c9542096b98a9a06"><div class="ttname"><a href="class_entity_palette.html#a1be90d226b935796c9542096b98a9a06">EntityPalette::ManageEntityPlacing</a></div><div class="ttdeci">void ManageEntityPlacing()</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:185</div></div>
 <div class="ttc" id="string__helper_8hpp_html"><div class="ttname"><a href="string__helper_8hpp.html">string_helper.hpp</a></div></div>
+<div class="ttc" id="class_entity_palette_html_a5afd7ecdb3061b5eb3de7870b1c1d81d"><div class="ttname"><a href="class_entity_palette.html#a5afd7ecdb3061b5eb3de7870b1c1d81d">EntityPalette::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:9</div></div>
 <div class="ttc" id="transform__info_8hpp_html"><div class="ttname"><a href="transform__info_8hpp.html">transform_info.hpp</a></div></div>
+<div class="ttc" id="class_entity_palette_html_adb27bd03e1af913d98cd12feee218458"><div class="ttname"><a href="class_entity_palette.html#adb27bd03e1af913d98cd12feee218458">EntityPalette::ManagePaletteInput</a></div><div class="ttdeci">void ManagePaletteInput()</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:103</div></div>
 <div class="ttc" id="class_entity_html"><div class="ttname"><a href="class_entity.html">Entity</a></div><div class="ttdef"><b>Definition:</b> entity.hpp:28</div></div>
-<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> controls.hpp:21</div></div>
-<div class="ttc" id="class_entity_palette_html_a40462c831050126ee1d0f71b516b251a"><div class="ttname"><a href="class_entity_palette.html#a40462c831050126ee1d0f71b516b251a">EntityPalette::ControlPalette</a></div><div class="ttdeci">void ControlPalette(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:99</div></div>
-<div class="ttc" id="class_entity_palette_html_ac91bda7de061ac47993b6f6cdff6a799"><div class="ttname"><a href="class_entity_palette.html#ac91bda7de061ac47993b6f6cdff6a799">EntityPalette::Render</a></div><div class="ttdeci">void Render(Controller *ctrl, MeshShader *u_data)</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:74</div></div>
+<div class="ttc" id="class_a_module_html"><div class="ttname"><a href="class_a_module.html">AModule</a></div><div class="ttdef"><b>Definition:</b> base_module.hpp:15</div></div>
+<div class="ttc" id="base__module_8hpp_html"><div class="ttname"><a href="base__module_8hpp.html">base_module.hpp</a></div></div>
 <div class="ttc" id="classui___transform_tab_html"><div class="ttname"><a href="classui___transform_tab.html">ui_TransformTab</a></div><div class="ttdef"><b>Definition:</b> ui_transform_tab.hpp:20</div></div>
-<div class="ttc" id="class_entity_palette_html_ae2770c26901369854288c266f62345a1"><div class="ttname"><a href="class_entity_palette.html#ae2770c26901369854288c266f62345a1">EntityPalette::~EntityPalette</a></div><div class="ttdeci">~EntityPalette()</div><div class="ttdef"><b>Definition:</b> entity_palette.hpp:72</div></div>
+<div class="ttc" id="data__manager_8hpp_html"><div class="ttname"><a href="data__manager_8hpp.html">data_manager.hpp</a></div></div>
 <div class="ttc" id="classui___scene_outliner_html"><div class="ttname"><a href="classui___scene_outliner.html">ui_SceneOutliner</a></div><div class="ttdef"><b>Definition:</b> scene_outliner.hpp:20</div></div>
-<div class="ttc" id="class_entity_palette_html_abfb0223a6f679d07a791c77ff6463e42"><div class="ttname"><a href="class_entity_palette.html#abfb0223a6f679d07a791c77ff6463e42">EntityPalette::PlacePalette</a></div><div class="ttdeci">void PlacePalette(Controller *ctrl)</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:173</div></div>
+<div class="ttc" id="class_entity_palette_html_a59d1a7436e984dbe3e9168b939825f8c"><div class="ttname"><a href="class_entity_palette.html#a59d1a7436e984dbe3e9168b939825f8c">EntityPalette::Enable</a></div><div class="ttdeci">void Enable()</div><div class="ttdef"><b>Definition:</b> entity_palette.cpp:74</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

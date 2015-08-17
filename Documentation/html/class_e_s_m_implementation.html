@@ -22,10 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="icon.ico"/></td>
+  <td id="projectlogo"><img alt="Logo" src="movie-genres-adventures-icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">3D Adventures
-   &#160;<span id="projectnumber">0.2.5</span>
+   &#160;<span id="projectnumber">0.2.6</span>
    </div>
   </td>
  </tr>
@@ -119,8 +119,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a75eab302b9b7ed77fcc1188b5e670775"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a837346bcf8976e521062180103e7292f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_m_implementation.html#a837346bcf8976e521062180103e7292f">SetGrannyBoneTransform</a> (GLuint numBones, granny_matrix_4x4 *GrannyBones)</td></tr>
 <tr class="separator:a837346bcf8976e521062180103e7292f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6b68e12e28c722ff2c790c275ef04fd"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_m_implementation.html#ad6b68e12e28c722ff2c790c275ef04fd">GetDirectionalShadow</a> (<a class="el" href="class_environment.html">Environment</a> *env, <a class="el" href="class_view_info.html">ViewInfo</a> *info)</td></tr>
-<tr class="separator:ad6b68e12e28c722ff2c790c275ef04fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcbb4cac73ce8e1e93ec58f64ca05a9d"><td class="memItemLeft" align="right" valign="top">glm::mat4&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_e_s_m_implementation.html#adcbb4cac73ce8e1e93ec58f64ca05a9d">GetDirectionalShadow</a> (<a class="el" href="class_environment.html">Environment</a> *env, <a class="el" href="class_view_info.html">ViewInfo</a> *info, <a class="el" href="class_view.html">View</a> *view)</td></tr>
+<tr class="separator:adcbb4cac73ce8e1e93ec58f64ca05a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Exponential shadow mapping </p>
@@ -201,7 +201,7 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad6b68e12e28c722ff2c790c275ef04fd"></a>
+<a class="anchor" id="adcbb4cac73ce8e1e93ec58f64ca05a9d"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
@@ -215,7 +215,13 @@ Public Member Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype"><a class="el" href="class_view_info.html">ViewInfo</a> *&#160;</td>
-          <td class="paramname"><em>info</em>&#160;</td>
+          <td class="paramname"><em>info</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="class_view.html">View</a> *&#160;</td>
+          <td class="paramname"><em>view</em>&#160;</td>
         </tr>
         <tr>
           <td></td>

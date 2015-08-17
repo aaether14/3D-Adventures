@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['m_5fuil',['m_uil',['../struct_s_block.html#a75f6c9a8b0037da35601aec6ac23996a',1,'SBlock']]],
+  ['m_5fuir',['m_uir',['../struct_s_block.html#afbc63974b5615cb2f1c20d015cb2c2c2',1,'SBlock']]],
   ['materialbindings',['MaterialBindings',['../struct_granny_mesh.html#a364a606ade647ab0fd3807db0ec19fec',1,'GrannyMesh']]],
   ['matrix',['matrix',['../class_transform_info.html#ad5def388d5c69d94733667eac84b5226',1,'TransformInfo']]],
   ['maxbonecount',['MaxBoneCount',['../struct_granny_scene.html#acbc4ac11711c06faaba9c762b25cd080',1,'GrannyScene']]],

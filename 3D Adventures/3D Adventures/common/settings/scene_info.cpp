@@ -72,14 +72,14 @@ void SceneInfo::AddEntity(Entity * new_entity)
 			{
 				InfoComponent * ic = static_cast<InfoComponent*>(new_entity->GetComponent("InfoComponent"));
 				if (!entity_map.count(ic->GetInfo()->entity_name))
-					entity_map[ic->GetInfo()->entity_name] = new_entity;
+					entity_map[ic->GetInfo()->entity_name].reset(new_entity);
 				else
 				{
 					GLuint number_sufix = 2;
 					while (entity_map.count(ic->GetInfo()->entity_name + std::to_string(number_sufix)))
 						number_sufix++;
 					ic->GetInfo()->entity_name = ic->GetInfo()->entity_name + std::to_string(number_sufix);
-					entity_map[ic->GetInfo()->entity_name] = new_entity;
+					entity_map[ic->GetInfo()->entity_name].reset(new_entity);
 
 				}
 			}
@@ -134,7 +134,7 @@ void SceneInfo::Load()
 	using boost::property_tree::ptree;
 	ptree pt;
 	std::istringstream iss;
-	iss.str(AFile::DecryptFile(AString::char_to_str(GetPath())));
+	iss.str(AFile::BlowfishDecryptFile(AString::char_to_str(GetPath())));
 	read_xml(iss, pt);
 
 
@@ -153,7 +153,7 @@ void SceneInfo::Load()
 			map_size.x = v.second.get<float>("Width");
 			map_size.y = v.second.get<float>("Height");
 			number_of_tiles = v.second.get<int>("Tiles");
-			entity_infos = new std::vector<TransformInfo*>[number_of_tiles];
+			entity_instances = new std::vector<EntityInstance*>[number_of_tiles];
 
 
 
@@ -162,7 +162,7 @@ void SceneInfo::Load()
 		{
 
 
-			TransformInfo * new_info = new TransformInfo();
+			EntityInstance * new_info = new EntityInstance();
 
 
 			std::string base_position;
@@ -173,25 +173,25 @@ void SceneInfo::Load()
 			base_position = v.second.get<std::string>("Position");
 			base_rotation = v.second.get<std::string>("Rotation");
 			base_scale = v.second.get<std::string>("Scale");
-			new_info->entity_name = v.second.get<std::string>("EntityName");
+			new_info->GetTransformInfo()->entity_name = v.second.get<std::string>("EntityName");
 
 
-			new_info->pos = Math::GetVecFromString(base_position);
-			new_info->rot = Math::GetVecFromString(base_rotation);
-			new_info->scale = Math::GetVecFromString(base_scale);
+			new_info->GetTransformInfo()->pos = Math::GetVecFromString(base_position);
+			new_info->GetTransformInfo()->rot = Math::GetVecFromString(base_rotation);
+			new_info->GetTransformInfo()->scale = Math::GetVecFromString(base_scale);
 
 
-			new_info->matrix = Math::Translation(new_info->pos)*
-				Math::Rotate(new_info->rot)*
-				Math::Scale(new_info->scale);
+			new_info->GetTransformInfo()->matrix = Math::Translation(new_info->GetTransformInfo()->pos)*
+				Math::Rotate(new_info->GetTransformInfo()->rot)*
+				Math::Scale(new_info->GetTransformInfo()->scale);
 
 
-			GLuint ind = GLuint(new_info->pos.z / (map_size.y / sqrt(number_of_tiles)))*sqrt(number_of_tiles) +
-				GLuint(new_info->pos.x / (map_size.x / sqrt(number_of_tiles)));
+			GLuint ind = GLuint(new_info->GetTransformInfo()->pos.z / (map_size.y / sqrt(number_of_tiles)))*sqrt(number_of_tiles) +
+				GLuint(new_info->GetTransformInfo()->pos.x / (map_size.x / sqrt(number_of_tiles)));
 
 
-			if (entity_map.count(new_info->entity_name))
-			GetEntityInfos()[ind].push_back(new_info);
+			if (entity_map.count(new_info->GetTransformInfo()->entity_name))
+			GetEntityInstances()[ind].push_back(new_info);
 
 
 		}
@@ -240,18 +240,18 @@ void SceneInfo::Save()
 	{
 
 
-		for (GLuint j = 0; j < GetEntityInfos()[i].size(); j++)
+		for (GLuint j = 0; j < GetEntityInstances()[i].size(); j++)
 		{
 
 
-			TransformInfo * info = GetEntityInfos()[i][j];
+			EntityInstance * info = GetEntityInstances()[i][j];
 
 
 			ptree new_info;
-			new_info.push_back(ptree::value_type("Position", ptree(Math::GetStringFromVec(info->pos))));
-			new_info.push_back(ptree::value_type("Rotation", ptree(Math::GetStringFromVec(info->rot))));
-			new_info.push_back(ptree::value_type("Scale", ptree(Math::GetStringFromVec(info->scale))));
-			new_info.push_back(ptree::value_type("EntityName", ptree(info->entity_name)));
+			new_info.push_back(ptree::value_type("Position", ptree(Math::GetStringFromVec(info->GetTransformInfo()->pos))));
+			new_info.push_back(ptree::value_type("Rotation", ptree(Math::GetStringFromVec(info->GetTransformInfo()->rot))));
+			new_info.push_back(ptree::value_type("Scale", ptree(Math::GetStringFromVec(info->GetTransformInfo()->scale))));
+			new_info.push_back(ptree::value_type("EntityName", ptree(info->GetTransformInfo()->entity_name)));
 			rootNode.add_child("Entity", new_info);
 
 		}
@@ -262,7 +262,7 @@ void SceneInfo::Save()
 	pt.add_child("Scene", rootNode);
 	boost::property_tree::xml_writer_settings<std::string> settings(' ', 4);
 	write_xml(GetPath(), pt, std::locale(), settings);
-	AFile::EncryptFile(AString::char_to_str(GetPath()));
+	AFile::BlowfishEncryptFile(AString::char_to_str(GetPath()));
 
 
 
@@ -275,6 +275,9 @@ void SceneInfo::Save()
 void SceneInfo::Reset()
 {
 
+
+	for (GLuint i = 0; i < number_of_tiles; i++)
+	   entity_instances[i].clear();
 
 
 }

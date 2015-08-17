@@ -23,6 +23,10 @@ void ui_ProjectRoot::Init(DataManager * dm, CEGUI::Window * Root)
 		CEGUI::Event::Subscriber(&ui_ProjectRoot::LoadProject, this));
 
 
+	Root->getChild("Menubar/MenuItem/PopupMenu/MenuItem3")->subscribeEvent(CEGUI::MenuItem::EventClicked,
+		CEGUI::Event::Subscriber(&ui_ProjectRoot::ResetProject, this));
+
+
 
 
 }

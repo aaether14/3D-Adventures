@@ -162,8 +162,8 @@ void EntityPalette::ManagePaletteInput()
 
 		for (GLuint i = 0; i < ui_scene_outliner->GetSelectedData().size(); i++)
 		{
-			scene_info->GetEntityInfos()[ui_scene_outliner->GetSelectedData()[i].x].erase(
-				scene_info->GetEntityInfos()[ui_scene_outliner->GetSelectedData()[i].x].begin() + ui_scene_outliner->GetSelectedData()[i].y);
+			scene_info->GetEntityInstances()[ui_scene_outliner->GetSelectedData()[i].x].erase(
+				scene_info->GetEntityInstances()[ui_scene_outliner->GetSelectedData()[i].x].begin() + ui_scene_outliner->GetSelectedData()[i].y);
 			ui_scene_outliner->UpdateSceneData(ui_scene_outliner->GetSelectedData()[i].x, ui_scene_outliner->GetSelectedData()[i].y);
 
 		}
@@ -207,29 +207,29 @@ void EntityPalette::ManageEntityPlacing()
 
 
 		visible = false;
-		TransformInfo *new_instance = new TransformInfo();
+		EntityInstance *new_instance = new EntityInstance();
 
 
 
-		new_instance->entity_name = ic->GetInfo()->entity_name;
-		new_instance->matrix = GetMatrix(current_entity);
-		new_instance->pos = ui_transform_tab->GetPInfo()->trans[0];
-		new_instance->rot = ui_transform_tab->GetPInfo()->trans[1];
-		new_instance->scale = ui_transform_tab->GetPInfo()->trans[2];
+		new_instance->GetTransformInfo()->entity_name = ic->GetInfo()->entity_name;
+		new_instance->GetTransformInfo()->matrix = GetMatrix(current_entity);
+		new_instance->GetTransformInfo()->pos = ui_transform_tab->GetPInfo()->trans[0];
+		new_instance->GetTransformInfo()->rot = ui_transform_tab->GetPInfo()->trans[1];
+		new_instance->GetTransformInfo()->scale = ui_transform_tab->GetPInfo()->trans[2];
 
 
 		if (ic)
 		{
-			new_instance->rot += ic->GetInfo()->base_rot;
-			new_instance->scale *= ic->GetInfo()->base_scale;
+			new_instance->GetTransformInfo()->rot += ic->GetInfo()->base_rot;
+			new_instance->GetTransformInfo()->scale *= ic->GetInfo()->base_scale;
 		}
 
 
 		GLuint ind = dm->GetInd(camera->GetInfo()->getCameraPos());
 
 
-		ui_scene_outliner->AddItem(ic->GetInfo()->entity_name, glm::ivec2(ind, scene_info->GetEntityInfos()[ind].size()));
-		scene_info->GetEntityInfos()[ind].push_back(new_instance);
+		ui_scene_outliner->AddItem(ic->GetInfo()->entity_name, glm::ivec2(ind, scene_info->GetEntityInstances()[ind].size()));
+		scene_info->GetEntityInstances()[ind].push_back(new_instance);
 
 
 
@@ -264,8 +264,8 @@ void EntityPalette::ManageSceneOutliner()
 
 
 	for (GLuint i = 0; i < tree->GetWidth() * tree->GetHeight(); i++)
-	for (GLuint j = 0; j < scene_info->GetEntityInfos()[i].size(); j++)
-	GetSceneOutliner()->AddItem(scene_info->GetEntityInfos()[i][j]->entity_name,
+	for (GLuint j = 0; j < scene_info->GetEntityInstances()[i].size(); j++)
+	GetSceneOutliner()->AddItem(scene_info->GetEntityInstances()[i][j]->GetTransformInfo()->entity_name,
 	glm::ivec2(i, j));
 
 	scene_info->SetShouldReset(false);

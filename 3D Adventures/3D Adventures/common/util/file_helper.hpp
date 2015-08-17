@@ -76,8 +76,14 @@ namespace AFile
 	Read file content into memory and return pointer
 	*/
 	unsigned char * ReadFile(const char * filePath);
-	void EncryptFile(const char * path);
-	std::string DecryptFile(const char * path);
+	/**
+	Encrypt file from 'path' using Blowfish algorithm
+	*/
+	void BlowfishEncryptFile(const char * path);
+	/**
+	Get decrytpted file from 'path' to string using Blowfish algorithm
+	*/
+	std::string BlowfishDecryptFile(const char * path);
 
 
 }

@@ -77,6 +77,7 @@
   <ItemGroup>
     <ClCompile Include="common\base\base_module.cpp" />
     <ClCompile Include="common\crypt\BlowFish.cpp" />
+    <ClCompile Include="common\entity_instance\entity_instance.cpp" />
     <ClCompile Include="common\mesh_implementation\mesh_drawer.cpp" />
     <ClCompile Include="common\mesh_implementation\mesh_shader.cpp" />
     <ClCompile Include="common\mesh_implementation\mesh_wrapper.cpp" />
@@ -177,8 +178,10 @@
     <Text Include="data\shaders\terrain_vert.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="common\base\base_entity_instance.hpp" />
     <ClInclude Include="common\base\base_module.hpp" />
     <ClInclude Include="common\crypt\Blowfish.h" />
+    <ClInclude Include="common\entity_instance\entity_instance.hpp" />
     <ClInclude Include="common\mesh_implementation\mesh_drawer.hpp" />
     <ClInclude Include="common\mesh_implementation\mesh_shader.hpp" />
     <ClInclude Include="common\mesh_implementation\mesh_wrapper.hpp" />

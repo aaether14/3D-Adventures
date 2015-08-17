@@ -52,6 +52,16 @@ class ui_ProjectRoot
 	}
 
 
+	/**
+	Callback for handling project reseting
+	*/
+	inline bool ResetProject(const CEGUI::EventArgs &args)
+	{
+		dm->GetResource()->NoChanges();
+		return 1;
+	}
+
+
 
 
 public:

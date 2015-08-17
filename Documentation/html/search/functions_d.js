@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['placepalette',['PlacePalette',['../class_entity_palette.html#abfb0223a6f679d07a791c77ff6463e42',1,'EntityPalette']]],
   ['playanimation',['PlayAnimation',['../class_granny_model.html#a99b87dad9ae1099e9542bfd2b47f4f13',1,'GrannyModel']]],
   ['print',['Print',['../class_shader.html#a9ae95e1316c2ab641bd2edd55827d998',1,'Shader']]],
   ['print_5fivec2',['print_ivec2',['../namespace_math.html#a3efba37f0f0ea0b92f156687a0e2bcb5',1,'Math']]],

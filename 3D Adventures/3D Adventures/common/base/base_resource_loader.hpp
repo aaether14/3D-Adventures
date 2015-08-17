@@ -65,6 +65,10 @@ public:
 	Iterates through all state changer map and use their load function
 	*/
 	void LoadChanges();
+	/**
+	Iterates through all state changer map and use their reset function
+	*/
+	void NoChanges();
 
 
 

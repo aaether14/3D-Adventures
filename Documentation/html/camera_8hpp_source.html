@@ -22,10 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="icon.ico"/></td>
+  <td id="projectlogo"><img alt="Logo" src="movie-genres-adventures-icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">3D Adventures
-   &#160;<span id="projectnumber">0.2.5</span>
+   &#160;<span id="projectnumber">0.2.6</span>
    </div>
   </td>
  </tr>
@@ -99,102 +99,104 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="controls__source_8hpp.html">controller/controls_source.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="view_8hpp.html">util/view.hpp</a>&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="base__module_8hpp.html">base/base_module.hpp</a>&gt;</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="class_camera.html">   23</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_camera.html">Camera</a></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="class_camera.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="class_camera.html">Camera</a> : <span class="keyword">public</span> <a class="code" href="class_a_module.html">AModule</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;{</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    GLfloat speed, mouse_speed, rotation_speed, base_speed;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    GLdouble horizontalAngle, verticalAngle;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    GLdouble last_x, last_y;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    GLfloat speed, mouse_speed, rotation_speed, base_speed;</div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    GLdouble horizontalAngle, verticalAngle;</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    GLdouble last_x, last_y;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <a class="code" href="class_view.html">View</a> *view_3rd;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <a class="code" href="class_view_info.html">ViewInfo</a> *info;</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="class_frustum.html">Frustum</a> * frustum;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <a class="code" href="class_view.html">View</a> *view_3rd;</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <a class="code" href="class_view_info.html">ViewInfo</a> *info;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <a class="code" href="class_frustum.html">Frustum</a> * frustum;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keyword">public</span>:</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
-<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="class_camera.html#a01f94c3543f56ede7af49dc778f19331">   66</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_camera.html#a01f94c3543f56ede7af49dc778f19331">Camera</a>(){ this-&gt;<a class="code" href="class_camera.html#a1543c3415858fa4773f8a69ef903366c">Init</a>(); }</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a1543c3415858fa4773f8a69ef903366c">Init</a>();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a1543c3415858fa4773f8a69ef903366c">Init</a>();</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="class_camera.html#ad1897942d0ccf91052386388a497349f">   76</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_camera.html#ad1897942d0ccf91052386388a497349f">~Camera</a>(){ this-&gt;<a class="code" href="class_camera.html#a474dad77e5081a26d0f8848aff63a88e">Clean</a>(); }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a474dad77e5081a26d0f8848aff63a88e">Clean</a>();</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
-<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="class_camera.html#a9776be004f1f917d07b5198da294fa75">   87</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_view.html">View</a> * <a class="code" href="class_camera.html#a9776be004f1f917d07b5198da294fa75">GetView</a>() { <span class="keywordflow">return</span> this-&gt;view_3rd; };</div>
-<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="class_camera.html#a0b763eec61ba40c052ad710d02f28311">   91</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_view_info.html">ViewInfo</a> *<a class="code" href="class_camera.html#a0b763eec61ba40c052ad710d02f28311">GetInfo</a>() { <span class="keywordflow">return</span> this-&gt;info; }</div>
-<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="class_camera.html#a75389b5a50c9c7dc70ae9a9bf57673b6">   95</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_frustum.html">Frustum</a> *<a class="code" href="class_camera.html#a75389b5a50c9c7dc70ae9a9bf57673b6">GetFrustum</a>() { <span class="keywordflow">return</span> this-&gt;frustum; }</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="class_camera.html#abb5b0fcfbdbcf55f4b55f6edd056ad03">  101</a></span>&#160;    <span class="keyword">inline</span> GLfloat <a class="code" href="class_camera.html#abb5b0fcfbdbcf55f4b55f6edd056ad03">GetBaseSpeed</a>(){ <span class="keywordflow">return</span> this-&gt;base_speed; }</div>
-<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="class_camera.html#aa753e69878c0db21dfce1a8855385cb1">  105</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#aa753e69878c0db21dfce1a8855385cb1">SetBaseSpeed</a>(GLfloat base_speed){ this-&gt;base_speed = base_speed; }</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a474dad77e5081a26d0f8848aff63a88e">Clean</a>();</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="class_camera.html#a9776be004f1f917d07b5198da294fa75">   82</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_view.html">View</a> * <a class="code" href="class_camera.html#a9776be004f1f917d07b5198da294fa75">GetView</a>() { <span class="keywordflow">return</span> this-&gt;view_3rd; };</div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="class_camera.html#a0b763eec61ba40c052ad710d02f28311">   86</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_view_info.html">ViewInfo</a> *<a class="code" href="class_camera.html#a0b763eec61ba40c052ad710d02f28311">GetInfo</a>() { <span class="keywordflow">return</span> this-&gt;info; }</div>
+<div class="line"><a name="l00090"></a><span class="lineno"><a class="line" href="class_camera.html#a75389b5a50c9c7dc70ae9a9bf57673b6">   90</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="class_frustum.html">Frustum</a> *<a class="code" href="class_camera.html#a75389b5a50c9c7dc70ae9a9bf57673b6">GetFrustum</a>() { <span class="keywordflow">return</span> this-&gt;frustum; }</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="class_camera.html#abb5b0fcfbdbcf55f4b55f6edd056ad03">   96</a></span>&#160;    <span class="keyword">inline</span> GLfloat <a class="code" href="class_camera.html#abb5b0fcfbdbcf55f4b55f6edd056ad03">GetBaseSpeed</a>(){ <span class="keywordflow">return</span> this-&gt;base_speed; }</div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="class_camera.html#aa753e69878c0db21dfce1a8855385cb1">  100</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#aa753e69878c0db21dfce1a8855385cb1">SetBaseSpeed</a>(GLfloat base_speed){ this-&gt;base_speed = base_speed; }</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno"><a class="line" href="class_camera.html#ae3e46041ae8d4a52d9775f663485a994">  106</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#ae3e46041ae8d4a52d9775f663485a994">SetFrustum</a>(glm::mat4 MV) { this-&gt;frustum-&gt;<a class="code" href="class_frustum.html#a2c87f9e9b3588c264d15a25c16d30ac1">Create</a>(MV); }</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="class_camera.html#ae3e46041ae8d4a52d9775f663485a994">  111</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#ae3e46041ae8d4a52d9775f663485a994">SetFrustum</a>(glm::mat4 MV) { this-&gt;frustum-&gt;<a class="code" href="class_frustum.html#a2c87f9e9b3588c264d15a25c16d30ac1">Create</a>(MV); }</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
+<div class="line"><a name="l00113"></a><span class="lineno"><a class="line" href="class_camera.html#a66ef8f58887dabff3ad4e02573745659">  113</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a66ef8f58887dabff3ad4e02573745659">Enable</a>(){}</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a28dff0904931019a124bb912850f694b">ProcessInput</a>(<a class="code" href="class_controller_source.html">ControllerSource</a> * source);</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a6cbb28339ca87f371ffaf90c0279b465">ComputeAngles</a>(<a class="code" href="class_controller_source.html">ControllerSource</a> * source);</div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#aa3d18221f5a93cc7641e1d8a0afcfd3b">SetInfo</a>(<a class="code" href="class_controller_source.html">ControllerSource</a> * source);</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a28dff0904931019a124bb912850f694b">ProcessInput</a>(<a class="code" href="class_controller_source.html">ControllerSource</a> * source);</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a6cbb28339ca87f371ffaf90c0279b465">ComputeAngles</a>(<a class="code" href="class_controller_source.html">ControllerSource</a> * source);</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="class_camera.html#aa3d18221f5a93cc7641e1d8a0afcfd3b">SetInfo</a>(<a class="code" href="class_controller_source.html">ControllerSource</a> * source);</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
-<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="class_camera.html#ac59d7aa2a341a6642b0ea79d212fef2b">  137</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#ac59d7aa2a341a6642b0ea79d212fef2b">setHorizontalAngle</a>(GLfloat angle){ this-&gt;horizontalAngle = angle; }</div>
-<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="class_camera.html#a7af08f5ee6f04031ae136be5f21d40c2">  141</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a7af08f5ee6f04031ae136be5f21d40c2">setVerticalAngle</a>(GLfloat angle){ this-&gt;verticalAngle = angle; }</div>
-<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="class_camera.html#ab0ea095110e9e1537c512db8c4a2c7fa">  145</a></span>&#160;    <span class="keyword">inline</span> GLdouble <a class="code" href="class_camera.html#ab0ea095110e9e1537c512db8c4a2c7fa">getHorizontalAngle</a>() { <span class="keywordflow">return</span> this-&gt;horizontalAngle; };</div>
-<div class="line"><a name="l00149"></a><span class="lineno"><a class="line" href="class_camera.html#a8adb0a2f313cec97257bbc88002443c2">  149</a></span>&#160;    <span class="keyword">inline</span> GLdouble <a class="code" href="class_camera.html#a8adb0a2f313cec97257bbc88002443c2">getVerticalAngle</a>() { <span class="keywordflow">return</span> this-&gt;verticalAngle; }</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="class_camera.html#ac59d7aa2a341a6642b0ea79d212fef2b">  135</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#ac59d7aa2a341a6642b0ea79d212fef2b">setHorizontalAngle</a>(GLfloat angle){ this-&gt;horizontalAngle = angle; }</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="class_camera.html#a7af08f5ee6f04031ae136be5f21d40c2">  139</a></span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="class_camera.html#a7af08f5ee6f04031ae136be5f21d40c2">setVerticalAngle</a>(GLfloat angle){ this-&gt;verticalAngle = angle; }</div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="class_camera.html#ab0ea095110e9e1537c512db8c4a2c7fa">  143</a></span>&#160;    <span class="keyword">inline</span> GLdouble <a class="code" href="class_camera.html#ab0ea095110e9e1537c512db8c4a2c7fa">getHorizontalAngle</a>() { <span class="keywordflow">return</span> this-&gt;horizontalAngle; };</div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="class_camera.html#a8adb0a2f313cec97257bbc88002443c2">  147</a></span>&#160;    <span class="keyword">inline</span> GLdouble <a class="code" href="class_camera.html#a8adb0a2f313cec97257bbc88002443c2">getVerticalAngle</a>() { <span class="keywordflow">return</span> this-&gt;verticalAngle; }</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;</div>
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;};</div>
 <div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;};</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="class_controller_source_html"><div class="ttname"><a href="class_controller_source.html">ControllerSource</a></div><div class="ttdef"><b>Definition:</b> controls_source.hpp:84</div></div>
 <div class="ttc" id="controls__source_8hpp_html"><div class="ttname"><a href="controls__source_8hpp.html">controls_source.hpp</a></div></div>
 <div class="ttc" id="view_8hpp_html"><div class="ttname"><a href="view_8hpp.html">view.hpp</a></div></div>
-<div class="ttc" id="class_camera_html_a7af08f5ee6f04031ae136be5f21d40c2"><div class="ttname"><a href="class_camera.html#a7af08f5ee6f04031ae136be5f21d40c2">Camera::setVerticalAngle</a></div><div class="ttdeci">void setVerticalAngle(GLfloat angle)</div><div class="ttdef"><b>Definition:</b> camera.hpp:141</div></div>
+<div class="ttc" id="class_camera_html_a7af08f5ee6f04031ae136be5f21d40c2"><div class="ttname"><a href="class_camera.html#a7af08f5ee6f04031ae136be5f21d40c2">Camera::setVerticalAngle</a></div><div class="ttdeci">void setVerticalAngle(GLfloat angle)</div><div class="ttdef"><b>Definition:</b> camera.hpp:139</div></div>
 <div class="ttc" id="class_camera_html_aa3d18221f5a93cc7641e1d8a0afcfd3b"><div class="ttname"><a href="class_camera.html#aa3d18221f5a93cc7641e1d8a0afcfd3b">Camera::SetInfo</a></div><div class="ttdeci">void SetInfo(ControllerSource *source)</div><div class="ttdef"><b>Definition:</b> camera.cpp:159</div></div>
 <div class="ttc" id="class_view_info_html"><div class="ttname"><a href="class_view_info.html">ViewInfo</a></div><div class="ttdef"><b>Definition:</b> view.hpp:33</div></div>
 <div class="ttc" id="class_frustum_html"><div class="ttname"><a href="class_frustum.html">Frustum</a></div><div class="ttdef"><b>Definition:</b> view.hpp:197</div></div>
 <div class="ttc" id="class_frustum_html_a2c87f9e9b3588c264d15a25c16d30ac1"><div class="ttname"><a href="class_frustum.html#a2c87f9e9b3588c264d15a25c16d30ac1">Frustum::Create</a></div><div class="ttdeci">void Create(glm::mat4 MVP)</div><div class="ttdef"><b>Definition:</b> view.cpp:92</div></div>
-<div class="ttc" id="class_camera_html_ab0ea095110e9e1537c512db8c4a2c7fa"><div class="ttname"><a href="class_camera.html#ab0ea095110e9e1537c512db8c4a2c7fa">Camera::getHorizontalAngle</a></div><div class="ttdeci">GLdouble getHorizontalAngle()</div><div class="ttdef"><b>Definition:</b> camera.hpp:145</div></div>
-<div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> camera.hpp:23</div></div>
-<div class="ttc" id="class_camera_html_ac59d7aa2a341a6642b0ea79d212fef2b"><div class="ttname"><a href="class_camera.html#ac59d7aa2a341a6642b0ea79d212fef2b">Camera::setHorizontalAngle</a></div><div class="ttdeci">void setHorizontalAngle(GLfloat angle)</div><div class="ttdef"><b>Definition:</b> camera.hpp:137</div></div>
-<div class="ttc" id="class_camera_html_a8adb0a2f313cec97257bbc88002443c2"><div class="ttname"><a href="class_camera.html#a8adb0a2f313cec97257bbc88002443c2">Camera::getVerticalAngle</a></div><div class="ttdeci">GLdouble getVerticalAngle()</div><div class="ttdef"><b>Definition:</b> camera.hpp:149</div></div>
-<div class="ttc" id="class_camera_html_a75389b5a50c9c7dc70ae9a9bf57673b6"><div class="ttname"><a href="class_camera.html#a75389b5a50c9c7dc70ae9a9bf57673b6">Camera::GetFrustum</a></div><div class="ttdeci">Frustum * GetFrustum()</div><div class="ttdef"><b>Definition:</b> camera.hpp:95</div></div>
-<div class="ttc" id="class_camera_html_abb5b0fcfbdbcf55f4b55f6edd056ad03"><div class="ttname"><a href="class_camera.html#abb5b0fcfbdbcf55f4b55f6edd056ad03">Camera::GetBaseSpeed</a></div><div class="ttdeci">GLfloat GetBaseSpeed()</div><div class="ttdef"><b>Definition:</b> camera.hpp:101</div></div>
+<div class="ttc" id="class_camera_html_ab0ea095110e9e1537c512db8c4a2c7fa"><div class="ttname"><a href="class_camera.html#ab0ea095110e9e1537c512db8c4a2c7fa">Camera::getHorizontalAngle</a></div><div class="ttdeci">GLdouble getHorizontalAngle()</div><div class="ttdef"><b>Definition:</b> camera.hpp:143</div></div>
+<div class="ttc" id="class_camera_html"><div class="ttname"><a href="class_camera.html">Camera</a></div><div class="ttdef"><b>Definition:</b> camera.hpp:24</div></div>
+<div class="ttc" id="class_camera_html_ac59d7aa2a341a6642b0ea79d212fef2b"><div class="ttname"><a href="class_camera.html#ac59d7aa2a341a6642b0ea79d212fef2b">Camera::setHorizontalAngle</a></div><div class="ttdeci">void setHorizontalAngle(GLfloat angle)</div><div class="ttdef"><b>Definition:</b> camera.hpp:135</div></div>
+<div class="ttc" id="class_camera_html_a66ef8f58887dabff3ad4e02573745659"><div class="ttname"><a href="class_camera.html#a66ef8f58887dabff3ad4e02573745659">Camera::Enable</a></div><div class="ttdeci">void Enable()</div><div class="ttdef"><b>Definition:</b> camera.hpp:113</div></div>
+<div class="ttc" id="class_camera_html_a8adb0a2f313cec97257bbc88002443c2"><div class="ttname"><a href="class_camera.html#a8adb0a2f313cec97257bbc88002443c2">Camera::getVerticalAngle</a></div><div class="ttdeci">GLdouble getVerticalAngle()</div><div class="ttdef"><b>Definition:</b> camera.hpp:147</div></div>
+<div class="ttc" id="class_camera_html_a75389b5a50c9c7dc70ae9a9bf57673b6"><div class="ttname"><a href="class_camera.html#a75389b5a50c9c7dc70ae9a9bf57673b6">Camera::GetFrustum</a></div><div class="ttdeci">Frustum * GetFrustum()</div><div class="ttdef"><b>Definition:</b> camera.hpp:90</div></div>
+<div class="ttc" id="class_camera_html_abb5b0fcfbdbcf55f4b55f6edd056ad03"><div class="ttname"><a href="class_camera.html#abb5b0fcfbdbcf55f4b55f6edd056ad03">Camera::GetBaseSpeed</a></div><div class="ttdeci">GLfloat GetBaseSpeed()</div><div class="ttdef"><b>Definition:</b> camera.hpp:96</div></div>
 <div class="ttc" id="class_camera_html_a6cbb28339ca87f371ffaf90c0279b465"><div class="ttname"><a href="class_camera.html#a6cbb28339ca87f371ffaf90c0279b465">Camera::ComputeAngles</a></div><div class="ttdeci">void ComputeAngles(ControllerSource *source)</div><div class="ttdef"><b>Definition:</b> camera.cpp:106</div></div>
-<div class="ttc" id="class_camera_html_a0b763eec61ba40c052ad710d02f28311"><div class="ttname"><a href="class_camera.html#a0b763eec61ba40c052ad710d02f28311">Camera::GetInfo</a></div><div class="ttdeci">ViewInfo * GetInfo()</div><div class="ttdef"><b>Definition:</b> camera.hpp:91</div></div>
-<div class="ttc" id="class_camera_html_a01f94c3543f56ede7af49dc778f19331"><div class="ttname"><a href="class_camera.html#a01f94c3543f56ede7af49dc778f19331">Camera::Camera</a></div><div class="ttdeci">Camera()</div><div class="ttdef"><b>Definition:</b> camera.hpp:66</div></div>
+<div class="ttc" id="class_camera_html_a0b763eec61ba40c052ad710d02f28311"><div class="ttname"><a href="class_camera.html#a0b763eec61ba40c052ad710d02f28311">Camera::GetInfo</a></div><div class="ttdeci">ViewInfo * GetInfo()</div><div class="ttdef"><b>Definition:</b> camera.hpp:86</div></div>
 <div class="ttc" id="class_camera_html_a1543c3415858fa4773f8a69ef903366c"><div class="ttname"><a href="class_camera.html#a1543c3415858fa4773f8a69ef903366c">Camera::Init</a></div><div class="ttdeci">void Init()</div><div class="ttdef"><b>Definition:</b> camera.cpp:6</div></div>
-<div class="ttc" id="class_camera_html_a9776be004f1f917d07b5198da294fa75"><div class="ttname"><a href="class_camera.html#a9776be004f1f917d07b5198da294fa75">Camera::GetView</a></div><div class="ttdeci">View * GetView()</div><div class="ttdef"><b>Definition:</b> camera.hpp:87</div></div>
+<div class="ttc" id="class_camera_html_a9776be004f1f917d07b5198da294fa75"><div class="ttname"><a href="class_camera.html#a9776be004f1f917d07b5198da294fa75">Camera::GetView</a></div><div class="ttdeci">View * GetView()</div><div class="ttdef"><b>Definition:</b> camera.hpp:82</div></div>
 <div class="ttc" id="class_camera_html_a474dad77e5081a26d0f8848aff63a88e"><div class="ttname"><a href="class_camera.html#a474dad77e5081a26d0f8848aff63a88e">Camera::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> camera.cpp:31</div></div>
+<div class="ttc" id="class_a_module_html"><div class="ttname"><a href="class_a_module.html">AModule</a></div><div class="ttdef"><b>Definition:</b> base_module.hpp:15</div></div>
 <div class="ttc" id="class_view_html"><div class="ttname"><a href="class_view.html">View</a></div><div class="ttdef"><b>Definition:</b> view.hpp:110</div></div>
-<div class="ttc" id="class_camera_html_ad1897942d0ccf91052386388a497349f"><div class="ttname"><a href="class_camera.html#ad1897942d0ccf91052386388a497349f">Camera::~Camera</a></div><div class="ttdeci">~Camera()</div><div class="ttdef"><b>Definition:</b> camera.hpp:76</div></div>
-<div class="ttc" id="class_camera_html_ae3e46041ae8d4a52d9775f663485a994"><div class="ttname"><a href="class_camera.html#ae3e46041ae8d4a52d9775f663485a994">Camera::SetFrustum</a></div><div class="ttdeci">void SetFrustum(glm::mat4 MV)</div><div class="ttdef"><b>Definition:</b> camera.hpp:111</div></div>
+<div class="ttc" id="class_camera_html_ae3e46041ae8d4a52d9775f663485a994"><div class="ttname"><a href="class_camera.html#ae3e46041ae8d4a52d9775f663485a994">Camera::SetFrustum</a></div><div class="ttdeci">void SetFrustum(glm::mat4 MV)</div><div class="ttdef"><b>Definition:</b> camera.hpp:106</div></div>
 <div class="ttc" id="class_camera_html_a28dff0904931019a124bb912850f694b"><div class="ttname"><a href="class_camera.html#a28dff0904931019a124bb912850f694b">Camera::ProcessInput</a></div><div class="ttdeci">void ProcessInput(ControllerSource *source)</div><div class="ttdef"><b>Definition:</b> camera.cpp:55</div></div>
-<div class="ttc" id="class_camera_html_aa753e69878c0db21dfce1a8855385cb1"><div class="ttname"><a href="class_camera.html#aa753e69878c0db21dfce1a8855385cb1">Camera::SetBaseSpeed</a></div><div class="ttdeci">void SetBaseSpeed(GLfloat base_speed)</div><div class="ttdef"><b>Definition:</b> camera.hpp:105</div></div>
+<div class="ttc" id="base__module_8hpp_html"><div class="ttname"><a href="base__module_8hpp.html">base_module.hpp</a></div></div>
+<div class="ttc" id="class_camera_html_aa753e69878c0db21dfce1a8855385cb1"><div class="ttname"><a href="class_camera.html#aa753e69878c0db21dfce1a8855385cb1">Camera::SetBaseSpeed</a></div><div class="ttdeci">void SetBaseSpeed(GLfloat base_speed)</div><div class="ttdef"><b>Definition:</b> camera.hpp:100</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

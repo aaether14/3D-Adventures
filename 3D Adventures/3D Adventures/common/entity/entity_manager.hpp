@@ -37,7 +37,7 @@ class EntityManager : public AModule
 	/**
 	Render entities bound to a patch
 	*/
-	void RenderPatch(std::vector<TransformInfo*> patch_info);
+	void RenderPatch(std::vector<EntityInstance*> patch_info);
 	/**
 	Check quad against frustum in order to render frustum-visible entities
 	*/

@@ -22,10 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="icon.ico"/></td>
+  <td id="projectlogo"><img alt="Logo" src="movie-genres-adventures-icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">3D Adventures
-   &#160;<span id="projectnumber">0.2.5</span>
+   &#160;<span id="projectnumber">0.2.6</span>
    </div>
   </td>
  </tr>
@@ -94,15 +94,20 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="camera_8hpp_source.html">camera.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for Camera:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="class_camera.png" usemap="#Camera_map" alt=""/>
+  <map id="Camera_map" name="Camera_map">
+<area href="class_a_module.html" alt="AModule" shape="rect" coords="0,0,63,24"/>
+</map>
+ </div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a01f94c3543f56ede7af49dc778f19331"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a01f94c3543f56ede7af49dc778f19331">Camera</a> ()</td></tr>
-<tr class="separator:a01f94c3543f56ede7af49dc778f19331"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1543c3415858fa4773f8a69ef903366c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a1543c3415858fa4773f8a69ef903366c">Init</a> ()</td></tr>
 <tr class="separator:a1543c3415858fa4773f8a69ef903366c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1897942d0ccf91052386388a497349f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ad1897942d0ccf91052386388a497349f">~Camera</a> ()</td></tr>
-<tr class="separator:ad1897942d0ccf91052386388a497349f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a474dad77e5081a26d0f8848aff63a88e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a474dad77e5081a26d0f8848aff63a88e">Clean</a> ()</td></tr>
 <tr class="separator:a474dad77e5081a26d0f8848aff63a88e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9776be004f1f917d07b5198da294fa75"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_view.html">View</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a9776be004f1f917d07b5198da294fa75">GetView</a> ()</td></tr>
@@ -117,6 +122,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa753e69878c0db21dfce1a8855385cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae3e46041ae8d4a52d9775f663485a994"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#ae3e46041ae8d4a52d9775f663485a994">SetFrustum</a> (glm::mat4 MV)</td></tr>
 <tr class="separator:ae3e46041ae8d4a52d9775f663485a994"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66ef8f58887dabff3ad4e02573745659"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a66ef8f58887dabff3ad4e02573745659">Enable</a> ()</td></tr>
+<tr class="separator:a66ef8f58887dabff3ad4e02573745659"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a28dff0904931019a124bb912850f694b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a28dff0904931019a124bb912850f694b">ProcessInput</a> (<a class="el" href="class_controller_source.html">ControllerSource</a> *source)</td></tr>
 <tr class="separator:a28dff0904931019a124bb912850f694b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6cbb28339ca87f371ffaf90c0279b465"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a6cbb28339ca87f371ffaf90c0279b465">ComputeAngles</a> (<a class="el" href="class_controller_source.html">ControllerSource</a> *source)</td></tr>
@@ -131,62 +138,31 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ab0ea095110e9e1537c512db8c4a2c7fa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8adb0a2f313cec97257bbc88002443c2"><td class="memItemLeft" align="right" valign="top">GLdouble&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_camera.html#a8adb0a2f313cec97257bbc88002443c2">getVerticalAngle</a> ()</td></tr>
 <tr class="separator:a8adb0a2f313cec97257bbc88002443c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="inherit_header pub_methods_class_a_module"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_class_a_module')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="class_a_module.html">AModule</a></td></tr>
+<tr class="memitem:adcd435bad69d9abf8c526e266fbb7ade inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#adcd435bad69d9abf8c526e266fbb7ade">Add</a> (std::string key, <a class="el" href="class_a_module.html">AModule</a> *module)</td></tr>
+<tr class="separator:adcd435bad69d9abf8c526e266fbb7ade inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac7566b1743ad4e3dc6a6519747b60cae inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_a_module.html">AModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#ac7566b1743ad4e3dc6a6519747b60cae">Get</a> (std::string key)</td></tr>
+<tr class="separator:ac7566b1743ad4e3dc6a6519747b60cae inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61b330c5189177c7cf5c50eb01529230 inherit pub_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="class_a_module.html">AModule</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a61b330c5189177c7cf5c50eb01529230">GetManager</a> ()</td></tr>
+<tr class="separator:a61b330c5189177c7cf5c50eb01529230 inherit pub_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pro_methods_class_a_module"><td colspan="2" onclick="javascript:toggleInherit('pro_methods_class_a_module')"><img src="closed.png" alt="-"/>&#160;Protected Member Functions inherited from <a class="el" href="class_a_module.html">AModule</a></td></tr>
+<tr class="memitem:a47e2ba7d981d89912a0f1ed020a2fafd inherit pro_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#a47e2ba7d981d89912a0f1ed020a2fafd">SetManager</a> (<a class="el" href="class_a_module.html">AModule</a> *module)</td></tr>
+<tr class="separator:a47e2ba7d981d89912a0f1ed020a2fafd inherit pro_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad7cd8cc79c0cfdac219416008db70c01 inherit pro_methods_class_a_module"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_a_module.html#ad7cd8cc79c0cfdac219416008db70c01">CleanModule</a> ()</td></tr>
+<tr class="separator:ad7cd8cc79c0cfdac219416008db70c01 inherit pro_methods_class_a_module"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Basic camera implementation Can support 1st and 3rd person views Also has frustum functionality for frustum culling </p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a class="anchor" id="a01f94c3543f56ede7af49dc778f19331"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Camera::Camera </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Calls <a class="el" href="class_camera.html#a1543c3415858fa4773f8a69ef903366c">Init()</a> </p>
-
-</div>
-</div>
-<a class="anchor" id="ad1897942d0ccf91052386388a497349f"></a>
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">Camera::~Camera </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Calls Clear() </p>
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a474dad77e5081a26d0f8848aff63a88e"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Camera::Clean </td>
@@ -195,8 +171,15 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Cleans data </p>
+
+<p>Implements <a class="el" href="class_a_module.html#aadfc1cf6dbe1733be50f01218a410b27">AModule</a>.</p>
 
 </div>
 </div>
@@ -214,6 +197,32 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <p>Compute angles out of mouse movement </p>
+
+</div>
+</div>
+<a class="anchor" id="a66ef8f58887dabff3ad4e02573745659"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Camera::Enable </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Matches interface </p>
+
+<p>Implements <a class="el" href="class_a_module.html#a6385cc4dd1286579a01dd12f5ba35ff7">AModule</a>.</p>
 
 </div>
 </div>
@@ -364,6 +373,9 @@ Public Member Functions</h2></td></tr>
 <a class="anchor" id="a1543c3415858fa4773f8a69ef903366c"></a>
 <div class="memitem">
 <div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void Camera::Init </td>
@@ -372,8 +384,15 @@ Public Member Functions</h2></td></tr>
           <td></td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 <p>Initializes data </p>
+
+<p>Implements <a class="el" href="class_a_module.html#a758c9fedc6db4773c850317c1eb8b4d2">AModule</a>.</p>
 
 </div>
 </div>

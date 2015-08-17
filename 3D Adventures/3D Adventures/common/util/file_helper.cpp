@@ -174,7 +174,7 @@ namespace AFile
 
 
 
-	void EncryptFile(const char * path)
+	void BlowfishEncryptFile(const char * path)
 	{
 
  
@@ -224,7 +224,7 @@ namespace AFile
 
 
 
-	std::string DecryptFile(const char * path)
+	std::string BlowfishDecryptFile(const char * path)
 	{
 
 

@@ -18,7 +18,7 @@ void EntityManager::Init()
 
 
 
-void EntityManager::RenderPatch(std::vector<TransformInfo*> patch_info)
+void EntityManager::RenderPatch(std::vector<EntityInstance*> patch_info)
 {
 
 
@@ -39,7 +39,7 @@ void EntityManager::RenderPatch(std::vector<TransformInfo*> patch_info)
 
 
 	for (GLuint i = 0; i < patch_info.size(); i++)
-		patch_info[i]->Render(info, view, res, tech, shader, scene_info->GetEntity(patch_info[i]->entity_name));
+		patch_info[i]->GetTransformInfo()->Render(info, view, res, tech, shader, scene_info->GetEntity(patch_info[i]->GetTransformInfo()->entity_name));
 
 
 
@@ -83,7 +83,7 @@ void EntityManager::RenderQuad(QuadNode * node)
 			this->RenderQuad(node->GetNodes()[i]);
 	}
 	else
-	this->RenderPatch(scene_info->GetEntityInfos()[node->GetInd()]);
+	this->RenderPatch(scene_info->GetEntityInstances()[node->GetInd()]);
 
 
 

@@ -22,10 +22,10 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
-  <td id="projectlogo"><img alt="Logo" src="icon.ico"/></td>
+  <td id="projectlogo"><img alt="Logo" src="movie-genres-adventures-icon.png"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">3D Adventures
-   &#160;<span id="projectnumber">0.2.5</span>
+   &#160;<span id="projectnumber">0.2.6</span>
    </div>
   </td>
  </tr>
@@ -113,67 +113,65 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="class_controller.html">Controller</a> * ctrl;</div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    CEGUI::Window * Root;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    CEGUI::Window * Root;</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> ViewTransform(<span class="keyword">const</span> CEGUI::EventArgs&amp; e)</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    {</div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        Root-&gt;getChild(<span class="stringliteral">&quot;Frame3&quot;</span>)-&gt;show();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    }</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> ViewTransform(<span class="keyword">const</span> CEGUI::EventArgs&amp; e)</div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        Root-&gt;getChild(<span class="stringliteral">&quot;Frame3&quot;</span>)-&gt;show();</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    }</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> ViewSettings(<span class="keyword">const</span> CEGUI::EventArgs&amp; e)</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    {</div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        Root-&gt;getChild(<span class="stringliteral">&quot;Frame&quot;</span>)-&gt;show();</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    }</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> ViewSettings(<span class="keyword">const</span> CEGUI::EventArgs&amp; e)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    {</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        Root-&gt;getChild(<span class="stringliteral">&quot;Frame&quot;</span>)-&gt;show();</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> ViewSceneOutliner(<span class="keyword">const</span> CEGUI::EventArgs&amp; e)</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    {</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        Root-&gt;getChild(<span class="stringliteral">&quot;Frame2&quot;</span>)-&gt;show();</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="keywordflow">return</span> 1;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    }</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">bool</span> ViewSceneOutliner(<span class="keyword">const</span> CEGUI::EventArgs&amp; e)</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    {</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        Root-&gt;getChild(<span class="stringliteral">&quot;Frame2&quot;</span>)-&gt;show();</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="classui___view_root.html#a8f59df00996abf99cfb9074ae53e9904">   76</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classui___view_root.html#a8f59df00996abf99cfb9074ae53e9904">ui_ViewRoot</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl, CEGUI::Window * Root){ this-&gt;<a class="code" href="classui___view_root.html#a9de686138de89bf40fc8eb356edf41e6">Init</a>(ctrl, Root); }</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___view_root.html#a9de686138de89bf40fc8eb356edf41e6">Init</a>(<a class="code" href="class_controller.html">Controller</a> * ctrl, CEGUI::Window * Root);</div>
+<div class="line"><a name="l00075"></a><span class="lineno"><a class="line" href="classui___view_root.html#a5d6e72a677cd1fb92f1e3cc63c0d3533">   75</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classui___view_root.html#a5d6e72a677cd1fb92f1e3cc63c0d3533">ui_ViewRoot</a>(CEGUI::Window * Root){ this-&gt;<a class="code" href="classui___view_root.html#a0d69417c682fcef79e6f08de023e96b7">Init</a>(Root); }</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___view_root.html#a0d69417c682fcef79e6f08de023e96b7">Init</a>(CEGUI::Window * Root);</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="classui___view_root.html#afb48aa17e74e6b6b14011c728c94caa5">   86</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classui___view_root.html#afb48aa17e74e6b6b14011c728c94caa5">~ui_ViewRoot</a>(){ this-&gt;<a class="code" href="classui___view_root.html#aabfbd9f513a969554c7ccce875a067ea">Clean</a>(); }</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___view_root.html#aabfbd9f513a969554c7ccce875a067ea">Clean</a>();</div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="classui___view_root.html#afb48aa17e74e6b6b14011c728c94caa5">   85</a></span>&#160;    <span class="keyword">inline</span> <a class="code" href="classui___view_root.html#afb48aa17e74e6b6b14011c728c94caa5">~ui_ViewRoot</a>(){ this-&gt;<a class="code" href="classui___view_root.html#aabfbd9f513a969554c7ccce875a067ea">Clean</a>(); }</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___view_root.html#aabfbd9f513a969554c7ccce875a067ea">Clean</a>();</div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___view_root.html#a0878733b6eac61d947126ad03480d47e">SyncUI</a>();</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classui___view_root.html#a0878733b6eac61d947126ad03480d47e">SyncUI</a>();</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;};</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
 <div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;</div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="ttc" id="controls_8hpp_html"><div class="ttname"><a href="controls_8hpp.html">controls.hpp</a></div></div>
 <div class="ttc" id="ui__util_8hpp_html"><div class="ttname"><a href="ui__util_8hpp.html">ui_util.hpp</a></div></div>
-<div class="ttc" id="classui___view_root_html_afb48aa17e74e6b6b14011c728c94caa5"><div class="ttname"><a href="classui___view_root.html#afb48aa17e74e6b6b14011c728c94caa5">ui_ViewRoot::~ui_ViewRoot</a></div><div class="ttdeci">~ui_ViewRoot()</div><div class="ttdef"><b>Definition:</b> view_root.hpp:86</div></div>
+<div class="ttc" id="classui___view_root_html_a0d69417c682fcef79e6f08de023e96b7"><div class="ttname"><a href="classui___view_root.html#a0d69417c682fcef79e6f08de023e96b7">ui_ViewRoot::Init</a></div><div class="ttdeci">void Init(CEGUI::Window *Root)</div><div class="ttdef"><b>Definition:</b> view_root.cpp:7</div></div>
+<div class="ttc" id="classui___view_root_html_afb48aa17e74e6b6b14011c728c94caa5"><div class="ttname"><a href="classui___view_root.html#afb48aa17e74e6b6b14011c728c94caa5">ui_ViewRoot::~ui_ViewRoot</a></div><div class="ttdeci">~ui_ViewRoot()</div><div class="ttdef"><b>Definition:</b> view_root.hpp:85</div></div>
 <div class="ttc" id="string__helper_8hpp_html"><div class="ttname"><a href="string__helper_8hpp.html">string_helper.hpp</a></div></div>
-<div class="ttc" id="classui___view_root_html_a9de686138de89bf40fc8eb356edf41e6"><div class="ttname"><a href="classui___view_root.html#a9de686138de89bf40fc8eb356edf41e6">ui_ViewRoot::Init</a></div><div class="ttdeci">void Init(Controller *ctrl, CEGUI::Window *Root)</div><div class="ttdef"><b>Definition:</b> view_root.cpp:7</div></div>
-<div class="ttc" id="classui___view_root_html_a8f59df00996abf99cfb9074ae53e9904"><div class="ttname"><a href="classui___view_root.html#a8f59df00996abf99cfb9074ae53e9904">ui_ViewRoot::ui_ViewRoot</a></div><div class="ttdeci">ui_ViewRoot(Controller *ctrl, CEGUI::Window *Root)</div><div class="ttdef"><b>Definition:</b> view_root.hpp:76</div></div>
-<div class="ttc" id="class_controller_html"><div class="ttname"><a href="class_controller.html">Controller</a></div><div class="ttdef"><b>Definition:</b> controls.hpp:21</div></div>
-<div class="ttc" id="classui___view_root_html_aabfbd9f513a969554c7ccce875a067ea"><div class="ttname"><a href="classui___view_root.html#aabfbd9f513a969554c7ccce875a067ea">ui_ViewRoot::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> view_root.cpp:38</div></div>
-<div class="ttc" id="classui___view_root_html_a0878733b6eac61d947126ad03480d47e"><div class="ttname"><a href="classui___view_root.html#a0878733b6eac61d947126ad03480d47e">ui_ViewRoot::SyncUI</a></div><div class="ttdeci">void SyncUI()</div><div class="ttdef"><b>Definition:</b> view_root.cpp:49</div></div>
+<div class="ttc" id="classui___view_root_html_aabfbd9f513a969554c7ccce875a067ea"><div class="ttname"><a href="classui___view_root.html#aabfbd9f513a969554c7ccce875a067ea">ui_ViewRoot::Clean</a></div><div class="ttdeci">void Clean()</div><div class="ttdef"><b>Definition:</b> view_root.cpp:37</div></div>
+<div class="ttc" id="classui___view_root_html_a5d6e72a677cd1fb92f1e3cc63c0d3533"><div class="ttname"><a href="classui___view_root.html#a5d6e72a677cd1fb92f1e3cc63c0d3533">ui_ViewRoot::ui_ViewRoot</a></div><div class="ttdeci">ui_ViewRoot(CEGUI::Window *Root)</div><div class="ttdef"><b>Definition:</b> view_root.hpp:75</div></div>
+<div class="ttc" id="classui___view_root_html_a0878733b6eac61d947126ad03480d47e"><div class="ttname"><a href="classui___view_root.html#a0878733b6eac61d947126ad03480d47e">ui_ViewRoot::SyncUI</a></div><div class="ttdeci">void SyncUI()</div><div class="ttdef"><b>Definition:</b> view_root.cpp:48</div></div>
 <div class="ttc" id="classui___view_root_html"><div class="ttname"><a href="classui___view_root.html">ui_ViewRoot</a></div><div class="ttdef"><b>Definition:</b> view_root.hpp:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

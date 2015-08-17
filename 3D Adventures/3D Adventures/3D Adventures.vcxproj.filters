@@ -103,6 +103,9 @@
     <Filter Include="common\crypt">
       <UniqueIdentifier>{3d50e677-7c84-47fc-b2a8-15fd316862bf}</UniqueIdentifier>
     </Filter>
+    <Filter Include="common\entity_instance">
+      <UniqueIdentifier>{5e85994c-403d-419f-83d1-7be2686a4ef1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="common\controls.cpp">
@@ -293,6 +296,9 @@
     </ClCompile>
     <ClCompile Include="common\crypt\BlowFish.cpp">
       <Filter>common\crypt</Filter>
+    </ClCompile>
+    <ClCompile Include="common\entity_instance\entity_instance.cpp">
+      <Filter>common\entity_instance</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -597,6 +603,12 @@
     </ClInclude>
     <ClInclude Include="common\crypt\Blowfish.h">
       <Filter>common\crypt</Filter>
+    </ClInclude>
+    <ClInclude Include="common\entity_instance\entity_instance.hpp">
+      <Filter>common\entity_instance</Filter>
+    </ClInclude>
+    <ClInclude Include="common\base\base_entity_instance.hpp">
+      <Filter>common\base</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

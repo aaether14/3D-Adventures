@@ -4,7 +4,7 @@
 
 
 
-#include <entity_info/transform_info.hpp>
+#include <entity_instance/entity_instance.hpp>
 #include <base/base_state_saver.hpp>
 #include <components/model_component.hpp>
 #include <components/general_entity_info_component.hpp>
@@ -35,10 +35,14 @@ class SceneInfo : public AStateSaver
 private:
 
 
+
+	///////Subject to change///////////
+
+
 	/*
 	Instance information
 	*/
-	std::vector<TransformInfo*> * entity_infos;
+	std::vector<EntityInstance*> * entity_instances;
 
 
 
@@ -46,7 +50,12 @@ private:
 	glm::vec2 map_size;
 
 
-	std::map<std::string, Entity*> entity_map;
+    //////////////////////////////////
+
+
+
+
+	std::map<std::string, boost::shared_ptr<Entity>> entity_map;
 	/**
 	Based on the files in path you provide ScenInfo adds specific components to the given entity
 	*/
@@ -84,18 +93,31 @@ public:
 
 
 
+
+
+
+
+
 	/**
 	Get vector of entity instances
 	*/
-	inline std::vector<TransformInfo*> * GetEntityInfos(){ return entity_infos; }
+	std::vector<EntityInstance*> * GetEntityInstances(){ return entity_instances; }
+
+
+
+
+
+
+
+
 	/**
 	Get entity with provided key
 	*/
-	inline Entity* GetEntity(std::string name){ return entity_map[name]; }
+	inline Entity* GetEntity(std::string name){ return entity_map[name].get(); }
 	/**
 	Get entity with provided index
 	*/
-	inline Entity* GetEntity(GLuint counter){ std::map<std::string, Entity*>::iterator it(entity_map.begin()); std::advance(it, counter); return it->second; }
+	inline Entity* GetEntity(GLuint counter){ std::map<std::string, boost::shared_ptr<Entity>>::iterator it(entity_map.begin()); std::advance(it, counter); return it->second.get(); }
 	/**
 	Get number of entities in map
 	*/
