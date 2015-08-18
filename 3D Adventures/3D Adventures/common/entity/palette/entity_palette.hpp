@@ -5,13 +5,9 @@
 
 
 
-#include "../ui/scene_outliner.hpp"
-#include "../ui/ui_transform_tab.hpp"
-#include <entity_info/transform_info.hpp>
-#include <util/string_helper.hpp>
+#include <entity/ui/scene_outliner.hpp>
+#include <entity/ui/ui_transform_tab.hpp>
 #include <data_manager.hpp>
-#include <CEGUI/CEGUI.h>
-#include <base/base_module.hpp>
 
 
 

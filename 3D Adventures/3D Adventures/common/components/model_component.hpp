@@ -7,8 +7,6 @@
 
 #include <model_loaders/aaether_loader.hpp>
 #include <model_loaders/granny_loader.hpp>
-#include <util/file_helper.hpp>
-#include <util/string_helper.hpp>
 #include <base/base_component.hpp>
 #include <base/base_model_loader.hpp>
 

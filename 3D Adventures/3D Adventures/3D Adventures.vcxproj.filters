@@ -300,6 +300,9 @@
     <ClCompile Include="common\entity_instance\entity_instance.cpp">
       <Filter>common\entity_instance</Filter>
     </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data\shaders\skybox_frag.txt">
@@ -609,6 +612,9 @@
     </ClInclude>
     <ClInclude Include="common\base\base_entity_instance.hpp">
       <Filter>common\base</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

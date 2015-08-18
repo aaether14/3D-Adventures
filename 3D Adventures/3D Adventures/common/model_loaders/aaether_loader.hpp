@@ -3,12 +3,11 @@
 
 
 
+
+
 #include <texture/texture.hpp>
-#include <util/string_helper.hpp>
 #include <util/math_helper.hpp>
-#include <util/file_helper.hpp>
 #include <base/base_model_loader.hpp>
-#include <assert.h>
 
 
 

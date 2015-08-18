@@ -5,12 +5,9 @@
 
 
 #include <controller/controls_source.hpp>
+#include <technique.hpp>
+#include <resource_loader.hpp>
 #include <terrain/quad_tree.hpp>
-#include <settings/settings.hpp>
-#include <base/base_module.hpp>
-#include "resource_loader.hpp"
-#include "technique.hpp"
-
 
 
 

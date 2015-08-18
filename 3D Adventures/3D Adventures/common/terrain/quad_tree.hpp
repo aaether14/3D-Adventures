@@ -5,8 +5,6 @@
 
 
 
-#include <gl/glew.h>
-#include "texture/texture.hpp"
 #include "terrain_strip.hpp"
 #include <fstream>
 

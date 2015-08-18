@@ -3,9 +3,7 @@
 
 
 
-
-#include <map>
-#include <string>
+#include <stdafx.h>
 
 
 

@@ -4,9 +4,8 @@
 
 
 #include <granny.h>
-#include <util/string_helper.hpp>
-#include <assert.h>
 #include <texture/texture.hpp>
+#include <util/math_helper.hpp>
 #include <base/base_model_loader.hpp>
 
 

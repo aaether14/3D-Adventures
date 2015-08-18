@@ -4,10 +4,10 @@
 
 
 
-#include <GL/glew.h>
-#include <util/math_helper.hpp>
+
 #include <shader/shader.hpp>
 #include <texture/texture.hpp>
+#include <util/math_helper.hpp>
 #include <util/utils.hpp>
 
 

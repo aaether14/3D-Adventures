@@ -3,6 +3,11 @@
 
 
 
+
+
+
+
+
 void SceneInfo::AddComponentsToEntity(char * path, Entity * new_entity)
 {
 

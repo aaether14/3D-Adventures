@@ -4,15 +4,7 @@
 
 
 
-
-#include <glfw3.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <util/view.hpp>
-#include <stdio.h>
-#include <string>
-#include <sstream>
-#include <granny.h>
+#include <stdafx.h>
 
 
 

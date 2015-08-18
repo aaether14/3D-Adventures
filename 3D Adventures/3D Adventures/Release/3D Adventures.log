@@ -1,50 +1,250 @@
-﻿Build started 8/17/2015 7:45:32 PM.
+﻿Build started 8/18/2015 9:20:03 PM.
      1>Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\mesh_implementation\mesh_drawer.cpp common\mesh_implementation\mesh_wrapper.cpp common\application.cpp common\base\base_resource_loader.cpp common\entity\palette\entity_palette.cpp common\entity\entity_manager.cpp common\data_manager.cpp common\settings\scene_info.cpp common\sky_implementation\sky_wrapper.cpp common\pipeline.cpp common\resource_loader.cpp common\terrain_implementation\terrain_wrapper.cpp common\ui_implementation\project_root.cpp common\ui_implementation\settings_root.cpp common\ui_implementation\top_root.cpp common\ui_implementation\ui_root.cpp main.cpp
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\3D Adventures\\" /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"stdafx.h" /Fp"Release\3D Adventures.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt stdafx.cpp
+         stdafx.cpp
+     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(87): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+         D:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I"..\3D Adventures\\" /I..\..\Dependencies\include /I"..\3D Adventures\common" /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Release\3D Adventures.pch" /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt common\base\base_module.cpp common\crypt\BlowFish.cpp common\entity_instance\entity_instance.cpp common\mesh_implementation\mesh_drawer.cpp common\mesh_implementation\mesh_shader.cpp common\mesh_implementation\mesh_wrapper.cpp common\screen_render.cpp common\application.cpp common\base\base_resource_loader.cpp common\camera_implementation\camera.cpp common\components\general_entity_info_component.cpp common\components\model_component.cpp common\controller\controls_source.cpp common\controls.cpp common\converter\assimp_converter.cpp common\entity\entity.cpp common\entity\palette\entity_palette.cpp common\entity\entity_manager.cpp common\entity\ui\scene_outliner.cpp common\entity\ui\ui_transform_tab.cpp common\entity_info\transform_info.cpp common\filters\basic_filter.cpp common\filters\blur.cpp common\filters\dof.cpp common\filters\fxaa.cpp common\filters\g_buffer.cpp common\filters\hdr.cpp common\filters\exponential_shadow_map.cpp common\filters\ssao.cpp common\data_manager.cpp common\light\light.cpp common\model_loaders\aaether_loader.cpp common\model_loaders\granny_loader.cpp common\model_loaders\granny_loader_helper.cpp common\settings\environment.cpp common\settings\filter_settings.cpp common\settings\scene_info.cpp common\shader\shader.cpp common\sky_implementation\sky_render.cpp common\sky_implementation\sky_wrapper.cpp common\technique.cpp common\pipeline.cpp common\resource_loader.cpp common\terrain\quad_tree.cpp common\terrain\terrain.cpp common\terrain\terrain_strip.cpp common\terrain_implementation\terrain_shader.cpp common\terrain_implementation\terrain_wrapper.cpp common\texture\texture.cpp common\ui\ui_manager.cpp common\ui\ui_util.cpp common\ui_implementation\filter_root.cpp common\ui_implementation\lighting_root.cpp common\ui_implementation\project_root.cpp common\ui_implementation\settings_root.cpp common\ui_implementation\top_root.cpp common\ui_implementation\ui_root.cpp common\ui_implementation\view_root.cpp common\util\math_helper.cpp common\util\file_helper.cpp common\util\string_helper.cpp common\util\utils.cpp common\util\view.cpp main.cpp
+         base_module.cpp
+         BlowFish.cpp
+         entity_instance.cpp
          mesh_drawer.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\mesh_implementation\mesh_drawer.cpp(1): warning C4627: '#include "mesh_drawer.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\mesh_implementation\mesh_drawer.cpp(98): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         mesh_shader.cpp
+     1>common\mesh_implementation\mesh_shader.cpp(1): warning C4627: '#include "mesh_shader.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\mesh_implementation\mesh_shader.cpp(65): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          mesh_wrapper.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\mesh_implementation\mesh_wrapper.cpp(1): warning C4627: '#include "mesh_wrapper.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\mesh_implementation\mesh_wrapper.cpp(99): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         screen_render.cpp
+     1>common\screen_render.cpp(1): warning C4627: '#include "screen_render.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\screen_render.cpp(81): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          application.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\application.cpp(1): warning C4627: '#include "application.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\application.cpp(88): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          base_resource_loader.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>C:\Users\Aaether\Desktop\3D-Adventures\Dependencies\include\GL/glew.h(84): fatal error C1189: #error :  gl.h included before glew.h
+     1>common\base\base_resource_loader.cpp(1): warning C4627: '#include "base_resource_loader.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\base\base_resource_loader.cpp(125): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         camera.cpp
+     1>common\camera_implementation\camera.cpp(1): warning C4627: '#include "camera.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\camera_implementation\camera.cpp(205): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         general_entity_info_component.cpp
+     1>common\components\general_entity_info_component.cpp(1): warning C4627: '#include "general_entity_info_component.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\components\general_entity_info_component.cpp(129): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         model_component.cpp
+     1>common\components\model_component.cpp(1): warning C4627: '#include "model_component.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\components\model_component.cpp(52): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         controls_source.cpp
+     1>common\controller\controls_source.cpp(1): warning C4627: '#include "controls_source.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\controller\controls_source.cpp(332): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         controls.cpp
+     1>common\controls.cpp(1): warning C4627: '#include "controls.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\controls.cpp(100): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         assimp_converter.cpp
+     1>common\converter\assimp_converter.cpp(1): warning C4627: '#include "assimp_converter.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\converter\assimp_converter.cpp(198): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         entity.cpp
+     1>common\entity\entity.cpp(1): warning C4627: '#include "entity.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\entity\entity.cpp(125): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          entity_palette.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\entity\palette\entity_palette.cpp(1): warning C4627: '#include "entity_palette.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\entity\palette\entity_palette.cpp(274): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          entity_manager.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>common\entity\entity_manager.cpp(57): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>common\entity\entity_manager.cpp(1): warning C4627: '#include "entity_manager.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\entity\entity_manager.cpp(110): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         scene_outliner.cpp
+     1>common\entity\ui\scene_outliner.cpp(1): warning C4627: '#include "scene_outliner.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\entity\ui\scene_outliner.cpp(136): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         ui_transform_tab.cpp
+     1>common\entity\ui\ui_transform_tab.cpp(1): warning C4627: '#include "ui_transform_tab.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\entity\ui\ui_transform_tab.cpp(150): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         Compiling...
+         transform_info.cpp
+     1>common\entity_info\transform_info.cpp(1): warning C4627: '#include "transform_info.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\entity_info\transform_info.cpp(12): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         basic_filter.cpp
+     1>common\filters\basic_filter.cpp(1): warning C4627: '#include "basic_filter.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\filters\basic_filter.cpp(139): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         blur.cpp
+     1>common\filters\blur.cpp(1): warning C4627: '#include "blur.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\filters\blur.cpp(49): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         dof.cpp
+     1>common\filters\dof.cpp(1): warning C4627: '#include "dof.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\filters\dof.cpp(42): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         fxaa.cpp
+     1>common\filters\fxaa.cpp(1): warning C4627: '#include "fxaa.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\filters\fxaa.cpp(58): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         g_buffer.cpp
+     1>common\filters\g_buffer.cpp(1): warning C4627: '#include "g_buffer.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\filters\g_buffer.cpp(71): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         hdr.cpp
+     1>common\filters\hdr.cpp(1): warning C4627: '#include "hdr.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\filters\hdr.cpp(70): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         exponential_shadow_map.cpp
+     1>common\filters\exponential_shadow_map.cpp(1): warning C4627: '#include "exponential_shadow_map.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\filters\exponential_shadow_map.cpp(78): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         ssao.cpp
+     1>common\filters\ssao.cpp(1): warning C4627: '#include "ssao.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\filters\ssao.cpp(231): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          data_manager.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\data_manager.cpp(1): warning C4627: '#include "data_manager.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\data_manager.cpp(91): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         light.cpp
+     1>common\light\light.cpp(6): warning C4627: '#include "light.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\light\light.cpp(219): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         aaether_loader.cpp
+     1>common\model_loaders\aaether_loader.cpp(1): warning C4627: '#include "aaether_loader.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\model_loaders\aaether_loader.cpp(181): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         granny_loader.cpp
+     1>common\model_loaders\granny_loader.cpp(1): warning C4627: '#include "granny_loader.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\model_loaders\granny_loader.cpp(723): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         granny_loader_helper.cpp
+     1>common\model_loaders\granny_loader_helper.cpp(1): warning C4627: '#include "granny_loader.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\model_loaders\granny_loader_helper.cpp(181): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         environment.cpp
+     1>common\settings\environment.cpp(1): warning C4627: '#include "environment.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\settings\environment.cpp(157): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         filter_settings.cpp
+     1>common\settings\filter_settings.cpp(1): warning C4627: '#include "filter_settings.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\settings\filter_settings.cpp(184): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          scene_info.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>C:\Users\Aaether\Desktop\3D-Adventures\Dependencies\include\GL/glew.h(84): fatal error C1189: #error :  gl.h included before glew.h
+     1>common\settings\scene_info.cpp(1): warning C4627: '#include "scene_info.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\settings\scene_info.cpp(372): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         shader.cpp
+     1>common\shader\shader.cpp(1): warning C4627: '#include "shader.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\shader\shader.cpp(106): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         sky_render.cpp
+     1>common\sky_implementation\sky_render.cpp(1): warning C4627: '#include "sky_render.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\sky_implementation\sky_render.cpp(120): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          sky_wrapper.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>common\sky_implementation\sky_wrapper.cpp(62): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>common\sky_implementation\sky_wrapper.cpp(1): warning C4627: '#include "sky_wrapper.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\sky_implementation\sky_wrapper.cpp(85): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         Compiling...
+         technique.cpp
+     1>common\technique.cpp(1): warning C4627: '#include "technique.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\technique.cpp(217): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          pipeline.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>common\pipeline.cpp(206): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
-     1>common\pipeline.cpp(267): warning C4244: 'argument' : conversion from 'double' to 'GLfloat', possible loss of data
+     1>common\pipeline.cpp(1): warning C4627: '#include "pipeline.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\pipeline.cpp(504): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          resource_loader.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
-     1>C:\Users\Aaether\Desktop\3D-Adventures\Dependencies\include\GL/glew.h(84): fatal error C1189: #error :  gl.h included before glew.h
+     1>common\resource_loader.cpp(1): warning C4627: '#include "resource_loader.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\resource_loader.cpp(70): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         quad_tree.cpp
+     1>common\terrain\quad_tree.cpp(1): warning C4627: '#include "quad_tree.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\terrain\quad_tree.cpp(397): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         terrain.cpp
+     1>common\terrain\terrain.cpp(1): warning C4627: '#include "terrain.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\terrain\terrain.cpp(665): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         terrain_strip.cpp
+     1>common\terrain\terrain_strip.cpp(1): warning C4627: '#include "terrain_strip.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\terrain\terrain_strip.cpp(113): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         terrain_shader.cpp
+     1>common\terrain_implementation\terrain_shader.cpp(1): warning C4627: '#include "terrain_shader.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\terrain_implementation\terrain_shader.cpp(121): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          terrain_wrapper.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\terrain_implementation\terrain_wrapper.cpp(1): warning C4627: '#include "terrain_wrapper.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\terrain_implementation\terrain_wrapper.cpp(194): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         texture.cpp
+     1>common\texture\texture.cpp(1): warning C4627: '#include "texture.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\texture\texture.cpp(493): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         ui_manager.cpp
+     1>common\ui\ui_manager.cpp(1): warning C4627: '#include "ui_manager.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui\ui_manager.cpp(109): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         ui_util.cpp
+     1>common\ui\ui_util.cpp(1): warning C4627: '#include "ui_util.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui\ui_util.cpp(75): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         filter_root.cpp
+     1>common\ui_implementation\filter_root.cpp(1): warning C4627: '#include "filter_root.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui_implementation\filter_root.cpp(208): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         lighting_root.cpp
+     1>common\ui_implementation\lighting_root.cpp(1): warning C4627: '#include "lighting_root.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui_implementation\lighting_root.cpp(92): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          project_root.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\ui_implementation\project_root.cpp(1): warning C4627: '#include "project_root.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui_implementation\project_root.cpp(56): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          settings_root.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\ui_implementation\settings_root.cpp(1): warning C4627: '#include "settings_root.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui_implementation\settings_root.cpp(79): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          top_root.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\ui_implementation\top_root.cpp(1): warning C4627: '#include "top_root.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui_implementation\top_root.cpp(43): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
          ui_root.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>common\ui_implementation\ui_root.cpp(1): warning C4627: '#include "ui_root.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui_implementation\ui_root.cpp(64): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         view_root.cpp
+     1>common\ui_implementation\view_root.cpp(1): warning C4627: '#include "view_root.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\ui_implementation\view_root.cpp(56): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         math_helper.cpp
+         file_helper.cpp
+     1>common\util\file_helper.cpp(1): warning C4627: '#include "file_helper.hpp"': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>common\util\file_helper.cpp(289): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
+         Compiling...
+         string_helper.cpp
+         utils.cpp
+         view.cpp
          main.cpp
-     1>C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\common\util/view.hpp(91): warning C4244: 'argument' : conversion from 'double' to 'float', possible loss of data
+     1>main.cpp(92): warning C4627: '#include <application.hpp>': skipped when looking for precompiled header use
+                 Add directive to 'stdafx.h' or rebuild precompiled header
+     1>main.cpp(114): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include "stdafx.h"' to your source?
      1>Done Building Project "C:\Users\Aaether\Desktop\3D-Adventures\3D Adventures\3D Adventures\3D Adventures.vcxproj" (Build target(s)) -- FAILED.
 
 Build FAILED.
 
-Time Elapsed 00:01:07.49
+Time Elapsed 00:00:05.03

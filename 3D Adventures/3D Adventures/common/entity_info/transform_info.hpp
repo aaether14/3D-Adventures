@@ -4,7 +4,7 @@
 
 
 
-#include <util/string_helper.hpp>
+
 #include <util/math_helper.hpp>
 
 
@@ -39,9 +39,7 @@ public:
 
 
 
-	/**
-	Call Clean()
-	*/
+
 	inline TransformInfo(){}
 
 

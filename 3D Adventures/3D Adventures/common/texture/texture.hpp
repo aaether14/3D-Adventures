@@ -6,11 +6,9 @@
 
 
 #include <FreeImage.h>
-#include <util/string_helper.hpp>
 #include <GL/glew.h>
-#include <glfw3.h>
-#include <assert.h>
-#include <glm/glm.hpp>
+#include <util/string_helper.hpp>
+#include <util/math_helper.hpp>
 
 
 

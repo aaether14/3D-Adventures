@@ -5,8 +5,7 @@
 
 
 
-#include <gl/glew.h>
-#include "texture/texture.hpp"
+#include <texture/texture.hpp>
 #include <util/math_helper.hpp>
 
 

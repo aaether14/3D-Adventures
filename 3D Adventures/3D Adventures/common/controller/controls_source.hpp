@@ -4,13 +4,9 @@
 
 
 
-#include <GL/glew.h>
-#include <glfw3.h>
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <stdio.h>
-#include <string.h>
 #include <time.h>
+#include <texture/texture.hpp>
+#include <util/math_helper.hpp>
 #include <ui/ui_util.hpp>
 #include <base/base_module.hpp>
 

@@ -1,6 +1,7 @@
-//Checked 2014
+#include <stdafx.h>
 
-#include <util/view.hpp>
+
+
 
 
 void View::Create3rd(GLfloat FoV, GLfloat ratio, GLfloat z_near, GLfloat z_far, GLfloat distance, glm::vec3 position, glm::vec3 direction, glm::vec3 up)
